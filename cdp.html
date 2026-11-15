@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="te">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TG TET CDP – 30 ప్రశ్నలు | MANA TET – MANA TEST</title>
+<title>TG TET PREVIOUS PAPER – JUNE 2025 SHIFT 2 | MANA TET</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.7}
@@ -29,8 +30,13 @@ footer{text-align:center;color:#64748b;padding:18px}
 <body>
 <header>
 <h1>MANA TET – MANA TEST</h1>
-<div>TG TET PAPER – I</div>
 <div><b>Child Development &amp; Pedagogy (CDP)</b></div>
+<div style="font-size:20px;font-weight:bold;color:#facc15;margin:10px 0">
+TG TET PREVIOUS PAPER
+</div>
+<div style="font-size:18px;font-weight:bold">
+JUNE 2025 – SHIFT 2
+</div>
 <div>పూర్తి ఆన్‌లైన్ పరీక్ష – 30 ప్రశ్నలు | 30 మార్కులు</div>
 </header>
 <main>
@@ -83,29 +89,54 @@ const questions = [
 ];
 
 const quiz=document.getElementById('quiz');
+
 questions.forEach((q,i)=>{
- const card=document.createElement('section');card.className='card';card.id='q'+i;
- const title=document.createElement('h3');title.className='question';title.textContent=(i+1)+'. '+q.q;card.appendChild(title);
+ const card=document.createElement('section');
+ card.className='card';
+ card.id='q'+i;
+ const title=document.createElement('h3');
+ title.className='question';
+ title.textContent=(i+1)+'. '+q.q;
+ card.appendChild(title);
  q.opts.forEach((op,j)=>{
-  const label=document.createElement('label');label.className='option';
-  const input=document.createElement('input');input.type='radio';input.name='q'+i;input.value=j;
+  const label=document.createElement('label');
+  label.className='option';
+  const input=document.createElement('input');
+  input.type='radio';
+  input.name='q'+i;
+  input.value=j;
   input.addEventListener('change',()=>check(i,j));
-  label.appendChild(input);label.appendChild(document.createTextNode(' '+String.fromCharCode(65+j)+') '+op));
+  label.appendChild(input);
+  label.appendChild(document.createTextNode(' '+String.fromCharCode(65+j)+') '+op));
   card.appendChild(label);
  });
- const fb=document.createElement('div');fb.className='feedback';fb.id='fb'+i;card.appendChild(fb);quiz.appendChild(card);
+ const fb=document.createElement('div');
+ fb.className='feedback';
+ fb.id='fb'+i;
+ card.appendChild(fb);
+ quiz.appendChild(card);
 });
+
 function check(i,j){
  const q=questions[i],fb=document.getElementById('fb'+i);
  const inputs=document.querySelectorAll('input[name="q'+i+'"]');
  inputs.forEach(x=>x.disabled=true);
- const ok=j===q.correct;fb.style.display='block';fb.className='feedback '+(ok?'correct':'wrong');
+ const ok=j===q.correct;
+ fb.style.display='block';
+ fb.className='feedback '+(ok?'correct':'wrong');
  fb.textContent=(ok?'సరైన సమాధానం! ':'తప్పు సమాధానం. సరైన సమాధానం: '+String.fromCharCode(65+q.correct)+') '+q.opts[q.correct]+'. ')+q.exp;
  document.getElementById('progress').textContent='సమాధానాలు: '+document.querySelectorAll('input:checked').length+'/30';
 }
+
 function finishQuiz(){
  let answered=0,score=0;
- questions.forEach((q,i)=>{const chosen=document.querySelector('input[name="q'+i+'"]:checked');if(chosen){answered++;if(Number(chosen.value)===q.correct)score++;}});
+ questions.forEach((q,i)=>{
+  const chosen=document.querySelector('input[name="q'+i+'"]:checked');
+  if(chosen){
+   answered++;
+   if(Number(chosen.value)===q.correct)score++;
+  }
+ });
  document.getElementById('result').textContent='మీ స్కోర్: '+score+'/30';
  document.getElementById('summary').textContent='సమాధానాలు ఇచ్చినవి: '+answered+'/30 | సరైనవి: '+score+' | తప్పైనవి: '+(answered-score)+' | సమాధానం ఇవ్వనివి: '+(30-answered);
  document.getElementById('submit').disabled=true;
