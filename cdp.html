@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TG TET CDP – ప్రశ్నలు 1–10</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.6}
+header{background:#123b70;color:#fff;text-align:center;padding:22px 12px}
+main{max-width:850px;margin:22px auto;padding:0 14px}
+.card{background:#fff;border-radius:14px;padding:20px;margin:16px 0;box-shadow:0 2px 9px #00000012}
+h2{margin-top:0} .option{display:block;padding:11px 13px;margin:9px 0;border:1px solid #cbd5e1;border-radius:9px;cursor:pointer}
+.option input{margin-right:9px} .option:has(input:checked){border-color:#123b70;background:#eff6ff}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:9px}
+.correct{background:#dcfce7;color:#166534} .wrong{background:#fee2e2;color:#991b1b}
+button{border:0;border-radius:9px;padding:12px 20px;background:#123b70;color:#fff;font-size:16px;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed} #result{font-size:20px;font-weight:bold;text-align:center}
+.small{color:#475569;font-size:14px} .toprow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><h1>TG TET PAPER – I</h1><div>Child Development & Pedagogy</div><div>PDF ప్రశ్నలు 1–10</div></header>
+<main>
+<div class="card toprow"><span>మొత్తం ప్రశ్నలు: <b>10</b></span><span>ప్రతి ప్రశ్నకు 1 మార్కు</span><span id="progress">సమాధానాలు: 0/10</span></div>
+<div id="quiz"></div>
+<div class="card" id="finish"><button id="submit" onclick="finishQuiz()">ఫలితాలు చూడండి</button><div id="result"></div><p class="small" id="summary"></p><button onclick="location.reload()">మళ్లీ పరీక్ష రాయండి</button></div>
+</main>
+<script>
+const questions = [{"q": "గ్రామీణ మరియు మారుమూల ప్రాంతాల్లో కింది వాటిలో ఏవి లేకపోవడం వల్ల అభ్యసన ఫలితాలు ప్రభావితమవుతాయి?\nA) రవాణా సౌకర్యాలు\nB) సాంకేతికత\nC) తల్లిదండ్రుల సంరక్షణ", "opts": ["A మరియు C మాత్రమే", "A మరియు B మాత్రమే", "B మరియు C మాత్రమే", "A, B మరియు C"], "correct": 1, "exp": "PDF సమాధాన సూచిక ప్రకారం రవాణా సౌకర్యాలు, సాంకేతికత లేకపోవడం అభ్యసన ఫలితాలను ప్రభావితం చేస్తాయి."}, {"q": "బోధనలో పునశ్చరణ కోసం తగిన పరీక్షా సాధనాలను ఏ దశలో ఉపయోగిస్తారు?", "opts": ["బోధనానంతర దశ", "బోధనాపూర్వ దశ", "బోధనాకాల దశ", "పరిచయ దశ"], "correct": 0, "exp": "బోధన పూర్తయిన తరువాత అభ్యసనాన్ని పునశ్చరణ చేయడానికి పరీక్షా సాధనాలను ఉపయోగిస్తారు."}, {"q": "వికీపీడియా ఒక ఉచిత ఆన్‌లైన్ విజ్ఞాన సృష్టి, సమస్యా పరిష్కారంలో అనేక మంది కలిసి పాల్గొనే సర్వస్వం. ఈ విధానం ఏ రకమైన అభ్యసనానికి ఉదాహరణ?", "opts": ["పరిశీలనాత్మక అభ్యసనం", "సహకార అభ్యసనం", "అన్వేషణ ఆధారిత విధానం", "ప్రాజెక్టు ఆధారిత విధానం"], "correct": 1, "exp": "అనేక మంది కలిసి విజ్ఞానాన్ని సృష్టించడం, సమస్యలను పరిష్కరించడం సహకార అభ్యసన లక్షణం."}, {"q": "వికలాంగుల హక్కుల చట్టం (RPwD), 2016లో వికలాంగులపై దుర్వినియోగం, హింస, దోపిడీ నుంచి రక్షణకు సంబంధించిన సెక్షన్ ఏది?", "opts": ["సెక్షన్ 7", "సెక్షన్ 5", "సెక్షన్ 4", "సెక్షన్ 6"], "correct": 0, "exp": "ఈ ప్రశ్నకు PDF సమాధాన సూచికలో సెక్షన్ 7గా ఇవ్వబడింది."}, {"q": "జాతీయ పాఠ్య ప్రణాళికా చట్రం (NCF), 2005లో కింది వాటిలో సిఫారసు చేయనిది ఏది?", "opts": ["‘భారం లేని అభ్యసనం’ సూచనల ఆధారంగా పాఠ్య ప్రణాళిక భారాన్ని తగ్గించడం", "బహుళత్వ సమాజంలో జాతీయ విద్యా వ్యవస్థను బలోపేతం చేయడం", "పిల్లల ఆర్థిక స్థితి ఆధారంగా విద్యను అందించడం", "పిల్లలందరికీ నాణ్యమైన విద్యను అందించడం"], "correct": 2, "exp": "పిల్లల ఆర్థిక స్థితి ఆధారంగా విద్యను వేరు చేయడం NCF 2005 సిఫారసు కాదు."}, {"q": "విద్యార్థుల్లో ఆశించిన అభ్యసనాన్ని కలిగించలేని ఉపాధ్యాయ ప్రవర్తన ఏది?", "opts": ["దృఢ సంకల్పం", "స్వీయ నియంత్రణ", "సరళత", "క్రమశిక్షణను మాత్రమే కోరే స్వభావం"], "correct": 3, "exp": "క్రమశిక్షణకే పరిమితమై విద్యార్థుల ఇతర అవసరాలను పట్టించుకోకపోవడం ఆశించిన అభ్యసనానికి ఆటంకం."}, {"q": "లైంగిక నేరాల నుంచి పిల్లల రక్షణ (POCSO) చట్టం, 2012లోని సెక్షన్ 11 ప్రకారం లైంగిక వేధింపులకు పాల్పడిన వ్యక్తికి సెక్షన్ 12 కింద విధించే జైలు శిక్ష ఎంత?", "opts": ["1 సంవత్సరం", "5 సంవత్సరాలు", "3 సంవత్సరాలు", "7 సంవత్సరాలు"], "correct": 2, "exp": "ఈ ప్రశ్నకు PDF సమాధాన సూచికలో మూడు సంవత్సరాలుగా ఇవ్వబడింది."}, {"q": "స్థానిక సమస్యకు పరిష్కారం కనుగొనడానికి విద్యార్థులకు పరిశోధనా ప్రాజెక్టును ఇచ్చి, స్థానిక సంస్థతో కలిసి పనిచేయమని ఉపాధ్యాయురాలు సూచించింది. ఈ సందర్భంలో అభ్యసన వనరుగా ఉపయోగపడేది ఏది?", "opts": ["సాంకేతికత", "పాఠశాల", "ఆట", "సమాజం"], "correct": 3, "exp": "స్థానిక సంస్థలతో కలిసి పనిచేయడం ద్వారా సమాజం అభ్యసన వనరుగా ఉపయోగపడుతుంది."}, {"q": "రుషిక ఇంజినీరింగ్ పూర్తి చేసి, తన ప్రత్యేక నైపుణ్య రంగంలో ఉద్యోగం పొందలేక నిరాశకు గురైంది. ఉద్యోగ మార్కెట్‌లోని మార్పులు, ఉద్యోగ అవకాశాల గురించి తెలుసుకోవడానికి ఆమెకు ఏ రకమైన మార్గదర్శకత్వం అవసరం?", "opts": ["విద్యాపరమైన మార్గదర్శకత్వం", "వృత్తిపరమైన మార్గదర్శకత్వం", "మానసిక మార్గదర్శకత్వం", "నిర్దేశక మార్గదర్శకత్వం"], "correct": 1, "exp": "ఉద్యోగ అవకాశాలు, ఉద్యోగ మార్కెట్, వృత్తి ఎంపికల గురించి తెలుసుకోవడానికి వృత్తిపరమైన మార్గదర్శకత్వం అవసరం."}, {"q": "ఇద్దరు బాలికలు కొత్త రెస్టారెంట్‌కు వెళ్లారు. లోపలి వాతావరణాన్ని చూసి ఏదో అసౌకర్యంగా భావించి వెంటనే బయటకు వచ్చారు. ఇది ఏ రకమైన ఆలోచనకు ఉదాహరణ?", "opts": ["అంతర్దృష్టి ఆధారిత ఆలోచన", "విభిన్న ఆలోచన", "విశ్లేషణాత్మక ఆలోచన", "సమ్మిళిత ఆలోచన"], "correct": 0, "exp": "పరిస్థితిని చూసిన వెంటనే అంతర్గత అవగాహనతో నిర్ణయానికి రావడాన్ని అంతర్దృష్టి ఆధారిత ఆలోచన అంటారు."}];
+const quiz = document.getElementById('quiz');
+questions.forEach((q,i)=>{
+ const card=document.createElement('section'); card.className='card'; card.id='q'+i;
+ const title=document.createElement('h3'); title.textContent=(i+1)+'. '+q.q; card.appendChild(title);
+ q.opts.forEach((op,j)=>{
+  const label=document.createElement('label'); label.className='option';
+  label.innerHTML='<input type="radio" name="q'+i+'" value="'+j+'"> '+String.fromCharCode(65+j)+') '+op;
+  label.querySelector('input').addEventListener('change',()=>check(i,j));
+  card.appendChild(label);
+ });
+ const fb=document.createElement('div'); fb.className='feedback'; fb.id='fb'+i; card.appendChild(fb); quiz.appendChild(card);
+});
+function check(i,j){
+ const q=questions[i], fb=document.getElementById('fb'+i), inputs=document.querySelectorAll('input[name="q'+i+'"]');
+ inputs.forEach(x=>x.disabled=true);
+ const ok=j===q.correct; fb.style.display='block'; fb.className='feedback '+(ok?'correct':'wrong');
+ fb.textContent=(ok?'సరైన సమాధానం! ':'తప్పు సమాధానం. సరైన సమాధానం: '+String.fromCharCode(65+q.correct)+') '+q.opts[q.correct]+'. ')+q.exp;
+ document.getElementById('progress').textContent='సమాధానాలు: '+document.querySelectorAll('input:checked').length+'/10';
+}
+function finishQuiz(){
+ let answered=0,score=0;
+ questions.forEach((q,i)=>{const chosen=document.querySelector('input[name="q'+i+'"]:checked'); if(chosen){answered++;if(Number(chosen.value)===q.correct)score++;}});
+ document.getElementById('result').textContent='మీ స్కోర్: '+score+'/10';
+ document.getElementById('summary').textContent='సమాధానాలు ఇచ్చినవి: '+answered+'/10 | సరైనవి: '+score+' | తప్పైనవి: '+(answered-score)+' | సమాధానం ఇవ్వనివి: '+(10-answered);
+ document.getElementById('submit').disabled=true;
+}
+</script>
+</body></html>
