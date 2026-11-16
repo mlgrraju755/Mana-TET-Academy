@@ -1,1 +1,79 @@
-
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TG TET తెలుగు క్విజ్ (31–60)</title>
+<style>
+:root{font-family:"Noto Sans Telugu","Gautami",Arial,sans-serif;color:#182235;background:#eef3f9}
+*{box-sizing:border-box}body{margin:0;padding:16px}.wrap{max-width:900px;margin:auto}
+header{background:linear-gradient(135deg,#123b68,#286a91);color:white;padding:22px;border-radius:18px;margin-bottom:14px}
+h1{font-size:24px;margin:0 0 7px}.sub{opacity:.92;font-size:14px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:white;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px #10243a12;font-size:14px}
+.progress{height:9px;background:#d7e0ec;border-radius:20px;overflow:hidden;margin:10px 0 16px}#bar{height:100%;width:0;background:#18a477;transition:.2s}
+.card{background:white;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 4px 14px #10243a12}
+.qtop{display:flex;justify-content:space-between;gap:10px;color:#52647a;font-size:13px;margin-bottom:10px}
+.question{font-size:18px;line-height:1.65;font-weight:650;margin-bottom:14px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #d8e1ec;border-radius:12px;margin:8px 0;cursor:pointer;line-height:1.5}
+.option input{margin-top:5px;transform:scale(1.15)}.option.correct{border-color:#159765;background:#eaf8f1}.option.wrong{border-color:#d84b4b;background:#fff0f0}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:12px;line-height:1.55;background:#f1f5fa}.feedback.show{display:block}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}button{border:0;border-radius:12px;padding:12px 17px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:#1769aa;color:white}.secondary{background:#e1eaf4;color:#17324e}
+#result{display:none;background:#fff;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 14px #10243a12}#result h2{margin-top:0}
+.note{background:#fff8e7;border-left:4px solid #e4a32b;padding:12px;border-radius:8px;font-size:13px;line-height:1.55;margin-top:12px}
+footer{text-align:center;color:#66788d;font-size:12px;padding:15px}
+@media(max-width:600px){body{padding:9px}header{padding:17px}h1{font-size:21px}.card{padding:14px}.question{font-size:17px}}
+</style></head><body><div class="wrap">
+<header><h1>TG TET తెలుగు క్విజ్ (31–60)</h1><div class="sub">Language I – Telugu • 30 ప్రశ్నలు</div><div class="sub">TG TET Paper-I • 27 June 2025 • Shift 2</div></header>
+<div class="stats"><div class="pill">మొత్తం ప్రశ్నలు: <b>30</b></div><div class="pill">సమాధానం ఇచ్చినవి: <b id="answered">0</b></div><div class="pill">సరైనవి: <b id="right">0</b></div><div class="pill">తప్పులు: <b id="wrong">0</b></div></div>
+<div class="progress"><div id="bar"></div></div>
+<div id="quiz"></div>
+<div class="actions"><button class="primary" onclick="showResult()">ఫలితాలు చూడండి</button><button class="secondary" onclick="resetQuiz()">మళ్లీ ప్రారంభించండి</button></div>
+<div id="result"></div>
+<div class="note"><b>గమనిక:</b> ఇవి PDFలోని ప్రశ్నల ఆధారంగా స్వతంత్రంగా సిద్ధం చేసిన సమాధానాలు, వివరణలు. అధికారిక Answer Key కాదు. మూల PDFలో OCR/స్కాన్ స్పష్టత లేని చోట ప్రత్యేక గమనిక ఇచ్చాం. అలాంటి ప్రశ్నలను అసలు ప్రశ్నపత్రంతో ధృవీకరించండి.</div>
+<footer>Mana Online Test • TG TET Previous Paper – June 2025 Shift 2</footer>
+</div>
+<script>
+const qs=[["‘పాలసుడు’ అనే పదానికి అర్థం ఏమిటి?", ["మంచివాడు", "చెడ్డవాడు", "నికుడు", "వజ్రం"], 1, "‘పాలసుడు’ అంటే దుర్జనుడు, చెడ్డవాడు లేదా దుష్టుడు. అందువల్ల ‘చెడ్డవాడు’ సరైన అర్థం."], ["కాపాడినా మేలు చేయని జీవి ఏది?", ["సర్వజ్ఞుడు", "తేలు", "ఈగ", "పరుగు"], 1, "పద్య సందర్భంలో తేలును కాపాడినా అది తన సహజ స్వభావం ప్రకారం కుడుతుంది. అందువల్ల తేలు సరైనది."], ["అగ్నిలో పడబోతున్న తేలును కాపాడితే అది ఏమి చేస్తుంది?", ["మనలనే కుడుతుంది", "దాక్కుంటుంది", "పారిపోతుంది", "కృతజ్ఞత చూపిస్తుంది"], 0, "తేలు తన స్వభావాన్ని విడవక కాపాడిన వ్యక్తినే కుడుతుందని పద్య భావం."], ["సర్వజ్ఞుడైనా చేయకూడని పని ఏది?", ["ఇతరుల ఆపదలను పట్టించుకోకుండా ఉండటం", "అజ్ఞానంగా ప్రవర్తించడం", "తనకు ఆపద వచ్చినప్పుడు జాలి చూపకపోవడం", "మూర్ఖత్వంగా ప్రవర్తించడం"], 0, "జ్ఞానం ఉన్నవాడు ఇతరుల కష్టాలను నిర్లక్ష్యం చేయకూడదు. కరుణ, సహాయం చూపాలి."], ["గోలకొండ పత్రిక వల్ల కలిగిన ప్రధాన ప్రయోజనం ఏమిటి?", ["తెలంగాణ సాహిత్య కృషి వెల్లడి", "రాష్ట్రాభివృద్ధి", "నిజాం అభివృద్ధి", "తెలంగాణ ఆర్థికాభివృద్ధి"], 0, "గోలకొండ పత్రిక తెలంగాణ ప్రాంత సాహిత్యకారుల రచనలు, సాహిత్య కృషిని వెలుగులోకి తెచ్చింది."], ["‘గోలకొండ కవుల సంచిక’ ప్రధాన ఉద్దేశం ఏమిటి?", ["భాషాభివృద్ధి", "తెలంగాణ కవుల సాహిత్య కృషిని వెలికి తీయడం", "ఆంధ్రప్రదేశ్ రాష్ట్ర కవుల సాహిత్య కృషిని కొనియాడడం", "తెలంగాణలో పత్రికా రంగాన్ని అభివృద్ధి చేయడం"], 1, "తెలంగాణ కవుల ప్రతిభ, రచనలను పరిచయం చేసి వారి సాహిత్య కృషిని వెలికి తీయడమే ప్రధాన ఉద్దేశం."], ["గ్రామీణాంధ్రుల జీవిత చరిత్రను భావికాలం వారికి అందించిన గ్రంథం ఏది?", ["గోలకొండ కవుల సంచిక", "ఆంధ్రుల సాంఘిక చరిత్ర", "ఆంధ్ర పత్రిక", "గతకాలపు సాహిత్య చరిత్ర"], 1, "‘ఆంధ్రుల సాంఘిక చరిత్ర’లో ఆంధ్రుల సామాజిక జీవన విధానం, ఆచారాలు, పరిస్థితులు నమోదు చేయబడ్డాయి."], ["తెలంగాణకు సాహిత్య రంగంలో విశిష్ట స్థానాన్ని సంపాదించి పెట్టినది ఏది?", ["గోలకొండ పత్రిక", "ఆంధ్రుల సాంఘిక చరిత్ర", "గ్రామీణుల జీవిత చరిత్ర", "గోలకొండ కవుల సంచిక"], 3, "గోలకొండ కవుల సంచిక తెలంగాణ కవుల సాహిత్య ప్రతిభను సమగ్రంగా పరిచయం చేసి ప్రత్యేక గుర్తింపునిచ్చింది."], ["‘రాజు ధనవంతుడు’ — ఇది ఏ రకమైన వాక్యం?", ["క్రియారహిత వాక్యం", "క్రియాసహిత వాక్యం", "ప్రశ్నార్థక వాక్యం", "ఆశ్చర్యార్థక వాక్యం"], 0, "ఈ వాక్యంలో స్పష్టమైన క్రియాపదం లేదు. ‘ధనవంతుడు’ విధేయంగా ఉన్నందున ఇది క్రియారహిత వాక్యం."], ["పూర్వ, పర స్వరాలకు పరస్వరం ఏకాదేశమగుటను ఏమంటారు?", ["సమాసం", "అవ్యయం", "ఉత్వ సంధి", "సంధి"], 3, "రెండు పదాలు కలిసేటప్పుడు అక్షరాలు/స్వరాలలో జరిగే మార్పును సంధి అంటారు. ఇచ్చిన నిర్వచనం సంధికి సంబంధించినది."], ["‘అదేమిటి’ అనే పదంలో ఉన్న సంధి పేరు ఏమిటి?", ["అకార సంధి", "ఇకార సంధి", "ఉకార సంధి", "గుణ సంధి"], 1, "‘అది + ఏమిటి’ కలిసినప్పుడు ‘ఇ’కారానికి సంబంధించిన లోప/మార్పు సంభవించి ‘అదేమిటి’ అవుతుంది. ఇచ్చిన ఎంపికల్లో ఇకార సంధి."], ["‘రాముడు హనుమంతుణ్ణి చూసి ఆనందించాడు’ అనే వాక్యంలో అసమాపక క్రియ ఏది?", ["రాముడు", "ఆనందించాడు", "చూసి", "హనుమంతుణ్ణి"], 2, "‘చూసి’ అనే క్రియ వాక్యాన్ని పూర్తిచేయదు; తరువాతి క్రియతో అనుసంధానమవుతుంది. కాబట్టి ఇది అసమాపక క్రియ."], ["‘భాను + ఉదయం’ కలిపి రాస్తే ఏర్పడే పదం ఏది?", ["భానూదయం", "భానోదయం", "ఖానోదయం", "భానుదయం"], 0, "‘భాను’లోని ఉకారం, ‘ఉదయం’లోని ఉకారంతో కలసి దీర్ఘ ‘ఊ’గా మారుతుంది: భానూదయం."], ["‘తరి చాలా విలువైనది’ అనే వాక్యంలో గీతగీసిన పదానికి అర్థం ఏమిటి?", ["ఆరోగ్యం", "ధనం", "జ్ఞానం", "వస్త్రం"], 1, "ఈ ప్రశ్నలో మూల PDF OCRలో గీతగీసిన పదం స్పష్టంగా కనిపించడం లేదు. అందుబాటులోని ఎంపికలు/వాక్యాన్ని బట్టి తాత్కాలికంగా ‘ధనం’ను ఎంచుకున్నాం; అసలు ప్రశ్నపత్రంతో ధృవీకరించాలి."], ["గడ్డి, పచ్చిక, గజిక అనే పర్యాయపదాలు కలిగిన పదం ఏది?", ["వరి", "తృణం", "కలుపు", "కూర"], 1, "‘తృణం’ అంటే గడ్డి. గడ్డి, పచ్చిక, గజిక ఇవి తృణానికి పర్యాయపదాలు."], ["‘గుణం’ అనే పదానికి నానార్థాలు ఏవి?", ["ఉద్యోగం, సేవ", "వంశం, తెగ", "శరీరం, ఇల్లు", "స్వభావం, లక్షణం"], 3, "‘గుణం’ అనే పదం స్వభావం, లక్షణం అనే అర్థాల్లో వాడబడుతుంది."], ["‘సంధ్య’ పదానికి వికృతి ఏది?", ["సిగ / సెగ", "సింగ / సాగ", "సంజ / సందె", "సంది / సందియం"], 2, "‘సంధ్య’కు వికృతి రూపంగా ‘సందె’ వాడుకలో ఉంది. కాబట్టి మూడవ ఎంపిక."], ["‘పురంలో నివసించువారు’ అనే అర్థాన్ని తెలిపే పదం ఏది?", ["నాగరికులు", "పురజనులు", "ఇమ్ముఖులు", "పట్టణవాసులు"], 1, "‘పురం’ అంటే పట్టణం; పురంలో నివసించే ప్రజలను ‘పురజనులు’ అంటారు."], ["‘వాగనుశాసనుడు’ అనే బిరుదు కలిగినవారు ఎవరు?", ["వాగ్గేయకారుడు", "ప్రబంధ పరమేశ్వరుడు", "కవి సార్వభౌముడు", "ఉభయకవి మిత్రుడు"], null, "ముఖ్య గమనిక: ‘వాగనుశాసనుడు’ అనే బిరుదు నన్నయకు చెందుతుంది. కానీ మూల PDFలో ఇచ్చిన నాలుగు ఎంపికల్లో ‘నన్నయ’ లేదు. అందువల్ల ఈ ప్రశ్నకు ఎంపికలలో సరైన సమాధానం లేదు; పరీక్షా మూలంలో ఎంపిక లోపం/OCR లోపం ఉండవచ్చు."], ["పాల్కురికి సోమనాథుని రచన కానిది ఏది?", ["శివపురాణం", "పండితారాధ్య చరిత్రం", "వృషాధిప శతకం", "బసవపురాణం"], 0, "పండితారాధ్య చరిత్రం, వృషాధిప శతకం, బసవపురాణం పాల్కురికి సోమనాథుని ప్రసిద్ధ రచనలు. ఇచ్చిన వాటిలో శివపురాణం ఆయన రచనగా పరిగణించబడదు."], ["‘భాస్కర శతకం’ రాసిన కవి ఎవరు?", ["హకళంకి భాస్కరుడు", "కంకంటి పాపరాజు", "మారద వెంకయ్య", "కంచర్ల గోపన్న"], 2, "‘భాస్కర శతకం’ రచయితగా మారద వెంకయ్యను పేర్కొంటారు."], ["‘తృణకంకణం’ ఎవరి రచన?", ["గుర్రం జాషువా", "దాశరథి", "అబ్బూరి", "కాళోజీ"], 2, "‘తృణకంకణం’ అబ్బూరి రామకృష్ణారావు రచనగా ప్రసిద్ధి."], ["‘తొక్కుడు బండ’, ‘శబ్నం’ అనే రచనలు ఎవరివి?", ["చెరబండ రాజు", "నగ్నముని", "టి. కృష్ణమూర్తి యాదవ్", "వరవరరావు"], 2, "ఈ రచనలు టి. కృష్ణమూర్తి యాదవ్‌కు ఆపాదించబడతాయి."], ["కింది వాటిలో దేశభక్తి గీతానికి చెందిన రచన ఏది?", ["పల్లెటూరి పిల్లగాడ", "ఏ దేశమేగినా", "తెలుగు తల్లి", "కూలిమస్తుగా దొరుకుతాదని"], 1, "‘ఏ దేశమేగినా’ దేశభక్తి భావాన్ని వ్యక్తం చేసే ప్రసిద్ధ గేయం."], ["‘శైలీభేదాలను గ్రహించడం’ అనే స్పష్టీకరణ ఏ బోధనా లక్ష్యానికి చెందుతుంది?", ["భాషాభిరుచి", "భాషాంతరీకరణ", "సంస్కృతి–సంప్రదాయం", "రసానుభూతి"], 0, "వివిధ శైలులను గుర్తించి ఆస్వాదించడం భాషపై అభిరుచి, సున్నితమైన భాషా రుచిని పెంపొందిస్తుంది."], ["భాషను ‘మానవ సమాజంతో భావ వినిమయానికి, పరస్పర సహకారానికి, సంస్కృతీ పరివ్యాప్తికి ఉపకరించే వాగ్రూప ధ్వని సంకేత సముదాయం’ అని నిర్వచించిన భాషావేత్త ఎవరు?", ["హాకెట్", "సైమన్ పాటర్", "బ్లూమ్‌ఫీల్డ్", "సాపిర్"], 3, "భాషను భావ వినిమయం, సామాజిక సహకారం, సంస్కృతి వ్యాప్తికి ఉపయోగపడే ధ్వని సంకేత వ్యవస్థగా సాపిర్ నిర్వచించాడు."], ["రెండవ తరగతి విద్యార్థులు బొమ్మ ఆధారంగా కథను ఊహించి చెప్పడం, రాయగలగడం అనే అభ్యసన సూచిక ఏ విద్యా ప్రమాణానికి చెందుతుంది?", ["ధారాళంగా చదవడం", "సృజనాత్మకత", "పదజాలం", "విని అర్థం చేసుకోవడం – స్వేచ్ఛగా మాట్లాడటం"], 1, "బొమ్మను చూసి కొత్త కథను ఊహించి చెప్పడం, రాయడం సృజనాత్మక ఆలోచనకు ఉదాహరణ."], ["పద్యంలో పదాలను విడదీసి, ప్రతి పదానికి అర్థం చెబుతూ, పదస్వరూపాన్ని వివరించే పద్య బోధన పద్ధతి ఏది?", ["ఖండ పద్ధతి", "పూర్ణ పద్ధతి", "ప్రశంసన పద్ధతి", "అనువాద పద్ధతి"], 0, "పద్యాన్ని పదాలుగా విడగొట్టి ఒక్కో పదానికి అర్థం, రూపం వివరించడం ఖండ పద్ధతి."], ["ప్రథమ భాషా వాచక అంతర్గత లక్షణాలలో చేరనిది ఏది?", ["అధ్యయన వేదిక", "శైలీ వైవిధ్యం", "ముద్రణ", "వ్యాకరణ సాధనాలు"], 0, "‘అధ్యయన వేదిక’ వాచకంలోని అంతర్గత లక్షణం కాదు. శైలి, ముద్రణ/ప్రదర్శన, వ్యాకరణ అంశాలు పాఠ్యపుస్తక లక్షణాలుగా పరిగణించబడతాయి."], ["ప్రత్యేక అవసరాలు గల విద్యార్థుల కోసం రూపొందించిన ఉపకరణాలు ఏ బోధనా సామగ్రి వర్గానికి చెందుతాయి?", ["సాధారణ పాఠ్య పుస్తకాలు", "దృశ్యోపకరణాలు", "ప్రత్యేక అవసరాలుగల విద్యార్థులకుద్దేశించిన ఉపకరణాలు", "శ్రవణ ఉపకరణాలు"], 2, "వికలాంగత/ప్రత్యేక అభ్యసన అవసరాలకు అనుగుణంగా రూపొందించిన పరికరాలు ప్రత్యేక అవసరాలుగల విద్యార్థుల ఉపకరణాల వర్గంలోకి వస్తాయి."]];
+const letters=['అ','ఆ','ఇ','ఈ'];
+let picks=Array(qs.length).fill(null), locked=Array(qs.length).fill(false);
+function render(){
+ const root=document.getElementById('quiz');root.innerHTML='';
+ qs.forEach((q,i)=>{
+  const box=document.createElement('section');box.className='card';
+  const top=document.createElement('div');top.className='qtop';top.innerHTML=`<span>ప్రశ్న ${i+1+( 31)-1}</span><span>${q[2]===null?'సమీక్ష అవసరం':'ఒక్క ప్రశ్న • 1 మార్కు'}</span>`;
+  const title=document.createElement('div');title.className='question';title.textContent=q[0];
+  box.append(top,title);
+  q[1].forEach((op,j)=>{
+   const label=document.createElement('label');label.className='option';label.innerHTML=`<input type="radio" name="q${i}" ${picks[i]===j?'checked':''} ${locked[i]?'disabled':''}><span><b>${letters[j]})</b> ${op}</span>`;
+   label.onclick=(e)=>{if(locked[i]){e.preventDefault();return}picks[i]=j;locked[i]=true;render();};
+   if(locked[i]&&q[2]!==null&&j===q[2])label.classList.add('correct');
+   if(locked[i]&&picks[i]===j&&q[2]!==null&&j!==q[2])label.classList.add('wrong');
+   if(locked[i]&&q[2]===null&&picks[i]===j)label.classList.add('wrong');
+   box.append(label);
+  });
+  if(locked[i]){
+   const f=document.createElement('div');f.className='feedback show';
+   if(q[2]===null)f.innerHTML='<b>సమీక్ష అవసరం:</b> '+q[3];
+   else f.innerHTML=(picks[i]===q[2]?'<b style="color:#12845b">సరైన సమాధానం!</b>':'<b style="color:#c0392b">తప్పు సమాధానం.</b>')+'<br><b>సరైన ఎంపిక:</b> '+letters[q[2]]+') '+q[1][q[2]]+'<br>'+q[3];
+   box.append(f);
+  }
+  root.append(box);
+ });
+ updateStats();
+}
+function updateStats(){
+ let ans=picks.filter(x=>x!==null).length, right=0,wrong=0;
+ qs.forEach((q,i)=>{if(picks[i]!==null&&q[2]!==null){if(picks[i]===q[2])right++;else wrong++;}});
+ document.getElementById('answered').textContent=ans;
+ document.getElementById('right').textContent=right;
+ document.getElementById('wrong').textContent=wrong;
+ document.getElementById('bar').style.width=(ans/qs.length*100)+'%';
+}
+function showResult(){
+ let valid=qs.filter(q=>q[2]!==null).length, right=0,wrong=0,unanswered=0,review=qs.filter(q=>q[2]===null).length;
+ qs.forEach((q,i)=>{if(q[2]!==null){if(picks[i]===null)unanswered++;else if(picks[i]===q[2])right++;else wrong++;}});
+ let pct=valid?Math.round(right/valid*100):0;
+ const r=document.getElementById('result');r.style.display='block';
+ r.innerHTML=`<h2>మీ ఫలితాలు</h2><div class="stats"><div class="pill">స్కోరు: <b>${right} / ${valid}</b></div><div class="pill">సరైనవి: <b>${right}</b></div><div class="pill">తప్పులు: <b>${wrong}</b></div><div class="pill">మిగిలినవి: <b>${unanswered}</b></div><div class="pill">శాతం: <b>${pct}%</b></div></div>${review?'<p>సమీక్ష అవసరమైన/ఎంపికల్లో సరైన సమాధానం లేని ప్రశ్నలు: '+review+'</p>':''}`;
+ r.scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){picks=Array(qs.length).fill(null);locked=Array(qs.length).fill(false);document.getElementById('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
+render();
+</script></body></html>
