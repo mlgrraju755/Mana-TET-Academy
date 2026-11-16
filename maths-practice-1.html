@@ -1,1 +1,79 @@
-
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TG TET గణితం క్విజ్ (91–120)</title>
+<style>
+:root{font-family:"Noto Sans Telugu","Gautami",Arial,sans-serif;color:#182235;background:#eef3f9}
+*{box-sizing:border-box}body{margin:0;padding:16px}.wrap{max-width:900px;margin:auto}
+header{background:linear-gradient(135deg,#123b68,#286a91);color:white;padding:22px;border-radius:18px;margin-bottom:14px}
+h1{font-size:24px;margin:0 0 7px}.sub{opacity:.92;font-size:14px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:white;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px #10243a12;font-size:14px}
+.progress{height:9px;background:#d7e0ec;border-radius:20px;overflow:hidden;margin:10px 0 16px}#bar{height:100%;width:0;background:#18a477;transition:.2s}
+.card{background:white;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 4px 14px #10243a12}
+.qtop{display:flex;justify-content:space-between;gap:10px;color:#52647a;font-size:13px;margin-bottom:10px}
+.question{font-size:18px;line-height:1.65;font-weight:650;margin-bottom:14px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #d8e1ec;border-radius:12px;margin:8px 0;cursor:pointer;line-height:1.5}
+.option input{margin-top:5px;transform:scale(1.15)}.option.correct{border-color:#159765;background:#eaf8f1}.option.wrong{border-color:#d84b4b;background:#fff0f0}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:12px;line-height:1.55;background:#f1f5fa}.feedback.show{display:block}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}button{border:0;border-radius:12px;padding:12px 17px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:#1769aa;color:white}.secondary{background:#e1eaf4;color:#17324e}
+#result{display:none;background:#fff;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 14px #10243a12}#result h2{margin-top:0}
+.note{background:#fff8e7;border-left:4px solid #e4a32b;padding:12px;border-radius:8px;font-size:13px;line-height:1.55;margin-top:12px}
+footer{text-align:center;color:#66788d;font-size:12px;padding:15px}
+@media(max-width:600px){body{padding:9px}header{padding:17px}h1{font-size:21px}.card{padding:14px}.question{font-size:17px}}
+</style></head><body><div class="wrap">
+<header><h1>TG TET గణితం క్విజ్ (91–120)</h1><div class="sub">Mathematics • 30 ప్రశ్నలు</div><div class="sub">TG TET Paper-I • 27 June 2025 • Shift 2</div></header>
+<div class="stats"><div class="pill">మొత్తం ప్రశ్నలు: <b>30</b></div><div class="pill">సమాధానం ఇచ్చినవి: <b id="answered">0</b></div><div class="pill">సరైనవి: <b id="right">0</b></div><div class="pill">తప్పులు: <b id="wrong">0</b></div></div>
+<div class="progress"><div id="bar"></div></div>
+<div id="quiz"></div>
+<div class="actions"><button class="primary" onclick="showResult()">ఫలితాలు చూడండి</button><button class="secondary" onclick="resetQuiz()">మళ్లీ ప్రారంభించండి</button></div>
+<div id="result"></div>
+<div class="note"><b>గమనిక:</b> ఇవి PDFలోని ప్రశ్నల ఆధారంగా స్వతంత్రంగా సిద్ధం చేసిన సమాధానాలు, వివరణలు. అధికారిక Answer Key కాదు. మూల PDFలో OCR/స్కాన్ స్పష్టత లేని చోట ప్రత్యేక గమనిక ఇచ్చాం. అలాంటి ప్రశ్నలను అసలు ప్రశ్నపత్రంతో ధృవీకరించండి.</div>
+<footer>Mana Online Test • TG TET Previous Paper – June 2025 Shift 2</footer>
+</div>
+<script>
+const qs=[["పూర్ణ సంఖ్యలకు సంబంధించిన వాక్యాలను చదవండి. A) 2025 ఋణ పూర్ణ సంఖ్యల లబ్ధం ఋణ పూర్ణ సంఖ్య అవుతుంది. B) ఒక ఋణ పూర్ణ సంఖ్యను మరొక ఋణ పూర్ణ సంఖ్యతో భాగిస్తే భాగఫలం ఋణ పూర్ణ సంఖ్య అవుతుంది. సరైన సమాధానం ఎంచుకోండి.", ["A సరైనది; B తప్పు", "A తప్పు; B సరైనది", "A, B రెండూ సరైనవి", "A, B రెండూ తప్పు"], 0, "2025 ఋణ సంఖ్యల గుణితంలో బేసి సంఖ్యలో ఋణ గుర్తులు ఉండటం వల్ల ఫలితం ఋణం (A నిజం). ఋణాన్ని ఋణంతో భాగిస్తే ధన ఫలితం వస్తుంది; అంతేకాక భాగఫలం ఎల్లప్పుడూ పూర్ణసంఖ్య కాదు (B తప్పు)."], ["కింది వాటిలో సంపూరక కోణాల జతలను ఎంచుకోండి. A) 90°, 90°  B) 124°, 66°  C) 54°, 36°  D) 92°, 88°", ["A, B, D మాత్రమే", "C మాత్రమే", "A, D మాత్రమే", "B, D మాత్రమే"], 2, "సంపూరక కోణాల మొత్తం 180°. A: 180°, D: 180°. B: 190°, C: 90°. కాబట్టి A, D మాత్రమే."], ["45/2 మీటర్ల పొడవున్న వస్త్రాన్ని 5/4 మీటర్ల చొప్పున చిన్న ముక్కలుగా కత్తిరిస్తే ఎన్ని ముక్కలు వస్తాయి?", ["9", "18", "28", "32"], 1, "ముక్కల సంఖ్య = (45/2) ÷ (5/4) = (45/2) × (4/5) = 18."], ["కనిష్ఠ మార్కు, గరిష్ఠ మార్కులో మూడో వంతుకు 4 కలిపిన దానికి సమానం. కనిష్ఠ మార్కు 35 అయితే గరిష్ఠ మార్కు ఎంత?", ["81", "105", "101", "93"], 3, "35 = గరిష్ఠ మార్కు/3 + 4. కాబట్టి 31 = గరిష్ఠ మార్కు/3; గరిష్ఠ మార్కు = 93."], ["x, y పరస్పర విలోమానుపాతంలో ఉన్నప్పుడు సరైన సంబంధం ఏది?", ["x₁y₁ = x₂y₂", "x₁/y₁ = x₂/y₂", "x₁x₂ = y₁y₂", "x₁ + y₁ = x₂ + y₂"], 0, "విలోమానుపాతంలో x × y స్థిరంగా ఉంటుంది. అందువల్ల x₁y₁ = x₂y₂."], ["శరణ్ ₹1,250కు పుస్తకాలు కొని ₹1,500కు అమ్మాడు. వరుణ్ ₹1,000కు కొని ₹1,250కు అమ్మాడు. సరైన ప్రకటన ఏది?", ["శరణ్‌కు వరుణ్ కంటే 5% ఎక్కువ లాభం వచ్చింది", "వరుణ్‌కు శరణ్ కంటే 5% ఎక్కువ లాభం వచ్చింది", "ఇద్దరికీ 25% లాభం వచ్చింది", "శరణ్‌కు వరుణ్ కంటే 10% తక్కువ లాభం వచ్చింది"], 1, "శరణ్ లాభ శాతం = 250/1250×100 = 20%. వరుణ్ = 250/1000×100 = 25%. వరుణ్‌కు 5 శాతం పాయింట్లు ఎక్కువ."], ["10 డేటా విలువల మధ్యగతం x. 11 స్థానంలో 31, 17 స్థానంలో 27 ఉంచితే కొత్త మధ్యగతం y. y − x ఎంత?", ["5", "4", "3", "6"], 0, "మొదటి క్రమబద్ధ డేటా: 11,14,17,20,21,28,35,38,49,53. x=(21+28)/2=24.5. మార్పుల తర్వాత: 14,20,21,27,28,31,35,38,49,53; y=(28+31)/2=29.5. y−x=5."], ["త్రిభుజాలకు సంబంధించిన వాక్యాలు: A) లంబకోణ త్రిభుజంలో రెండు ఎత్తులు దాని రెండు భుజాలే. B) త్రిభుజం ఎత్తుల సంగమ బిందువును గురుత్వ కేంద్రం అంటారు. సరైనది ఏది?", ["A సరైనది; B తప్పు", "A తప్పు; B సరైనది", "A, B రెండూ సరైనవి", "A, B రెండూ తప్పు"], 0, "లంబకోణ త్రిభుజంలో లంబంగా ఉండే రెండు భుజాలే రెండు ఎత్తులు (A నిజం). ఎత్తుల సంగమ బిందువు లంబకేంద్రం; గురుత్వకేంద్రం కాదు (B తప్పు)."], ["సమబాహు త్రిభుజం (భుజం 80 మీ), దీర్ఘచతురస్రం (80 మీ × 40 మీ), చతురస్రం (భుజం 60 మీ) చుట్టూ ముగ్గురు ఒక్కొక్కరు మూడు చక్కర్లు కొడితే సరైన ప్రకటన ఏది?", ["సింధు, కార్తిక్ ఇద్దరూ మూడు చక్కర్లలో 120 మీ నడుస్తారు", "కార్తిక్, సింధు మరియు కిరణ్ కంటే 360 మీ ఎక్కువ నడుస్తాడు", "ముగ్గురు కలిపి మూడు చక్కర్లలో 720 మీ నడుస్తారు", "కిరణ్, కార్తిక్ ఇద్దరూ 480 మీ నడుస్తారు"], 2, "మూడు ఆకృతుల పరిధులు: 3×80=240; 2(80+40)=240; 4×60=240 మీ. ఒక్కొక్కరు 3 చక్కర్లలో 720 మీ నడుస్తారు. ప్రతి ఒక్కరి మూడు చక్కర్ల దూరం 720 మీ. ముగ్గురి మొత్తం దూరం 2160 మీ. కాబట్టి PDFలోని C ఎంపికలో ‘ముగ్గురు కలిపి’ అని ఉంటే అది గణితపరంగా సరిపోదు. మూల OCR/ప్రశ్న వాక్యంలో లోపం ఉండవచ్చు; Cను తాత్కాలికంగా ఉద్దేశించిన ఎంపికగా చూపిస్తున్నాం."], ["ఒక బహుముఖికి 15 అంచులు, 7 ముఖాలు ఉంటే శీర్షాలు ఎన్ని?", ["8", "10", "12", "14"], 1, "యూలర్ సూత్రం V−E+F=2. V=2+15−7=10."], ["35 సెం.మీ. భుజం గల చతురస్రంలో అంతర్లిఖిత వృత్తం చుట్టుకొలత ఎంత? (π=22/7)", ["110 సెం.మీ.", "220 సెం.మీ.", "35 సెం.మీ.", "962.5 సెం.మీ."], 0, "అంతర్లిఖిత వృత్తం వ్యాసం చతురస్ర భుజం =35 సెం.మీ. చుట్టుకొలత = πd = (22/7)×35 =110 సెం.మీ."], ["ఒక పండ్ల వ్యాపారి 26% నారింజ పండ్లు అమ్మిన తర్వాత 777 మిగిలాయి. మొదట ఎన్ని పండ్లు ఉన్నాయి?", ["2,900", "1,323", "1,050", "1,506"], 2, "మిగిలింది 74%. మొత్తం =777÷0.74=1050."], ["ఒక సంఖ్యలో 33% విలువ 759 అయితే, అదే సంఖ్యలో 21% ఎంత?", ["458", "504", "460", "483"], 3, "సంఖ్య =759÷0.33=2300. దాని 21%=2300×0.21=483."], ["డేటా x₁, x₂, …, xₙ సగటు x̄ అయితే, ప్రతి విలువను a (a≠0)తో గుణించినప్పుడు కొత్త సగటు ఎంత?", ["x̄/a", "x̄", "a x̄", "a + x̄"], 2, "ప్రతి పరిశీలనను aతో గుణిస్తే మొత్తం కూడా a రెట్లు అవుతుంది; అందువల్ల సగటు ax̄."], ["△ABC ≅ △XZY అయితే సరైన సంబంధం ఏది?", ["AB = ZY", "∠ABC = ∠XYZ", "∠BAC = ∠ZXY", "AC = XZ"], 2, "సామాన్య క్రమం ABC ↔ XZY ప్రకారం A↔X, B↔Z, C↔Y. కాబట్టి ∠A = ∠X, అంటే ∠BAC = ∠ZXY."], ["2⁻⁶ × 2ᵃ = 1024 అయితే a² విలువ ఎంత?", ["512", "64", "16", "256"], 3, "1024=2¹⁰. కాబట్టి 2^(a−6)=2¹⁰; a=16. అందువల్ల a²=256."], ["6 మరియు 9 రెండింటితోనూ భాగించబడే సంఖ్య ఏది?", ["197232", "179028", "800544", "726360"], 1, "6, 9 రెండింటితో భాగించబడాలంటే 18తో భాగించాలి. 179028 సరి సంఖ్య; అంకెల మొత్తం 27 కాబట్టి 9తోనూ భాగిస్తుంది."], ["ఒక వార్తాపత్రిక రోజుకు 24 పేజీలు. రోజుకు 3,125 ప్రతులు పంపిణీ చేస్తే 2025 జూన్ నెలలో ఎన్ని పేజీలు ముద్రించాలి?", ["21,00,000", "23,25,000", "22,50,000", "19,00,000"], 2, "జూన్‌లో 30 రోజులు. 24×3125×30 = 22,50,000 పేజీలు."], ["91(2k−5l−m) నుంచి 51(7k+3l−2m) లబ్ధాన్ని తీసివేయండి. (మూల ముద్రణలోని వ్యక్తీకరణలో అక్షరాలు OCR వల్ల కొంత కలిసివచ్చాయి.)", ["17kl − 60l² − lm", "−17kl − 60l² + lm", "17kl − 60l² + lm", "17kl + 60l² + lm"], 1, "ప్రశ్నలోని వ్యక్తీకరణను 9l(2k−5l−m) − 5l(7k+3l−2m)గా చదివితే: 18kl−45l²−9lm −35kl−15l²+10lm = −17kl−60l²+lm. కాబట్టి B."], ["ఒకే ఒక సమమితి రేఖ కలిగిన ఆంగ్ల అక్షరాల సమూహం ఏది?", ["CKW", "AKOW", "CKOW", "AR"], 0, "సాధారణ block capitalsలో C, K, Wలకు ఒక్కొక్క సమమితి రేఖ ఉంటుంది. మిగిలిన సమూహాల్లో Oకు రెండు సమమితి రేఖలు లేదా Rకు సమమితి రేఖ ఉండదు."], ["STAR ఒక చతురస్రం. కర్ణాలు O వద్ద ఖండించుకుంటాయి. OT=5x+4 సె.మీ., OA=3x+8 సె.మీ. అయితే కర్ణం పొడవు ఎంత?", ["14√2 సెం.మీ.", "14 సెం.మీ.", "28√2 సెం.మీ.", "28 సెం.మీ."], 3, "చతురస్ర కర్ణాలు ఒకదానిని మరొకటి సమభాగాలుగా విభజిస్తాయి. 5x+4=3x+8 ⇒ x=2. OT=14 సెం.మీ.; పూర్తి కర్ణం=28 సెం.మీ."], ["45 మంది కార్మికులు బావిని 20 రోజుల్లో తవ్వితే, 30 మంది కార్మికులు ఎన్ని రోజుల్లో తవ్వగలరు?", ["20", "25", "30", "35"], 2, "పని స్థిరం: 45×20=900 కార్మిక-రోజులు. 900÷30=30 రోజులు."], ["2 మీ పొడవు, 1 మీ వెడల్పు, 0.8 మీ లోతు గల ఘనాభాకార తొట్టె ఘనపరిమాణం ఎన్ని లీటర్లు?", ["160", "1,600", "16,000", "1,60,000"], 1, "ఘనపరిమాణం=2×1×0.8=1.6 ఘన మీటర్లు. 1 ఘన మీటరు=1000 లీటర్లు; కాబట్టి 1600 లీటర్లు."], ["12, 15, 35లతో భాగించబడే అతి పెద్ద నాలుగు అంకెల సంఖ్య ఏది?", ["9,920", "9,060", "9,600", "9,660"], 3, "LCM(12,15,35)=420. 9999 కంటే తక్కువ/సమానమైన అతిపెద్ద 420 గుణిజం 420×23=9660."], ["గణిత అభ్యసనం ద్వారా హేతుబద్ధ ఆలోచనను పెంపొందించడం ప్రతిబింబించే విలువ ఏది?", ["సాంస్కృతిక విలువ", "సౌందర్య విలువ", "క్రమశిక్షణ విలువ", "సామాజిక విలువ"], 2, "గణితంలోని తార్కిక క్రమం, నియమబద్ధ ఆలోచన, ఆధారాలతో నిర్ణయం తీసుకోవడం క్రమశిక్షణ విలువను ప్రతిబింబిస్తాయి."], ["గణిత బోధనలో విశ్లేషణాత్మక పద్ధతి లక్షణం ఏది?", ["సాధారణ పరిశీలనలు, ఉదాహరణల ద్వారా సూత్రాన్ని రూపొందించడం", "సమస్యను పరిష్కరించేటప్పుడు ప్రతి దశకు తర్కాన్ని చూపించడం", "సూత్రంలో విలువలను ప్రతిక్షేపించి పరిష్కరించడం", "ఇచ్చిన సమాచారం నుంచి నేరుగా ముగింపుకు వెళ్లడం"], 1, "విశ్లేషణాత్మక పద్ధతిలో సమస్యను విడదీసి, ప్రతి దశకు తార్కిక కారణాన్ని చూపుతూ పరిష్కారానికి చేరుకుంటారు."], ["హెర్బార్టియన్ పాఠ్య ప్రణాళికలో ముగింపు కార్యాచరణల ప్రాముఖ్యత ఏమిటి?", ["బోధించిన పాఠంలోని ముఖ్యాంశాలను పునశ్చరణ చేయడం", "అభ్యసకుని పూర్వజ్ఞానాన్ని పరీక్షించడం", "బోధించాల్సిన విషయాన్ని బోధించడం", "బోధించబోయే అంశంపై ఆసక్తి కలిగించడం"], 0, "ముగింపు/అనువర్తన దశలో పాఠంలోని ముఖ్యాంశాలను సమీక్షించి, అభ్యసనాన్ని స్థిరపరుస్తారు."], ["దశాంశ భిన్నాలపై అవగాహనను కొత్త సందర్భాల్లో అన్వయిస్తున్నాడని తెలిపే ఆధారం ఏది? A) సాధారణ భిన్నాన్ని దశాంశంగా మార్చడం. B) దశాంశాలకు ఉదాహరణలు ఇవ్వడం. C) పొడవు, బరువు, ఘనపరిమాణం, కరెన్సీ వంటి కొలతలను దశాంశ రూపంలో వ్యక్తపరచడం. D) వేర్వేరు దశాంశ స్థానాల మధ్య సంబంధాన్ని పోల్చడం.", ["A, B మాత్రమే", "A, B, C మాత్రమే", "D మాత్రమే", "C మాత్రమే"], 3, "కొత్త నిజజీవిత సందర్భాలైన కొలతలు, కరెన్సీలో దశాంశాలను ఉపయోగించడం అన్వయానికి స్పష్టమైన ఆధారం. అందువల్ల C మాత్రమే."], ["గణిత పాఠ్యపుస్తకం ఉపాధ్యాయునికి చేసే సహాయాలు: A) విషయవస్తువు క్రమబద్ధంగా ఉండటం వల్ల ప్రణాళిక సులభం. B) పాఠ్యప్రణాళిక తయారీలో సమయం ఆదా. C) విద్యార్థుల స్వయంఅభ్యసనాన్ని ప్రోత్సహిస్తుంది. D) అధిక ప్రతిభావంతులైన విద్యార్థులకు పాఠ్యపుస్తకమే పరిపూర్ణ సాధనం. సరైనది ఏది?", ["A, D మాత్రమే", "A, B, C మాత్రమే", "B, C, D మాత్రమే", "A, C మాత్రమే"], 1, "A, B, C సరైన ప్రయోజనాలు. పాఠ్యపుస్తకం ఒక్కటే అధిక ప్రతిభావంతులందరినీ నిమగ్నం చేసే పరిపూర్ణ సాధనం కాదు; D తప్పు."], ["మూల్యాంకన సాధనంగా రూబ్రిక్స్ ఉపయోగించడం వల్ల కలిగే ప్రయోజనాలు ఏవి? A) గణిత సామర్థ్య స్థాయిని తెలుసుకోవచ్చు. B) సామర్థ్యాలకు అనుగుణంగా పనులు కేటాయించవచ్చు. C) పరీక్షలో ఉత్తీర్ణుడయ్యాడా తెలుసుకోవచ్చు. D) స్వీయ మూల్యాంకనాన్ని ప్రోత్సహించదు.", ["A, B మాత్రమే", "A, B, C మాత్రమే", "C, D మాత్రమే", "C మాత్రమే"], 0, "రూబ్రిక్స్ ద్వారా సామర్థ్య స్థాయిని అంచనా వేసి తగిన పనులు ఇవ్వవచ్చు (A, B). ఇవి స్వీయ మూల్యాంకనాన్నీ ప్రోత్సహిస్తాయి; కాబట్టి D తప్పు. C సాధారణ pass/fail కంటే విస్తృతమైన నైపుణ్య వివరణకు సంబంధించినది."]];
+const letters=['అ','ఆ','ఇ','ఈ'];
+let picks=Array(qs.length).fill(null), locked=Array(qs.length).fill(false);
+function render(){
+ const root=document.getElementById('quiz');root.innerHTML='';
+ qs.forEach((q,i)=>{
+  const box=document.createElement('section');box.className='card';
+  const top=document.createElement('div');top.className='qtop';top.innerHTML=`<span>ప్రశ్న ${i+1+( 91)-1}</span><span>${q[2]===null?'సమీక్ష అవసరం':'ఒక్క ప్రశ్న • 1 మార్కు'}</span>`;
+  const title=document.createElement('div');title.className='question';title.textContent=q[0];
+  box.append(top,title);
+  q[1].forEach((op,j)=>{
+   const label=document.createElement('label');label.className='option';label.innerHTML=`<input type="radio" name="q${i}" ${picks[i]===j?'checked':''} ${locked[i]?'disabled':''}><span><b>${letters[j]})</b> ${op}</span>`;
+   label.onclick=(e)=>{if(locked[i]){e.preventDefault();return}picks[i]=j;locked[i]=true;render();};
+   if(locked[i]&&q[2]!==null&&j===q[2])label.classList.add('correct');
+   if(locked[i]&&picks[i]===j&&q[2]!==null&&j!==q[2])label.classList.add('wrong');
+   if(locked[i]&&q[2]===null&&picks[i]===j)label.classList.add('wrong');
+   box.append(label);
+  });
+  if(locked[i]){
+   const f=document.createElement('div');f.className='feedback show';
+   if(q[2]===null)f.innerHTML='<b>సమీక్ష అవసరం:</b> '+q[3];
+   else f.innerHTML=(picks[i]===q[2]?'<b style="color:#12845b">సరైన సమాధానం!</b>':'<b style="color:#c0392b">తప్పు సమాధానం.</b>')+'<br><b>సరైన ఎంపిక:</b> '+letters[q[2]]+') '+q[1][q[2]]+'<br>'+q[3];
+   box.append(f);
+  }
+  root.append(box);
+ });
+ updateStats();
+}
+function updateStats(){
+ let ans=picks.filter(x=>x!==null).length, right=0,wrong=0;
+ qs.forEach((q,i)=>{if(picks[i]!==null&&q[2]!==null){if(picks[i]===q[2])right++;else wrong++;}});
+ document.getElementById('answered').textContent=ans;
+ document.getElementById('right').textContent=right;
+ document.getElementById('wrong').textContent=wrong;
+ document.getElementById('bar').style.width=(ans/qs.length*100)+'%';
+}
+function showResult(){
+ let valid=qs.filter(q=>q[2]!==null).length, right=0,wrong=0,unanswered=0,review=qs.filter(q=>q[2]===null).length;
+ qs.forEach((q,i)=>{if(q[2]!==null){if(picks[i]===null)unanswered++;else if(picks[i]===q[2])right++;else wrong++;}});
+ let pct=valid?Math.round(right/valid*100):0;
+ const r=document.getElementById('result');r.style.display='block';
+ r.innerHTML=`<h2>మీ ఫలితాలు</h2><div class="stats"><div class="pill">స్కోరు: <b>${right} / ${valid}</b></div><div class="pill">సరైనవి: <b>${right}</b></div><div class="pill">తప్పులు: <b>${wrong}</b></div><div class="pill">మిగిలినవి: <b>${unanswered}</b></div><div class="pill">శాతం: <b>${pct}%</b></div></div>${review?'<p>సమీక్ష అవసరమైన/ఎంపికల్లో సరైన సమాధానం లేని ప్రశ్నలు: '+review+'</p>':''}`;
+ r.scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){picks=Array(qs.length).fill(null);locked=Array(qs.length).fill(false);document.getElementById('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
+render();
+</script></body></html>
