@@ -1,1 +1,79 @@
-
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TG TET English క్విజ్ (61–90)</title>
+<style>
+:root{font-family:"Noto Sans Telugu","Gautami",Arial,sans-serif;color:#182235;background:#eef3f9}
+*{box-sizing:border-box}body{margin:0;padding:16px}.wrap{max-width:900px;margin:auto}
+header{background:linear-gradient(135deg,#123b68,#286a91);color:white;padding:22px;border-radius:18px;margin-bottom:14px}
+h1{font-size:24px;margin:0 0 7px}.sub{opacity:.92;font-size:14px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:white;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px #10243a12;font-size:14px}
+.progress{height:9px;background:#d7e0ec;border-radius:20px;overflow:hidden;margin:10px 0 16px}#bar{height:100%;width:0;background:#18a477;transition:.2s}
+.card{background:white;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 4px 14px #10243a12}
+.qtop{display:flex;justify-content:space-between;gap:10px;color:#52647a;font-size:13px;margin-bottom:10px}
+.question{font-size:18px;line-height:1.65;font-weight:650;margin-bottom:14px}
+.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #d8e1ec;border-radius:12px;margin:8px 0;cursor:pointer;line-height:1.5}
+.option input{margin-top:5px;transform:scale(1.15)}.option.correct{border-color:#159765;background:#eaf8f1}.option.wrong{border-color:#d84b4b;background:#fff0f0}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:12px;line-height:1.55;background:#f1f5fa}.feedback.show{display:block}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}button{border:0;border-radius:12px;padding:12px 17px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:#1769aa;color:white}.secondary{background:#e1eaf4;color:#17324e}
+#result{display:none;background:#fff;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 14px #10243a12}#result h2{margin-top:0}
+.note{background:#fff8e7;border-left:4px solid #e4a32b;padding:12px;border-radius:8px;font-size:13px;line-height:1.55;margin-top:12px}
+footer{text-align:center;color:#66788d;font-size:12px;padding:15px}
+@media(max-width:600px){body{padding:9px}header{padding:17px}h1{font-size:21px}.card{padding:14px}.question{font-size:17px}}
+</style></head><body><div class="wrap">
+<header><h1>TG TET English క్విజ్ (61–90)</h1><div class="sub">Language II – English • 30 ప్రశ్నలు</div><div class="sub">TG TET Paper-I • 27 June 2025 • Shift 2</div></header>
+<div class="stats"><div class="pill">మొత్తం ప్రశ్నలు: <b>30</b></div><div class="pill">సమాధానం ఇచ్చినవి: <b id="answered">0</b></div><div class="pill">సరైనవి: <b id="right">0</b></div><div class="pill">తప్పులు: <b id="wrong">0</b></div></div>
+<div class="progress"><div id="bar"></div></div>
+<div id="quiz"></div>
+<div class="actions"><button class="primary" onclick="showResult()">ఫలితాలు చూడండి</button><button class="secondary" onclick="resetQuiz()">మళ్లీ ప్రారంభించండి</button></div>
+<div id="result"></div>
+<div class="note"><b>గమనిక:</b> ఇవి PDFలోని ప్రశ్నల ఆధారంగా స్వతంత్రంగా సిద్ధం చేసిన సమాధానాలు, వివరణలు. అధికారిక Answer Key కాదు. మూల PDFలో OCR/స్కాన్ స్పష్టత లేని చోట ప్రత్యేక గమనిక ఇచ్చాం. అలాంటి ప్రశ్నలను అసలు ప్రశ్నపత్రంతో ధృవీకరించండి.</div>
+<footer>Mana Online Test • TG TET Previous Paper – June 2025 Shift 2</footer>
+</div>
+<script>
+const qs=[["ఆదర్శ ఉపాధ్యాయుడు–విద్యార్థి సంబంధంలో భాగం కానిది ఏది?", ["ప్రపంచంపై వ్యక్తి దృక్పథాన్ని మార్చడం", "గతం, వర్తమానం, భవిష్యత్తును కలిపే అనుబంధాన్ని సృష్టించడం", "నమ్మకం, పరస్పర గౌరవం, ప్రేరణపై నిర్మితమవడం", "ఉపాధ్యాయుడు, విద్యార్థి ఆత్మగౌరవం మరియు ఆత్మవిశ్వాసాన్ని తగ్గించడం"], 3, "ఆదర్శ సంబంధం నమ్మకం, గౌరవం, ప్రేరణను పెంచుతుంది; ఆత్మగౌరవాన్ని తగ్గించదు."], ["‘Persist’ అనే పదానికి అర్థం ఏమిటి?", ["కొనసాగించడం / నిలబెట్టుకోవడం", "వదిలివేయడం", "లొంగిపోవడం", "ఒంటరిగా ఉండటం"], 0, "Persist అంటే కొనసాగడం లేదా నిలకడగా ఉండడం. ఇచ్చిన ఎంపికల్లో preserve దగ్గర అర్థం."], ["పాఠ్యభాగం ప్రకారం ఏ స్థాయిలో ఉపాధ్యాయుడు–విద్యార్థి సంబంధం మరింత సంక్లిష్టమవుతుంది?", ["ప్రాథమిక పాఠశాల", "ప్రీ-ప్రైమరీ పాఠశాల", "పాఠశాలలో చేరకముందు", "హైస్కూల్"], 3, "పాఠ్యభాగంలో విద్యార్థులు పెద్దవారయ్యే కొద్దీ, ముఖ్యంగా హైస్కూల్‌లో సంబంధం సంక్లిష్టమవుతుందని పేర్కొంది."], ["గొప్ప ఉపాధ్యాయులు ఏమి చేస్తారు?", ["పాఠ్యప్రణాళికను మాత్రమే అనుసరిస్తారు", "పిల్లలు ఏమి చేస్తున్నారో పట్టించుకోరు", "పాఠశాల, అభ్యసనం పట్ల పిల్లల అవగాహన మరియు అనుభవాన్ని తీర్చిదిద్దుతారు", "పరీక్షలు, అసైన్‌మెంట్ల ద్వారానే విద్యార్థులను అంచనా వేస్తారు"], 2, "పాఠ్యభాగం ప్రకారం గొప్ప ఉపాధ్యాయులు విద్యార్థులను అర్థం చేసుకొని వారి పాఠశాల అనుభవాన్ని ప్రభావితం చేస్తారు."], ["‘Overbearing’ అనే పదం ఇక్కడ ఏ భావాన్ని సూచిస్తుంది?", ["ఉపాధ్యాయులు స్నేహపూర్వకంగా, సహాయకరంగా ఉంటారు", "ఆధిపత్యం చూపుతూ విద్యార్థులకు ఇబ్బంది కలిగిస్తారు", "సులభంగా అంగీకరించే స్వభావం కలిగి ఉంటారు", "విద్యార్థులే అన్ని నిర్ణయాలు తీసుకునేలా చేస్తారు"], 1, "Overbearing అంటే అతిగా ఆధిపత్యం చెలాయించే, ఇతరులపై ఒత్తిడి చేసే స్వభావం."], ["The noise in the kitchen ___ me up. సరైన పదాన్ని ఎంచుకోండి.", ["awake", "woke", "woked", "awoke"], 1, "‘Wake someone up’ అనే phrasal verb యొక్క simple past రూపం ‘woke me up’."], ["Televisions ___ computers ___ dominating our daily life. సరైన జతను ఎంచుకోండి.", ["or, was", "and, are", "and, is", "so, are"], 1, "‘Televisions and computers’ బహువచన కర్త. అందువల్ల plural verb ‘are’ ఉపయోగించాలి."], ["“Neither the seller nor the buyer are in favour of the system.” వాక్యంలో తప్పు భాగం ఏది?", ["A – Neither the seller", "B – nor the buyer", "C – are in favour", "D – of the system"], 2, "Neither…nor నిర్మాణంలో సమీప కర్త ‘buyer’ ఏకవచనం. కాబట్టి ‘are’ బదులు ‘is’ రావాలి."], ["‘మేము విమానంలోనే లండన్‌కు వెళ్లాలి. వేరే మార్గంలో అక్కడికి వెళ్లలేము.’ ఈ రెండు వాక్యాలను కలపండి.", ["We have to go to London by airplane because we cannot go there any other way.", "We cannot go there any other way because we have to go to London by airplane.", "We have to go to London by airplane though we cannot go there any other way.", "Airplane is the only way to go to London because we can go there in any other way."], 0, "రెండో వాక్యం మొదటి వాక్యానికి కారణాన్ని తెలియజేస్తుంది. కాబట్టి because తో కలిపిన A సరైనది."], ["“The Australians were expected to win the cricket world cup.” వాక్యాన్ని కర్తరి వాచ్యంలోకి మార్చండి.", ["People expected the Australians to win the cricket world cup.", "The cricket world cup is expected to be won by the Australians.", "It was expected that the Australians will win the cricket world cup.", "It is expected that the Australians would win the cricket world cup."], 0, "Passive ‘were expected’ ను active లో ‘People expected…’గా మార్చవచ్చు."], ["He said, “I have completed the work just now.” పరోక్ష कथనంగా మార్చండి.", ["He said that I have completed the work just then.", "He said that he had completed the work just then.", "He said that he had completed the work just now.", "He told that he has been completing the work just then."], 1, "Reported speechలో present perfect → past perfect; I → he; just now → just then."], ["‘Betray’ అనే పదానికి అర్థం ఏమిటి?", ["రక్షించడం", "కాపాడడం", "మోసం చేయడం / ద్రోహం చేయడం", "విశ్వాసంగా ఉండడం"], 2, "Betray అంటే నమ్మకద్రోహం చేయడం లేదా మోసం చేయడం."], ["‘Reluctant’ అనే పదానికి వ్యతిరేక పదం ఏది?", ["సందేహించే", "జాగ్రత్తగా ఉండే", "అప్రమత్తంగా ఉండే", "సుముఖంగా ఉండే"], 3, "Reluctant అంటే ఇష్టంలేని/వెనుకాడే. దానికి వ్యతిరేకం willing."], ["ఒక లక్ష్యం కోసం తన ప్రాణాన్ని త్యాగం చేసే వ్యక్తిని ఏమంటారు?", ["Martyr", "Patriot", "Loyalist", "Devotee"], 0, "Martyr అంటే ఒక నమ్మకం లేదా లక్ష్యం కోసం ప్రాణత్యాగం చేసిన వ్యక్తి."], ["‘Helter-skelter’ అనే ప్రయోగానికి అర్థం ఏమిటి?", ["ఉద్దేశపూర్వకంగా, క్రమపద్ధతిలో", "స్వేచ్ఛగా, నెమ్మదిగా", "శాంతిగా, సంతోషంగా", "తొందరగా, గందరగోళంగా"], 3, "Helter-skelter అంటే క్రమం లేకుండా తొందరగా, గందరగోళంగా."], ["Political ___ would no longer be tolerated. సరైన పదం ఏది?", ["descent", "dissent", "decent", "detent"], 1, "Dissent అంటే అభిప్రాయ భేదం లేదా వ్యతిరేక అభిప్రాయం. ‘Political dissent’ సరైన collocation."], ["సరైన స్పెల్లింగ్ ఉన్న పదాన్ని ఎంచుకోండి.", ["accommadation", "acommodation", "accomodation", "accommodation"], 3, "సరైన స్పెల్లింగ్ accommodation. ఇందులో ‘cc’ మరియు ‘mm’ రెండూ ఉంటాయి."], ["‘The Panchatantra is the most popular story book.’ వాక్యాన్ని comparative degreeలోకి మార్చండి.", ["The Panchatantra is more popular than any other story book.", "The Panchatantra is most popular than any other story book.", "The Panchatantra is more popular than many other story book.", "The Panchatantra is more popular than some other story book."], 0, "Superlative ‘the most popular’ ను comparativeలో ‘more popular than any other…’గా మార్చాలి."], ["అర్థవంతమైన వాక్యంగా అమర్చండి: P: Rip Van Winkle is an; Q: dwarfs playing ninepins; R: where he comes upon a group of; S: amiable farmer who; T: wanders into the Catskill Mountains.", ["P, T, S, R, Q", "P, S, T, R, Q", "P, R, T, S, Q", "P, S, R, T, Q"], 1, "సరైన వాక్యం: ‘Rip Van Winkle is an amiable farmer who wanders into the Catskill Mountains, where he comes upon a group of dwarfs playing ninepins.’"], ["The test ___ the true cause of death. సరైన పదం ఏది?", ["revealed", "announced", "invented", "introduced"], 0, "Test నిజమైన కారణాన్ని బయటపెట్టింది అనే అర్థంలో ‘revealed’ సరైనది."], ["He ___ at reception under his own name. సరైన పదబంధం ఏది?", ["checked on", "check with", "checked off", "checked in"], 3, "హోటల్/రిసెప్షన్ వద్ద తన పేరుతో నమోదు చేసుకోవడం ‘checked in’."], ["సరైన విరామ చిహ్నాలతో ఉన్న వాక్యం ఏది?", ["“Why don’t they know who is responsible?” they asked.", "“Why don’t they know who is responsible” They asked.", "“Why don’t they know?” Who is responsible they asked.", "“Why don’t they know who is responsible” they asked?"], 0, "ప్రశ్నార్థక వాక్యంలోని ప్రశ్నార్థకం closing quotation markకు ముందు రావాలి; తర్వాత they asked చిన్న అక్షరంతో కొనసాగుతుంది."], ["Article సరైనంగా ఉపయోగించిన వాక్యం ఏది?", ["The cow is a useful animals.", "A cow is an useful animal.", "The cow is a useful animal.", "The cow is an useful animal."], 2, "‘Useful’ పదం /y/ ధ్వనితో ప్రారంభమవుతుంది. అందువల్ల ‘a useful animal’ సరైనది."], ["‘As well as’ ఏ పదభాగానికి చెందుతుంది?", ["Preposition", "Interjection", "Adverb", "Conjunction"], 3, "‘As well as’ రెండు పదాలు/భావాలను కలిపే conjunction-like linking expressionగా ఈ ప్రశ్నలో వర్గీకరించబడింది."], ["తెలంగాణ రాష్ట్ర బోర్డు ప్రాథమిక స్థాయిలో ఆంగ్లంలో formative assessment సాధనం కానిది ఏది?", ["Notebooks", "Observation", "Projects", "Book Review"], 3, "ఇచ్చిన ఎంపికల్లో Book Review సాధారణ formative assessment tool జాబితాలో ఉండదు; notebooks, observation, projects నిరంతర మూల్యాంకనానికి ఉపయోగపడతాయి."], ["భాష నేర్చుకోవడంలో ప్రధాన లక్ష్యం ఏమిటి?", ["Communicative competence", "Grammar accuracy", "Reading ability", "Writing skill"], 0, "భాష యొక్క ప్రధాన ప్రయోజనం సందర్భానుసారంగా అర్థవంతంగా సంభాషించగల సామర్థ్యాన్ని అభివృద్ధి చేయడం."], ["Teaching-Learning Materialsలో ‘Authentic Materials’కు ఉదాహరణ ఏది?", ["Charts", "Flash Cards", "Work books", "Tourism brochures"], 3, "నిజ జీవితంలో సహజంగా ఉపయోగించే సమాచార పత్రాలు, ఉదాహరణకు tourism brochures, authentic materials."], ["భారతదేశంలో ఆంగ్ల విద్యకు ‘Magna Carta’గా ప్రసిద్ధి చెందినది ఏది?", ["Woods Despatch of 1854", "Lord Macaulay’s Minute of 1835", "The Kothari Commission (1964–66)", "The Hunter Commission of 1882"], 0, "1854 వుడ్స్ డిస్పాచ్ భారత విద్యా చరిత్రలో ముఖ్యమైన పత్రం; దీనిని భారత ఆంగ్ల విద్యకు Magna Carta అంటారు."], ["సాధారణ భావాన్ని త్వరగా తెలుసుకోవడానికి ఉపయోగించే పఠన పద్ధతి ఏది?", ["Critical reading", "Skimming", "Scanning", "Visual reading"], 1, "Skimming అంటే ప్రతి పదాన్ని చదవకుండా పాఠ్యంలోని ప్రధాన భావాన్ని త్వరగా గ్రహించడం."], ["తెలంగాణ రాష్ట్ర బోర్డు 3వ తరగతి విద్యార్థులకు లక్ష్యంగా పెట్టిన discourse ఏది?", ["Profile", "Notice", "News report", "Slogans"], 0, "ప్రాథమిక స్థాయి పిల్లలకు వ్యక్తి వివరాలను సరళంగా పరిచయం చేసే profile వంటి discourse అనుకూలం; మిగిలినవి సాధారణంగా పై తరగతుల స్థాయి రచనా రూపాలు."]];
+const letters=['అ','ఆ','ఇ','ఈ'];
+let picks=Array(qs.length).fill(null), locked=Array(qs.length).fill(false);
+function render(){
+ const root=document.getElementById('quiz');root.innerHTML='';
+ qs.forEach((q,i)=>{
+  const box=document.createElement('section');box.className='card';
+  const top=document.createElement('div');top.className='qtop';top.innerHTML=`<span>ప్రశ్న ${i+1+( 61)-1}</span><span>${q[2]===null?'సమీక్ష అవసరం':'ఒక్క ప్రశ్న • 1 మార్కు'}</span>`;
+  const title=document.createElement('div');title.className='question';title.textContent=q[0];
+  box.append(top,title);
+  q[1].forEach((op,j)=>{
+   const label=document.createElement('label');label.className='option';label.innerHTML=`<input type="radio" name="q${i}" ${picks[i]===j?'checked':''} ${locked[i]?'disabled':''}><span><b>${letters[j]})</b> ${op}</span>`;
+   label.onclick=(e)=>{if(locked[i]){e.preventDefault();return}picks[i]=j;locked[i]=true;render();};
+   if(locked[i]&&q[2]!==null&&j===q[2])label.classList.add('correct');
+   if(locked[i]&&picks[i]===j&&q[2]!==null&&j!==q[2])label.classList.add('wrong');
+   if(locked[i]&&q[2]===null&&picks[i]===j)label.classList.add('wrong');
+   box.append(label);
+  });
+  if(locked[i]){
+   const f=document.createElement('div');f.className='feedback show';
+   if(q[2]===null)f.innerHTML='<b>సమీక్ష అవసరం:</b> '+q[3];
+   else f.innerHTML=(picks[i]===q[2]?'<b style="color:#12845b">సరైన సమాధానం!</b>':'<b style="color:#c0392b">తప్పు సమాధానం.</b>')+'<br><b>సరైన ఎంపిక:</b> '+letters[q[2]]+') '+q[1][q[2]]+'<br>'+q[3];
+   box.append(f);
+  }
+  root.append(box);
+ });
+ updateStats();
+}
+function updateStats(){
+ let ans=picks.filter(x=>x!==null).length, right=0,wrong=0;
+ qs.forEach((q,i)=>{if(picks[i]!==null&&q[2]!==null){if(picks[i]===q[2])right++;else wrong++;}});
+ document.getElementById('answered').textContent=ans;
+ document.getElementById('right').textContent=right;
+ document.getElementById('wrong').textContent=wrong;
+ document.getElementById('bar').style.width=(ans/qs.length*100)+'%';
+}
+function showResult(){
+ let valid=qs.filter(q=>q[2]!==null).length, right=0,wrong=0,unanswered=0,review=qs.filter(q=>q[2]===null).length;
+ qs.forEach((q,i)=>{if(q[2]!==null){if(picks[i]===null)unanswered++;else if(picks[i]===q[2])right++;else wrong++;}});
+ let pct=valid?Math.round(right/valid*100):0;
+ const r=document.getElementById('result');r.style.display='block';
+ r.innerHTML=`<h2>మీ ఫలితాలు</h2><div class="stats"><div class="pill">స్కోరు: <b>${right} / ${valid}</b></div><div class="pill">సరైనవి: <b>${right}</b></div><div class="pill">తప్పులు: <b>${wrong}</b></div><div class="pill">మిగిలినవి: <b>${unanswered}</b></div><div class="pill">శాతం: <b>${pct}%</b></div></div>${review?'<p>సమీక్ష అవసరమైన/ఎంపికల్లో సరైన సమాధానం లేని ప్రశ్నలు: '+review+'</p>':''}`;
+ r.scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){picks=Array(qs.length).fill(null);locked=Array(qs.length).fill(false);document.getElementById('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
+render();
+</script></body></html>
