@@ -36,6 +36,17 @@ let picks=Array(qs.length).fill(null), locked=Array(qs.length).fill(false);
 function render(){
  const root=document.getElementById('quiz');root.innerHTML='';
  qs.forEach((q,i)=>{
+  // ప్రశ్నల సమూహానికి సంబంధించిన పద్య/గద్య భాగాన్ని ముందుగా చూపించు
+  if(i===0 || i===4){
+   const passage=document.createElement('section');
+   passage.className='card';
+   if(i===0){
+    passage.innerHTML='<div class="qtop"><b>పద్యభాగం • ప్రశ్నలు 31–34</b><span>చదివి సమాధానాలు గుర్తించండి</span></div><div class="question" style="text-align:center;line-height:2"><b>పాలసునికైన యాపద<br>జాలిండి తీర్చి గదను సర్వజ్ఞు డకున్<br>దేలంగి బడగ బట్టి న<br>మేలెరుగునే మీటుగా మేదిని సమహే!</b></div>';
+   }else{
+    passage.innerHTML='<div class="qtop"><b>గద్యభాగం • ప్రశ్నలు 35–38</b><span>చదివి సమాధానాలు గుర్తించండి</span></div><div style="font-size:17px;line-height:1.9">నిజాం రాజ్యంలో, ఒకనాడు నిజాం ప్రభుత్వం ప్రాంతీయ భాషల మీద దాడి సలిపినప్పుడు శ్రీ సురవరం ప్రతాపరెడ్డి గారు గోలకొండ పత్రిక ద్వారా ఆ దాడిని ఎదుర్కొని తెలంగాణాలో కోటి మంది తెలుగువాళ్లకు భాషాభిక్ష పెట్టినారు. ఆంధ్రసాహితీ రంగంలో తెలంగాణా చేసిన సాహిత్య కృషిని, గోలకొండ కవుల సంచిక ద్వారా యావదాంధ్రదేశానికి వెల్లడించి, సాహితీరంగంలో సోదరాంధ్రులచే విస్మరింపబడిన తెలంగాణానికి విశిష్ట స్థానాన్ని సంపాదించిపెట్టినారు. గతకాలపు మన మనసు చీకటి గుహల్లో మరుగునపడిపోయిన గ్రామీణాంధ్రుల జీవిత చరిత్రను త్రవ్వి పైకెత్తి అందుల సామాజిక చరిత్ర ద్వారా భావికాలం వారికి వెలుతురును ప్రసాదించినారు.</div>';
+   }
+   root.append(passage);
+  }
   const box=document.createElement('section');box.className='card';
   const top=document.createElement('div');top.className='qtop';top.innerHTML=`<span>ప్రశ్న ${i+1+( 31)-1}</span><span>${q[2]===null?'సమీక్ష అవసరం':'ఒక్క ప్రశ్న • 1 మార్కు'}</span>`;
   const title=document.createElement('div');title.className='question';title.textContent=q[0];
