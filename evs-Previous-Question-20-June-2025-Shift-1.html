@@ -1,1 +1,111 @@
-
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA TET 2026 – EVS Questions 121–150</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:"Nirmala UI","Noto Sans Telugu",Arial,sans-serif;background:#f2f5fb;color:#172033}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:white;padding:22px 16px;text-align:center}
+header h1{margin:0 0 7px;font-size:25px}
+header p{margin:0;font-size:14px}
+.wrap{max-width:900px;margin:20px auto;padding:0 14px}
+.top{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-bottom:14px}
+.badge{background:white;padding:10px 14px;border-radius:10px;box-shadow:0 2px 8px #0000000c;font-weight:600}
+.progress{height:9px;background:#dce4f0;border-radius:20px;overflow:hidden;margin:12px 0 18px}
+#bar{height:100%;width:0;background:#16865c;transition:.25s}
+.card{background:white;border-radius:16px;padding:22px;box-shadow:0 5px 22px #17203312}
+.qmeta{color:#176b9b;font-weight:700;margin-bottom:12px}
+.question{font-size:20px;line-height:1.7;white-space:pre-line;margin:0 0 18px}
+.option{display:flex;align-items:flex-start;gap:10px;border:1.5px solid #dce3ed;border-radius:11px;padding:13px;margin:10px 0;cursor:pointer;line-height:1.55;transition:.15s}
+.option:hover{border-color:#2784bd;background:#f5faff}
+.option input{margin-top:5px;accent-color:#176b9b;transform:scale(1.15)}
+.option.selected{border-color:#176b9b;background:#edf7ff}
+.option.correct{border-color:#16865c;background:#eaf8f1}
+.option.wrong{border-color:#d33b3b;background:#fff0f0}
+.feedback{font-weight:700;margin-top:14px;min-height:24px}
+.controls{display:flex;gap:10px;justify-content:space-between;margin-top:20px;flex-wrap:wrap}
+button{border:0;border-radius:10px;padding:12px 19px;font-size:15px;font-weight:700;cursor:pointer}
+.primary{background:#176b9b;color:white}.secondary{background:#e7edf5;color:#24364b}
+button:disabled{opacity:.45;cursor:not-allowed}
+.grid{display:grid;grid-template-columns:repeat(10,1fr);gap:7px;margin-top:18px}
+.grid button{padding:9px 2px;background:#e7edf5;color:#24364b}
+.grid button.done{background:#d7f0e3;color:#12613f}
+.grid button.active{outline:3px solid #176b9b}
+.result{text-align:center;padding:24px}
+.result h2{font-size:27px;color:#176b9b}
+.small{font-size:13px;color:#617086}
+@media(max-width:600px){header h1{font-size:21px}.question{font-size:18px}.card{padding:16px}.grid{grid-template-columns:repeat(6,1fr)}}
+</style>
+</head>
+<body>
+<header>
+<h1>మన TET – మన TEST</h1>
+<p>TG TET Paper-I | EVS | ప్రశ్నలు 121–150 | 20-06-2025 | Shift–1</p>
+</header>
+<div class="wrap">
+<div class="top">
+<div class="badge" id="counter">ప్రశ్న 121 / 150</div>
+<div class="badge" id="score">స్కోరు: 0 / 30</div>
+</div>
+<div class="progress"><div id="bar"></div></div>
+<div class="card" id="quiz">
+<div class="qmeta" id="qmeta"></div>
+<h2 class="question" id="question"></h2>
+<div id="options"></div>
+<div class="feedback" id="feedback"></div>
+<div class="controls">
+<button class="secondary" id="prev">← వెనుకకు</button>
+<button class="primary" id="check">సమాధానం తనిఖీ చేయండి</button>
+<button class="primary" id="next">తర్వాత →</button>
+</div>
+</div>
+<div class="grid" id="grid"></div>
+<p class="small">గమనిక: ప్రతి ప్రశ్నకు ఒక సమాధానాన్ని ఎంచుకొని “సమాధానం తనిఖీ చేయండి” నొక్కండి. చివరలో మీ ఫలితాన్ని చూడవచ్చు.</p>
+</div>
+<script>
+const questions = [{"number": 121, "question": "రవి ఐరన్ ఎక్కువగా ఉన్న ఆహారం తినమని డాక్టర్ సలహా ఇచ్చాడు. అతని తల్లి అతనికి కింది వాటిలో దేనిని తరచుగా ఇవ్వాలి?", "options": ["అన్నం", "ఐస్‌క్రీం", "వెన్న పూసిన బ్రెడ్", "పాలకూర పప్పు"], "answer": 3}, {"number": 122, "question": "భారతదేశంలో, జున్ను, కోవా, నెయ్యి, పెరుగు మరియు పాలపొడి వంటి ఉత్పత్తులను తయారు చేయడానికి ఉపయోగించే పాల శాతం (సుమారుగా) ఎంత?", "options": ["30%", "40%", "80%", "60%"], "answer": 3}, {"number": 123, "question": "కింది వాటిలో తేనెటీగల పుష్పజాలంగా పరిగణించబడే మొక్కలను గుర్తించండి.\nA) అకేసియా (తుమ్మ) చెట్టు\nB) ఆవాలు\nC) పైన్\nసరైన బిన్నవికల్పాన్ని ఎంచుకోండి:", "options": ["A మరియు B మాత్రమే", "B మరియు C మాత్రమే", "A మరియు C మాత్రమే", "A, B మరియు C"], "answer": 0}, {"number": 124, "question": "కింది వాటిలో స్పృహ కోల్పోయిన సందర్భంలో, వ్యక్తికి సహాయపడే అత్యంత సముచితమైన ప్రథమ చికిత్స చర్య ఏది?", "options": ["వ్యక్తిని నిటారుగా కూర్చోబెట్టి నీరు ఇవ్వడం", "కాళ్లను పైకి లేపి, తలను పక్కకు వంచి, వాయుమార్గం తెరిచి ఉండేలా చూడటం", "చల్లని నీటిని చల్లి వ్యక్తిని కదిలించడం", "వ్యక్తిని దుప్పటితో కప్పి వేచి ఉండటం"], "answer": 1}, {"number": 125, "question": "కింది జంతువులలో ద్విదా విభజన ద్వారా ప్రత్యుత్పత్తి చేసేది ఏది?", "options": ["అమీబా", "వానపాము", "సీతాకోకచిలుక", "కప్ప"], "answer": 0}, {"number": 126, "question": "కింది వాటిలో, ప్రధాన సాంప్రదాయేతర ఇంధన వనరులలో ఒకటి ఏది?", "options": ["బయోడీజిల్", "బొగ్గు", "సహజ వాయువు", "పెట్రోలియం"], "answer": 0}, {"number": 127, "question": "వరదల గురించి కింది వాటిలో సరికాని వాక్యాన్ని గుర్తించండి:", "options": ["అర అడుగు లోతు ఉన్న ఆకస్మిక వరద ఒక వ్యక్తిని కింద పడేలా చేస్తుంది.", "ఒక అడుగు లోతు ఉన్న వరద కార్లు వంటి వాహనాలను కింద పడేలా చేస్తుంది.", "రెండు అడుగుల లోతు ఉన్న ఆకస్మిక వరద కార్లు వంటి వాహనాలను కొట్టుకుపోయేలా చేస్తుంది.", "ఒక అడుగు లోతు ఉన్న వరదను కాలినడకన లేదా కారులో సురక్షితంగా దాటవచ్చు."], "answer": 3}, {"number": 128, "question": "కింది వాక్యాల ఆధారంగా సరైన సమాధానాన్ని ఎంచుకోండి:\nవాక్యం I: హిమాలయాల వంటి చల్లని ప్రదేశాలలో ఉన్ని దుస్తులను ఉపయోగిస్తారు.\nవాక్యం II: ఎడారుల వంటి వేడి ప్రదేశాలలో ఉన్ని దుస్తులను ఉపయోగిస్తారు.", "options": ["వాక్యం I మాత్రమే సరైనది.", "వాక్యం II మాత్రమే సరైనది.", "వాక్యం I మరియు వాక్యం II రెండూ సరైనవి.", "వాక్యం I మరియు వాక్యం II రెండూ సరికావు."], "answer": 2}, {"number": 129, "question": "సరీసృపాల నుండి పక్షులు పరిణామం చెందిన యుగం ఏది?", "options": ["పాలియోజోయిక్ యుగం", "మెసోజోయిక్ యుగం", "సెనోజోయిక్ యుగం", "ప్రికాంబ్రియన్ యుగం"], "answer": 1}, {"number": 130, "question": "పెద్దవారిలో చిన్న ప్రేగు సుమారుగా ఎంత పొడవు ఉంటుంది?", "options": ["3 మీటర్ల పొడవు", "5 మీటర్ల పొడవు", "7 మీటర్ల పొడవు", "10 మీటర్ల పొడవు"], "answer": 2}, {"number": 131, "question": "తాగునీటిలో ఫ్లోరైడ్ గాఢత (ppm) ఈ స్థాయిని మించి ఉంటే, అది పిల్లలలో దంత సమస్యలను కలిగిస్తుంది. ఆ స్థాయి ఎంత?", "options": ["0.5", "1.5", "1.0", "1.2"], "answer": 1}, {"number": 132, "question": "గాలి ఎల్లప్పుడూ ఒక ప్రదేశం నుండి మరొక ప్రదేశానికి వీచడానికి కారణం:\nA) గురుత్వాకర్షణ బలం\nB) భూమి యొక్క భ్రమణం మరియు పరిభ్రమణం\nసరైన బిన్నవికల్పాన్ని ఎంచుకోండి:", "options": ["A మాత్రమే", "B మాత్రమే", "A మరియు B రెండూ", "A కాదు మరియు B కాదు"], "answer": 2}, {"number": 133, "question": "వేల సంవత్సరాలుగా, ఈ నది జలాలు ఈజిప్టులోని భూములకు సాగునీరు అందించడానికి సహాయపడుతున్నాయి. ఆ నది ఏది?", "options": ["కాంగో నది", "నైలు నది", "జాంబేజీ నది", "చాడ్ నది"], "answer": 1}, {"number": 134, "question": "కింది వాటిలో ఒకదానిని ‘గొప్ప వృత్తం’ అని పిలుస్తారు. అది ఏది?", "options": ["భూమధ్యరేఖ", "కర్కాటక రేఖ", "మకర రేఖ", "ఆర్కిటిక్ వలయం"], "answer": 0}, {"number": 135, "question": "ఈ పర్వత శ్రేణులు దక్కన్ పీఠభూమికి తూర్పు అంచులుగా ఏర్పడుతున్నాయి. అవి ఏవి?", "options": ["సాత్పురా శ్రేణులు", "మహాదేవ్, కైమూర్ శ్రేణి మరియు మైకాల్ శ్రేణిలోని కొంత భాగం", "పశ్చిమ కనుమలు", "నీలగిరి పర్వత శ్రేణులు"], "answer": 1}, {"number": 136, "question": "ఈ రకమైన వ్యవసాయ విధానంలో, ఆహారం మరియు పశుగ్రాస పంటలను పండించడానికి, అలాగే పశువులను పెంచడానికి భూమిని ఉపయోగిస్తారు. ఈ వ్యవసాయ విధానం ఏది?", "options": ["మిశ్రమ వ్యవసాయం", "సేంద్రియ వ్యవసాయం", "బహుళ పంటలు", "అంతర పంటలు"], "answer": 0}, {"number": 137, "question": "చోళుల శాసనం ప్రకారం, ‘శాలభోగం’ అనేది దేనిని సూచిస్తుంది?", "options": ["జైన సంస్థలకు విరాళంగా ఇచ్చిన భూమి", "బ్రాహ్మణులకు బహూకరించిన భూమి", "పాఠశాల నిర్వహణ కోసం ఇచ్చిన భూమి", "దేవాలయాలకు బహూకరించిన భూమి"], "answer": 2}, {"number": 138, "question": "భారతదేశంలో ఉన్న హరప్పా నాగరికతకు చెందిన ప్రదేశాలను కింది వాటిలో గుర్తించండి:", "options": ["కాలిబంగన్, చాన్హుదారో మరియు లోథాల్", "మొహెంజోదారో, షోర్తుగై మరియు సుత్కాగెండోర్", "కాలిబంగన్, రోపర్ మరియు హరప్పా", "కాలిబంగన్, రోపర్ మరియు లోథాల్"], "answer": 3}, {"number": 139, "question": "కింది వాటిలో కాకతీయులకు చెందనిదిగా గుర్తించవలసిన శాసనం ఏది?", "options": ["మోటుపల్లి శాసనం", "ఉత్తర మేరూర్ శాసనం", "పాలంపేట శాసనం", "బయ్యారం శాసనం"], "answer": 1}, {"number": 140, "question": "శంకర సత్యనారాయణ ‘తెలంగాణ’ అనే బుర్రకథను రచించారు. అది దేనిపై దృష్టి సారించింది?", "options": ["ఉస్మానియా విశ్వవిద్యాలయ విద్యార్థుల వీరోచిత పోరాటం", "షేక్ బందగి అనే ముస్లిం రైతు వీరత్వం", "ప్రత్యేక రాష్ట్రం కోసం తెలంగాణ ప్రజలు చేసిన వీరోచిత పోరాటం", "హైదరాబాద్ రాష్ట్ర రజాకార్లకు వ్యతిరేకంగా ప్రజలు చేసిన వీరోచిత పోరాటం"], "answer": 1}, {"number": 141, "question": "ప్రజా పంపిణీ వ్యవస్థ ద్రవ్యోల్బణ పరిస్థితుల్లో ప్రజలకు, ముఖ్యంగా పేదలకు ఆహార భద్రత కల్పించడానికి మాత్రమే కాకుండా, కింది వాటిలో దేనికి కూడా ఉపయోగపడుతుంది?", "options": ["నిత్యావసర వస్తువుల ధరలను నియంత్రించడానికి", "రైతుల ఆర్థిక వ్యవస్థను పెంచడానికి", "ఉత్పత్తిదారుల వస్తువుల ధరలను పెంచడానికి", "సామాన్య ప్రజల ఆదాయాన్ని పెంచడానికి"], "answer": 0}, {"number": 142, "question": "1969 ఆగస్టులో, అస్సాంలోని కింది జిల్లాల నుండి మేఘాలయ రాష్ట్రం ఏర్పడింది:", "options": ["ఖాసీ, జైంతియా మరియు గారో హిల్స్", "బక్సా, బార్పేట మరియు గారో హిల్స్", "ఖాసీ, బార్పేట మరియు గారో హిల్స్", "జైంతియా, బార్పేట మరియు గారో హిల్స్"], "answer": 0}, {"number": 143, "question": "భారత రాజ్యాంగంలోని ఈ అధికరణం ప్రకారం, ఒక రాష్ట్ర గవర్నర్ రాష్ట్ర ప్రభుత్వాన్ని మరియు రాష్ట్ర శాసనసభను రద్దు చేయాలని రాష్ట్రపతికి సిఫారసు చేయవచ్చు. ఆ అధికరణం ఏది?", "options": ["అధికరణం 352", "అధికరణం 360", "అధికరణం 356", "అధికరణం 368"], "answer": 2}, {"number": 144, "question": "1947కు ముందు భారతదేశంలోని ఏకైక ఇనుము మరియు ఉక్కు పరిశ్రమ ఏది?", "options": ["ఇండియన్ ఐరన్ & స్టీల్ కంపెనీ (IISCO)", "బొకారో స్టీల్ ప్లాంట్", "భిలాయ్ స్టీల్ ప్లాంట్", "టాటా ఐరన్ అండ్ స్టీల్ కంపెనీ"], "answer": 3}, {"number": 145, "question": "కింది వాటిలో సహ-పాఠ్య కార్యక్రమానికి ఉదాహరణను గుర్తించండి:", "options": ["నాయకత్వం మరియు బహిరంగ ప్రసంగ నైపుణ్యాలను అభ్యసించడానికి మాక్ అసెంబ్లీ నిర్వహించడం", "వాతావరణ నమూనాలపై సైన్స్ ప్రాజెక్టును సిద్ధం చేసి ప్రదర్శించడం", "పర్యావరణ భావనలపై రాత పరీక్ష రాయడం", "పర్యావరణ పరిరక్షణపై తరగతి గది ఉపన్యాసం వినడం"], "answer": 0}, {"number": 146, "question": "5వ తరగతి చదువుతున్న ఒక విద్యార్థి సమాన పరిమాణం గల రెండు కప్పులను తీసుకొని, ఒక కప్పులో సాధారణ కుళాయి నీటిని, మరొక కప్పులో సమాన పరిమాణంలో ఉప్పు నీటిని పోసి, రెండు కప్పులను రిఫ్రిజిరేటర్‌లో ఉంచాడు. EVS ఉపాధ్యాయుడిగా, ఈ ప్రయోగం కోసం మీరు విద్యార్థులకు ఇచ్చే ‘పరికల్పన’ ఏది?", "options": ["ప్రతి కప్పు పూర్తిగా గడ్డకట్టడానికి పట్టే సమయాన్ని నమోదు చేసి నివేదిక రాయడం.", "ఏది ముందుగా గడ్డకడుతుందో చూడటానికి ప్రతి 30 నిమిషాలకు కప్పులను పరిశీలించడం.", "రిఫ్రిజిరేటర్‌లో ఉంచే ముందు రెండు కప్పుల ఉష్ణోగ్రతను కొలవడం.", "ఉప్పు నీరు, కుళాయి నీటి కంటే నెమ్మదిగా గడ్డకడుతుంది; ఎందుకంటే ఉప్పు నీటి గడ్డకట్టే ఉష్ణోగ్రతను తగ్గిస్తుంది."], "answer": 3}, {"number": 147, "question": "పర్యావరణ అధ్యయనం (EVS) బోధనలో ఉపాధ్యాయుని అత్యంత ముఖ్యమైన పాత్ర ఏది?", "options": ["ఉపన్యాసాల ద్వారా సమాచారాన్ని అందించడం", "విద్యార్థుల అన్వేషణను మరియు క్రియాశీల అభ్యసనాన్ని సులభతరం చేయడం", "తరచుగా క్విజ్‌ల ద్వారా విద్యార్థులను పరీక్షించడం", "ప్రధానంగా పాఠ్యపుస్తక విషయాలపై దృష్టి పెట్టడం"], "answer": 1}, {"number": 148, "question": "కింది జాబితా–A ను జాబితా–B తో జతపరచండి:\nజాబితా–A (పాఠ్యాంశాలు)\nA) నీరు – అవసరాలు\nB) బాలల హక్కులు\nC) శక్తి\nD) కుటుంబ వ్యవస్థ – మార్పులు\n\nజాబితా–B (సంబంధిత ఇతివృత్తాలు)\ni) వాతావరణం\n ii) కుటుంబం – సంబంధాలు\n iii) ఆహారం – ఆరోగ్యం – పరిశుభ్రత\n iv) విలువలు – హక్కులు\n\nసరైన సమాధానాన్ని గుర్తించండి:", "options": ["A–iii, B–i, C–iv, D–ii", "A–iii, B–iv, C–i, D–ii", "A–iv, B–iii, C–i, D–ii", "A–iv, B–i, C–ii, D–iii"], "answer": 1}, {"number": 149, "question": "‘మొక్కలు మరియు జంతువులు’ అనే పాఠాన్ని పూర్తిచేసిన తరువాత, 5వ తరగతి విద్యార్థి తన పరిసరాలలో మొక్కలు పెంచడం, పాఠశాల తోటను అభివృద్ధి చేయడం, జంతువులు మరియు పక్షుల పట్ల ప్రేమ, సానుభూతి చూపించడం చేస్తున్నాడు. ఈ కృత్యంలో ప్రతిబింబించే విద్యా ప్రమాణం ఏది?", "options": ["సమకాలీన అంశాలపై ప్రతిస్పందన", "సమాచార నైపుణ్యాలు మరియు ప్రాజెక్టు పనులు", "ప్రశంస, సున్నితత్వం", "ప్రయోగాలు, క్షేత్ర పరిశీలనలు"], "answer": 2}, {"number": 150, "question": "పర్యావరణ అధ్యయనం (EVS) లో నిర్మాణాత్మక మూల్యాంకనంలో ప్రధానంగా కింది సాధనాలను ఉపయోగిస్తారు:\nA) స్లిప్ పరీక్షలు\nB) రాత పనులు\nC) పిల్లల భాగస్వామ్యం మరియు ప్రతిస్పందనలు\nD) ప్రాజెక్టు పనులు\nసరైన సమాధానాన్ని గుర్తించండి:", "options": ["A, B, C, D", "B, C, D మాత్రమే", "A, C, D మాత్రమే", "A, B, C మాత్రమే"], "answer": 0}];
+let index=0, selected=Array(questions.length).fill(null), checked=Array(questions.length).fill(false);
+const $=id=>document.getElementById(id);
+function score(){return checked.reduce((s,v,i)=>s+(v&&selected[i]===questions[i].answer?1:0),0)}
+function render(){
+ const q=questions[index];
+ $('counter').textContent=`ప్రశ్న ${q.number} / 150`;
+ $('score').textContent=`స్కోరు: ${score()} / 30`;
+ $('bar').style.width=((index+1)/questions.length*100)+'%';
+ $('qmeta').textContent=`EVS – ప్రశ్న ${q.number}`;
+ $('question').textContent=q.question;
+ $('options').innerHTML='';
+ q.options.forEach((op,i)=>{
+  const label=document.createElement('label');
+  label.className='option'+(selected[index]===i?' selected':'');
+  if(checked[index]&&i===q.answer)label.classList.add('correct');
+  if(checked[index]&&selected[index]===i&&i!==q.answer)label.classList.add('wrong');
+  label.innerHTML=`<input type="radio" name="answer" ${selected[index]===i?'checked':''} ${checked[index]?'disabled':''}><span><b>${i+1}.</b> ${escapeHtml(op).replace(/\n/g,'<br>')}</span>`;
+  label.addEventListener('click',()=>{if(!checked[index]){selected[index]=i;render();}});
+  $('options').appendChild(label);
+ });
+ $('feedback').textContent=checked[index]?(selected[index]===q.answer?'✓ సరైన సమాధానం!':`✗ సరైన సమాధానం: ${q.answer+1}. ${q.options[q.answer]}`):'';
+ $('prev').disabled=index===0;
+ $('next').textContent=index===questions.length-1?'ఫలితం చూడండి':'తర్వాత →';
+ $('check').disabled=checked[index]||selected[index]===null;
+ $('grid').innerHTML='';
+ questions.forEach((x,i)=>{
+  const b=document.createElement('button');b.textContent=x.number;
+  if(checked[i])b.classList.add('done');if(i===index)b.classList.add('active');
+  b.onclick=()=>{index=i;render()};$('grid').appendChild(b);
+ });
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+$('check').onclick=()=>{if(selected[index]!==null){checked[index]=true;render();}};
+$('prev').onclick=()=>{if(index>0){index--;render();}};
+$('next').onclick=()=>{if(index<questions.length-1){index++;render();}else showResult();};
+function showResult(){
+ const total=score(), attempted=selected.filter(x=>x!==null).length;
+ $('quiz').innerHTML=`<div class="result"><h2>మీ ఫలితం</h2><h1>${total} / 30</h1><p>సరైన సమాధానాలు: ${total}</p><p>తప్పు సమాధానాలు: ${checked.filter((v,i)=>v&&selected[i]!==questions[i].answer).length}</p><p>సమాధానం ఎంచుకున్నవి: ${attempted} / 30</p><h3>${Math.round(total/30*100)}%</h3><button class="primary" onclick="location.reload()">మళ్లీ పరీక్ష రాయండి</button></div>`;
+}
+render();
+</script>
+</body>
+</html>
