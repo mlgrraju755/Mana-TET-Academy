@@ -48,10 +48,10 @@ At the same time, droughts are becoming more prevalent, particularly as water us
 <div class="qtop"><span class="qnum" id="qnum"></span><span class="instructions">English Medium</span></div>
 <p class="qtext" id="qtext"></p>
 <div id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div>
-<div class="controls"><button class="secondary" id="prev">← Previous</button><button class="primary" id="next">Next →</button></div>
+<div class="controls"><button type="button" class="secondary" id="prev">← Previous</button><button type="button" class="primary" id="next">Next →</button></div>
 </section>
 <section class="panel"><h2>Question Navigation</h2><p class="instructions">Tap any question number to move directly to that question.</p><div class="navgrid" id="navgrid"></div></section>
-<section class="panel controls"><button class="submit" id="submit">Submit Test</button><button class="secondary" id="reset">Reset Test</button></section>
+<section class="panel controls"><button type="button" class="submit" id="submit">Submit Test</button><button type="button" class="secondary" id="reset">Reset Test</button></section>
 <section class="panel result" id="result"><h2>Test Result</h2><div class="score" id="score"></div><p id="percent"></p><p id="summary"></p><h2>Answer Review</h2><div id="review"></div><button class="primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to Top</button></section>
 </main><footer>MANA-TET-2026 · Practice with confidence</footer>
 <script>
@@ -78,9 +78,12 @@ function render(){
  $('prev').disabled=current===0;$('next').disabled=current===questions.length-1;
  document.querySelectorAll('#navgrid button').forEach((b,i)=>{b.classList.toggle('active',i===current);b.classList.toggle('done',answers[i]!==null)});
 }
-function makeNav(){questions.forEach((q,i)=>{const b=document.createElement('button');b.textContent=q.n;b.onclick=()=>{current=i;render();$('quizPanel').scrollIntoView({behavior:'smooth'})};$('navgrid').append(b)})}
-$('prev').onclick=()=>{if(current>0){current--;render()}};
-$('next').onclick=()=>{if(current<questions.length-1){current++;render()}};
+function makeNav(){questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.textContent=q.n;b.onclick=()=>{current=i;render();$('quizPanel').scrollIntoView({behavior:'smooth'})};$('navgrid').append(b)})}
+function goPrevious(){ if(current>0){ current--; render(); $('quizPanel').scrollIntoView({block:'start'}); } }
+function goNext(){ if(current<questions.length-1){ current++; render(); $('quizPanel').scrollIntoView({block:'start'}); } }
+window.goPrevious=goPrevious; window.goNext=goNext;
+$('prev').addEventListener('click', goPrevious);
+$('next').addEventListener('click', goNext);
 $('submit').onclick=()=>{
  if(submitted)return;
  const unanswered=answers.filter(x=>x===null).length;
