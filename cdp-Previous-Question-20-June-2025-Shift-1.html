@@ -1,138 +1,71 @@
-<!DOCTYPE html>
-<html lang="te">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mana TET 2026 - TG TET Paper-I CDP Telugu Practice Test">
-<title>Mana TET 2026 | CDP Previous Paper - 20 June 2025 Shift 1</title>
+<!doctype html>
+<html lang="te"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CDP | 20 జూన్ 2025 Shift-1 | MANA TET 2026</title>
 <style>
-:root{--primary:#174ea6;--accent:#ffb300;--bg:#f3f6fb;--ink:#172033;--muted:#64748b;--green:#16834a;--red:#c62828}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);font-family:"Noto Sans Telugu","Gautami","Nirmala UI",Arial,sans-serif;color:var(--ink);line-height:1.7}
-header{background:linear-gradient(135deg,#123b78,#2468c7);color:white;padding:22px 16px;text-align:center}
-header h1{margin:0;font-size:clamp(23px,5vw,32px)}
-header p{margin:5px 0 0;font-size:15px}
-.wrap{max-width:850px;margin:18px auto;padding:0 12px 35px}
-.topbar,.card,.result{background:#fff;border-radius:14px;box-shadow:0 3px 14px #13294b12}
-.topbar{padding:14px 16px;margin-bottom:14px}
-.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;color:#24456f}
-.progress{height:9px;background:#e5eaf2;border-radius:20px;margin-top:10px;overflow:hidden}
-#bar{height:100%;width:0;background:var(--accent);transition:width .25s}
-.card{padding:20px;margin-bottom:14px}
-.qhead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.badge{background:#e8f0fe;color:var(--primary);font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap}
-.question{font-size:18px;font-weight:700;white-space:pre-line}
-.options{display:grid;gap:10px;margin-top:18px}
-.option{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1.5px solid #d9e1ee;border-radius:10px;cursor:pointer;background:#fff;transition:.15s}
-.option:hover{border-color:#6b91d5;background:#f7faff}
-.option input{margin-top:7px;accent-color:var(--primary);transform:scale(1.15)}
-.option.correct{border-color:var(--green);background:#eaf7ef}
-.option.wrong{border-color:var(--red);background:#fff0f0}
-.feedback{margin-top:14px;padding:11px 13px;border-radius:9px;font-weight:700;display:none}
-.feedback.good{display:block;background:#eaf7ef;color:#12683b}
-.feedback.bad{display:block;background:#fff0f0;color:#a51e1e}
-.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
-button{border:0;border-radius:9px;padding:11px 17px;font-size:15px;font-weight:700;cursor:pointer}
-.primary{background:var(--primary);color:white}
-.secondary{background:#e8edf5;color:#24344e}
+:root{--ink:#172554;--muted:#64748b;--blue:#1d4ed8;--green:#15803d;--red:#b91c1c}
+*{box-sizing:border-box} body{margin:0;font-family:"Noto Sans Telugu","Gautami",Arial,sans-serif;background:linear-gradient(135deg,#e0e7ff,#f0f9ff 55%,#ecfeff);color:#172033}
+header{background:linear-gradient(120deg,#172554,#1d4ed8,#0891b2);color:#fff;padding:25px 16px;text-align:center}
+header h1{margin:0 0 7px;font-size:clamp(21px,4vw,30px)} header p{margin:5px 0;font-size:15px}
+.wrap{max-width:900px;margin:20px auto;padding:0 13px 35px}
+.topbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;background:#fff;padding:13px 16px;border-radius:14px;box-shadow:0 5px 18px #1e3a8a12;margin-bottom:14px}
+.badge{font-weight:700;color:var(--ink)} #timer{color:#b91c1c;font-weight:800;font-size:18px}
+.progress{height:9px;background:#dbeafe;border-radius:20px;overflow:hidden;margin-top:9px;width:100%}
+#bar{height:100%;width:0;background:linear-gradient(90deg,#2563eb,#06b6d4);transition:width .2s}
+.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 28px #1e3a8a14}
+.qhead{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:15px}
+.qnum{background:#dbeafe;color:#1e40af;padding:7px 12px;border-radius:20px;font-weight:800}
+.question{font-size:19px;line-height:1.8;font-weight:700;white-space:pre-line;margin:8px 0 20px}
+.option{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border:1.5px solid #dbe3f0;border-radius:12px;margin:10px 0;cursor:pointer;line-height:1.65;background:#fff}
+.option:hover{border-color:#60a5fa;background:#f8fbff}.option input{margin-top:6px;accent-color:#1d4ed8;transform:scale(1.15)}
+.option.selected{border-color:#2563eb;background:#eff6ff}
+.controls{display:flex;gap:9px;flex-wrap:wrap;justify-content:space-between;margin-top:20px}
+button{border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer}
+.primary{background:#1d4ed8;color:white}.secondary{background:#e2e8f0;color:#1e293b}.submit{background:#15803d;color:white}
 button:disabled{opacity:.45;cursor:not-allowed}
-.result{padding:18px;text-align:center;margin-bottom:14px;display:none}
-.result h2{margin:0 0 5px;color:var(--primary)}
-.small{font-size:13px;color:var(--muted);text-align:center;margin-top:15px}
-.navgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:12px}
-.navgrid button{padding:7px 2px;background:#e8edf5;color:#25334a;font-size:13px}
-.navgrid button.done{background:#d9f0e3;color:#12683b}
-.navgrid button.current{outline:2px solid var(--primary)}
-@media(max-width:480px){.card{padding:15px}.question{font-size:16px}.navgrid{grid-template-columns:repeat(6,1fr)}}
-</style>
-</head>
-<body>
-<header>
-<h1>Mana TET 2026</h1>
-<p>Paper–I | Child Development & Pedagogy (CDP)</p>
-<p>Previous Question Paper • 20 June 2025 • Shift–1 • తెలుగు మాధ్యమం</p>
-</header>
+#result{display:none;margin-top:16px;background:#fff;border-radius:16px;padding:22px;box-shadow:0 8px 28px #1e3a8a14}
+.score{font-size:28px;font-weight:900;color:#1d4ed8}.review{padding:13px 0;border-bottom:1px solid #e2e8f0;line-height:1.7}
+.correct{color:var(--green);font-weight:700}.wrong{color:var(--red);font-weight:700}
+.small{font-size:13px;color:var(--muted)} footer{text-align:center;color:#64748b;padding:20px 8px;font-size:13px}
+@media(max-width:560px){.card{padding:16px}.question{font-size:17px}button{padding:10px 13px}}
+</style></head><body>
+<header><h1>మనా TET 2026</h1><p>TG TET PAPER–I | CHILD DEVELOPMENT & PEDAGOGY</p><p>20 జూన్ 2025 • Shift–1 • ప్రశ్నలు 1–30</p></header>
 <main class="wrap">
-<section class="topbar">
-<div class="meta"><span id="progressText">ప్రశ్న 1 / 30</span><span id="scoreText">సరైన సమాధానాలు: 0</span></div>
-<div class="progress"><div id="bar"></div></div>
-</section>
-<section id="result" class="result"></section>
-<section class="card">
-<div class="qhead"><span class="badge" id="qnum">ప్రశ్న 1</span></div>
-<div class="question" id="question"></div>
-<div class="options" id="options"></div>
-<div id="feedback" class="feedback"></div>
-<div class="controls">
-<button class="primary" id="checkBtn" onclick="checkAnswer()">సమాధానం తనిఖీ చేయండి</button>
-<button class="secondary" id="prevBtn" onclick="move(-1)" disabled>← వెనుకకు</button>
-<button class="primary" id="nextBtn" onclick="move(1)" disabled>తదుపరి →</button>
-<button class="secondary" id="restartBtn" onclick="restart()" style="display:none">మళ్లీ ప్రారంభించండి</button>
-</div>
-</section>
-<section class="card">
-<strong>ప్రశ్నలకు వెళ్లండి</strong>
-<div class="navgrid" id="navgrid"></div>
-</section>
-<p class="small">ప్రశ్నలు మరియు సరైన సమాధానాలు అందించిన PDF ఆధారంగా రూపొందించబడ్డాయి. • Mana TET Academy</p>
+<div class="topbar"><div><div class="badge">CDP – Previous Paper Practice</div><div class="small" id="progressText">ప్రశ్న 1 / 30 • సమాధానాలు 0</div></div><div id="timer">30:00</div><div class="progress"><div id="bar"></div></div></div>
+<section class="card" id="quizCard">
+<div class="qhead"><span class="qnum" id="qnum">ప్రశ్న 1</span><span class="small">మొత్తం మార్కులు: 30</span></div>
+<div class="question" id="question"></div><div id="options"></div>
+<div class="controls"><button class="secondary" id="prev">← Previous</button><button class="primary" id="next">Next →</button><button class="submit" id="submit">Submit Test</button></div>
+</section><section id="result"></section>
+<footer>© MANA TET 2026 • మూల ప్రశ్నపత్రంలోని తెలుగు ప్రశ్నలు, ఎంపికలు మరియు సమాధానాల ఆధారంగా రూపొందించబడింది.</footer>
 </main>
 <script>
-const questions = [{"q": "క్రింది స్టేట్‌మెంట్లను చదివి సరైన సమాధానాన్ని గుర్తించండి.\n\nA) వ్యక్తిగత భేదాల సూత్రం ప్రకారం, ఏకరూప కవలల వికాసంలో కూడా భేదాలు ఉండవచ్చు.\nB) వ్యక్తిగత భేదాల సూత్రం యొక్క ఒక అంతరార్థం ఏమిటంటే, పిల్లలందరూ ఒకే వేగంతో పెరుగుతారు.", "opts": ["A మరియు B రెండూ సరికావు", "A సరికాదు, B సరైనది", "A మరియు B రెండూ సరైనవి", "A సరైనది, B సరికాదు"], "a": 4}, {"q": "క్రింది వాటిలో సరికాని వాక్యాన్ని గుర్తించండి.", "opts": ["పరిపక్వత ఒక వికాస ప్రక్రియ", "పరిపక్వత అభ్యసనంపై ఆధారపడి ఉంటుంది", "ఒక వ్యక్తి గర్భధారణ సమయం నుంచే అతని కణాలలో పరిపక్వతకు సంబంధించిన బ్లూప్రింట్లు ఉంటాయి", "పరిపక్వత అనేది వారసత్వ ధోరణుల సహజ విప్పుదల"], "a": 2}, {"q": "వ్యక్తి యొక్క మానసిక సామర్థ్యాలు దేని ఫలితం?", "opts": ["అనువంశికత మరియు పరిసరాలు రెండూ", "అనువంశికత మాత్రమే", "పరిసరాలు మాత్రమే", "అనువంశికత లేదా పరిసరాలు రెండూ కావు"], "a": 1}, {"q": "క్రింది స్టేట్‌మెంట్లను చదివి సరైన సమాధానాన్ని గుర్తించండి.\n\nస్టేట్‌మెంట్ A – జీవితంలోని ఒక నిర్దిష్ట దశలో ఆవిర్భవించే అభ్యసన కార్యం సకాలంలో పూర్తి కాకపోతే, తదుపరి అభ్యసన కార్యాలలో ఇబ్బందులు ఏర్పడతాయి.\n\nస్టేట్‌మెంట్ B – రచనకు 6 నెలల వయస్సు వచ్చినా తనంతట తాను తిరగలేకపోతున్నాడని తల్లి ఆందోళన చెందుతుంది. దీనివల్ల క్రాల్ చేయడం, నిలబడటం వంటి తరువాతి కార్యకలాపాలపై కూడా ప్రభావం పడవచ్చని ఆమె భావిస్తుంది.", "opts": ["స్టేట్‌మెంట్ A సరికాదు", "స్టేట్‌మెంట్ A సరైనది కానీ స్టేట్‌మెంట్ B కు సరైన వివరణ కాదు", "స్టేట్‌మెంట్ A సరైనది మరియు స్టేట్‌మెంట్ B కు సరైన వివరణ ఇస్తుంది", "స్టేట్‌మెంట్ A మరియు B సంబంధం లేనివి"], "a": 3}, {"q": "కోహల్‌బర్గ్ ప్రకారం, నైతిక వికాస దశలు ఎలా ఉంటాయి?", "opts": ["సంస్కృతికి సంబంధించినవి", "సార్వత్రికమైనవి", "అబ్బాయిలు మరియు అమ్మాయిలలో వేరుగా ఉంటాయి", "గుర్తించలేనివి"], "a": 2}, {"q": "సపర్ణ అనే II తరగతి విద్యార్థినికి కూడిక తెలుసు. ఆమె టీచర్ 2 × 3 ను 2 + 2 + 2 గా చూపిస్తూ గుణకారాన్ని పరిచయం చేసింది. 2 × 3 అనేది 2 ను 3 సార్లు కలపడం అని వివరించింది. పియాజే ప్రకారం, గుణకార భావనను అర్థం చేసుకోవడానికి ప్రయత్నిస్తున్న సపర్ణ ఏ స్థితిలో ఉంది?", "opts": ["సమతుల్యత", "అసమతుల్యత", "అపరివర్తనీయత", "సాంశ్లేషణ"], "a": 2}, {"q": "క్రింది వాటిలో ఆలోచనను సూచించనిది ఏది?", "opts": ["కాలుష్యాన్ని తగ్గించడానికి విద్యార్థుల నుంచి సూచనలు తీసుకుంటున్న ఉపాధ్యాయుడు", "తన బడ్జెట్‌ను సమర్థంగా ఉపయోగించుకోవడానికి పర్యటన ప్రణాళిక సిద్ధం చేస్తున్న వ్యక్తి", "ఆరోగ్య సంరక్షణకు సంబంధించిన ఒక ఉత్పత్తి వినియోగంపై చర్చిస్తున్న బృందం", "గుర్రం చిత్రాన్ని చూసి గుర్రాన్ని గీస్తున్న బాలిక"], "a": 4}, {"q": "‘మన సామర్థ్యాలు, లక్షణాల గురించి మన అవగాహన, భావనలు’ అని దేనిని అంటారు?", "opts": ["స్వీయ భావన", "ఆత్మగౌరవం", "స్వీయ నియంత్రణ", "స్వీయ సామర్థ్యం"], "a": 1}, {"q": "క్రింది వాటిలో బడి మానివేయడానికి కారణం కానిది ఏది?", "opts": ["ఉపాధ్యాయుల ప్రతికూల వైఖరి", "పిల్లల శారీరక మరియు మానసిక ఆరోగ్యం సరిగా లేకపోవడం", "తల్లిదండ్రుల ప్రోత్సాహం", "పాఠశాలల్లో నిరంకుశ పరిపాలన"], "a": 3}, {"q": "విద్యార్థుల సాధారణ ప్రతిభను మెరుగుపరచడంలో తల్లిదండ్రుల భాగస్వామ్యం ప్రభావాన్ని తెలుసుకోవడానికి ఒక ప్రాథమిక పాఠశాల ఉపాధ్యాయుడు అధ్యయనం ప్రారంభించాడు. తల్లిదండ్రులందరూ పట్టభద్రులైన పిల్లలను ఎంపిక చేసి, పాఠశాల తర్వాత ప్రతిరోజూ ఒక గంట పిల్లలతో గడిపి సహాయం చేయాలని కోరాడు. తల్లిదండ్రులందరూ ఉపాధ్యాయుని సూచనలను కచ్చితంగా పాటించారు. ఈ అధ్యయనంలో అంతరాయ చరరాశులు ఏవి?\n\nA) విద్యార్థి సామర్థ్యం\nB) విద్యార్థుల ప్రదర్శన\nC) తల్లిదండ్రుల భాగస్వామ్యం\nD) విద్యార్థుల అభ్యసన శైలి\n\nసరైన సమాధానాన్ని ఎంచుకోండి.", "opts": ["A మరియు D మాత్రమే", "A, B, C, D", "A, B మరియు C మాత్రమే", "B మరియు C మాత్రమే"], "a": 1}, {"q": "క్రింది కార్యకలాపాలలో ఏవి ఒక నిర్దిష్ట స్థాయి పరిపక్వతను సాధించాల్సిన అవసరం కలిగిస్తాయి?\n\nA) శిశువు తన శరీర కదలికలను నియంత్రించడం నేర్చుకోవడం\nB) ప్రీ-స్కూల్ పిల్లవాడు పెన్సిల్ పట్టుకోవడం నేర్చుకోవడం\nC) కౌమారదశలో ఉన్నవారు ఇతరుల భావాలను గౌరవించడం నేర్చుకోవడం\n\nసరైన సమాధానాన్ని ఎంచుకోండి.", "opts": ["A, B & C", "A & B మాత్రమే", "B & C మాత్రమే", "A & C మాత్రమే"], "a": 1}, {"q": "క్రింది వాటిలో అభ్యసన ప్రక్రియకు సంబంధించిన కారకంగా పరిగణించలేనిది ఏది?", "opts": ["తగిన పద్ధతుల ఎంపిక", "గరిష్ఠ ఇంద్రియాలను ఉపయోగించడం", "అభ్యాస పనిని అందించడం", "ఉపాధ్యాయుని అర్హత"], "a": 4}, {"q": "థార్న్‌డైక్ అభ్యసన సిద్ధాంతం ప్రకారం, అభ్యసనానికి సరైన సమయాలు అని చెప్పినప్పుడు, అభ్యసనానికి సిద్ధత అనేది అభ్యసనకర్త యొక్క దేనికి సంబంధించినది?", "opts": ["విశ్రాంతి సమయం", "మానసిక స్థితి", "ప్రజ్ఞ", "సామర్థ్యం"], "a": 2}, {"q": "యామిని రెండేళ్ల బాలిక. తల్లి ఏదైనా ఇవ్వడానికి నిరాకరిస్తే, యామిని వస్తువులన్నింటినీ విసిరేది. ఈ ప్రవర్తనను నివారించడానికి తల్లి యామిని అడిగినదంతా ఇచ్చేది. కొంతకాలానికి తల్లి ఈ ప్రవర్తనను మార్చాలని నిర్ణయించి, యామిని వస్తువులను విసిరినా పట్టించుకోలేదు. క్రమంగా యామిని వస్తువులను విసరడం మానేసి తల్లి మాట వినడం ప్రారంభించింది. పావ్‌లవ్ ప్రకారం ఇది ఏ సూత్రానికి ఉదాహరణ?", "opts": ["సాధారణీకరణ", "ఆకస్మిక పునరుద్ధరణ", "విలుప్తి", "విచక్షణ"], "a": 3}, {"q": "జయ అనే పాఠశాల విద్యార్థిని అన్ని పరీక్షల్లో మంచి మార్కులు సాధించడానికి శ్రద్ధగా చదువుతుంది. ప్రతి టర్మ్ పరీక్ష తర్వాత ఆమె తల్లి బహుమతి ఇస్తుంది. ఇక్కడ అనుసరించిన ఉపబల షెడ్యూల్ ఏది?", "opts": ["నిరంతర ఉపబల షెడ్యూల్", "స్థిర నిష్పత్తి ఉపబల షెడ్యూల్", "స్థిర విరామ ఉపబల షెడ్యూల్", "చర నిష్పత్తి ఉపబల షెడ్యూల్"], "a": 3}, {"q": "స్మృతి రోడ్డుపై నడుస్తూ ఒక కుక్కను చూసింది. కుక్క తనను తాను విడిపించుకుని పారిపోయింది. స్మృతి కుక్కను వెంబడించి పట్టుకుంది. అయితే చుట్టూ చూసినప్పుడు తాను కొత్త ప్రదేశంలో ఉన్నట్లు గుర్తించింది. తన ఇంటికి తిరిగి వెళ్లడానికి, సమీపంలోని మార్కెట్‌కు దారి చూపించే బోర్డును చూసి ఇంటికి తిరిగి వెళ్లడం ప్రారంభించింది. ఇది ఏ అభ్యసనానికి ఉదాహరణ?", "opts": ["నిబంధన", "ప్రయత్న దోష పద్ధతి", "అంతర్దృష్టి", "మోడలింగ్"], "a": 3}, {"q": "ఒక తండ్రి తన కుమార్తెకు అనాథ పిల్లల పట్ల సానుభూతి కలిగించడానికి ఆమెను అనాథాశ్రమానికి తీసుకెళ్లాడు. తండ్రి లక్ష్యంగా పెట్టుకున్న అభ్యసన రంగం ఏది?", "opts": ["చలనాత్మక", "భావావేశ", "జ్ఞానాత్మక", "మానసిక చలనాత్మక"], "a": 2}, {"q": "కేతకి సివిల్ సర్వెంట్ కావాలని పరీక్ష రాసింది. ఆమె కేంద్ర సర్వీసుల్లో దిగువ కేడర్ ఉద్యోగానికి ఎంపికైంది; సివిల్ సర్వీసులకు ఎంపిక కాలేదు. స్వయం పోషణ కోసం ఆమె కేంద్ర సర్వీసుల్లో చేరి, సివిల్ సర్వీసుల కోసం తన ప్రయత్నాన్ని కొనసాగించింది. ఇది దేనిని సూచిస్తుంది?", "opts": ["ప్రేరేపిత ప్రవర్తన తప్పు", "ప్రేరేపిత ప్రవర్తన లక్ష్యానికి కట్టుబడి ఉండదు", "ప్రేరేపిత ప్రవర్తన ఎప్పుడూ కొనసాగదు", "ప్రేరేపిత ప్రవర్తన అవసరాలు మరియు వాటి సంతృప్తి మధ్య సమతుల్యతను కోరుకుంటుంది"], "a": 4}, {"q": "రామ ఒక షాపింగ్ మాల్‌కు వెళ్లినప్పుడు కొందరు సంఘవిద్రోహ శక్తులు వచ్చి దుకాణాలను ధ్వంసం చేసి పారిపోయారు. పోలీసులు కేసు నమోదు చేశారు. పోలీసుల అభ్యర్థన మేరకు రామ ప్రత్యక్ష సాక్షిగా కొన్ని నెలల తర్వాత మేజిస్ట్రేట్ ముందు జరిగిన సంఘటనను వివరించాడు. ఈ సందర్భంలో రామ జ్ఞాపకశక్తి ఏది?", "opts": ["ఎపిసోడిక్ స్మృతి", "సెమాంటిక్ స్మృతి", "స్వల్పకాలిక స్మృతి", "తక్షణ స్మృతి"], "a": 1}, {"q": "ఉష ఒక పాటలోని ఒక చరణాన్ని 15 నిమిషాల చొప్పున పది సార్లు అభ్యసించి కంఠస్థం చేసింది. అదే పాటలోని రెండవ చరణాన్ని కంఠస్థం చేయడానికి అదే వ్యవధితో మరో పది సార్లు అభ్యసించింది. ఇక్కడ జరిగిన అభ్యసన బదిలీ ఏది?", "opts": ["సకారాత్మక బదిలీ", "అనుకూల బదిలీ", "ప్రతికూల బదిలీ", "శూన్య బదిలీ"], "a": 4}, {"q": "‘పరోక్ష బోధనా పద్ధతులు’కు సంబంధించిన సరికాని వాక్యాన్ని గుర్తించండి.", "opts": ["పాత్రధారణ పరోక్ష బోధనా పద్ధతికి ఉదాహరణ", "పరోక్ష బోధనా పద్ధతుల్లో విద్యార్థులు అభ్యసనంలో చురుకుగా పాల్గొంటారు", "పరోక్ష బోధనా పద్ధతులు ఎక్కువ కాలం గుర్తుంచుకోవడానికి సహాయపడతాయి", "పరోక్ష బోధనా పద్ధతుల్లో ఉపాధ్యాయుడు కేంద్రంగా ఉంటాడు"], "a": 4}, {"q": "బోధనలో పూర్వ క్రియాశీల దశలో జరిగేవి ఏవి?\n\nA) బోధన మరియు అభ్యసన లక్ష్యాలను నిర్ణయించడం\nB) విషయవస్తువును క్రమానుగతంగా అమర్చడం\n\nసరైన సమాధానాన్ని ఎంచుకోండి.", "opts": ["A & B రెండూ", "A మాత్రమే", "B మాత్రమే", "A లేదా B రెండూ కావు"], "a": 1}, {"q": "సమస్యా పరిష్కార పద్ధతి యొక్క ప్రతికూలతను గుర్తించండి.", "opts": ["తక్కువ సమయం తీసుకుంటుంది", "సమస్యను పరిష్కరించడానికి అవసరమైన సామగ్రి మరియు వనరులను అందించడం", "ఉపయోగించడానికి సులభం", "అన్ని పాఠాలకు ఉపయోగించవచ్చు"], "a": 2}, {"q": "సమీకృత తరగతి గదిలో ఉపాధ్యాయుడు చేయకూడనిది ఏది?", "opts": ["వైకల్యం లేని పిల్లలకు వైకల్యం ఉన్న పిల్లల గురించి అవగాహన కల్పించడం", "వైకల్యం, సమీకరణ మరియు విద్యలో ప్రస్తుత ధోరణులపై జ్ఞానాన్ని నవీకరించుకోవడం", "సహవిద్యార్థుల బోధనను నిరుత్సాహపరచడం", "వైకల్యం ఉన్న పిల్లల అభ్యసనాన్ని మెరుగుపరచడానికి తరగతి భౌతిక వాతావరణాన్ని నిర్మించడం"], "a": 3}, {"q": "ఉచిత మరియు నిర్బంధ విద్యా హక్కు చట్టం, 2009 లోని సెక్షన్ 12(1)(c) నిబంధన ప్రకారం, నవోదయ విద్యాలయాలు ఒక తరగతిలోని మొత్తం బలంలో ఎంత శాతం వరకు బలహీన వర్గాలు మరియు వెనుకబడిన వర్గాలకు చెందిన పిల్లలను చేర్చుకోవాలి?", "opts": ["33%", "50%", "10%", "25%"], "a": 4}, {"q": "తెలంగాణ ఉపాధ్యాయ అర్హత పరీక్ష (TGTET) అనేది ఏ రకమైన పరీక్ష?\n\nA) ప్రమాణ-ఆధారిత పరీక్ష\nB) ప్రమాణ సూచిక-ఆధారిత పరీక్ష\n\nసరైన సమాధానాన్ని ఎంచుకోండి.", "opts": ["B మాత్రమే", "A మాత్రమే", "A & B రెండూ", "A లేదా B రెండూ కావు"], "a": 1}, {"q": "పిల్లలపై ఉద్దేశపూర్వకంగా, ప్రమాదవశాత్తు కాని గాయం లేదా దుర్వ్యవహారం కలిగించడాన్ని ఎవరు చేయవచ్చు?\n\nA) తల్లిదండ్రులు\nB) సంరక్షకులు\nC) యజమానులు\nD) ఇతరులు\n\nసరైన సమాధానాన్ని ఎంచుకోండి.", "opts": ["B, C & D మాత్రమే", "A, B, C & D", "A, B & C మాత్రమే", "B & C మాత్రమే"], "a": 2}, {"q": "సమర్థవంతమైన అభ్యసనంలో అభ్యసనకర్తకు సహాయపడనిది ఏది?", "opts": ["అభిప్రాయంపై అభ్యసనకర్త చర్య", "అభ్యసన లక్ష్యాలపై అభ్యసనకర్తకు అవగాహన", "అభ్యసనకర్తల నిష్క్రియాత్మక పాత్ర", "అభ్యసనకర్త గత అనుభవం"], "a": 3}, {"q": "జోక్యం చేసుకోని నాయకత్వ శైలిని ఏమని కూడా అంటారు?", "opts": ["లెసె ఫెయిర్", "నిరంకుశ", "ప్రజాస్వామ్య", "అధికారయుత"], "a": 1}, {"q": "మూడు సంవత్సరాల బాలిక తాను చూసిన పక్షి చిత్రాన్ని గీయగలిగింది. బ్రూనర్ ప్రకారం, ఆమె ఏ విధమైన ప్రాతినిధ్య దశలో ఉంది?", "opts": ["చిత్రాత్మక", "క్రియాత్మక", "ప్రతీకాత్మక", "కార్యాచరణాత్మక"], "a": 1}];
-let current=0, answers=Array(questions.length).fill(null), checked=Array(questions.length).fill(false);
+const questions = [{"question": "ప్రశ్న 1. క్రింది స్టేట్‌మెంట్లను చదివి సరైన సమాధానాన్ని గుర్తించండి.\nA) వ్యక్తిగత భేదాల సూత్రం ప్రకారం, ఏకరూప కవలల వికాసంలో కూడా భేదాలు ఉండవచ్చు.\nB) వ్యక్తిగత భేదాల సూత్రం యొక్క ఒక అంతరార్థం ఏమిటంటే, పిల్లలందరూ ఒకే వేగంతో పెరుగుతారు.", "options": ["A మరియు B రెండూ సరికావు", "A సరికాదు, B సరైనది", "A మరియు B రెండూ సరైనవి", "A సరైనది, B సరికాదు"], "answer": 4}, {"question": "ప్రశ్న 2. క్రింది వాటిలో సరికాని వాక్యాన్ని గుర్తించండి.", "options": ["పరిపక్వత ఒక వికాస ప్రక్రియ", "పరిపక్వత అభ్యసనంపై ఆధారపడి ఉంటుంది", "ఒక వ్యక్తి గర్భధారణ సమయం నుంచే అతని కణాలలో పరిపక్వతకు సంబంధించిన బ్లూప్రింట్లు ఉంటాయి", "పరిపక్వత అనేది వారసత్వ ధోరణుల సహజ విప్పుదల"], "answer": 2}, {"question": "ప్రశ్న 3. వ్యక్తి యొక్క మానసిక సామర్థ్యాలు దేని ఫలితం?", "options": ["అనువంశికత మరియు పరిసరాలు రెండూ", "అనువంశికత మాత్రమే", "పరిసరాలు మాత్రమే", "అనువంశికత లేదా పరిసరాలు రెండూ కావు"], "answer": 1}, {"question": "ప్రశ్న 4. క్రింది స్టేట్‌మెంట్లను చదివి సరైన సమాధానాన్ని గుర్తించండి.\nస్టేట్‌మెంట్ A – జీవితంలోని ఒక నిర్దిష్ట దశలో ఆవిర్భవించే అభ్యసన కార్యం సకాలంలో పూర్తి కాకపోతే, తదుపరి అభ్యసన కార్యాలలో ఇబ్బందులు ఏర్పడతాయి.\nస్టేట్‌మెంట్ B – రచనకు 6 నెలల వయస్సు వచ్చినా తనంతట తాను తిరగలేకపోతున్నాడని తల్లి ఆందోళన చెందుతుంది. దీనివల్ల క్రాల్ చేయడం, నిలబడటం వంటి తరువాతి కార్యకలాపాలపై కూడా ప్రభావం పడవచ్చని ఆమె భావిస్తుంది.", "options": ["స్టేట్‌మెంట్ A సరికాదు", "స్టేట్‌మెంట్ A సరైనది కానీ స్టేట్‌మెంట్ B కు సరైన వివరణ కాదు", "స్టేట్‌మెంట్ A సరైనది మరియు స్టేట్‌మెంట్ B కు సరైన వివరణ ఇస్తుంది", "స్టేట్‌మెంట్ A మరియు B సంబంధం లేనివి"], "answer": 3}, {"question": "ప్రశ్న 5. కోహల్‌బర్గ్ ప్రకారం, నైతిక వికాస దశలు ఎలా ఉంటాయి?", "options": ["సంస్కృతికి సంబంధించినవి", "సార్వత్రికమైనవి", "అబ్బాయిలు మరియు అమ్మాయిలలో వేరుగా ఉంటాయి", "గుర్తించలేనివి"], "answer": 2}, {"question": "ప్రశ్న 6. సపర్ణ అనే II తరగతి విద్యార్థినికి కూడిక తెలుసు. ఆమె టీచర్ 2 × 3 ను 2 + 2 + 2 గా చూపిస్తూ గుణకారాన్ని పరిచయం చేసింది. 2 × 3 అనేది 2 ను 3 సార్లు కలపడం అని వివరించింది. పియాజే ప్రకారం, గుణకార భావనను అర్థం చేసుకోవడానికి ప్రయత్నిస్తున్న సపర్ణ ఏ స్థితిలో ఉంది?", "options": ["సమతుల్యత", "అసమతుల్యత", "అపరివర్తనీయత", "సాంశ్లేషణ"], "answer": 2}, {"question": "ప్రశ్న 7. క్రింది వాటిలో ఆలోచనను సూచించనిది ఏది?", "options": ["కాలుష్యాన్ని తగ్గించడానికి విద్యార్థుల నుంచి సూచనలు తీసుకుంటున్న ఉపాధ్యాయుడు", "తన బడ్జెట్‌ను సమర్థంగా ఉపయోగించుకోవడానికి పర్యటన ప్రణాళిక సిద్ధం చేస్తున్న వ్యక్తి", "ఆరోగ్య సంరక్షణకు సంబంధించిన ఒక ఉత్పత్తి వినియోగంపై చర్చిస్తున్న బృందం", "గుర్రం చిత్రాన్ని చూసి గుర్రాన్ని గీస్తున్న బాలిక"], "answer": 4}, {"question": "ప్రశ్న 8. ‘మన సామర్థ్యాలు, లక్షణాల గురించి మన అవగాహన, భావనలు’ అని దేనిని అంటారు?", "options": ["స్వీయ భావన", "ఆత్మగౌరవం", "స్వీయ నియంత్రణ", "స్వీయ సామర్థ్యం"], "answer": 1}, {"question": "ప్రశ్న 9. క్రింది వాటిలో బడి మానివేయడానికి కారణం కానిది ఏది?", "options": ["ఉపాధ్యాయుల ప్రతికూల వైఖరి", "పిల్లల శారీరక మరియు మానసిక ఆరోగ్యం సరిగా లేకపోవడం", "తల్లిదండ్రుల ప్రోత్సాహం", "పాఠశాలల్లో నిరంకుశ పరిపాలన"], "answer": 3}, {"question": "ప్రశ్న 10. విద్యార్థుల సాధారణ ప్రతిభను మెరుగుపరచడంలో తల్లిదండ్రుల భాగస్వామ్యం ప్రభావాన్ని తెలుసుకోవడానికి ఒక ప్రాథమిక పాఠశాల ఉపాధ్యాయుడు అధ్యయనం ప్రారంభించాడు. తల్లిదండ్రులందరూ పట్టభద్రులైన పిల్లలను ఎంపిక చేసి, పాఠశాల తర్వాత ప్రతిరోజూ ఒక గంట పిల్లలతో గడిపి సహాయం చేయాలని కోరాడు. తల్లిదండ్రులందరూ ఉపాధ్యాయుని సూచనలను కచ్చితంగా పాటించారు. ఈ అధ్యయనంలో అంతరాయ చరరాశులు ఏవి?\nA) విద్యార్థి సామర్థ్యం\nB) విద్యార్థుల ప్రదర్శన\nC) తల్లిదండ్రుల భాగస్వామ్యం\nD) విద్యార్థుల అభ్యసన శైలి\nసరైన సమాధానాన్ని ఎంచుకోండి.", "options": ["A మరియు D మాత్రమే", "A, B, C, D", "A, B మరియు C మాత్రమే", "B మరియు C మాత్రమే"], "answer": 1}, {"question": "ప్రశ్న 11. క్రింది కార్యకలాపాలలో ఏవి ఒక నిర్దిష్ట స్థాయి పరిపక్వతను సాధించాల్సిన అవసరం కలిగిస్తాయి?\nA) శిశువు తన శరీర కదలికలను నియంత్రించడం నేర్చుకోవడం\nB) ప్రీ-స్కూల్ పిల్లవాడు పెన్సిల్ పట్టుకోవడం నేర్చుకోవడం\nC) కౌమారదశలో ఉన్నవారు ఇతరుల భావాలను గౌరవించడం నేర్చుకోవడం\nసరైన సమాధానాన్ని ఎంచుకోండి.", "options": ["A, B & C", "A & B మాత్రమే", "B & C మాత్రమే", "A & C మాత్రమే"], "answer": 1}, {"question": "ప్రశ్న 12. క్రింది వాటిలో అభ్యసన ప్రక్రియకు సంబంధించిన కారకంగా పరిగణించలేనిది ఏది?", "options": ["తగిన పద్ధతుల ఎంపిక", "గరిష్ఠ ఇంద్రియాలను ఉపయోగించడం", "అభ్యాస పనిని అందించడం", "ఉపాధ్యాయుని అర్హత"], "answer": 4}, {"question": "ప్రశ్న 13. థార్న్‌డైక్ అభ్యసన సిద్ధాంతం ప్రకారం, అభ్యసనానికి సరైన సమయాలు అని చెప్పినప్పుడు, అభ్యసనానికి సిద్ధత అనేది అభ్యసనకర్త యొక్క దేనికి సంబంధించినది?", "options": ["విశ్రాంతి సమయం", "మానసిక స్థితి", "ప్రజ్ఞ", "సామర్థ్యం"], "answer": 2}, {"question": "ప్రశ్న 14. యామిని రెండేళ్ల బాలిక. తల్లి ఏదైనా ఇవ్వడానికి నిరాకరిస్తే, యామిని వస్తువులన్నింటినీ విసిరేది. ఈ ప్రవర్తనను నివారించడానికి తల్లి యామిని అడిగినదంతా ఇచ్చేది. కొంతకాలానికి తల్లి ఈ ప్రవర్తనను మార్చాలని నిర్ణయించి, యామిని వస్తువులను విసిరినా పట్టించుకోలేదు. క్రమంగా యామిని వస్తువులను విసరడం మానేసి తల్లి మాట వినడం ప్రారంభించింది. పావ్‌లవ్ ప్రకారం ఇది ఏ సూత్రానికి ఉదాహరణ?", "options": ["సాధారణీకరణ", "ఆకస్మిక పునరుద్ధరణ", "విలుప్తి", "విచక్షణ"], "answer": 3}, {"question": "ప్రశ్న 15. జయ అనే పాఠశాల విద్యార్థిని అన్ని పరీక్షల్లో మంచి మార్కులు సాధించడానికి శ్రద్ధగా చదువుతుంది. ప్రతి టర్మ్ పరీక్ష తర్వాత ఆమె తల్లి బహుమతి ఇస్తుంది. ఇక్కడ అనుసరించిన ఉపబల షెడ్యూల్ ఏది?", "options": ["నిరంతర ఉపబల షెడ్యూల్", "స్థిర నిష్పత్తి ఉపబల షెడ్యూల్", "స్థిర విరామ ఉపబల షెడ్యూల్", "చర నిష్పత్తి ఉపబల షెడ్యూల్"], "answer": 3}, {"question": "ప్రశ్న 16. స్మృతి రోడ్డుపై నడుస్తూ ఒక కుక్కను చూసింది. కుక్క తనను తాను విడిపించుకుని పారిపోయింది. స్మృతి కుక్కను వెంబడించి పట్టుకుంది. అయితే చుట్టూ చూసినప్పుడు తాను కొత్త ప్రదేశంలో ఉన్నట్లు గుర్తించింది. తన ఇంటికి తిరిగి వెళ్లడానికి, సమీపంలోని మార్కెట్‌కు దారి చూపించే బోర్డును చూసి ఇంటికి తిరిగి వెళ్లడం ప్రారంభించింది. ఇది ఏ అభ్యసనానికి ఉదాహరణ?", "options": ["నిబంధన", "ప్రయత్న దోష పద్ధతి", "అంతర్దృష్టి", "మోడలింగ్"], "answer": 3}, {"question": "ప్రశ్న 17. ఒక తండ్రి తన కుమార్తెకు అనాథ పిల్లల పట్ల సానుభూతి కలిగించడానికి ఆమెను అనాథాశ్రమానికి తీసుకెళ్లాడు. తండ్రి లక్ష్యంగా పెట్టుకున్న అభ్యసన రంగం ఏది?", "options": ["చలనాత్మక", "భావావేశ", "జ్ఞానాత్మక", "మానసిక చలనాత్మక"], "answer": 2}, {"question": "ప్రశ్న 18. కేతకి సివిల్ సర్వెంట్ కావాలని పరీక్ష రాసింది. ఆమె కేంద్ర సర్వీసుల్లో దిగువ కేడర్ ఉద్యోగానికి ఎంపికైంది; సివిల్ సర్వీసులకు ఎంపిక కాలేదు. స్వయం పోషణ కోసం ఆమె కేంద్ర సర్వీసుల్లో చేరి, సివిల్ సర్వీసుల కోసం తన ప్రయత్నాన్ని కొనసాగించింది. ఇది దేనిని సూచిస్తుంది?", "options": ["ప్రేరేపిత ప్రవర్తన తప్పు", "ప్రేరేపిత ప్రవర్తన లక్ష్యానికి కట్టుబడి ఉండదు", "ప్రేరేపిత ప్రవర్తన ఎప్పుడూ కొనసాగదు", "ప్రేరేపిత ప్రవర్తన అవసరాలు మరియు వాటి సంతృప్తి మధ్య సమతుల్యతను కోరుకుంటుంది"], "answer": 4}, {"question": "ప్రశ్న 19. రామ ఒక షాపింగ్ మాల్‌కు వెళ్లినప్పుడు కొందరు సంఘవిద్రోహ శక్తులు వచ్చి దుకాణాలను ధ్వంసం చేసి పారిపోయారు. పోలీసులు కేసు నమోదు చేశారు. పోలీసుల అభ్యర్థన మేరకు రామ ప్రత్యక్ష సాక్షిగా కొన్ని నెలల తర్వాత మేజిస్ట్రేట్ ముందు జరిగిన సంఘటనను వివరించాడు. ఈ సందర్భంలో రామ జ్ఞాపకశక్తి ఏది?", "options": ["ఎపిసోడిక్ స్మృతి", "సెమాంటిక్ స్మృతి", "స్వల్పకాలిక స్మృతి", "తక్షణ స్మృతి"], "answer": 1}, {"question": "ప్రశ్న 20. ఉష ఒక పాటలోని ఒక చరణాన్ని 15 నిమిషాల చొప్పున పది సార్లు అభ్యసించి కంఠస్థం చేసింది. అదే పాటలోని రెండవ చరణాన్ని కంఠస్థం చేయడానికి అదే వ్యవధితో మరో పది సార్లు అభ్యసించింది. ఇక్కడ జరిగిన అభ్యసన బదిలీ ఏది?", "options": ["సకారాత్మక బదిలీ", "అనుకూల బదిలీ", "ప్రతికూల బదిలీ", "శూన్య బదిలీ"], "answer": 4}, {"question": "ప్రశ్న 21. ‘పరోక్ష బోధనా పద్ధతులు’కు సంబంధించిన సరికాని వాక్యాన్ని గుర్తించండి.", "options": ["పాత్రధారణ పరోక్ష బోధనా పద్ధతికి ఉదాహరణ", "పరోక్ష బోధనా పద్ధతుల్లో విద్యార్థులు అభ్యసనంలో చురుకుగా పాల్గొంటారు", "పరోక్ష బోధనా పద్ధతులు ఎక్కువ కాలం గుర్తుంచుకోవడానికి సహాయపడతాయి", "పరోక్ష బోధనా పద్ధతుల్లో ఉపాధ్యాయుడు కేంద్రంగా ఉంటాడు"], "answer": 4}, {"question": "ప్రశ్న 22. బోధనలో పూర్వ క్రియాశీల దశలో జరిగేవి ఏవి?\nA) బోధన మరియు అభ్యసన లక్ష్యాలను నిర్ణయించడం\nB) విషయవస్తువును క్రమానుగతంగా అమర్చడం\nసరైన సమాధానాన్ని ఎంచుకోండి.", "options": ["A & B రెండూ", "A మాత్రమే", "B మాత్రమే", "A లేదా B రెండూ కావు"], "answer": 1}, {"question": "ప్రశ్న 23. సమస్యా పరిష్కార పద్ధతి యొక్క ప్రతికూలతను గుర్తించండి.", "options": ["తక్కువ సమయం తీసుకుంటుంది", "సమస్యను పరిష్కరించడానికి అవసరమైన సామగ్రి మరియు వనరులను అందించడం", "ఉపయోగించడానికి సులభం", "అన్ని పాఠాలకు ఉపయోగించవచ్చు"], "answer": 2}, {"question": "ప్రశ్న 24. సమీకృత తరగతి గదిలో ఉపాధ్యాయుడు చేయకూడనిది ఏది?", "options": ["వైకల్యం లేని పిల్లలకు వైకల్యం ఉన్న పిల్లల గురించి అవగాహన కల్పించడం", "వైకల్యం, సమీకరణ మరియు విద్యలో ప్రస్తుత ధోరణులపై జ్ఞానాన్ని నవీకరించుకోవడం", "సహవిద్యార్థుల బోధనను నిరుత్సాహపరచడం", "వైకల్యం ఉన్న పిల్లల అభ్యసనాన్ని మెరుగుపరచడానికి తరగతి భౌతిక వాతావరణాన్ని నిర్మించడం"], "answer": 3}, {"question": "ప్రశ్న 25. ఉచిత మరియు నిర్బంధ విద్యా హక్కు చట్టం, 2009 లోని సెక్షన్ 12(1)(c) నిబంధన ప్రకారం, నవోదయ విద్యాలయాలు ఒక తరగతిలోని మొత్తం బలంలో ఎంత శాతం వరకు బలహీన వర్గాలు మరియు వెనుకబడిన వర్గాలకు చెందిన పిల్లలను చేర్చుకోవాలి?", "options": ["33%", "50%", "10%", "25%"], "answer": 4}, {"question": "ప్రశ్న 26. తెలంగాణ ఉపాధ్యాయ అర్హత పరీక్ష (TGTET) అనేది ఏ రకమైన పరీక్ష?\nA) ప్రమాణ-ఆధారిత పరీక్ష\nB) ప్రమాణ సూచిక-ఆధారిత పరీక్ష\nసరైన సమాధానాన్ని ఎంచుకోండి.", "options": ["B మాత్రమే", "A మాత్రమే", "A & B రెండూ", "A లేదా B రెండూ కావు"], "answer": 1}, {"question": "ప్రశ్న 27. పిల్లలపై ఉద్దేశపూర్వకంగా, ప్రమాదవశాత్తు కాని గాయం లేదా దుర్వ్యవహారం కలిగించడాన్ని ఎవరు చేయవచ్చు?\nA) తల్లిదండ్రులు\nB) సంరక్షకులు\nC) యజమానులు\nD) ఇతరులు\nసరైన సమాధానాన్ని ఎంచుకోండి.", "options": ["B, C & D మాత్రమే", "A, B, C & D", "A, B & C మాత్రమే", "B & C మాత్రమే"], "answer": 2}, {"question": "ప్రశ్న 28. సమర్థవంతమైన అభ్యసనంలో అభ్యసనకర్తకు సహాయపడనిది ఏది?", "options": ["అభిప్రాయంపై అభ్యసనకర్త చర్య", "అభ్యసన లక్ష్యాలపై అభ్యసనకర్తకు అవగాహన", "అభ్యసనకర్తల నిష్క్రియాత్మక పాత్ర", "అభ్యసనకర్త గత అనుభవం"], "answer": 3}, {"question": "ప్రశ్న 29. జోక్యం చేసుకోని నాయకత్వ శైలిని ఏమని కూడా అంటారు?", "options": ["లెసె ఫెయిర్", "నిరంకుశ", "ప్రజాస్వామ్య", "అధికారయుత"], "answer": 1}, {"question": "ప్రశ్న 30. మూడు సంవత్సరాల బాలిక తాను చూసిన పక్షి చిత్రాన్ని గీయగలిగింది. బ్రూనర్ ప్రకారం, ఆమె ఏ విధమైన ప్రాతినిధ్య దశలో ఉంది?", "options": ["చిత్రాత్మక", "క్రియాత్మక", "ప్రతీకాత్మక", "కార్యాచరణాత్మక"], "answer": 1}];
+let answers=Array(questions.length).fill(null),current=0,finished=false,seconds=1800;
 const $=id=>document.getElementById(id);
 function render(){
- const item=questions[current];
- $('qnum').textContent='ప్రశ్న '+(current+1);
- $('question').textContent=item.q;
- $('options').innerHTML='';
- item.opts.forEach((op,i)=>{
-   const label=document.createElement('label'); label.className='option';
-   const radio=document.createElement('input'); radio.type='radio';radio.name='answer';radio.value=i+1;
-   radio.checked=answers[current]===i+1; radio.disabled=checked[current];
-   radio.addEventListener('change',()=>{answers[current]=i+1;});
-   const span=document.createElement('span');span.textContent=(i+1)+') '+op;
-   label.append(radio,span);
-   if(checked[current] && i+1===item.a) label.classList.add('correct');
-   if(checked[current] && answers[current]===i+1 && answers[current]!==item.a) label.classList.add('wrong');
-   $('options').appendChild(label);
+ const q=questions[current];$('qnum').textContent='ప్రశ్న '+(current+1);$('question').textContent=q.question;$('options').innerHTML='';
+ q.options.forEach((op,i)=>{
+  const label=document.createElement('label');label.className='option'+(answers[current]===i+1?' selected':'');
+  const input=document.createElement('input');input.type='radio';input.name='answer';input.checked=answers[current]===i+1;
+  const span=document.createElement('span');span.textContent=(i+1)+') '+op;
+  input.addEventListener('change',()=>{answers[current]=i+1;render();});
+  label.append(input,span);$('options').append(label);
  });
- $('feedback').className='feedback';$('feedback').textContent='';
- if(checked[current]){
-   const ok=answers[current]===item.a;
-   $('feedback').classList.add(ok?'good':'bad');
-   $('feedback').textContent=ok?'✓ సరైన సమాధానం!':'✗ తప్పు సమాధానం. సరైన సమాధానం: '+item.a+') '+item.opts[item.a-1];
- }
- $('checkBtn').style.display=checked[current]?'none':'inline-block';
- $('nextBtn').disabled=!checked[current] || current===questions.length-1;
- $('prevBtn').disabled=current===0;
- $('progressText').textContent='ప్రశ్న '+(current+1)+' / '+questions.length;
- $('scoreText').textContent='సరైన సమాధానాలు: '+answers.filter((a,i)=>checked[i]&&a===questions[i].a).length;
- $('bar').style.width=((current+1)/questions.length*100)+'%';
- $('restartBtn').style.display=(checked.every(Boolean))?'inline-block':'none';
- renderNav();
- if(checked.every(Boolean)) showResult();
+ $('prev').disabled=current===0;$('next').disabled=current===questions.length-1;renderMeta();
 }
-function checkAnswer(){
- if(!answers[current]){alert('దయచేసి ఒక సమాధానాన్ని ఎంచుకోండి.');return;}
- checked[current]=true;render();
+function renderMeta(){const count=answers.filter(x=>x!==null).length;$('progressText').textContent=`ప్రశ్న ${current+1} / ${questions.length} • సమాధానాలు ${count}`;$('bar').style.width=(count/questions.length*100)+'%';}
+$('prev').onclick=()=>{if(current>0){current--;render();}};
+$('next').onclick=()=>{if(current<questions.length-1){current++;render();}};
+$('submit').onclick=()=>{const n=answers.filter(x=>x===null).length;if(n&&!confirm(`${n} ప్రశ్నలకు సమాధానం ఇవ్వలేదు. అయినా పరీక్షను Submit చేయాలా?`))return;finish();};
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function finish(){
+ if(finished)return;finished=true;clearInterval(clock);let score=0;questions.forEach((q,i)=>{if(answers[i]===q.answer)score++;});
+ $('quizCard').style.display='none';const result=$('result');result.style.display='block';
+ let out=`<h2>మీ పరీక్ష ఫలితం</h2><div class="score">${score} / ${questions.length}</div><p>సరైన సమాధానాలు: ${score} &nbsp; | &nbsp; తప్పు / సమాధానం ఇవ్వనివి: ${questions.length-score}</p><hr><h3>సమాధానాల సమీక్ష</h3>`;
+ questions.forEach((q,i)=>{const ok=answers[i]===q.answer;out+=`<div class="review"><b>ప్రశ్న ${i+1}.</b> ${esc(q.question)}<br><span class="${ok?'correct':'wrong'}">${ok?'సరైన సమాధానం':'మీ సమాధానం తప్పు / ఇవ్వలేదు'}</span><br>మీ సమాధానం: ${answers[i]===null?'ఇవ్వలేదు':answers[i]}<br><b>సరైన సమాధానం: ${q.answer}) ${esc(q.options[q.answer-1])}</b></div>`;});
+ out+='<p><button class="primary" onclick="location.reload()">మళ్లీ పరీక్ష రాయండి</button></p>';result.innerHTML=out;window.scrollTo(0,0);
 }
-function move(d){current=Math.max(0,Math.min(questions.length-1,current+d));render();}
-function go(n){current=n;render();}
-function renderNav(){
- $('navgrid').innerHTML='';
- questions.forEach((q,i)=>{
-  const b=document.createElement('button');b.textContent=i+1;
-  if(checked[i])b.classList.add('done');if(i===current)b.classList.add('current');
-  b.onclick=()=>go(i);$('navgrid').appendChild(b);
- });
-}
-function showResult(){
- const score=answers.filter((a,i)=>a===questions[i].a).length;
- $('result').style.display='block';
- $('result').innerHTML='<h2>మీ పరీక్ష ఫలితం</h2><div style="font-size:30px;font-weight:800">'+score+' / '+questions.length+'</div><p>శాతం: '+Math.round(score/questions.length*100)+'%</p>';
-}
-function restart(){current=0;answers=Array(questions.length).fill(null);checked=Array(questions.length).fill(false);$('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
-render();
-</script>
-</body>
-</html>
+function tick(){if(finished)return;seconds--;const m=String(Math.floor(seconds/60)).padStart(2,'0'),s=String(seconds%60).padStart(2,'0');$('timer').textContent=m+':'+s;if(seconds<=0){alert('సమయం ముగిసింది. మీ పరీక్షను Submit చేస్తున్నాము.');finish();}}
+const clock=setInterval(tick,1000);render();
+</script></body></html>
