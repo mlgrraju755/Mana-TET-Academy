@@ -3,103 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANA TET 2026 | English Questions 61–90</title>
+<title>MANA TET – English Questions 61–90</title>
 <style>
-:root{--navy:#173b67;--blue:#2463a6;--pale:#eef5fc;--green:#16834a;--red:#c0392b;--ink:#202b38}
-*{box-sizing:border-box}body{margin:0;background:#f2f5f9;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
-header{background:linear-gradient(120deg,#12345a,#2874b9);color:white;text-align:center;padding:22px 14px}
-header h1{margin:0;font-size:clamp(22px,4vw,30px);letter-spacing:.5px}header p{margin:5px 0 0;font-size:15px}
-.wrap{max-width:980px;margin:20px auto;padding:0 13px}
-.panel{background:#fff;border-radius:12px;padding:18px;margin-bottom:16px;box-shadow:0 2px 12px #102b4610}
-.passage h2,.panel h2{color:var(--navy);margin:0 0 9px;font-size:20px}
-.passage-text{white-space:pre-line;font-size:16px;text-align:justify}
-.instructions{color:#536273;font-size:14px;margin:0}
-.status{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;color:var(--navy);margin-bottom:10px}
-.progress{height:9px;background:#e4eaf1;border-radius:10px;overflow:hidden;margin:8px 0 15px}.bar{height:100%;width:0;background:#2b83c6;transition:width .2s}
-.qtop{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
-.qnum{font-weight:700;color:var(--blue);font-size:18px}
-.qtext{font-size:18px;font-weight:600;white-space:pre-line;margin:0 0 16px}
-.option{display:flex;gap:11px;align-items:flex-start;padding:12px;border:1px solid #d8e0e9;border-radius:9px;margin:9px 0;cursor:pointer;background:#fff}
-.option:hover{background:#f5f9fe;border-color:#8db5df}.option input{margin-top:5px;accent-color:var(--blue);transform:scale(1.15)}
-.option.selected{border-color:var(--blue);background:#eef6ff}.option.correct{border-color:var(--green);background:#eaf7ef}.option.wrong{border-color:var(--red);background:#fff0ef}
-.feedback{min-height:25px;font-weight:700;margin-top:10px}.feedback.good{color:var(--green)}.feedback.bad{color:var(--red)}
-.controls{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:17px}
-button{border:0;border-radius:8px;padding:11px 17px;font-weight:700;font-size:15px;cursor:pointer}
-button:disabled{opacity:.45;cursor:not-allowed}.secondary{background:#e6edf5;color:#173b67}.primary{background:#2463a6;color:#fff}.submit{background:#16834a;color:#fff}
-.navgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:7px;margin-top:12px}
-.navgrid button{padding:8px 3px;background:#e8edf3;color:#24364a}.navgrid button.done{background:#d8efe1;color:#116638}.navgrid button.active{outline:2px solid #2463a6;background:#dcecff}
-.result{display:none;text-align:center}.result h2{font-size:25px}.score{font-size:32px;color:var(--green);font-weight:800}
-.review-item{border-top:1px solid #e5eaf0;padding:13px 0;text-align:left}.review-item p{margin:4px 0}.correct-answer{color:var(--green);font-weight:700}.your-wrong{color:var(--red);font-weight:700}
-footer{text-align:center;color:#667587;font-size:13px;padding:15px}
-@media(max-width:600px){.panel{padding:14px}.qtext{font-size:16px}button{padding:10px 13px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f1f5f9;color:#172033;line-height:1.7}
+header{background:#123b70;color:#fff;text-align:center;padding:22px 12px}
+header h1{margin:0 0 6px;font-size:25px}
+main{max-width:850px;margin:20px auto;padding:0 14px}
+.card{background:#fff;border-radius:14px;padding:18px;margin:15px 0;box-shadow:0 2px 9px #00000012}
+.toprow{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.question{white-space:pre-line;margin-top:0;font-size:18px}
+.option{display:block;padding:11px 13px;margin:9px 0;border:1px solid #cbd5e1;border-radius:9px;cursor:pointer}
+.option input{margin-right:9px}
+.option:has(input:checked){border-color:#123b70;background:#eff6ff}
+.feedback{display:none;margin-top:12px;padding:12px;border-radius:9px}
+.correct{background:#dcfce7;color:#166534}
+.wrong{background:#fee2e2;color:#991b1b}
+button{border:0;border-radius:9px;padding:12px 20px;background:#123b70;color:#fff;font-size:16px;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}
+#result{font-size:22px;font-weight:bold;text-align:center;margin-top:12px}
+.small{color:#475569;font-size:14px}
+.passage h2{margin-top:0;color:#123b70}
+.passage-text{white-space:pre-line;text-align:justify}
+footer{text-align:center;color:#64748b;padding:18px}
 </style>
 </head>
 <body>
-<header><h1>MANA TET – MANA TEST</h1><p>TG TET Paper-I | ENGLISH | Questions 61–90</p><p>20 June 2025 · Shift 1</p></header>
-<main class="wrap">
-<section class="panel passage"><h2>Passage for Questions 61–65</h2><p class="instructions">Read the following passage and choose the correct option for each question.</p><div class="passage-text">The effects of climate change on water resources can have profound consequences for both our environment and our daily lives. As global temperatures rise, the patterns of precipitation—such as when, where, and how much rain falls—are becoming increasingly unpredictable. Some regions are experiencing more intense and frequent rainfall, while others are facing prolonged droughts. These shifts in precipitation patterns pose significant challenges to water management and accessibility worldwide.
-
-Flooding is emerging as a growing concern due to the changing climate. Compared to the early 20th century, precipitation events have become more intense, heavier, and more frequent in many parts of the world. As a result, the risk of flooding has increased, especially in areas already vulnerable to such events. This trend is expected to worsen as climate change continues, highlighting the need for better flood prevention strategies and infrastructure.
-
-At the same time, droughts are becoming more prevalent, particularly as water usage escalates during hotter weather, with agriculture being a major contributor. Just as we sweat more in extreme heat, higher temperatures cause plants to lose, or transpire, more water, prompting farmers to use even more water to irrigate their crops. Snowpack, which is essential for providing fresh water to many regions, is also being affected. As snow levels decrease and snowmelt occurs earlier, it is becoming an increasingly unreliable source of water, especially in areas where rainfall is limited during warmer months.</div></section>
-<section class="panel" id="quizPanel">
-<div class="status"><span id="progressText">Question 61 of 90</span><span id="answeredText">Answered: 0 / 30</span></div>
-<div class="progress"><div class="bar" id="bar"></div></div>
-<div class="qtop"><span class="qnum" id="qnum"></span><span class="instructions">English Medium</span></div>
-<p class="qtext" id="qtext"></p>
-<div id="options"></div><div class="feedback" id="feedback" aria-live="polite"></div>
-<div class="controls"><button type="button" class="secondary" id="prev">← Previous</button><button type="button" class="primary" id="next">Next →</button></div>
-</section>
-<section class="panel"><h2>Question Navigation</h2><p class="instructions">Tap any question number to move directly to that question.</p><div class="navgrid" id="navgrid"></div></section>
-<section class="panel controls"><button type="button" class="submit" id="submit">Submit Test</button><button type="button" class="secondary" id="reset">Reset Test</button></section>
-<section class="panel result" id="result"><h2>Test Result</h2><div class="score" id="score"></div><p id="percent"></p><p id="summary"></p><h2>Answer Review</h2><div id="review"></div><button class="primary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to Top</button></section>
-</main><footer>MANA-TET-2026 · Practice with confidence</footer>
+<header>
+<h1>MANA TET – MANA TEST</h1>
+<div><b>TG TET Paper-I – ENGLISH</b></div>
+<div style="font-size:20px;font-weight:bold;color:#facc15;margin:10px 0">PREVIOUS QUESTION PAPER</div>
+<div style="font-size:18px;font-weight:bold">20 JUNE 2025 – SHIFT 1</div>
+<div>Questions 61–90 | 30 Questions | 30 Marks</div>
+</header>
+<main>
+<div class="card passage">
+<h2>Passage for Questions 61–65</h2>
+<p class="small">Read the following passage and choose the correct option for each question.</p>
+<div class="passage-text" id="passage"></div>
+</div>
+<div class="card toprow">
+<span>Total Questions: <b>30</b></span>
+<span>Each question carries 1 mark</span>
+<span id="progress">Answered: 0/30</span>
+</div>
+<div id="quiz"></div>
+<div class="card" id="finish">
+<button id="submit" onclick="finishQuiz()">Submit Test</button>
+<div id="result"></div>
+<p class="small" id="summary"></p>
+<button onclick="location.reload()">Restart Test</button>
+</div>
+</main>
+<footer>© 2026 MANA TET – MANA TEST | Learn • Practice • Succeed</footer>
 <script>
-const questions=[{"n": 61, "q": "As per the passage, the growing concern is", "o": ["population growth.", "conflicts between nations.", "degradation of soil quality.", "occurrence of floods."], "a": 4}, {"n": 62, "q": "“…water usage escalates during hotter weather”. Here the word “escalates” means", "o": ["diminishes.", "accelerates.", "recedes.", "decreases."], "a": 2}, {"n": 63, "q": "The patterns of precipitation, such as timing, location, and rainfall volume, are becoming increasingly unpredictable due to", "o": ["rise in global temperatures.", "decrease in temperatures.", "increase in snow levels.", "restoration of water bodies."], "a": 1}, {"n": 64, "q": "Farmers are prompted to apply more water for irrigating their crops due to", "o": ["reduced temperatures.", "moderate temperatures.", "lower temperatures.", "higher temperatures."], "a": 4}, {"n": 65, "q": "Which water source has become less reliable, particularly in regions that experience limited rainfall during the warmer months?", "o": ["Floods", "River water", "Snowpack", "Oceans tides"], "a": 3}, {"n": 66, "q": "The head of the armed forces declared ______ law. Choose the correct option to complete the sentence.", "o": ["marshal", "marital", "martial", "mortal"], "a": 3}, {"n": 67, "q": "The traders suddenly ______ the prices of edible oil last month. Choose the most appropriate word to complete the sentence.", "o": ["rose", "raised", "rised", "rise"], "a": 2}, {"n": 68, "q": "Read the following two sentences.\nSentence A: He is wearing a black and white shirt.\nSentence B: He has being worn a black and a white shirt.\nChoose the correct option.", "o": ["Sentence A and B are correct.", "Sentence A and B are incorrect.", "Only sentence A is correct.", "Only sentence B is correct."], "a": 3}, {"n": 69, "q": "Identify the part with an error in the given sentence.\nThe farmer grazes (A) cattle on this meadow (B) during the (C) summer months (D).", "o": ["A", "B", "C", "D"], "a": 2}, {"n": 70, "q": "Vikas was a humble, courteous and gentle man. Choose the opposite word of “humble”.", "o": ["modest", "timid", "arrogant", "quiet"], "a": 3}, {"n": 71, "q": "The visiting diplomat ______ the Chief Minister. Fill in the blank with the most appropriate word.", "o": ["called in", "called off", "called on", "called at"], "a": 3}, {"n": 72, "q": "Identify the idiom that means “to speak first after prolonged silence”.", "o": ["Break the news", "Beat the air", "Break the ice", "Bell the cat"], "a": 3}, {"n": 73, "q": "The bus ______ before I reached the bus stop. Choose the correct option to complete the sentence.", "o": ["leaves", "had left", "has left", "will have left"], "a": 2}, {"n": 74, "q": "The article ______ several experts on the subject. Pick the correct option to fill in the blank.", "o": ["cites", "sights", "sites", "saints"], "a": 1}, {"n": 75, "q": "The Government run by officials is called", "o": ["democracy.", "autocracy.", "bureaucracy.", "aristocracy."], "a": 3}, {"n": 76, "q": "Identify the meaning of the word “deliberate”.", "o": ["sudden", "random", "indifferent", "intentional"], "a": 4}, {"n": 77, "q": "Choose correctly spelt word.", "o": ["contaminate", "inadequate", "accelarate", "stimulete"], "a": 1}, {"n": 78, "q": "Arrange the following in the correct order to form a meaningful sentence.\nP: A natural community\nQ: the population of\nR: other animals.\nS: relies on the presence of\nT: carnivores to regulate", "o": ["P, T, S, Q, R", "P, S, T, Q, R", "P, T, S, R, Q", "P, Q, T, S, R"], "a": 2}, {"n": 79, "q": "The shop keeper asked me, “Where is your grocery list?” Choose the correct indirect speech.", "o": ["The shop keeper asked me where my grocery list was.", "The shop keeper asks me where my grocery list was.", "The shop keeper asked me where is your grocery list.", "The shop keeper asked me where was my grocery list."], "a": 1}, {"n": 80, "q": "Pick correctly punctuated sentence.", "o": ["The teacher asked him why were you absent yesterday?", "The Teacher asked him “why were you absent yesterday.”", "The teacher asked him, “Why were you absent yesterday?”", "The teacher asked him, Why were you absent yesterday?"], "a": 3}, {"n": 81, "q": "It’s very hot, ______? Complete the sentence with correct option.", "o": ["does it", "is it", "isn’t it", "doesn’t it"], "a": 3}, {"n": 82, "q": "When did she return my laptop? Choose correct passive voice.", "o": ["When is my laptop returned by her?", "When was my laptop returned by her?", "When was my laptop be returned by her?", "When was she return my laptop."], "a": 2}, {"n": 83, "q": "Why are you ______ a bag today? Complete the sentence with correct option.", "o": ["carrying", "carry", "carries", "carried"], "a": 1}, {"n": 84, "q": "Choose the grammatically correct sentence.", "o": ["He is a wisest boy in the class.", "He is the most wisest boy in the class.", "He is wisest than his classmates.", "He is the wisest boy in the class."], "a": 4}, {"n": 85, "q": "In language teaching, storytelling serves the purpose of ______.", "o": ["memorizing spelling", "learning punctuation", "enhancing grammar accuracy", "improving speaking and comprehension"], "a": 4}, {"n": 86, "q": "This writing covers the function of showing cause and effect by explaining how the events are linked.", "o": ["Persuasive writing", "Expository writing", "Narrative writing", "Descriptive writing"], "a": 2}, {"n": 87, "q": "This is NOT desirable in an English classroom.", "o": ["Incorporating various teaching methods", "Encouraging open discussions and debates", "Allowing learners to express their ideas", "Overlooking learners’ mistakes"], "a": 4}, {"n": 88, "q": "Who wanted to make the people “Indian in blood and color but English in taste and opinion.”?", "o": ["Rippon", "Raja Ram Mohan Roy", "Macaulay", "Charles Wood"], "a": 3}, {"n": 89, "q": "Effective oral communication requires the ability to use the language appropriately in", "o": ["adapting to the audience and context.", "memorizing vocabulary.", "using complex and lengthy sentences.", "reproducing the written script."], "a": 1}, {"n": 90, "q": "“My English World” is the title of the", "o": ["English textbook for Telangana State Board’s Secondary classes.", "English textbook for Telangana State Board’s Pre-Primary classes.", "English textbook for Telangana State Board’s Primary classes.", "English workbook for Telangana State Board’s Primary classes."], "a": 3}];
-let current=0, answers=Array(questions.length).fill(null), submitted=false;
-const $=id=>document.getElementById(id);
-function render(){
- const q=questions[current];$('qnum').textContent='Question '+q.n;$('qtext').textContent=q.q;
- $('progressText').textContent=`Question ${q.n} (of 61–90)`;
- $('answeredText').textContent=`Answered: ${answers.filter(x=>x!==null).length} / 30`;
- $('bar').style.width=((current+1)/questions.length*100)+'%';
- $('options').innerHTML='';
- q.o.forEach((op,i)=>{
-  const label=document.createElement('label');label.className='option'+(answers[current]===i?' selected':'');
-  if(submitted){if(i===q.a-1)label.classList.add('correct');else if(answers[current]===i)label.classList.add('wrong')}
-  const radio=document.createElement('input');radio.type='radio';radio.name='answer';radio.checked=answers[current]===i;radio.disabled=submitted;
-  radio.addEventListener('change',()=>{answers[current]=i;render();});
-  const span=document.createElement('span');span.textContent=String.fromCharCode(65+i)+'. '+op;
-  label.append(radio,span);$('options').append(label);
+const passageText = "The effects of climate change on water resources can have profound consequences for both our environment and our daily lives. As global temperatures rise, the patterns of precipitation—such as when, where, and how much rain falls—are becoming increasingly unpredictable. Some regions are experiencing more intense and frequent rainfall, while others are facing prolonged droughts. These shifts in precipitation patterns pose significant challenges to water management and accessibility worldwide.\n\nFlooding is emerging as a growing concern due to the changing climate. Compared to the early 20th century, precipitation events have become more intense, heavier, and more frequent in many parts of the world. As a result, the risk of flooding has increased, especially in areas already vulnerable to such events. This trend is expected to worsen as climate change continues, highlighting the need for better flood prevention strategies and infrastructure.\n\nAt the same time, droughts are becoming more prevalent, particularly as water usage escalates during hotter weather, with agriculture being a major contributor. Just as we sweat more in extreme heat, higher temperatures cause plants to lose, or transpire, more water, prompting farmers to use even more water to irrigate their crops. Snowpack, which is essential for providing fresh water to many regions, is also being affected. As snow levels decrease and snowmelt occurs earlier, it is becoming an increasingly unreliable source of water, especially in areas where rainfall is limited during warmer months.";
+document.getElementById('passage').textContent = passageText;
+
+const questions = [{"q": "As per the passage, the growing concern is", "opts": ["population growth.", "conflicts between nations.", "degradation of soil quality.", "occurrence of floods."], "correct": 3}, {"q": "“…water usage escalates during hotter weather”. Here the word “escalates” means", "opts": ["diminishes.", "accelerates.", "recedes.", "decreases."], "correct": 1}, {"q": "The patterns of precipitation, such as timing, location, and rainfall volume, are becoming increasingly unpredictable due to", "opts": ["rise in global temperatures.", "decrease in temperatures.", "increase in snow levels.", "restoration of water bodies."], "correct": 0}, {"q": "Farmers are prompted to apply more water for irrigating their crops due to", "opts": ["reduced temperatures.", "moderate temperatures.", "lower temperatures.", "higher temperatures."], "correct": 3}, {"q": "Which water source has become less reliable, particularly in regions that experience limited rainfall during the warmer months?", "opts": ["Floods", "River water", "Snowpack", "Oceans tides"], "correct": 2}, {"q": "The head of the armed forces declared ______ law. Choose the correct option to complete the sentence.", "opts": ["marshal", "marital", "martial", "mortal"], "correct": 2}, {"q": "The traders suddenly ______ the prices of edible oil last month. Choose the most appropriate word to complete the sentence.", "opts": ["rose", "raised", "rised", "rise"], "correct": 1}, {"q": "Read the following two sentences.\nSentence A: He is wearing a black and white shirt.\nSentence B: He has being worn a black and a white shirt.\nChoose the correct option.", "opts": ["Sentence A and B are correct.", "Sentence A and B are incorrect.", "Only sentence A is correct.", "Only sentence B is correct."], "correct": 2}, {"q": "Identify the part with an error in the given sentence.\nThe farmer grazes (A) cattle on this meadow (B) during the (C) summer months (D).", "opts": ["A", "B", "C", "D"], "correct": 1}, {"q": "Vikas was a humble, courteous and gentle man. Choose the opposite word of “humble”.", "opts": ["modest", "timid", "arrogant", "quiet"], "correct": 2}, {"q": "The visiting diplomat ______ the Chief Minister. Fill in the blank with the most appropriate word.", "opts": ["called in", "called off", "called on", "called at"], "correct": 2}, {"q": "Identify the idiom that means “to speak first after prolonged silence”.", "opts": ["Break the news", "Beat the air", "Break the ice", "Bell the cat"], "correct": 2}, {"q": "The bus ______ before I reached the bus stop. Choose the correct option to complete the sentence.", "opts": ["leaves", "had left", "has left", "will have left"], "correct": 1}, {"q": "The article ______ several experts on the subject. Pick the correct option to fill in the blank.", "opts": ["cites", "sights", "sites", "saints"], "correct": 0}, {"q": "The Government run by officials is called", "opts": ["democracy.", "autocracy.", "bureaucracy.", "aristocracy."], "correct": 2}, {"q": "Identify the meaning of the word “deliberate”.", "opts": ["sudden", "random", "indifferent", "intentional"], "correct": 3}, {"q": "Choose correctly spelt word.", "opts": ["contaminate", "inadequate", "accelarate", "stimulete"], "correct": 0}, {"q": "Arrange the following in the correct order to form a meaningful sentence.\nP: A natural community\nQ: the population of\nR: other animals.\nS: relies on the presence of\nT: carnivores to regulate", "opts": ["P, T, S, Q, R", "P, S, T, Q, R", "P, T, S, R, Q", "P, Q, T, S, R"], "correct": 1}, {"q": "The shop keeper asked me, “Where is your grocery list?” Choose the correct indirect speech.", "opts": ["The shop keeper asked me where my grocery list was.", "The shop keeper asks me where my grocery list was.", "The shop keeper asked me where is your grocery list.", "The shop keeper asked me where was my grocery list."], "correct": 0}, {"q": "Pick correctly punctuated sentence.", "opts": ["The teacher asked him why were you absent yesterday?", "The Teacher asked him “why were you absent yesterday.”", "The teacher asked him, “Why were you absent yesterday?”", "The teacher asked him, Why were you absent yesterday?"], "correct": 2}, {"q": "It’s very hot, ______? Complete the sentence with correct option.", "opts": ["does it", "is it", "isn’t it", "doesn’t it"], "correct": 2}, {"q": "When did she return my laptop? Choose correct passive voice.", "opts": ["When is my laptop returned by her?", "When was my laptop returned by her?", "When was my laptop be returned by her?", "When was she return my laptop."], "correct": 1}, {"q": "Why are you ______ a bag today? Complete the sentence with correct option.", "opts": ["carrying", "carry", "carries", "carried"], "correct": 0}, {"q": "Choose the grammatically correct sentence.", "opts": ["He is a wisest boy in the class.", "He is the most wisest boy in the class.", "He is wisest than his classmates.", "He is the wisest boy in the class."], "correct": 3}, {"q": "In language teaching, storytelling serves the purpose of ______.", "opts": ["memorizing spelling", "learning punctuation", "enhancing grammar accuracy", "improving speaking and comprehension"], "correct": 3}, {"q": "This writing covers the function of showing cause and effect by explaining how the events are linked.", "opts": ["Persuasive writing", "Expository writing", "Narrative writing", "Descriptive writing"], "correct": 1}, {"q": "This is NOT desirable in an English classroom.", "opts": ["Incorporating various teaching methods", "Encouraging open discussions and debates", "Allowing learners to express their ideas", "Overlooking learners’ mistakes"], "correct": 3}, {"q": "Who wanted to make the people “Indian in blood and color but English in taste and opinion.”?", "opts": ["Rippon", "Raja Ram Mohan Roy", "Macaulay", "Charles Wood"], "correct": 2}, {"q": "Effective oral communication requires the ability to use the language appropriately in", "opts": ["adapting to the audience and context.", "memorizing vocabulary.", "using complex and lengthy sentences.", "reproducing the written script."], "correct": 0}, {"q": "“My English World” is the title of the", "opts": ["English textbook for Telangana State Board’s Secondary classes.", "English textbook for Telangana State Board’s Pre-Primary classes.", "English textbook for Telangana State Board’s Primary classes.", "English workbook for Telangana State Board’s Primary classes."], "correct": 2}];
+const quiz=document.getElementById('quiz');
+
+questions.forEach((q,i)=>{
+ const card=document.createElement('section');
+ card.className='card';
+ card.id='q'+i;
+ const title=document.createElement('h3');
+ title.className='question';
+ title.textContent=(i+61)+'. '+q.q;
+ card.appendChild(title);
+ q.opts.forEach((op,j)=>{
+  const label=document.createElement('label');
+  label.className='option';
+  const input=document.createElement('input');
+  input.type='radio';
+  input.name='q'+i;
+  input.value=j;
+  input.addEventListener('change',()=>check(i,j));
+  label.appendChild(input);
+  label.appendChild(document.createTextNode(' '+String.fromCharCode(65+j)+') '+op));
+  card.appendChild(label);
  });
- $('feedback').className='feedback';$('feedback').textContent='';
- if(answers[current]!==null&&!submitted){$('feedback').textContent='Answer selected.';}
- if(submitted){const good=answers[current]===q.a-1;$('feedback').textContent=good?'Correct answer!':'Incorrect. Correct answer: '+String.fromCharCode(64+q.a)+'. '+q.o[q.a-1];$('feedback').classList.add(good?'good':'bad')}
- $('prev').disabled=current===0;$('next').disabled=current===questions.length-1;
- document.querySelectorAll('#navgrid button').forEach((b,i)=>{b.classList.toggle('active',i===current);b.classList.toggle('done',answers[i]!==null)});
+ const fb=document.createElement('div');
+ fb.className='feedback';
+ fb.id='fb'+i;
+ card.appendChild(fb);
+ quiz.appendChild(card);
+});
+
+function check(i,j){
+ const q=questions[i],fb=document.getElementById('fb'+i);
+ const inputs=document.querySelectorAll('input[name="q'+i+'"]');
+ inputs.forEach(x=>x.disabled=true);
+ const ok=j===q.correct;
+ fb.style.display='block';
+ fb.className='feedback '+(ok?'correct':'wrong');
+ fb.textContent=(ok?'Correct answer! ':'Incorrect. Correct answer: '+String.fromCharCode(65+q.correct)+') '+q.opts[q.correct]+'.');
+ document.getElementById('progress').textContent='Answered: '+document.querySelectorAll('input:checked').length+'/30';
 }
-function makeNav(){questions.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.textContent=q.n;b.onclick=()=>{current=i;render();$('quizPanel').scrollIntoView({behavior:'smooth'})};$('navgrid').append(b)})}
-function goPrevious(){ if(current>0){ current--; render(); $('quizPanel').scrollIntoView({block:'start'}); } }
-function goNext(){ if(current<questions.length-1){ current++; render(); $('quizPanel').scrollIntoView({block:'start'}); } }
-window.goPrevious=goPrevious; window.goNext=goNext;
-$('prev').addEventListener('click', goPrevious);
-$('next').addEventListener('click', goNext);
-$('submit').onclick=()=>{
- if(submitted)return;
- const unanswered=answers.filter(x=>x===null).length;
- if(unanswered>0&&!confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`))return;
- submitted=true;let correct=0;questions.forEach((q,i)=>{if(answers[i]===q.a-1)correct++});
- $('score').textContent=`${correct} / ${questions.length}`;
- $('percent').textContent=`Percentage: ${(correct/questions.length*100).toFixed(2)}%`;
- $('summary').textContent=`Correct: ${correct} · Incorrect: ${answers.filter((a,i)=>a!==null&&a!==questions[i].a-1).length} · Unanswered: ${unanswered}`;
- $('review').innerHTML='';questions.forEach((q,i)=>{const d=document.createElement('div');d.className='review-item';
- const p=document.createElement('p');p.innerHTML='<strong>Q'+q.n+'.</strong> '+escapeHtml(q.q);
- const yours=document.createElement('p');yours.textContent='Your answer: '+(answers[i]===null?'Not answered':String.fromCharCode(65+answers[i])+'. '+q.o[answers[i]]);yours.className=answers[i]===q.a-1?'correct-answer':'your-wrong';
- const right=document.createElement('p');right.textContent='Correct answer: '+String.fromCharCode(64+q.a)+'. '+q.o[q.a-1];right.className='correct-answer';d.append(p,yours,right);$('review').append(d)});
- $('result').style.display='block';$('result').scrollIntoView({behavior:'smooth'});render();
-};
-$('reset').onclick=()=>{if(!confirm('Reset all answers and start again?'))return;answers=Array(questions.length).fill(null);current=0;submitted=false;$('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'})};
-function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-makeNav();render();
+
+function finishQuiz(){
+ let answered=0,score=0;
+ questions.forEach((q,i)=>{
+  const chosen=document.querySelector('input[name="q'+i+'"]:checked');
+  if(chosen){
+   answered++;
+   if(Number(chosen.value)===q.correct)score++;
+  }
+ });
+ document.getElementById('result').textContent='Your Score: '+score+'/30';
+ document.getElementById('summary').textContent='Answered: '+answered+'/30 | Correct: '+score+' | Incorrect: '+(answered-score)+' | Unanswered: '+(30-answered);
+ document.getElementById('submit').disabled=true;
+ document.getElementById('result').scrollIntoView({behavior:'smooth',block:'center'});
+}
 </script>
-</body></html>
+</body>
+</html>
