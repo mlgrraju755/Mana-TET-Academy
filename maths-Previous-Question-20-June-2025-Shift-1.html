@@ -1,1 +1,138 @@
-
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mana TET 2026 - TG TET Paper-I Mathematics Telugu Practice Test">
+<title>Mana TET 2026 | Mathematics Questions 91–120</title>
+<style>
+:root{--primary:#174ea6;--accent:#ffb300;--bg:#f3f6fb;--ink:#172033;--muted:#64748b;--green:#16834a;--red:#c62828}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:"Noto Sans Telugu","Gautami","Nirmala UI",Arial,sans-serif;color:var(--ink);line-height:1.7}
+header{background:linear-gradient(135deg,#123b78,#2468c7);color:white;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:clamp(23px,5vw,32px)}
+header p{margin:5px 0 0;font-size:15px}
+.wrap{max-width:850px;margin:18px auto;padding:0 12px 35px}
+.topbar,.card,.result{background:#fff;border-radius:14px;box-shadow:0 3px 14px #13294b12}
+.topbar{padding:14px 16px;margin-bottom:14px}
+.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;color:#24456f}
+.progress{height:9px;background:#e5eaf2;border-radius:20px;margin-top:10px;overflow:hidden}
+#bar{height:100%;width:0;background:var(--accent);transition:width .25s}
+.card{padding:20px;margin-bottom:14px}
+.qhead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.badge{background:#e8f0fe;color:var(--primary);font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap}
+.question{font-size:18px;font-weight:700;white-space:pre-line}
+.options{display:grid;gap:10px;margin-top:18px}
+.option{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1.5px solid #d9e1ee;border-radius:10px;cursor:pointer;background:#fff;transition:.15s}
+.option:hover{border-color:#6b91d5;background:#f7faff}
+.option input{margin-top:7px;accent-color:var(--primary);transform:scale(1.15)}
+.option.correct{border-color:var(--green);background:#eaf7ef}
+.option.wrong{border-color:var(--red);background:#fff0f0}
+.feedback{margin-top:14px;padding:11px 13px;border-radius:9px;font-weight:700;display:none}
+.feedback.good{display:block;background:#eaf7ef;color:#12683b}
+.feedback.bad{display:block;background:#fff0f0;color:#a51e1e}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+button{border:0;border-radius:9px;padding:11px 17px;font-size:15px;font-weight:700;cursor:pointer}
+.primary{background:var(--primary);color:white}
+.secondary{background:#e8edf5;color:#24344e}
+button:disabled{opacity:.45;cursor:not-allowed}
+.result{padding:18px;text-align:center;margin-bottom:14px;display:none}
+.result h2{margin:0 0 5px;color:var(--primary)}
+.small{font-size:13px;color:var(--muted);text-align:center;margin-top:15px}
+.navgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin-top:12px}
+.navgrid button{padding:7px 2px;background:#e8edf5;color:#25334a;font-size:13px}
+.navgrid button.done{background:#d9f0e3;color:#12683b}
+.navgrid button.current{outline:2px solid var(--primary)}
+@media(max-width:480px){.card{padding:15px}.question{font-size:16px}.navgrid{grid-template-columns:repeat(6,1fr)}}
+</style>
+</head>
+<body>
+<header>
+<h1>Mana TET 2026</h1>
+<p>Paper–I | Mathematics (గణితం)</p>
+<p>Previous Question Paper • 20 June 2025 • Shift–1 • తెలుగు మాధ్యమం</p>
+</header>
+<main class="wrap">
+<section class="topbar">
+<div class="meta"><span id="progressText">ప్రశ్న 91 / 120</span><span id="scoreText">సరైన సమాధానాలు: 0</span></div>
+<div class="progress"><div id="bar"></div></div>
+</section>
+<section id="result" class="result"></section>
+<section class="card">
+<div class="qhead"><span class="badge" id="qnum">ప్రశ్న 91</span></div>
+<div class="question" id="question"></div>
+<div class="options" id="options"></div>
+<div id="feedback" class="feedback"></div>
+<div class="controls">
+<button class="primary" id="checkBtn" onclick="checkAnswer()">సమాధానం తనిఖీ చేయండి</button>
+<button class="secondary" id="prevBtn" onclick="move(-1)" disabled>← వెనుకకు</button>
+<button class="primary" id="nextBtn" onclick="move(1)" disabled>తదుపరి →</button>
+<button class="secondary" id="restartBtn" onclick="restart()" style="display:none">మళ్లీ ప్రారంభించండి</button>
+</div>
+</section>
+<section class="card">
+<strong>ప్రశ్నలకు వెళ్లండి (91–120)</strong>
+<div class="navgrid" id="navgrid"></div>
+</section>
+<p class="small">TG TET Paper-I • గణితం ప్రశ్నలు 91–120 • Mana TET Academy</p>
+</main>
+<script>
+const questions = [{"q": "కింది వాటిలో ఏ కొలతలతో త్రిభుజాన్ని నిర్మించవచ్చు?", "opts": ["4 సెం.మీ., 7 సెం.మీ., 14 సెం.మీ.", "2 సెం.మీ., 3 సెం.మీ., 6 సెం.మీ.", "3 సెం.మీ., 4 సెం.మీ., 6 సెం.మీ.", "5 సెం.మీ., 7 సెం.మీ., 13 సెం.మీ."], "a": 3}, {"q": "కింది వాటిలో కనిష్ఠ బేసి ప్రధాన సంఖ్య ఏది?", "opts": ["2", "3", "1", "5"], "a": 2}, {"q": "5/19, 1/3, 4/13, 2/7 మరియు 3/11 అనే సంఖ్యల మధ్యగతం ఏది?", "opts": ["5/19", "1/3", "3/11", "2/7"], "a": 4}, {"q": "ఒక తండ్రి మరియు కుమారుల ప్రస్తుత వయస్సుల నిష్పత్తి 7:2. 8 సంవత్సరాల తర్వాత వారి వయస్సుల నిష్పత్తి 9:4 అయితే, కుమారుడి ప్రస్తుత వయస్సు (సంవత్సరాలలో) ఎంత?", "opts": ["8", "6", "10", "4"], "a": 1}, {"q": "(x² − x − 20)/(x + 4) = x − A [x ≠ −4] అయితే, A విలువ ఎంత?", "opts": ["−5", "4", "10", "5"], "a": 4}, {"q": "పదివేలు + పది వందలు + పది ఒకట్లు = ఎంత?", "opts": ["101010", "11100", "11010", "11001"], "a": 3}, {"q": "7 యొక్క మూడు వరుస గుణకాల మొత్తం 357. వాటిలో అతిపెద్ద గుణకం ఎంత?", "opts": ["119", "126", "112", "133"], "a": 2}, {"q": "ఒక లంబకోణ త్రిభుజ భుజాల పొడవులు x సెం.మీ., (x + 1) సెం.మీ. మరియు (x + 2) సెం.మీ. అయితే, x విలువ ఎంత?", "opts": ["5", "4", "3", "6"], "a": 3}, {"q": "1000 లీటర్లు ఎన్ని ఘనపు మీటర్లకు సమానం?", "opts": ["100", "0.1", "10", "1"], "a": 4}, {"q": "42 సెం.మీ. పొడవున్న ఒక తీగతో కింది ఆకారాలను ఏర్పరిస్తే, వాటిలో ఏ ఆకారానికి భుజం పొడవు ఎక్కువగా ఉంటుంది?", "opts": ["సమ పంచభుజి", "చతురస్రం", "సమబాహు త్రిభుజం", "సమ షడ్భుజి"], "a": 3}, {"q": "26² + 9² = ఎంత?", "opts": ["523", "757", "1225", "991"], "a": 2}, {"q": "హిస్టోగ్రాంలో ప్రతి దీర్ఘచతురస్రం ఎత్తు దేనిని సూచిస్తుంది?", "opts": ["దత్తాంశం యొక్క విలువ", "ఆ విరామంలోని దత్తాంశాల పౌనఃపున్యం", "ఆ విరామం యొక్క సగటు", "మొత్తం దత్తాంశ బిందువుల సంఖ్య"], "a": 2}, {"q": "కింది వాటిలో ఏ ఆకారానికి సౌష్టవ రేఖ లేదు?", "opts": ["సాధారణ సమాంతర చతుర్భుజం", "దీర్ఘచతురస్రం", "సమద్విబాహు లంబకోణ త్రిభుజం", "పంచభుజి"], "a": 1}, {"q": "10 సెం.మీ. అంచు గల మూడు ఘనాలను ఒకదాని చివర మరొకటి కలిపితే ఏర్పడే దీర్ఘఘనం యొక్క పార్శ్వతల వైశాల్యం (చ.సెం.మీ.) ఎంత?", "opts": ["960", "1200", "800", "1080"], "a": 3}, {"q": "4x + 5y = 20 సమీకరణానికి సాధనాల సంఖ్య ఎంత?", "opts": ["0", "1", "2", "అనంతం"], "a": 4}, {"q": "కింది వాటిలో జంట ప్రధాన సంఖ్యలు ఏవి?", "opts": ["(117, 119)", "(107, 109)", "(111, 113)", "(103, 105)"], "a": 2}, {"q": "15625 ను 5 యొక్క ఘాత రూపంలో రాస్తే ఏది వస్తుంది?", "opts": ["5⁵", "5⁷", "5⁶", "5⁴"], "a": 3}, {"q": "64√3 చ.సెం.మీ. వైశాల్యం కలిగిన సమబాహు త్రిభుజం చుట్టుకొలత (సెం.మీ.) ఎంత?", "opts": ["48", "32", "64", "40"], "a": 1}, {"q": "0.5, 3.0, 4.5, 4.0, 7.5, p, 8.5, 7.0 ల సగటు 5 అయితే, p విలువ ఎంత?", "opts": ["8", "6", "7", "5"], "a": 4}, {"q": "(2³)² ÷ 8 = ఎంత?", "opts": ["3²", "2³", "6²", "2²"], "a": 2}, {"q": "రాణి 18 రోజుల్లో ఒక పనిలో 3/5 వంతు చేయగలదు. అయితే 1/2 వంతు పనిని ఎన్ని రోజుల్లో పూర్తి చేయగలదు?", "opts": ["12", "9", "24", "15"], "a": 4}, {"q": "ఒక రేఖాఖండానికి ఎన్ని అంత్య బిందువులు ఉంటాయి?", "opts": ["2", "0", "1", "3"], "a": 1}, {"q": "n కనిష్ఠ పూర్ణ సంఖ్య అయితే, కింది వాటిలో ఏది ప్రధాన సంఖ్య కాదు?", "opts": ["n + 9", "3n + 5", "2n + 3", "4n + 7"], "a": 1}, {"q": "10 కంటే తక్కువ ఉన్న ప్రధాన సంఖ్యల లబ్ధం M మరియు 10 కంటే తక్కువ ఉన్న బేసి సంఖ్యల మొత్తం N అయితే, M − N విలువ ఎంత?", "opts": ["81", "175", "185", "75"], "a": 3}, {"q": "“ఒక విద్యార్థి దశాంశాలను సంఖ్యారేఖపై సూచించగలడు.” ఈ విద్యార్థి సాధించిన అభ్యసన లక్ష్యం ఏది?", "opts": ["జ్ఞానం", "అవగాహన", "అనువర్తనం", "నైపుణ్యం"], "a": 4}, {"q": "కృత్యాధార పద్ధతిలో వైయక్తిక భేదాలను గుర్తించడం యొక్క ముఖ్య ఉద్దేశ్యం ఏది?", "opts": ["అందరు పిల్లలకు ఒకే విధమైన కృత్యాలను అందించడం", "పిల్లల స్థాయి మరియు అభ్యసన వేగానికి అనుగుణంగా కృత్యాలను అందించడం", "వెనుకబడిన మరియు ప్రతిభావంతులైన విద్యార్థులకు ఒకే విధమైన కృత్యాలను అందించడం", "సగటు విద్యార్థులను దృష్టిలో ఉంచుకొని కృత్యాలను అందించడం"], "a": 2}, {"q": "కింది గణిత బోధనా వనరులలో సంస్థాగత వనరు కానిది ఏది?", "opts": ["బ్యాంకు", "తపాలా కార్యాలయం", "చారిత్రక భవనం", "మార్కెట్"], "a": 3}, {"q": "పాఠ్యపథక రచనలో, బోధించవలసిన అంశానికి సంబంధించిన పూర్వజ్ఞానాన్ని ఉపాధ్యాయుడు ప్రశ్నల ద్వారా విద్యార్థుల నుంచి రాబట్టే హెర్బార్టియన్ సోపానం ఏది?", "opts": ["సన్నద్ధత", "ప్రదర్శన", "అనుబంధం", "పునరావృత్తి"], "a": 1}, {"q": "‘విద్యా సాధన పరీక్ష (SAT)’ నిర్వహించడం ఏ రకమైన మూల్యాంకనం?", "opts": ["నిర్మాణాత్మక మూల్యాంకనం", "సంకలనాత్మక మూల్యాంకనం", "రోగనిర్ధారణాత్మక మూల్యాంకనం", "భవిష్యత్ అంచనా మూల్యాంకనం"], "a": 2}, {"q": "గణిత పాఠ్యపుస్తకాలలో ‘ప్రయత్నించండి’ అనే శీర్షిక కింద ఇచ్చే సమస్యల ముఖ్య ఉద్దేశ్యం ఏది?", "opts": ["విద్యార్థులు యాంత్రికంగా సమస్యను పరిష్కరించడం", "విద్యార్థులకు ఇంటిపనిగా సమస్యలు ఇవ్వడం", "విద్యార్థుల్లో తార్కిక ఆలోచనను అభివృద్ధి చేయడం", "విద్యార్థులు సమస్యను స్వయంగా మాత్రమే పరిష్కరించడం"], "a": 3}];
+let current=0, answers=Array(questions.length).fill(null), checked=Array(questions.length).fill(false);
+const $=id=>document.getElementById(id);
+function render(){
+ const item=questions[current];
+ $('qnum').textContent='ప్రశ్న '+(current+91);
+ $('question').textContent=item.q;
+ $('options').innerHTML='';
+ item.opts.forEach((op,i)=>{
+   const label=document.createElement('label'); label.className='option';
+   const radio=document.createElement('input'); radio.type='radio';radio.name='answer';radio.value=i+1;
+   radio.checked=answers[current]===i+1; radio.disabled=checked[current];
+   radio.addEventListener('change',()=>{answers[current]=i+1;});
+   const span=document.createElement('span');span.textContent=(i+1)+') '+op;
+   label.append(radio,span);
+   if(checked[current] && i+1===item.a) label.classList.add('correct');
+   if(checked[current] && answers[current]===i+1 && answers[current]!==item.a) label.classList.add('wrong');
+   $('options').appendChild(label);
+ });
+ $('feedback').className='feedback';$('feedback').textContent='';
+ if(checked[current]){
+   const ok=answers[current]===item.a;
+   $('feedback').classList.add(ok?'good':'bad');
+   $('feedback').textContent=ok?'✓ సరైన సమాధానం!':'✗ తప్పు సమాధానం. సరైన సమాధానం: '+item.a+') '+item.opts[item.a-1];
+ }
+ $('checkBtn').style.display=checked[current]?'none':'inline-block';
+ $('nextBtn').disabled=!checked[current] || current===questions.length-1;
+ $('prevBtn').disabled=current===0;
+ $('progressText').textContent='ప్రశ్న '+(current+91)+' / 120';
+ $('scoreText').textContent='సరైన సమాధానాలు: '+answers.filter((a,i)=>checked[i]&&a===questions[i].a).length;
+ $('bar').style.width=((current+1)/questions.length*100)+'%';
+ $('restartBtn').style.display=(checked.every(Boolean))?'inline-block':'none';
+ renderNav();
+ if(checked.every(Boolean)) showResult();
+}
+function checkAnswer(){
+ if(!answers[current]){alert('దయచేసి ఒక సమాధానాన్ని ఎంచుకోండి.');return;}
+ checked[current]=true;render();
+}
+function move(d){current=Math.max(0,Math.min(questions.length-1,current+d));render();}
+function go(n){current=n;render();}
+function renderNav(){
+ $('navgrid').innerHTML='';
+ questions.forEach((q,i)=>{
+  const b=document.createElement('button');b.textContent=i+91;
+  if(checked[i])b.classList.add('done');if(i===current)b.classList.add('current');
+  b.onclick=()=>go(i);$('navgrid').appendChild(b);
+ });
+}
+function showResult(){
+ const score=answers.filter((a,i)=>a===questions[i].a).length;
+ $('result').style.display='block';
+ $('result').innerHTML='<h2>మీ పరీక్ష ఫలితం</h2><div style="font-size:30px;font-weight:800">'+score+' / '+questions.length+'</div><p>శాతం: '+Math.round(score/questions.length*100)+'%</p><p>సరైన సమాధానాలు: '+score+' | తప్పు సమాధానాలు: '+(questions.length-score)+'</p>';
+}
+function restart(){current=0;answers=Array(questions.length).fill(null);checked=Array(questions.length).fill(false);$('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
+render();
+</script>
+</body>
+</html>
