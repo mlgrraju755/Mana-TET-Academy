@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | Language II English Q61–90</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,"Noto Sans",sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#123b70,#1677b8);color:#fff;padding:22px 15px;text-align:center}
+header h1{margin:0;font-size:25px} header p{margin:6px 0 0;font-size:14px}
+.wrap{max-width:900px;margin:18px auto;padding:0 12px}
+.info,.passage,.question,.result{background:#fff;border-radius:12px;padding:16px;margin:14px 0;box-shadow:0 2px 9px #172b4d12}
+.info{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;color:#174a7e}
+.progressbox{height:10px;background:#e4eaf2;border-radius:20px;overflow:hidden;margin-top:10px}
+#progress{height:100%;width:0;background:#16a36a;transition:.25s}
+.passage h2{margin:0 0 10px;color:#174a7e;font-size:19px}
+.passage p{margin:0 0 12px;text-align:justify}
+.question h3{margin:0 0 12px;font-size:17px;color:#173f69}
+.opt{display:block;border:1px solid #dce3ed;border-radius:9px;padding:10px 12px;margin:8px 0;cursor:pointer;transition:.15s}
+.opt:hover{background:#f4f8fd;border-color:#7ca9d8}
+.opt input{margin-right:9px;accent-color:#1769aa}
+.opt.correct{background:#e8f7ee;border-color:#27a45b;color:#126333}
+.opt.wrong{background:#fff0f0;border-color:#dc5555;color:#9c2424}
+.feedback{font-weight:700;margin-top:9px;min-height:24px}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+button{border:0;border-radius:9px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer}
+#finish{background:#137b50;color:white} #restart{background:#174a7e;color:white;display:none}
+.result{display:none;text-align:center;border:2px solid #b8d9c7}
+.result h2{color:#126333}
+.small{font-size:13px;color:#5b6573}
+@media(max-width:600px){header h1{font-size:21px}.question{padding:13px}}
+</style>
+</head>
+<body>
+<header><h1>MANA-TET-2026</h1><p>Paper I · Language II: English (English Medium)</p><p>Practice Test | Questions 61–90</p></header>
+<div class="wrap">
+<div class="info"><span id="count">Answered: 0 / 30</span><span id="scorelive">Correct: 0</span></div>
+<div class="progressbox"><div id="progress"></div></div>
+<section class="passage"><h2>Reading Comprehension Passage (Questions 61–65)</h2>
+<p>Over the years, the United Nations has played a crucial role in resolving numerous conflicts, often through the actions of the Security Council, the body primarily responsible, under the United Nations Charter, for maintaining international peace and security. When the Council receives a complaint about a potential threat to peace, its first step is to encourage the parties to reach a peaceful agreement. In some cases, the Council itself conducts investigations and facilitates mediation. It may appoint special representatives or request the Secretary-General to do so, or to offer his good offices. The Council may also propose principles for a peaceful resolution.
+
+When a dispute escalates into violence, the Council&#x27;s main priority is to end the conflict as quickly as possible. The Council has frequently issued ceasefire directives that have helped prevent large-scale hostilities. It also deploys UN peacekeeping missions to reduce tensions, separate opposing forces, and establish the conditions necessary for sustainable peace once settlements are reached. The Council may also impose enforcement measures, such as economic sanctions like trade embargoes or collective military action.
+
+The United Nations Security Council is composed of 15 member states, which include 5 permanent members China, France, Russia, the United Kingdom, and the United States of America and 10 non-permanent members elected for two-year term by the General Assembly. The permanent members hold veto power, giving them significant influence over the Council&#x27;s decisions, while the non-permanent members contribute to maintaining international peace and security through their rotating representation.</p>
+</section>
+<div id="quiz"></div>
+<div class="actions"><button id="finish" onclick="finishQuiz()">Submit Test &amp; View Result</button><button id="restart" onclick="restartQuiz()">Restart Test</button></div>
+<section class="result" id="result"><h2>Test Completed!</h2><p id="finalscore"></p><p id="remark"></p><p class="small">Review the questions above to see the correct answers.</p></section>
+</div>
+<script>
+const questions = [{"n": 61, "q": "As per the passage, the Security Council of United Nations is primarily responsible for", "o": ["protecting the environment in member nations.", "safeguarding human rights.", "providing health facilities to the needy.", "promoting international peace and security."], "a": 3}, {"n": 62, "q": "Based on the reading of the passage, pick the correct option.", "o": ["The Security Council is comprised of 15 members, 5 of which are permanent members the United States of America, India, Russia, the United Kingdom, and China.", "The Security Council is comprised of 10 members, 5 of which are permanent members the United States of America, France, Russia, the United Kingdom, and China.", "The Security Council is comprised of 15 members, 5 of which are permanent members the United States of America, France, Russia, the United Kingdom, and China.", "The Security Council is comprised of 15 members, 5 of which are non permanent members the United States of America, France, Russia, the United Kingdom, and China."], "a": 2}, {"n": 63, "q": "When the Council receives a complaint about a potential threat to peace, its first step is to", "o": ["impose economic sanctions.", "encourage the parties to reach a peaceful agreement.", "send international peace keeping forces.", "ignore the issue and leaving it to the concerned parties."], "a": 1}, {"n": 64, "q": "The word 'embargoes' means", "o": ["consents.", "restrictions.", "approvals.", "promotions."], "a": 1}, {"n": 65, "q": "The Council has frequently issued ceasefire directives that have helped", "o": ["support widespread conflict.", "embrace widespread conflict.", "encourage widespread conflict.", "avoid widespread conflict."], "a": 3}, {"n": 66, "q": "The children were laughing at the comedian. Identify the correct passive voice.", "o": ["The comedian was laughed at by the children.", "The comedian was being laughed at by the children.", "The comedian was been laughed by the children.", "The comedian is laughing at the children."], "a": 1}, {"n": 67, "q": "Bring me some fresh mint leaves for the tea, _________? Complete the sentence with correct option.", "o": ["isn't it", "shan't you", "will you", "don't you"], "a": 2}, {"n": 68, "q": "Pick the correct sentence.", "o": ["I advised him to carry the bag carefully.", "I advised carefully him to carry the bag.", "I advised him to carried carefully the bag.", "I advised him carry to the bag carefully."], "a": 0}, {"n": 69, "q": "I can't _________ people who make judgements. Complete the sentence with correct option.", "o": ["bair", "bier", "bear", "beer"], "a": 2}, {"n": 70, "q": "The article 'an' is used before a singular noun beginning with", "o": ["a consonant sound.", "a vowel letter giving a consonant sound.", "a consonant letter giving a consonant sound.", "a vowel sound."], "a": 3}, {"n": 71, "q": "Identify the incorrect pair of singular and plural forms.", "o": ["mouse - mices", "oasis - oases", "ox - oxen", "syllabus - syllabi"], "a": 0}, {"n": 72, "q": "Identify the part with an error in the given sentence: I can't (A) / understands her (B) / because I don't (C) / know Tamil. (D)", "o": ["C", "B", "A", "D"], "a": 1}, {"n": 73, "q": "This is the _________ movie I've ever seen. Choose the correct option to complete the sentence.", "o": ["most best", "better", "best", "more better"], "a": 2}, {"n": 74, "q": "Writing of somebody's life story is called", "o": ["lithography.", "biography.", "autobiography.", "calligraphy."], "a": 1}, {"n": 75, "q": "She has been living in Hyderabad _________ 2020. Choose the correct option to complete the sentence.", "o": ["to", "since", "for", "by"], "a": 1}, {"n": 76, "q": "Choose incorrectly spelt word.", "o": ["Demolition", "Deterrent", "Desecrate", "Dillema"], "a": 3}, {"n": 77, "q": "While I _________ eating an apple, he _________ at the door.", "o": ["had, knocked", "am, had knocked", "were, knocks", "was, knocked"], "a": 3}, {"n": 78, "q": "Identify correctly punctuated sentence.", "o": ["My friends and I went to the ground.", "My friends, and I went to the ground", "My friends and I, went to the ground.", "My friends and i went to the ground."], "a": 0}, {"n": 79, "q": "Choose correct sentence.", "o": ["The presence of an ecosystem depends on the balance of every types of animal.", "The balance of an ecosystem depend on the balance of every type of animal.", "The balance of an ecosystem depends on the presence of every type of animal.", "The balance of every type on animal depends of the presence of an ecosystem."], "a": 2}, {"n": 80, "q": "The boy is too intelligent to be _________ easily. Choose the most appropriate option to complete the sentence.", "o": ["deceives", "deceived", "decieving", "decieved"], "a": 1}, {"n": 81, "q": "Police keep track of the kidnapper using electronic surveillance equipment. Identify the meaning of the word 'surveillance'.", "o": ["observation", "complexion", "oblivion", "ignorance"], "a": 0}, {"n": 82, "q": "I won't pay unless you provide the goods immediately. The word 'unless' is a/an", "o": ["preposition", "interjection", "pronoun", "conjunction"], "a": 3}, {"n": 83, "q": "Dhanraj is _________ person in the village. Complete the sentence with the appropriate option.", "o": ["rich", "more rich", "the richest", "the richer"], "a": 2}, {"n": 84, "q": "Pallavi said to him, \"You must obey your elders.\" Identify the indirect speech.", "o": ["Pallavi said you should obey your elders.", "Pallavi told him that he must obey his elders.", "Pallavi said to him that he should obey your elders.", "Pallavi ordered to him that we must obey our elders."], "a": 1}, {"n": 85, "q": "The Universities of Calcutta, Bombay, and Madras were established through the Acts of Incorporation passed by this Governor-General", "o": ["Canning", "Macaulay", "William Bentinck", "Dalhousie"], "a": 0}, {"n": 86, "q": "Identify the discourse that is both oral and written.", "o": ["Diary", "Essay", "Poster", "Description"], "a": 3}, {"n": 87, "q": "“Make corrections using capital letters and full stop (.), wherever necessary. Rewrite the following sentences.” This task given in the Primary Level textbook of Telangana Board falls under this component.", "o": ["Speaking", "Conventions of Writing", "Grammar", "Vocabulary"], "a": 1}, {"n": 88, "q": "A key benefit of using ICT in teaching English is", "o": ["avoiding participation in class activities.", "reducing the need for textbooks.", "minimizing the role of the teacher.", "enhancing accessibility to diverse learning resources."], "a": 3}, {"n": 89, "q": "The following is a tool in Formative Assessment in Telangana State Board.", "o": ["generating question", "field trip", "slip test", "participation in games"], "a": 2}, {"n": 90, "q": "Language acquisition occurs only when", "o": ["the child learns the vocabulary by heart.", "the child is taught the grammar principles.", "the child drills the structures of language.", "the child has exposure to language."], "a": 3}];
+let answers = {};
+let locked = {};
+const quiz = document.getElementById('quiz');
+function render(){
+ quiz.innerHTML='';
+ questions.forEach((item,i)=>{
+  const card=document.createElement('section'); card.className='question'; card.id='q'+item.n;
+  const h=document.createElement('h3'); h.textContent=item.n+'. '+item.q; card.appendChild(h);
+  item.o.forEach((option,j)=>{
+   const label=document.createElement('label'); label.className='opt';
+   label.innerHTML='<input type="radio" name="q'+item.n+'" value="'+j+'"> '+String.fromCharCode(65+j)+') '+escapeHtml(option);
+   label.querySelector('input').addEventListener('change',()=>selectAnswer(item,j,card));
+   card.appendChild(label);
+  });
+  const fb=document.createElement('div'); fb.className='feedback'; fb.id='fb'+item.n; card.appendChild(fb);
+  quiz.appendChild(card);
+ });
+ updateProgress();
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function selectAnswer(item,j,card){
+ if(locked[item.n]) return;
+ answers[item.n]=j; locked[item.n]=true;
+ const labels=card.querySelectorAll('.opt');
+ labels.forEach((label,k)=>{
+  const input=label.querySelector('input'); input.disabled=true;
+  if(k===item.a) label.classList.add('correct');
+  if(k===j && j!==item.a) label.classList.add('wrong');
+ });
+ const fb=document.getElementById('fb'+item.n);
+ fb.textContent=j===item.a?'✓ Correct answer!':'✗ Incorrect. Correct answer: '+String.fromCharCode(65+item.a)+') '+item.o[item.a];
+ fb.style.color=j===item.a?'#126333':'#a12626';
+ updateProgress();
+}
+function updateProgress(){
+ const done=Object.keys(answers).length;
+ const correct=questions.filter(q=>answers[q.n]===q.a).length;
+ document.getElementById('count').textContent='Answered: '+done+' / '+questions.length;
+ document.getElementById('scorelive').textContent='Correct: '+correct;
+ document.getElementById('progress').style.width=(done/questions.length*100)+'%';
+}
+function finishQuiz(){
+ const done=Object.keys(answers).length;
+ const correct=questions.filter(q=>answers[q.n]===q.a).length;
+ const pct=Math.round(correct/questions.length*100);
+ document.getElementById('finalscore').textContent='Your Score: '+correct+' / '+questions.length+' ('+pct+'%) · Attempted: '+done+' · Not attempted: '+(questions.length-done);
+ document.getElementById('remark').textContent=pct>=80?'Excellent performance!':pct>=60?'Good effort. Keep practising!':pct>=40?'Keep practising and improve your score.':'Revise the topics and try again.';
+ document.getElementById('result').style.display='block';
+ document.getElementById('restart').style.display='inline-block';
+ document.getElementById('finish').style.display='none';
+ document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+function restartQuiz(){
+ answers={}; locked={};
+ document.getElementById('result').style.display='none';
+ document.getElementById('restart').style.display='none';
+ document.getElementById('finish').style.display='inline-block';
+ render(); window.scrollTo({top:0,behavior:'smooth'});
+}
+render();
+</script>
+</body>
+</html>
