@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | CDP Previous Questions 1–30</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#173b75,#2878c7);color:#fff;padding:24px 16px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{margin:7px 0 0;font-size:15px}
+.wrap{max-width:900px;margin:20px auto;padding:0 14px}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;padding:12px 14px;border-radius:12px;box-shadow:0 2px 10px #00000012;margin-bottom:16px}
+.progress-text{display:flex;justify-content:space-between;gap:10px;font-weight:700;font-size:14px;margin-bottom:8px}
+.progress-bg{height:9px;background:#e5eaf2;border-radius:20px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:#16834a;transition:width .25s}
+.card{background:#fff;border-radius:13px;padding:18px;margin:14px 0;box-shadow:0 2px 10px #0000000d;border:1px solid #e8edf4}
+.qhead{font-weight:700;font-size:17px;margin-bottom:13px}
+.option{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border:1px solid #dce3ed;border-radius:9px;margin:8px 0;cursor:pointer;transition:.15s}
+.option:hover{background:#f5f8fc;border-color:#8aa9d1}
+.option input{margin-top:4px;accent-color:#1769aa}
+.option.correct{background:#e8f6ed;border-color:#269653}
+.option.wrong{background:#fff0ef;border-color:#d94b43}
+.feedback{display:none;margin-top:12px;padding:11px 13px;border-radius:9px;font-size:14px}
+.feedback.show{display:block}
+.feedback.good{background:#e8f6ed;color:#155d32}
+.feedback.bad{background:#fff0ef;color:#8c241f}
+.explanation{display:block;margin-top:5px;color:inherit}
+.actions{text-align:center;margin:22px 0}
+button{border:0;border-radius:9px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;margin:5px}
+.finish{background:#1769aa;color:#fff}
+.restart{background:#16834a;color:#fff}
+#result{display:none;background:#fff;border-radius:13px;padding:22px;text-align:center;box-shadow:0 2px 10px #00000012;margin:18px 0}
+#result h2{margin-top:0;color:#173b75}
+.score{font-size:32px;font-weight:800;color:#16834a}
+footer{text-align:center;color:#667085;padding:18px;font-size:13px}
+@media(max-width:600px){header h1{font-size:21px}.card{padding:15px}.qhead{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>MANA-TET-2026</h1>
+  <p>Child Development and Pedagogy | Previous Questions 1–30 | English Medium</p>
+</header>
+<main class="wrap">
+  <section class="topbar">
+    <div class="progress-text"><span id="answered">Answered: 0 / 30</span><span id="percent">0%</span></div>
+    <div class="progress-bg"><div class="progress-fill" id="progress"></div></div>
+  </section>
+  <div id="quiz"></div>
+  <div class="actions"><button class="finish" onclick="finishQuiz()">Finish Test</button></div>
+  <section id="result">
+    <h2>Test Completed!</h2>
+    <div class="score" id="score"></div>
+    <p id="summary"></p>
+    <button class="restart" onclick="restartQuiz()">Restart Test</button>
+  </section>
+</main>
+<footer> MANA-TET-2026 | Learn • Practise • Succeed </footer>
+<script>
+const questions = [
+{q:"Development does not proceed at a uniform rate and shows individual differences but schools follow class wise common curriculum because",o:["Individual differences cannot be addressed in schools","Development proceeds from whole to parts and parts to whole","Development follows a definite pattern","Development is not predictable"],a:2,e:"Development follows an orderly and definite pattern, even though the rate of development differs from child to child."},
+{q:"Read the following statements and identify the correct answer:<br>A) Providing appropriate training at the time of maturation helps in achieving desired success.<br>B) Our National Education Policy, 2020 recommended six years as the age of admission to Grade 1.",o:["Statement A is false","Both Statements A and B are true and A does not offer correct explanation for B","Both Statements A and B are false","Both Statements A and B are true and A offers correct explanation for B"],a:1,e:"Both statements are true. The principle of training at maturity does not explain the NEP recommendation of six years for Grade 1 admission."},
+{q:"The basic factor in mental development among the following is",o:["Parental education","Organ growth of the nervous system","Rewards and punishment","School attended"],a:1,e:"The growth and maturation of the nervous system form a basic biological foundation for mental development."},
+{q:"Developmental tasks are related to what a developing child is expected to do, think and feel. Choose the correct answer.",o:["A, B & C","A & C only","B & C only","A & B only"],a:0,e:"Developmental tasks involve expected abilities, actions, thoughts and feelings at different stages of life."},
+{q:"Moral judgments are highly internalized in this level of moral development according to Kohlberg",o:["VI","II","I","IV"],a:0,e:"At Stage VI, moral judgment is guided by self-chosen ethical principles and is highly internalized."},
+{q:"The experiences to be provided to infants will be appropriate if they are related to",o:["Logical reasoning","Sensory exploration","Abstract thinking","Symbolic expression"],a:1,e:"Infants learn about their surroundings primarily through sensory exploration and interaction."},
+{q:"Individual differences help us understand that each individual is",o:["Familiar","Common","Static","Unique"],a:3,e:"Individual differences show that every learner has a unique combination of abilities, interests and characteristics."},
+{q:"Identify the example that is NOT an expression of Self-concept",o:["I am shy","I am strong","I go to school","I am god fearing"],a:2,e:"“I go to school” describes an activity or behaviour, rather than a personal attribute or self-description."},
+{q:"One of the following CANNOT be an initial action in treatment of 'Lying' behaviour among children",o:["Developing sportsman spirit","Punishment","Narrating ideal stories","Reward first sign of truthfulness"],a:1,e:"Punishment is not an appropriate initial intervention. Positive guidance and reinforcement of truthful behaviour are preferable."},
+{q:"In one of the following methods, the responses are taken directly from the person under study and responses can also be controlled",o:["Observation","Interview","Projective technique","Experimentation"],a:3,e:"In experimentation, the investigator controls conditions or variables and studies the responses produced."},
+{q:"Identify the INCORRECT statement relating to learning",o:["Learning is not a natural process","Learning is universal and continuous","There are different types of learning","Learning leads to changes in behaviour"],a:0,e:"Learning is a natural, continuous and lifelong process that brings about changes in behaviour or potential behaviour."},
+{q:"Providing proper feedback and reinforcement in learning is a factor relating to",o:["Content","Learner","Process","Discipline"],a:2,e:"Feedback and reinforcement are part of the teaching-learning process."},
+{q:"Sucharitha has a four year old daughter. Whenever her daughter does anything correctly she says 'good job' to strengthen her learning and her daughter gets excited whenever she listens to it. This is in accordance with this law of learning of Thorndike",o:["Law of Effect","Law of Readiness","Law of Exercise","Law of correlation"],a:0,e:"The Law of Effect states that responses followed by satisfying consequences are more likely to be repeated."},
+{q:"According to Classical Conditioning, the principle of learning to be used to gradually change the undesired behaviour is",o:["Readiness","Spontaneous recovery","Extinction","Exercise"],a:2,e:"Extinction occurs when a conditioned response gradually weakens because the conditioned stimulus is no longer paired with the unconditioned stimulus."},
+{q:"Kavitha participates in many quiz competitions in and out of school as her mother buys her one gift for every 4th win. The reinforcement schedule followed here is",o:["Variable reinforcement schedule","Fixed interval reinforcement schedule","Continuous reinforcement schedule","Fixed ratio reinforcement schedule"],a:3,e:"A reward after every fourth win is based on a fixed number of responses, so it is a fixed-ratio schedule."},
+{q:"Theory of Insightful learning requires organisation of the perceptual field and learning material in the form",o:["Mechanical steps","Isolated facts","Unrelated behavioural acts","A whole"],a:3,e:"Gestalt or insight learning emphasizes perceiving and organizing the learning situation as a meaningful whole."},
+{q:"Mimy asked her father for going out for swimming in the sea. Her father explained her about the risks of swimming in sea. The learning here is related to",o:["Affective","Cognitive","Conative","Psycho motor"],a:1,e:"Understanding and knowing the risks involves thinking and knowledge, which belong to the cognitive domain."},
+{q:"Vashisht is a ten year old boy who does very good art work. Whenever there is a birthday or a special day of anyone in family or friends, he prepares beautiful greeting cards as it gives him immense pleasure. This is an example for",o:["Unnatural motivation","Extrinsic motivation","Intrinsic motivation","Achievement motivation"],a:2,e:"He makes greeting cards because the activity itself gives him pleasure; this is intrinsic motivation."},
+{q:"Rinky is an animal lover. Her father took her to many zoological parks within country and in other countries. When anyone asks her about the animals in any of those zoological parks she tells about them without any flaw. This example refers to",o:["Semantic memory","Episodic memory","Temporary memory","Abnormal memory"],a:1,e:"The question refers to remembering details associated with her personal visits and experiences at zoological parks, which is episodic memory."},
+{q:"Shobha took one week to learn first tune in her music class. Thereafter, she took lesser time for the subsequent tunes. The transfer of training that happened is",o:["Zero transfer","Positive transfer","Negative transfer","Bilateral transfer"],a:1,e:"Earlier learning helped her learn later tunes more quickly. This is positive transfer of learning."},
+{q:"Students active involvement in learning brings about this among learners",o:["Rote memorization","Imitation of teacher","Concentration on learning","High achievement anxiety"],a:2,e:"Active participation generally increases attention, engagement and concentration in learning."},
+{q:"A teacher establishing a connection with the pupil which is very important, happens during this phase",o:["Inter-active","Post-active","Pre-active","Final phase"],a:0,e:"The interactive phase is when the teacher interacts with learners during classroom teaching."},
+{q:"In this method, learners sit together for loud thinking to find a solution to a problem by generating a large number of ideas",o:["Project","Enquiry","Survey","Brainstorming"],a:3,e:"Brainstorming encourages learners to generate many ideas freely to address a problem."},
+{q:"All but one among the following are expected from the Principal of a school in creating an inclusive centre",o:["Make staff aware of the needs, rights and capabilities of children with disabilities","Ensure inclusive practices are followed in school","Ensure physical environment of the school is accessible to the children with disabilities","Become a disability expert"],a:3,e:"The principal should enable inclusive practices and accessibility, but is not expected to become a specialist in every disability."},
+{q:"As per Rule 2(a) of Section 13 of the Right of Children to Free and Compulsory Education Act, 2009, any school collecting capitation fee, shall be punishable with fine which may extend to",o:["Ten times of the fee charged","Five times of the fee charged","Twenty times of the fee charged","Twenty five times of the fee charged"],a:0,e:"Section 13(2)(a) of the RTE Act provides for a fine which may extend to ten times the capitation fee charged."},
+{q:"Among the following, identify the example for Criterion-referenced test",o:["UGC NET","NEET","TET","EAMCET"],a:2,e:"TET is generally treated as criterion-referenced because candidates are assessed against a prescribed qualifying standard."},
+{q:"Which of the following types of child abuse come under social abuse?<br>A) Infanticide<br>B) Child Marriage<br>C) Child Prostitution<br>D) Child Beggary<br>E) Child Labour<br>Choose the correct answer:",o:["C, D & E only","B, C, D & E only","B, C & D only","A, B, C, D & E"],a:1,e:"Child marriage, child prostitution, child beggary and child labour are forms of social exploitation/abuse. Infanticide is generally categorized as physical abuse."},
+{q:"Among the following, those that relate to self as a learning resource are:<br>A) Learner's attitude<br>B) Learner's past experience<br>C) Learner's motivation<br>Choose the correct answer:",o:["A & B only","A, B & C","A & C only","B & C only"],a:1,e:"Attitude, previous experience and motivation are all learner-related resources that influence learning."},
+{q:"The leadership style of a teacher who leaves her students on their own with neither advising nor praising nor criticizing is",o:["Laissez Faire","Authoritative","Authoritarian","Democratic"],a:0,e:"Laissez-faire leadership involves minimal direction or intervention by the leader."},
+{q:"A primary school child who went to another country for summer vacation narrated what all she saw to her friends and teacher after vacation. The girl is in this mode of representation according to Bruner",o:["Enactive","Iconic","Symbolic","Objective"],a:2,e:"Narrating experiences through spoken language uses symbols; this is Bruner's symbolic mode of representation."}
+];
 
+const quiz=document.getElementById('quiz');
+let selected=Array(questions.length).fill(null);
+let locked=Array(questions.length).fill(false);
+function render(){
+  quiz.innerHTML='';
+  questions.forEach((item,i)=>{
+    const card=document.createElement('section'); card.className='card';
+    const q=document.createElement('div'); q.className='qhead'; q.innerHTML=(i+1)+'. '+item.q; card.appendChild(q);
+    const labels=['A','B','C','D'];
+    item.o.forEach((opt,j)=>{
+      const label=document.createElement('label'); label.className='option';
+      if(locked[i] && j===item.a) label.classList.add('correct');
+      if(locked[i] && selected[i]===j && j!==item.a) label.classList.add('wrong');
+      label.innerHTML=`<input type="radio" name="q${i}" value="${j}" ${selected[i]===j?'checked':''} ${locked[i]?'disabled':''}><span><b>${labels[j]})</b> ${opt}</span>`;
+      label.addEventListener('click',()=>choose(i,j));
+      card.appendChild(label);
+    });
+    const fb=document.createElement('div'); fb.className='feedback'+(locked[i]?' show '+(selected[i]===item.a?'good':'bad'):'');
+    if(locked[i]) fb.innerHTML=(selected[i]===item.a?'✓ Correct!':'✗ Incorrect. Correct answer: '+labels[item.a]+') '+item.o[item.a])+`<span class="explanation">${item.e}</span>`;
+    card.appendChild(fb); quiz.appendChild(card);
+  });
+  updateProgress();
+}
+function choose(i,j){
+  if(locked[i]) return;
+  selected[i]=j; locked[i]=true; render();
+}
+function updateProgress(){
+  const count=selected.filter(x=>x!==null).length;
+  document.getElementById('answered').textContent=`Answered: ${count} / ${questions.length}`;
+  document.getElementById('percent').textContent=Math.round(count/questions.length*100)+'%';
+  document.getElementById('progress').style.width=(count/questions.length*100)+'%';
+}
+function finishQuiz(){
+  const attempted=selected.filter(x=>x!==null).length;
+  const score=selected.reduce((n,x,i)=>n+(x===questions[i].a?1:0),0);
+  document.getElementById('score').textContent=`${score} / ${questions.length}`;
+  document.getElementById('summary').textContent=`Attempted: ${attempted} | Correct: ${score} | Incorrect: ${attempted-score} | Not attempted: ${questions.length-attempted}`;
+  document.getElementById('result').style.display='block';
+  document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+function restartQuiz(){
+  selected=Array(questions.length).fill(null); locked=Array(questions.length).fill(false);
+  document.getElementById('result').style.display='none'; render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+render();
+</script>
+</body>
+</html>
