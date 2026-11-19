@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | Environmental Studies Q121–150</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:#fff;padding:22px 15px;text-align:center}
+header h1{margin:0;font-size:25px} header p{margin:6px 0 0;font-size:15px}
+.container{max-width:1000px;margin:18px auto;padding:0 12px}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;padding:12px 14px;border-radius:12px;box-shadow:0 2px 10px #0001;margin-bottom:15px}
+.status{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:700;color:#174a70}
+.progress{height:9px;background:#e5eaf0;border-radius:20px;margin-top:9px;overflow:hidden}
+#progressFill{height:100%;width:0;background:#18a36b;transition:.25s}
+.question{background:#fff;border:1px solid #e1e7ef;border-radius:12px;padding:17px;margin:13px 0;box-shadow:0 2px 7px #00000008}
+.qtitle{font-weight:700;margin-bottom:12px;color:#172b4d}
+.qnum{display:inline-block;background:#e8f2fb;color:#14527c;padding:3px 9px;border-radius:7px;margin-right:7px}
+.option{display:flex;align-items:flex-start;gap:9px;padding:9px 10px;border:1px solid #e2e7ed;border-radius:8px;margin:7px 0;cursor:pointer}
+.option:hover{background:#f6faff}
+.option input{margin-top:5px;accent-color:#1769aa}
+.option.correct{border-color:#15945b;background:#eaf8f0}
+.option.wrong{border-color:#d64040;background:#fff0f0}
+.feedback{font-weight:700;margin-top:9px;font-size:14px}
+.feedback.good{color:#12804d} .feedback.bad{color:#c62828}
+.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:22px 0}
+button{border:0;border-radius:9px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
+#finishBtn{background:#146caa;color:#fff} #restartBtn{background:#15945b;color:#fff;display:none}
+#result{display:none;background:#fff;border-radius:12px;padding:20px;text-align:center;box-shadow:0 2px 10px #0001;margin:18px 0}
+#result h2{color:#14527c;margin-top:0} .score{font-size:30px;font-weight:800;color:#15945b}
+footer{text-align:center;color:#667085;padding:20px;font-size:13px}
+@media(max-width:600px){header h1{font-size:21px} .question{padding:13px} .topbar{top:0}}
+</style>
+</head>
+<body>
+<header><h1>MANA-TET-2026</h1><p>Paper I | Environmental Studies | English Medium</p><p>Previous Questions 121–150</p></header>
+<div class="container">
+<div class="topbar"><div class="status"><span id="answered">Answered: 0 / 30</span><span id="liveScore">Correct: 0</span></div><div class="progress"><div id="progressFill"></div></div></div>
+<div id="quiz"></div>
+<div class="actions"><button id="finishBtn" onclick="finishTest()">Submit Test &amp; View Result</button><button id="restartBtn" onclick="restartTest()">Restart Test</button></div>
+<div id="result"><h2>Test Result</h2><div class="score" id="scoreText"></div><p id="resultMessage"></p><p id="resultDetail"></p></div>
+</div>
+<footer>© MANA-TET-2026 | Practice makes progress</footer>
+<script>
+const questions = [["A child is suffering from night blindness. Which of the following will help in improving his condition?", ["Lemon juice", "Carrots and papaya", "Rice and chapati", "Cheese and butter"], 1], ["Which of the following were proposed by Dr. Verghese Kurien to increase milk production in India?<br><br>A) Producing hybrid varieties of cows and buffaloes<br>B) Improving animal health<br>C) Efficient milk collection and preservation<br><br>Choose the correct option:", ["A, B, & C", "A & B only", "A & C only", "B & C only"], 0], ["Red rot disease in sugarcane is caused by a", ["bacterium spread through air and seedlings", "virus transmitted by insects", "Fungus spread through air and infected seedlings", "Nematode attacking roots"], 2], ["Rangaiah often says, \"I am not healthy.\" According to the World Health Organization (WHO), which of the following best defines health?", ["Physical well-being only", "Mental well-being only", "Social well-being only", "Physical, mental, and social well-being"], 3], ["In historical scientific terminology, what does the term \"fixed air\" refer to?", ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], 2], ["The main constituent of the energy resource \"coal\" is", ["Carbon", "Hydrogen", "Oxygen", "Nitrogen"], 0], ["A person with high blood pressure suddenly complains of nausea and dizziness. On asking them to smile or laugh, you notice their mouth is crooked, speech is slurred, and they cannot raise one hand. What should you infer and do next?", ["It is a sign of simple fatigue; let him rest and monitor", "These are symptoms of paralysis; seek immediate medical help", "The person is faking symptoms; encourage him to move more", "These symptoms are due to dehydration; give him water and wait"], 1], ["Read the following statements and choose the correct option:<br><br>Statement I: All the clouds do not always cause rain.<br>Statement II: Clouds are formed from heavy droplets of water vapour.", ["Both Statement I and Statement II are correct.", "Statement I is correct but Statement II is incorrect.", "Statement I is incorrect but Statement II is correct.", "Both Statement I and Statement II are incorrect."], 1], ["Read the following statements and choose the correct option:<br><br>Statement I: Birds have wings to fly.<br>Statement II: Birds have hollow bones to lessen weight.", ["Both Statement I and Statement II are correct.", "Statement I is correct but Statement II is incorrect.", "Statement I is incorrect but Statement II is correct.", "Both Statement I and Statement II are incorrect."], 0], ["The world's largest living bird from the following is", ["Emu", "Cassowary", "Albatross", "Ostrich"], 3], ["Water pollution can be reduced by implementing the 4Rs principle. Which of the following is NOT a part of the 4Rs?", ["Reduce", "Reuse", "Recover", "Remove"], 3], ["What type of blood cells help in clotting?", ["Red blood cells", "White blood cells", "Platelets", "Plasma"], 2], ["During summer vacation, Ravi, who lives in Hyderabad, wants to visit Kavaratti. To reach Kavaratti, which of the following Union Territories would he need to travel to?", ["Puducherry", "Andaman and Nicobar Islands", "Lakshadweep", "Daman and Diu"], 2], ["Which one of the following causes rainfall during winters in North Western Part of India?", ["Trade Winds", "Western Disturbances", "South West Monsoon Winds", "Retreating South West Monsoon Winds"], 1], ["Most of the forests of Telangana fall in this category", ["Tropical Evergreen Forests", "Temperate Evergreen Forests", "Coniferous Forests", "Deciduous forests"], 3], ["Under this settlement, the peasants cultivating the land were identified, their field was identified and a Survey number was given to every piece of land fixing the legal ownership", ["The Zabt Revenue System", "The Mahalwari System", "The Ryotwari System", "The Zamindari System"], 2], ["This Department looks after the local systems of medicine such as Ayurveda, Homeopathy, Unani, Siddha and research in them", ["Department of Aids Control", "Department of Health and Family Welfare", "Department of Health Research", "Department of AYUSH"], 3], ["Identify the true statement regarding Bank Interest rates", ["Banks levy uniform rate of interest on all types of loans", "Bank Interest rates vary from loan to loan and depend upon loan period", "Bank charges higher rates of Interest on Housing Loan compared to personal loans", "Bank charges lower rate of Interest on Personal loans"], 1], ["In 1885, this retired British official played an important role in establishing Indian National Congress", ["Lord William Bentick", "Sir Arthur Cotton", "A.O. Hume", "Thomas Munro"], 2], ["The Chola ruler who built the town of Thanjavur and a temple for Goddess Nishumbhasudini at that place", ["Raja Raja I", "Aditya Chola", "Vijayalaya", "Rajaraja Chola"], 2], ["'Prashasthi' refers to", ["the concluding words written in the inscription", "The first part of the inscriptions", "A detailed description of 'construction of the temple'", "The Ancient stories of Kings and queens"], 1], ["In 1946, this incident had sparked off the famous Telangana Armed Struggle", ["Suppression of tillers Movement by the Nizam of Hyderabad", "organisation of People's Court by Nalla Narasimhulu", "Shooting of Doddi Komaraiah", "formation of Vishala Andhra"], 2], ["The establishment of the state of Andhra Pradesh in 1956 was based on the", ["Gentlemen Agreement with Andhra", "Indian Independence Act, 1947", "provisions of the Andhra Mahasabha", "States Reorganisation Act / Vishalandhra movement"], 0], ["The first state in India to implement Mid-Day Meal scheme in schools is", ["Kerala", "Tamil Nadu", "Karnataka", "Telangana"], 1], ["Which of the following is NOT an objective of teaching Environmental Studies at the primary level?", ["To train children to locate and comprehend relationships between the natural, social and cultural environment", "To encourage children to memorize definitions and scientific terms", "To nurture the curiosity and creativity of the child particularly in relation to the natural environment", "To develop an awareness about environmental issues"], 1], ["In EVS teaching, 'Field Trip' is mainly useful for", ["entertainment of students", "providing direct and first-hand learning experiences", "reducing the workload of the teacher", "completing the syllabus quickly"], 1], ["Which of the following is the best method to teach the topic 'Sources of Water' to Class IV students?", ["Dictating notes on sources of water", "Asking students to draw pictures of rivers from the textbook", "Organizing a group discussion and survey of local water bodies", "Giving a lecture on the water cycle"], 2], ["Continuous and Comprehensive Evaluation (CCE) in EVS emphasizes on", ["conducting weekly written tests only", "assessing both scholastic and co-scholastic aspects of child's development", "ranking students based on their marks", "evaluating students only at the end of the academic year"], 1], ["A teacher brings different types of leaves to the classroom and asks students to observe and classify them based on their shape, size, and texture. Which process skill is being developed here?", ["Hypothesizing", "Observation and Classification", "Experimentation", "Measuring"], 1], ["The integrated nature of Environmental Studies at the primary level means", ["teaching Science and Social Studies as separate subjects", "combining concepts and issues from Science, Social Studies, and Environmental Education", "focusing only on environmental pollution", "teaching EVS through English language only"], 1]];
+const letters=['A','B','C','D'];
+const quiz=document.getElementById('quiz');
+const answers=Array(questions.length).fill(null);
+let locked=false;
+function render(){
+ quiz.innerHTML='';
+ questions.forEach((q,i)=>{
+  const card=document.createElement('section');card.className='question';card.id='q'+i;
+  let opts=q[1].map((op,j)=>`<label class="option" id="opt-${i}-${j}"><input type="radio" name="q${i}" value="${j}" onchange="selectAnswer(${i},${j})"><span><b>${letters[j]})</b> ${escapeHtml(op)}</span></label>`).join('');
+  card.innerHTML=`<div class="qtitle"><span class="qnum">${i+121}</span>${q[0]}</div>${opts}<div class="feedback" id="fb-${i}"></div>`;
+  quiz.appendChild(card);
+ });
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function selectAnswer(i,j){
+ if(locked||answers[i]!==null)return;
+ answers[i]=j;
+ const correct=questions[i][2];
+ for(let k=0;k<4;k++){
+  const el=document.getElementById(`opt-${i}-${k}`);
+  el.querySelector('input').disabled=true;
+  if(k===correct)el.classList.add('correct');
+  if(k===j&&j!==correct)el.classList.add('wrong');
+ }
+ const fb=document.getElementById('fb-'+i);
+ if(j===correct){fb.textContent='✓ Correct Answer';fb.className='feedback good';}
+ else{fb.textContent=`✗ Incorrect. Correct answer: ${letters[correct]}) ${questions[i][1][correct]}`;fb.className='feedback bad';}
+ updateProgress();
+}
+function updateProgress(){
+ const count=answers.filter(x=>x!==null).length;
+ const score=answers.reduce((n,a,i)=>n+(a===questions[i][2]?1:0),0);
+ document.getElementById('answered').textContent=`Answered: ${count} / 30`;
+ document.getElementById('liveScore').textContent=`Correct: ${score}`;
+ document.getElementById('progressFill').style.width=(count/30*100)+'%';
+}
+function finishTest(){
+ locked=true;
+ const attempted=answers.filter(x=>x!==null).length;
+ const score=answers.reduce((n,a,i)=>n+(a===questions[i][2]?1:0),0);
+ document.querySelectorAll('input[type=radio]').forEach(x=>x.disabled=true);
+ document.getElementById('scoreText').textContent=`${score} / 30`;
+ document.getElementById('resultMessage').textContent=score>=24?'Excellent performance!':score>=18?'Good effort! Keep practising.':'Keep practising. You can improve!';
+ document.getElementById('resultDetail').textContent=`Attempted: ${attempted} | Correct: ${score} | Incorrect: ${attempted-score} | Not attempted: ${30-attempted}`;
+ document.getElementById('result').style.display='block';
+ document.getElementById('finishBtn').style.display='none';
+ document.getElementById('restartBtn').style.display='inline-block';
+ document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+function restartTest(){
+ answers.fill(null);locked=false;
+ document.getElementById('result').style.display='none';
+ document.getElementById('finishBtn').style.display='inline-block';
+ document.getElementById('restartBtn').style.display='none';
+ render();updateProgress();window.scrollTo({top:0,behavior:'smooth'});
+}
+render();updateProgress();
+</script>
+</body></html>
