@@ -3,50 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MANA-TET-2026 | Mathematics Questions 91–120</title>
+<title>MANA-TET-2026 | Mathematics Q91-120</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,sans-serif}
-header{background:linear-gradient(135deg,#123c69,#1d70a2);color:white;padding:22px 15px;text-align:center}
-header h1{margin:0;font-size:23px}header p{margin:7px 0 0}
-.wrap{max-width:850px;margin:20px auto;padding:0 12px}.panel,.question{background:white;border-radius:13px;padding:18px;margin-bottom:15px;box-shadow:0 2px 10px #0000000d}
-.progress-row{display:flex;justify-content:space-between;font-weight:bold;margin-bottom:9px}.bar{height:9px;background:#e5eaf1;border-radius:20px;overflow:hidden}.fill{height:100%;width:0;background:#1683c7;transition:.2s}
-.qhead{color:#1769aa;font-weight:bold;margin-bottom:12px}.qtext{font-size:17px;line-height:1.55;margin-bottom:15px}.option{display:block;border:1px solid #dce2ea;border-radius:9px;padding:12px;margin:9px 0;cursor:pointer;line-height:1.4}.option:hover{background:#f4f9ff}.option input{margin-right:9px}.option.correct{border-color:#168447;background:#eaf8ef}.option.wrong{border-color:#d33;background:#fff0f0}
-.feedback{font-weight:bold;margin-top:12px;min-height:22px}.controls{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}button{border:0;border-radius:8px;padding:12px 20px;font-size:15px;font-weight:bold;cursor:pointer}.primary{background:#126eaa;color:white}.secondary{background:#e8edf3;color:#243447}button:disabled{opacity:.45;cursor:not-allowed}
-#result{display:none;text-align:center}.score{font-size:30px;color:#126eaa;font-weight:bold;margin:12px}.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:15px 0}.stat{background:#f1f5fa;padding:12px 18px;border-radius:9px}.small{color:#64748b;font-size:13px}.math{display:inline-block;background:#f7f9fc;padding:5px 8px;border-radius:6px}
-</style></head>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:#fff;text-align:center;padding:22px 12px}
+header h1{margin:0;font-size:24px}header p{margin:7px 0 0;font-size:15px}
+.container{max-width:900px;margin:18px auto;padding:0 12px}
+.topbox,.question,.resultbox{background:#fff;border-radius:12px;padding:16px;margin-bottom:14px;box-shadow:0 2px 9px rgba(0,0,0,.07)}
+.status{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:bold;margin-bottom:9px}
+.progress{height:10px;background:#e4eaf1;border-radius:20px;overflow:hidden}
+.progressbar{height:100%;width:0;background:#1683c7;transition:width .2s}
+.question h3{font-size:17px;color:#145f99;margin:0 0 12px}
+.qtext{font-size:16px;line-height:1.55;margin-bottom:12px}
+.option{display:block;border:1px solid #d9e0e8;border-radius:8px;padding:11px 12px;margin:8px 0;cursor:pointer;line-height:1.45}
+.option:hover{background:#f4f9ff}
+.option input{margin-right:8px}
+.option.correct{background:#e9f8ef;border-color:#249653}
+.option.incorrect{background:#fff0f0;border-color:#d34b4b}
+.feedback{font-weight:bold;margin-top:10px;min-height:20px}
+.actions{text-align:center;margin:20px 0}
+button{border:0;border-radius:8px;padding:13px 24px;font-size:16px;font-weight:bold;cursor:pointer;background:#126eaa;color:white}
+button:hover{background:#0d5688}
+.resultbox{display:none;text-align:center;padding:22px}
+.score{font-size:30px;font-weight:bold;color:#126eaa;margin:12px}
+.stats{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:16px 0}
+.stat{background:#f1f5fa;border-radius:8px;padding:12px 16px}
+.small{text-align:center;color:#667085;font-size:13px}
+.math{display:inline-block;background:#f7f9fc;padding:5px 8px;border-radius:5px}
+</style>
+</head>
 <body>
 <header><h1>MANA-TET-2026</h1><p>Paper I – Mathematics (English Medium) | Questions 91–120</p></header>
-<div class="wrap">
-<div class="panel"><div class="progress-row"><span id="counter">Question 1 of 30</span><span id="answered">Answered: 0/30</span></div><div class="bar"><div class="fill" id="fill"></div></div></div>
+<div class="container">
+<div class="topbox">
+ <div class="status"><span id="answered">Answered: 0 / 30</span><span id="liveScore">Correct: 0</span></div>
+ <div class="progress"><div class="progressbar" id="progressbar"></div></div>
+</div>
 <div id="quiz"></div>
-<div class="panel controls" id="nav"><button class="secondary" id="prev" onclick="move(-1)">← Previous</button><button class="primary" id="next" onclick="move(1)">Next →</button><button class="primary" id="finish" onclick="finish()" style="display:none">Finish Test</button></div>
-<div class="panel" id="result"><h2>Test Completed!</h2><div class="score" id="score"></div><div id="percent"></div><div class="stats" id="stats"></div><p id="summary"></p><button class="primary" onclick="restart()">Restart Test</button></div>
-<p class="small" style="text-align:center">MANA-TET-2026 | Mathematics Practice Test</p>
+<div class="actions"><button id="submitBtn" onclick="showResult()">SUBMIT TEST</button></div>
+<div class="resultbox" id="result">
+ <h2>Test Result</h2><div class="score" id="score"></div><div id="percentage"></div>
+ <div class="stats" id="stats"></div>
+ <button onclick="restartQuiz()">RESTART TEST</button>
+</div>
+<p class="small">MANA-TET-2026 | Mathematics Practice Test</p>
 </div>
 <script>
-const questions=[[91, "The number of digits in numeral of 100 crores is", ["8", "11", "10", "9"], 2], [92, "The diesel price per litre is ₹95.70. A petrol bunk sells 700 litres of diesel on a day. How much money do they get on that day?", ["₹65,990", "₹66,990", "₹64,890", "₹67,930"], 1], [93, "Government of India declared this year as National Mathematics Year to commemorate the 125th birth anniversary of Srinivasa Ramanujan.", ["2013", "2011", "2010", "2012"], 3], [94, "The sum of two whole numbers is always a", ["whole number", "Fraction", "Negative number", "Prime number"], 0], [95, "Which of the following numbers is NOT divisible by 8?", ["859456", "531048", "726352", "613684"], 3], [96, "Identify the FALSE statement from the following", ["A line has no end points", "We can draw many lines through two distinct points", "Ray is a part of a line", "Line segment has a definite length"], 1], [97, "In a circle, region enclosed by an arc and two radii is called as", ["Sector of the circle", "Circular region", "Segment of a circle", "An Arc"], 0], [98, "At 5:00, what type of angle is formed between the minute and hour hands of the clock?", ["Straight angle", "Right angle", "Obtuse angle", "Acute angle"], 2], [99, "-2025 less than 2025 by", ["0", "4050", "-4050", "1"], 1], [100, "(-10) - (-18) + (36)(-3) - (-97) =", ["-3", "3", "0", "95"], 0], [101, "Write the following fractions in ascending order?<br><span class='math'>1/3, 1/4, 5/8, 3/6, 7/12</span>", ["1/4, 1/3, 5/8, 3/6, 7/12", "1/4, 1/3, 3/6, 7/12, 5/8", "7/12, 1/3, 1/4, 3/6, 5/8", "7/12, 5/8, 3/6, 1/4, 1/3"], 1], [102, "Arjun travelled 9km 27m by bus, 4 km 325m by car and 2km 630m on foot. How much distance did he travel in all?", ["16km 225m", "15km 415m", "15km 982m", "16km 25m"], 2], [103, "Who is known as father of Indian Statistics?", ["Aryabhatta", "Srinivasa Ramanujan", "Shakuntala Devi", "P.C. Mahalanobis"], 3], [104, "If 4x + 3(x - 2) = 2x + 9, then value of x =", ["2", "3", "4", "5"], 1], [105, "Ramesh wants to fence a rectangular plot of length 100m and breadth 50m. The cost of the fencing is ₹20 per meter. Then, the total cost of the fencing around the plot is", ["₹3000", "₹10000", "₹6000", "₹20000"], 2], [106, "The perimeter (in cm) of a regular pentagon of side 12 cm is", ["60", "120", "90", "144"], 0], [107, "A milk man adds 400 ml of water to 1 litre of milk. The ratio of water to milk is", ["1 : 3", "2 : 5", "1 : 5", "3 : 4"], 1], [108, "In the product 359 × 953, the sum of ten's digit and ones digit is", ["12", "8", "10", "9"], 3], [109, "26.858 ÷ 2.6 =", ["10.03", "10.31", "10.33", "10.13"], 2], [110, "(0.0625)^(3/4) =", ["0.25", "0.125", "0.025", "0.0125"], 1], [111, "In the number 7*87*4 same digit lies in the place of '*' and the difference in its place value is 59940, then what is that digit?", ["5", "7", "8", "6"], 3], [112, "Which of the following represent set of prime numbers?", ["{109, 139, 149, 179}", "{109, 119, 149, 189}", "{109, 129, 159, 199}", "{109, 139, 149, 169}"], 0], [113, "If the cost of 9 mangoes is ₹288, the cost of 4¾ dozen mangoes is", ["₹1814", "₹1834", "₹1824", "₹1844"], 2], [114, "If number of edges and vertices of a triangular pyramid are E and V respectively, then V/E =", ["3/2", "2/3", "1/2", "9/4"], 1], [115, "\"A student is able to write decimals in ascending and descending order\". Then the objective achieved by the student is:", ["Knowledge", "Understanding", "Application", "Skill"], 1], [116, "The main purpose of presenting the work done by the children in the activity-based method is:", ["Keeping the classroom clean", "Making the classroom beautiful", "Making the classroom as an interesting learning center", "Decorating the classroom"], 2], [117, "Among the following resources for teaching mathematics, it is NOT a human resource:", ["Tailor", "Carpenter", "Gardener", "Post office"], 3], [118, "In writing a period plan, the Herbartian step where the teacher tests competencies acquired by the students on the topic taught is:", ["Preparation", "Presentation", "Association", "Recapitulation"], 3], [119, "The assessment that gives feedback in the teaching and learning of the topic \"Pairs of Angles\" is:", ["Formative assessment", "Summative assessment", "Continuous comprehensive assessment", "Prognostic assessment"], 0], [120, "The main purpose of problems given under \"Do This\" in mathematics textbooks is:", ["Solving the problems only after discussing in groups", "To know students' understanding of the concepts taught", "Giving problems as homework to students", "Developing logical thinking in students"], 1]];
-const letters=['A','B','C','D'];let current=0;let answers=Array(questions.length).fill(null);let checked=Array(questions.length).fill(false);
-function render(){
- const q=questions[current];document.getElementById('quiz').innerHTML=`<div class="question"><div class="qhead">Question ${q[0]}</div><div class="qtext">${q[1]}</div>${q[2].map((o,i)=>`<label class="option ${checked[current]?(i===q[3]?'correct':(answers[current]===i?'wrong':'')):''}"><input type="radio" name="answer" value="${i}" ${answers[current]===i?'checked':''} ${checked[current]?'disabled':''} onchange="choose(${i})"> <b>${letters[i]})</b> ${o}</label>`).join('')}<div class="feedback" id="feedback">${checked[current]?(answers[current]===q[3]?'✓ Correct answer!':'✗ Incorrect. Correct answer: '+letters[q[3]]+') '+q[2][q[3]]):''}</div></div>`;
- document.getElementById('counter').textContent=`Question ${current+1} of ${questions.length}`;
- document.getElementById('answered').textContent=`Answered: ${answers.filter(x=>x!==null).length}/${questions.length}`;
- document.getElementById('fill').style.width=((current+1)/questions.length*100)+'%';
- document.getElementById('prev').disabled=current===0;
- document.getElementById('next').style.display=current===questions.length-1?'none':'inline-block';
- document.getElementById('finish').style.display=current===questions.length-1?'inline-block':'none';
+const questions = [[91, "The number of digits in numeral of 100 crores is", ["8", "11", "10", "9"], 2], [92, "The diesel price per litre is ₹95.70. A petrol bunk sells 700 litres of diesel on a day. How much money do they get on that day?", ["₹65,990", "₹66,990", "₹64,890", "₹67,930"], 1], [93, "Government of India declared this year as National Mathematics Year to commemorate the 125th birth anniversary of Srinivasa Ramanujan.", ["2013", "2011", "2010", "2012"], 3], [94, "The sum of two whole numbers is always a", ["whole number", "Fraction", "Negative number", "Prime number"], 0], [95, "Which of the following numbers is NOT divisible by 8?", ["859456", "531048", "726352", "613684"], 3], [96, "Identify the FALSE statement from the following", ["A line has no end points", "We can draw many lines through two distinct points", "Ray is a part of a line", "Line segment has a definite length"], 1], [97, "In a circle, region enclosed by an arc and two radii is called as", ["Sector of the circle", "Circular region", "Segment of a circle", "An Arc"], 0], [98, "At 5:00, what type of angle is formed between the minute and hour hands of the clock?", ["Straight angle", "Right angle", "Obtuse angle", "Acute angle"], 2], [99, "-2025 less than 2025 by", ["0", "4050", "-4050", "1"], 1], [100, "(-10) - (-18) + (36)(-3) - (-97) =", ["-3", "3", "0", "95"], 0], [101, "Write the following fractions in ascending order?<br><span class='math'>1/3, 1/4, 5/8, 3/6, 7/12</span>", ["1/4, 1/3, 5/8, 3/6, 7/12", "1/4, 1/3, 3/6, 7/12, 5/8", "7/12, 1/3, 1/4, 3/6, 5/8", "7/12, 5/8, 3/6, 1/4, 1/3"], 1], [102, "Arjun travelled 9km 27m by bus, 4 km 325m by car and 2km 630m on foot. How much distance did he travel in all?", ["16km 225m", "15km 415m", "15km 982m", "16km 25m"], 2], [103, "Who is known as father of Indian Statistics?", ["Aryabhatta", "Srinivasa Ramanujan", "Shakuntala Devi", "P.C. Mahalanobis"], 3], [104, "If 4x + 3(x - 2) = 2x + 9, then value of x =", ["2", "3", "4", "5"], 1], [105, "Ramesh wants to fence a rectangular plot of length 100m and breadth 50m. The cost of the fencing is ₹20 per meter. Then, the total cost of the fencing around the plot is", ["₹3000", "₹10000", "₹6000", "₹20000"], 2], [106, "The perimeter (in cm) of a regular pentagon of side 12 cm is", ["60", "120", "90", "144"], 0], [107, "A milk man adds 400 ml of water to 1 litre of milk. The ratio of water to milk is", ["1 : 3", "2 : 5", "1 : 5", "3 : 4"], 1], [108, "In the product 359 × 953, the sum of ten's digit and ones digit is", ["12", "8", "10", "9"], 3], [109, "26.858 ÷ 2.6 =", ["10.03", "10.31", "10.33", "10.13"], 2], [110, "(0.0625)^(3/4) =", ["0.25", "0.125", "0.025", "0.0125"], 1], [111, "In the number 7*87*4 same digit lies in the place of '*' and the difference in its place value is 59940, then what is that digit?", ["5", "7", "8", "6"], 3], [112, "Which of the following represent set of prime numbers?", ["{109, 139, 149, 179}", "{109, 119, 149, 189}", "{109, 129, 159, 199}", "{109, 139, 149, 169}"], 0], [113, "If the cost of 9 mangoes is ₹288, the cost of 4¾ dozen mangoes is", ["₹1814", "₹1834", "₹1824", "₹1844"], 2], [114, "If number of edges and vertices of a triangular pyramid are E and V respectively, then V/E =", ["3/2", "2/3", "1/2", "9/4"], 1], [115, "\"A student is able to write decimals in ascending and descending order\". Then the objective achieved by the student is:", ["Knowledge", "Understanding", "Application", "Skill"], 1], [116, "The main purpose of presenting the work done by the children in the activity-based method is:", ["Keeping the classroom clean", "Making the classroom beautiful", "Making the classroom as an interesting learning center", "Decorating the classroom"], 2], [117, "Among the following resources for teaching mathematics, it is NOT a human resource:", ["Tailor", "Carpenter", "Gardener", "Post office"], 3], [118, "In writing a period plan, the Herbartian step where the teacher tests competencies acquired by the students on the topic taught is:", ["Preparation", "Presentation", "Association", "Recapitulation"], 3], [119, "The assessment that gives feedback in the teaching and learning of the topic \"Pairs of Angles\" is:", ["Formative assessment", "Summative assessment", "Continuous comprehensive assessment", "Prognostic assessment"], 0], [120, "The main purpose of problems given under \"Do This\" in mathematics textbooks is:", ["Solving the problems only after discussing in groups", "To know students' understanding of the concepts taught", "Giving problems as homework to students", "Developing logical thinking in students"], 1]];
+const labels=['A','B','C','D'];
+let selected=Array(questions.length).fill(null);
+let locked=Array(questions.length).fill(false);
+function renderQuestions(){
+ const area=document.getElementById('quiz');
+ area.innerHTML=questions.map((q,index)=>`
+  <div class="question" id="qcard-${index}">
+   <h3>Question ${q[0]}</h3>
+   <div class="qtext">${q[1]}</div>
+   ${q[2].map((option,i)=>`
+    <label class="option" id="opt-${index}-${i}">
+     <input type="radio" name="q${index}" value="${i}" onchange="selectAnswer(${index},${i})">
+     <b>${labels[i]})</b> ${option}
+    </label>`).join('')}
+   <div class="feedback" id="feedback-${index}"></div>
+  </div>`).join('');
 }
-function choose(i){answers[current]=i;checked[current]=true;render();}
-function move(d){current=Math.max(0,Math.min(questions.length-1,current+d));render();}
-function finish(){
- let correct=0,wrong=0,unanswered=0;
- questions.forEach((q,i)=>{if(answers[i]===null)unanswered++;else if(answers[i]===q[3])correct++;else wrong++;});
- document.getElementById('quiz').style.display='none';document.getElementById('nav').style.display='none';
+function selectAnswer(qIndex,optionIndex){
+ if(locked[qIndex]) return;
+ selected[qIndex]=optionIndex;locked[qIndex]=true;
+ const correct=questions[qIndex][3];
+ for(let i=0;i<4;i++){
+  const el=document.getElementById(`opt-${qIndex}-${i}`);
+  const input=el.querySelector('input');input.disabled=true;
+  if(i===correct)el.classList.add('correct');
+  else if(i===optionIndex)el.classList.add('incorrect');
+ }
+ document.getElementById(`feedback-${qIndex}`).textContent =
+  optionIndex===correct ? '✓ Correct Answer!' : `✗ Incorrect. Correct answer: ${labels[correct]}) ${questions[qIndex][2][correct]}`;
+ updateProgress();
+}
+function updateProgress(){
+ const answered=selected.filter(x=>x!==null).length;
+ const correct=selected.reduce((sum,a,i)=>sum+(a===questions[i][3]?1:0),0);
+ document.getElementById('answered').textContent=`Answered: ${answered} / ${questions.length}`;
+ document.getElementById('liveScore').textContent=`Correct: ${correct}`;
+ document.getElementById('progressbar').style.width=(answered/questions.length*100)+'%';
+}
+function showResult(){
+ const answered=selected.filter(x=>x!==null).length;
+ const correct=selected.reduce((sum,a,i)=>sum+(a===questions[i][3]?1:0),0);
+ const wrong=answered-correct,unanswered=questions.length-answered;
+ document.getElementById('score').textContent=`${correct} / ${questions.length}`;
+ document.getElementById('percentage').textContent=`Percentage: ${(correct/questions.length*100).toFixed(2)}%`;
+ document.getElementById('stats').innerHTML=`
+  <div class="stat">✓ Correct: <b>${correct}</b></div>
+  <div class="stat">✗ Incorrect: <b>${wrong}</b></div>
+  <div class="stat">— Unanswered: <b>${unanswered}</b></div>`;
  document.getElementById('result').style.display='block';
- document.getElementById('score').textContent=`$${correct} / ${questions.length}`;
- document.getElementById('percent').textContent=`Percentage: ${(correct/questions.length*100).toFixed(2)}%`;
- document.getElementById('stats').innerHTML=`<div class="stat">✓ Correct: <b>${correct}</b></div><div class="stat">✗ Incorrect: <b>${wrong}</b></div><div class="stat">— Unanswered: <b>${unanswered}</b></div>`;
- document.getElementById('summary').textContent='Your Mathematics practice test result.';
+ document.getElementById('submitBtn').style.display='none';
+ document.getElementById('result').scrollIntoView({behavior:'smooth'});
 }
-function restart(){current=0;answers=Array(questions.length).fill(null);checked=Array(questions.length).fill(false);document.getElementById('quiz').style.display='block';document.getElementById('nav').style.display='flex';document.getElementById('result').style.display='none';render();}
-render();
-</script></body></html>
+function restartQuiz(){
+ selected=Array(questions.length).fill(null);locked=Array(questions.length).fill(false);
+ document.getElementById('result').style.display='none';
+ document.getElementById('submitBtn').style.display='inline-block';
+ renderQuestions();updateProgress();window.scrollTo({top:0,behavior:'smooth'});
+}
+renderQuestions();updateProgress();
+</script>
+</body>
+</html>
