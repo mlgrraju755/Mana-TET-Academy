@@ -1,90 +1,305 @@
-<!doctype html>
-<html lang="te"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TG TET తెలుగు క్విజ్ (31–60)</title>
-<style>
-:root{font-family:"Noto Sans Telugu","Gautami",Arial,sans-serif;color:#182235;background:#eef3f9}
-*{box-sizing:border-box}body{margin:0;padding:16px}.wrap{max-width:900px;margin:auto}
-header{background:linear-gradient(135deg,#123b68,#286a91);color:white;padding:22px;border-radius:18px;margin-bottom:14px}
-h1{font-size:24px;margin:0 0 7px}.sub{opacity:.92;font-size:14px}
-.stats{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:white;border-radius:12px;padding:9px 13px;box-shadow:0 2px 8px #10243a12;font-size:14px}
-.progress{height:9px;background:#d7e0ec;border-radius:20px;overflow:hidden;margin:10px 0 16px}#bar{height:100%;width:0;background:#18a477;transition:.2s}
-.card{background:white;border-radius:16px;padding:18px;margin:12px 0;box-shadow:0 4px 14px #10243a12}
-.qtop{display:flex;justify-content:space-between;gap:10px;color:#52647a;font-size:13px;margin-bottom:10px}
-.question{font-size:18px;line-height:1.65;font-weight:650;margin-bottom:14px}
-.option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid #d8e1ec;border-radius:12px;margin:8px 0;cursor:pointer;line-height:1.5}
-.option input{margin-top:5px;transform:scale(1.15)}.option.correct{border-color:#159765;background:#eaf8f1}.option.wrong{border-color:#d84b4b;background:#fff0f0}
-.feedback{display:none;margin-top:12px;padding:12px;border-radius:12px;line-height:1.55;background:#f1f5fa}.feedback.show{display:block}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}button{border:0;border-radius:12px;padding:12px 17px;font-size:15px;font-weight:700;cursor:pointer}.primary{background:#1769aa;color:white}.secondary{background:#e1eaf4;color:#17324e}
-#result{display:none;background:#fff;border-radius:16px;padding:20px;margin:16px 0;box-shadow:0 4px 14px #10243a12}#result h2{margin-top:0}
-.note{background:#fff8e7;border-left:4px solid #e4a32b;padding:12px;border-radius:8px;font-size:13px;line-height:1.55;margin-top:12px}
-footer{text-align:center;color:#66788d;font-size:12px;padding:15px}
-@media(max-width:600px){body{padding:9px}header{padding:17px}h1{font-size:21px}.card{padding:14px}.question{font-size:17px}}
-</style></head><body><div class="wrap">
-<header><h1>TG TET తెలుగు క్విజ్ (31–60)</h1><div class="sub">Language I – Telugu • 30 ప్రశ్నలు</div><div class="sub">TG TET Paper-I • 27 June 2025 • Shift 2</div></header>
-<div class="stats"><div class="pill">మొత్తం ప్రశ్నలు: <b>30</b></div><div class="pill">సమాధానం ఇచ్చినవి: <b id="answered">0</b></div><div class="pill">సరైనవి: <b id="right">0</b></div><div class="pill">తప్పులు: <b id="wrong">0</b></div></div>
-<div class="progress"><div id="bar"></div></div>
-<div id="quiz"></div>
-<div class="actions"><button class="primary" onclick="showResult()">ఫలితాలు చూడండి</button><button class="secondary" onclick="resetQuiz()">మళ్లీ ప్రారంభించండి</button></div>
-<div id="result"></div>
-<div class="note"><b>గమనిక:</b> ఇవి PDFలోని ప్రశ్నల ఆధారంగా స్వతంత్రంగా సిద్ధం చేసిన సమాధానాలు, వివరణలు. అధికారిక Answer Key కాదు. మూల PDFలో OCR/స్కాన్ స్పష్టత లేని చోట ప్రత్యేక గమనిక ఇచ్చాం. అలాంటి ప్రశ్నలను అసలు ప్రశ్నపత్రంతో ధృవీకరించండి.</div>
-<footer>Mana Online Test • TG TET Previous Paper – June 2025 Shift 2</footer>
+<!DOCTYPE html><html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | తెలుగు ప్రశ్నలు 31–60</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:"Noto Sans Telugu","Gautami","Nirmala UI",Arial,sans-serif;line-height:1.7}
+
+header{background:linear-gradient(135deg,#123b70,#1769aa);color:#fff;padding:22px 15px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{margin:5px 0 0}
+
+.wrap{max-width:900px;margin:18px auto;padding:0 12px}
+.panel{background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;box-shadow:0 2px 10px #0000000d}
+
+.passage-title{font-weight:700;color:#124b83;margin-bottom:8px}
+.poem{text-align:center;font-size:17px;font-weight:600;line-height:2;color:#333}
+
+.progressbox{position:sticky;top:0;background:#f3f6fb;padding:9px 0;z-index:5}
+.progressrow{display:flex;justify-content:space-between;font-weight:700;color:#174b7a;margin-bottom:6px}
+.bar{height:9px;background:#dce5ef;border-radius:20px;overflow:hidden}
+.fill{height:100%;width:0;background:#15945b;transition:width .25s}
+
+.qcard{background:#fff;border-radius:12px;padding:17px;margin:14px 0;box-shadow:0 2px 9px #0000000d;border-left:4px solid #1769aa}
+.qtitle{font-weight:700;font-size:17px;margin-bottom:12px}
+
+.option{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;margin:8px 0;border:1px solid #d8e0e9;border-radius:9px;cursor:pointer;background:#fff}
+.option input{margin-top:7px;accent-color:#1769aa;transform:scale(1.1)}
+.option.correct{background:#e7f7ed;border-color:#2e9d59}
+.option.wrong{background:#fff0f0;border-color:#dc4b4b}
+
+.feedback{font-weight:700;margin-top:8px;min-height:25px}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:22px 0}
+button{border:0;border-radius:9px;padding:12px 20px;font-size:16px;font-weight:700;cursor:pointer}
+.finish{background:#1769aa;color:#fff}
+.restart{background:#e8edf3;color:#17324d}
+
+#result{display:none;text-align:center;background:#eaf4ff;border:1px solid #b9d8f5}
+#result h2{color:#124b83;margin:0 0 8px}
+.score{font-size:28px;font-weight:800;color:#13834c}
+.small{font-size:13px;color:#5f6b78}
+
+@media(max-width:600px){
+header h1{font-size:21px}
+.qtitle{font-size:16px}
+.panel{padding:13px}
+}
+</style></head><body><header>
+<h1>MANA-TET-2026</h1>
+<p>Paper-I | Language-I : తెలుగు (తెలుగు మీడియం)</p>
+<p>ప్రశ్నలు 31 నుండి 60 వరకు</p>
+</header><div class="wrap"><!-- పద్యం --><section class="panel">
+<div class="passage-title">31–34 ప్రశ్నలకు సంబంధించిన పద్యం</div><div class="poem">
+చీమలు పెట్టిన పుట్టలు<br>
+పాముల కిరవైనయట్లు పామరుఁడు దగన్<br>
+హేమంబు గూడఁబెట్టిన<br>
+భూమీశుల పాలఁజేరు భువిలో సుమతీ!
 </div>
-<script>
-const qs=[["‘పాలసుడు’ అనే పదానికి అర్థం ఏమిటి?", ["మంచివాడు", "చెడ్డవాడు", "నికుడు", "వజ్రం"], 1, "‘పాలసుడు’ అంటే దుర్జనుడు, చెడ్డవాడు లేదా దుష్టుడు. అందువల్ల ‘చెడ్డవాడు’ సరైన అర్థం."], ["కాపాడినా మేలు చేయని జీవి ఏది?", ["సర్వజ్ఞుడు", "తేలు", "ఈగ", "పరుగు"], 1, "పద్య సందర్భంలో తేలును కాపాడినా అది తన సహజ స్వభావం ప్రకారం కుడుతుంది. అందువల్ల తేలు సరైనది."], ["అగ్నిలో పడబోతున్న తేలును కాపాడితే అది ఏమి చేస్తుంది?", ["మనలనే కుడుతుంది", "దాక్కుంటుంది", "పారిపోతుంది", "కృతజ్ఞత చూపిస్తుంది"], 0, "తేలు తన స్వభావాన్ని విడవక కాపాడిన వ్యక్తినే కుడుతుందని పద్య భావం."], ["సర్వజ్ఞుడైనా చేయకూడని పని ఏది?", ["ఇతరుల ఆపదలను పట్టించుకోకుండా ఉండటం", "అజ్ఞానంగా ప్రవర్తించడం", "తనకు ఆపద వచ్చినప్పుడు జాలి చూపకపోవడం", "మూర్ఖత్వంగా ప్రవర్తించడం"], 0, "జ్ఞానం ఉన్నవాడు ఇతరుల కష్టాలను నిర్లక్ష్యం చేయకూడదు. కరుణ, సహాయం చూపాలి."], ["గోలకొండ పత్రిక వల్ల కలిగిన ప్రధాన ప్రయోజనం ఏమిటి?", ["తెలంగాణ సాహిత్య కృషి వెల్లడి", "రాష్ట్రాభివృద్ధి", "నిజాం అభివృద్ధి", "తెలంగాణ ఆర్థికాభివృద్ధి"], 0, "గోలకొండ పత్రిక తెలంగాణ ప్రాంత సాహిత్యకారుల రచనలు, సాహిత్య కృషిని వెలుగులోకి తెచ్చింది."], ["‘గోలకొండ కవుల సంచిక’ ప్రధాన ఉద్దేశం ఏమిటి?", ["భాషాభివృద్ధి", "తెలంగాణ కవుల సాహిత్య కృషిని వెలికి తీయడం", "ఆంధ్రప్రదేశ్ రాష్ట్ర కవుల సాహిత్య కృషిని కొనియాడడం", "తెలంగాణలో పత్రికా రంగాన్ని అభివృద్ధి చేయడం"], 1, "తెలంగాణ కవుల ప్రతిభ, రచనలను పరిచయం చేసి వారి సాహిత్య కృషిని వెలికి తీయడమే ప్రధాన ఉద్దేశం."], ["గ్రామీణాంధ్రుల జీవిత చరిత్రను భావికాలం వారికి అందించిన గ్రంథం ఏది?", ["గోలకొండ కవుల సంచిక", "ఆంధ్రుల సాంఘిక చరిత్ర", "ఆంధ్ర పత్రిక", "గతకాలపు సాహిత్య చరిత్ర"], 1, "‘ఆంధ్రుల సాంఘిక చరిత్ర’లో ఆంధ్రుల సామాజిక జీవన విధానం, ఆచారాలు, పరిస్థితులు నమోదు చేయబడ్డాయి."], ["తెలంగాణకు సాహిత్య రంగంలో విశిష్ట స్థానాన్ని సంపాదించి పెట్టినది ఏది?", ["గోలకొండ పత్రిక", "ఆంధ్రుల సాంఘిక చరిత్ర", "గ్రామీణుల జీవిత చరిత్ర", "గోలకొండ కవుల సంచిక"], 3, "గోలకొండ కవుల సంచిక తెలంగాణ కవుల సాహిత్య ప్రతిభను సమగ్రంగా పరిచయం చేసి ప్రత్యేక గుర్తింపునిచ్చింది."], ["‘రాజు ధనవంతుడు’ — ఇది ఏ రకమైన వాక్యం?", ["క్రియారహిత వాక్యం", "క్రియాసహిత వాక్యం", "ప్రశ్నార్థక వాక్యం", "ఆశ్చర్యార్థక వాక్యం"], 0, "ఈ వాక్యంలో స్పష్టమైన క్రియాపదం లేదు. ‘ధనవంతుడు’ విధేయంగా ఉన్నందున ఇది క్రియారహిత వాక్యం."], ["పూర్వ, పర స్వరాలకు పరస్వరం ఏకాదేశమగుటను ఏమంటారు?", ["సమాసం", "అవ్యయం", "ఉత్వ సంధి", "సంధి"], 3, "రెండు పదాలు కలిసేటప్పుడు అక్షరాలు/స్వరాలలో జరిగే మార్పును సంధి అంటారు. ఇచ్చిన నిర్వచనం సంధికి సంబంధించినది."], ["‘అదేమిటి’ అనే పదంలో ఉన్న సంధి పేరు ఏమిటి?", ["అకార సంధి", "ఇకార సంధి", "ఉకార సంధి", "గుణ సంధి"], 1, "‘అది + ఏమిటి’ కలిసినప్పుడు ‘ఇ’కారానికి సంబంధించిన లోప/మార్పు సంభవించి ‘అదేమిటి’ అవుతుంది. ఇచ్చిన ఎంపికల్లో ఇకార సంధి."], ["‘రాముడు హనుమంతుణ్ణి చూసి ఆనందించాడు’ అనే వాక్యంలో అసమాపక క్రియ ఏది?", ["రాముడు", "ఆనందించాడు", "చూసి", "హనుమంతుణ్ణి"], 2, "‘చూసి’ అనే క్రియ వాక్యాన్ని పూర్తిచేయదు; తరువాతి క్రియతో అనుసంధానమవుతుంది. కాబట్టి ఇది అసమాపక క్రియ."], ["‘భాను + ఉదయం’ కలిపి రాస్తే ఏర్పడే పదం ఏది?", ["భానూదయం", "భానోదయం", "ఖానోదయం", "భానుదయం"], 0, "‘భాను’లోని ఉకారం, ‘ఉదయం’లోని ఉకారంతో కలసి దీర్ఘ ‘ఊ’గా మారుతుంది: భానూదయం."], ["‘తరి చాలా విలువైనది’ అనే వాక్యంలో గీతగీసిన పదానికి అర్థం ఏమిటి?", ["ఆరోగ్యం", "ధనం", "జ్ఞానం", "వస్త్రం"], 1, "ఈ ప్రశ్నలో మూల PDF OCRలో గీతగీసిన పదం స్పష్టంగా కనిపించడం లేదు. అందుబాటులోని ఎంపికలు/వాక్యాన్ని బట్టి తాత్కాలికంగా ‘ధనం’ను ఎంచుకున్నాం; అసలు ప్రశ్నపత్రంతో ధృవీకరించాలి."], ["గడ్డి, పచ్చిక, గజిక అనే పర్యాయపదాలు కలిగిన పదం ఏది?", ["వరి", "తృణం", "కలుపు", "కూర"], 1, "‘తృణం’ అంటే గడ్డి. గడ్డి, పచ్చిక, గజిక ఇవి తృణానికి పర్యాయపదాలు."], ["‘గుణం’ అనే పదానికి నానార్థాలు ఏవి?", ["ఉద్యోగం, సేవ", "వంశం, తెగ", "శరీరం, ఇల్లు", "స్వభావం, లక్షణం"], 3, "‘గుణం’ అనే పదం స్వభావం, లక్షణం అనే అర్థాల్లో వాడబడుతుంది."], ["‘సంధ్య’ పదానికి వికృతి ఏది?", ["సిగ / సెగ", "సింగ / సాగ", "సంజ / సందె", "సంది / సందియం"], 2, "‘సంధ్య’కు వికృతి రూపంగా ‘సందె’ వాడుకలో ఉంది. కాబట్టి మూడవ ఎంపిక."], ["‘పురంలో నివసించువారు’ అనే అర్థాన్ని తెలిపే పదం ఏది?", ["నాగరికులు", "పురజనులు", "ఇమ్ముఖులు", "పట్టణవాసులు"], 1, "‘పురం’ అంటే పట్టణం; పురంలో నివసించే ప్రజలను ‘పురజనులు’ అంటారు."], ["‘వాగనుశాసనుడు’ అనే బిరుదు కలిగినవారు ఎవరు?", ["వాగ్గేయకారుడు", "ప్రబంధ పరమేశ్వరుడు", "కవి సార్వభౌముడు", "ఉభయకవి మిత్రుడు"], null, "ముఖ్య గమనిక: ‘వాగనుశాసనుడు’ అనే బిరుదు నన్నయకు చెందుతుంది. కానీ మూల PDFలో ఇచ్చిన నాలుగు ఎంపికల్లో ‘నన్నయ’ లేదు. అందువల్ల ఈ ప్రశ్నకు ఎంపికలలో సరైన సమాధానం లేదు; పరీక్షా మూలంలో ఎంపిక లోపం/OCR లోపం ఉండవచ్చు."], ["పాల్కురికి సోమనాథుని రచన కానిది ఏది?", ["శివపురాణం", "పండితారాధ్య చరిత్రం", "వృషాధిప శతకం", "బసవపురాణం"], 0, "పండితారాధ్య చరిత్రం, వృషాధిప శతకం, బసవపురాణం పాల్కురికి సోమనాథుని ప్రసిద్ధ రచనలు. ఇచ్చిన వాటిలో శివపురాణం ఆయన రచనగా పరిగణించబడదు."], ["‘భాస్కర శతకం’ రాసిన కవి ఎవరు?", ["హకళంకి భాస్కరుడు", "కంకంటి పాపరాజు", "మారద వెంకయ్య", "కంచర్ల గోపన్న"], 2, "‘భాస్కర శతకం’ రచయితగా మారద వెంకయ్యను పేర్కొంటారు."], ["‘తృణకంకణం’ ఎవరి రచన?", ["గుర్రం జాషువా", "దాశరథి", "అబ్బూరి", "కాళోజీ"], 2, "‘తృణకంకణం’ అబ్బూరి రామకృష్ణారావు రచనగా ప్రసిద్ధి."], ["‘తొక్కుడు బండ’, ‘శబ్నం’ అనే రచనలు ఎవరివి?", ["చెరబండ రాజు", "నగ్నముని", "టి. కృష్ణమూర్తి యాదవ్", "వరవరరావు"], 2, "ఈ రచనలు టి. కృష్ణమూర్తి యాదవ్‌కు ఆపాదించబడతాయి."], ["కింది వాటిలో దేశభక్తి గీతానికి చెందిన రచన ఏది?", ["పల్లెటూరి పిల్లగాడ", "ఏ దేశమేగినా", "తెలుగు తల్లి", "కూలిమస్తుగా దొరుకుతాదని"], 1, "‘ఏ దేశమేగినా’ దేశభక్తి భావాన్ని వ్యక్తం చేసే ప్రసిద్ధ గేయం."], ["‘శైలీభేదాలను గ్రహించడం’ అనే స్పష్టీకరణ ఏ బోధనా లక్ష్యానికి చెందుతుంది?", ["భాషాభిరుచి", "భాషాంతరీకరణ", "సంస్కృతి–సంప్రదాయం", "రసానుభూతి"], 0, "వివిధ శైలులను గుర్తించి ఆస్వాదించడం భాషపై అభిరుచి, సున్నితమైన భాషా రుచిని పెంపొందిస్తుంది."], ["భాషను ‘మానవ సమాజంతో భావ వినిమయానికి, పరస్పర సహకారానికి, సంస్కృతీ పరివ్యాప్తికి ఉపకరించే వాగ్రూప ధ్వని సంకేత సముదాయం’ అని నిర్వచించిన భాషావేత్త ఎవరు?", ["హాకెట్", "సైమన్ పాటర్", "బ్లూమ్‌ఫీల్డ్", "సాపిర్"], 3, "భాషను భావ వినిమయం, సామాజిక సహకారం, సంస్కృతి వ్యాప్తికి ఉపయోగపడే ధ్వని సంకేత వ్యవస్థగా సాపిర్ నిర్వచించాడు."], ["రెండవ తరగతి విద్యార్థులు బొమ్మ ఆధారంగా కథను ఊహించి చెప్పడం, రాయగలగడం అనే అభ్యసన సూచిక ఏ విద్యా ప్రమాణానికి చెందుతుంది?", ["ధారాళంగా చదవడం", "సృజనాత్మకత", "పదజాలం", "విని అర్థం చేసుకోవడం – స్వేచ్ఛగా మాట్లాడటం"], 1, "బొమ్మను చూసి కొత్త కథను ఊహించి చెప్పడం, రాయడం సృజనాత్మక ఆలోచనకు ఉదాహరణ."], ["పద్యంలో పదాలను విడదీసి, ప్రతి పదానికి అర్థం చెబుతూ, పదస్వరూపాన్ని వివరించే పద్య బోధన పద్ధతి ఏది?", ["ఖండ పద్ధతి", "పూర్ణ పద్ధతి", "ప్రశంసన పద్ధతి", "అనువాద పద్ధతి"], 0, "పద్యాన్ని పదాలుగా విడగొట్టి ఒక్కో పదానికి అర్థం, రూపం వివరించడం ఖండ పద్ధతి."], ["ప్రథమ భాషా వాచక అంతర్గత లక్షణాలలో చేరనిది ఏది?", ["అధ్యయన వేదిక", "శైలీ వైవిధ్యం", "ముద్రణ", "వ్యాకరణ సాధనాలు"], 0, "‘అధ్యయన వేదిక’ వాచకంలోని అంతర్గత లక్షణం కాదు. శైలి, ముద్రణ/ప్రదర్శన, వ్యాకరణ అంశాలు పాఠ్యపుస్తక లక్షణాలుగా పరిగణించబడతాయి."], ["ప్రత్యేక అవసరాలు గల విద్యార్థుల కోసం రూపొందించిన ఉపకరణాలు ఏ బోధనా సామగ్రి వర్గానికి చెందుతాయి?", ["సాధారణ పాఠ్య పుస్తకాలు", "దృశ్యోపకరణాలు", "ప్రత్యేక అవసరాలుగల విద్యార్థులకుద్దేశించిన ఉపకరణాలు", "శ్రవణ ఉపకరణాలు"], 2, "వికలాంగత/ప్రత్యేక అభ్యసన అవసరాలకు అనుగుణంగా రూపొందించిన పరికరాలు ప్రత్యేక అవసరాలుగల విద్యార్థుల ఉపకరణాల వర్గంలోకి వస్తాయి."]];
-const letters=['అ','ఆ','ఇ','ఈ'];
-let picks=Array(qs.length).fill(null), locked=Array(qs.length).fill(false);
+</section><div class="progressbox">
+<div class="progressrow">
+<span>మీ ప్రగతి</span>
+<span id="progressText">0 / 30 సమాధానాలు</span>
+</div>
+<div class="bar">
+<div class="fill" id="progressFill"></div>
+</div>
+</div><!-- QUESTIONS --><div id="quiz"></div><div class="actions">
+<button class="finish" onclick="finishQuiz()">పరీక్షను ముగించండి</button>
+<button class="restart" onclick="restartQuiz()">మళ్లీ ప్రారంభించండి</button>
+</div><section class="panel" id="result">
+<h2>మీ పరీక్ష ఫలితాలు</h2>
+<div class="score" id="score"></div>
+<p id="resultText"></p>
+<p class="small">సమాధాన కీ ఆధారంగా మీ ఫలితాలు లెక్కించబడ్డాయి.</p>
+</section></div><script>
+
+const questions = [
+
+{"number":31,"question":"పద్యం ప్రకారం పామరుడి బంగారం చివరకు ఏమవుతుంది?","options":[{"label":"A","text":"దొంగల పాలవుతుంది."},{"label":"B","text":"మట్టిలో కలిసిపోతుంది"},{"label":"C","text":"రాజుల సంపదలో చేరుతుంది"},{"label":"D","text":"ఎవరికి ఏమి కాకుండా పోతుంది"}],"answer":"C"},
+
+{"number":32,"question":"పుట్టలు ఎవరికి ఆవాసాలవుతున్నాయి?","options":[{"label":"A","text":"చీమలకు"},{"label":"B","text":"పాములకు"},{"label":"C","text":"భూమీశులకు"},{"label":"D","text":"పామరులకు"}],"answer":"B"},
+
+{"number":33,"question":"\"నివాసానికి అనుకూలం\" అనే అర్థాన్నిచ్చే పదమేది?","options":[{"label":"A","text":"గూడఁబెట్టిన"},{"label":"B","text":"చీమలు పెట్టిన"},{"label":"C","text":"పాలఁజేరు"},{"label":"D","text":"ఇరవైనయట్లు"}],"answer":"D"},
+
+{"number":34,"question":"'చీమలు-పాములు' – వీటి విషయంలో ఈ పద్యం ప్రకారం సరైనది ఏది?","options":[{"label":"A","text":"పుట్టలు కొట్టేవి – పుట్టలో ఉండేవి."},{"label":"B","text":"పుట్టలు పెట్టేవి – ఆ పుట్టల్లో ఉండేవి."},{"label":"C","text":"పుట్టల్లో ఉండేవి - ఆ పుట్టల్లో తిరిగేవి."},{"label":"D","text":"పుట్టల్లో ఉండేవి – ఆ పుట్టలను పెట్టేవి."}],"answer":"B"},
+
+{"number":35,"question":"ధర్మసూత్రాలు ఏ లిపిలో రాయబడ్డాయి?","options":[{"label":"A","text":"సంస్కృతం"},{"label":"B","text":"పాకృతం"},{"label":"C","text":"త్రిలింగ"},{"label":"D","text":"బ్రాహ్మీ"}],"answer":"D"},
+
+{"number":36,"question":"శాతవాహనుల తొలిరాజధాని","options":[{"label":"A","text":"కరీంనగర్"},{"label":"B","text":"కోటిలింగాల"},{"label":"C","text":"లక్షెట్టిపేట"},{"label":"D","text":"గోదావరీ ప్రాంతంలో లేదు."}],"answer":"B"},
+
+{"number":37,"question":"శాతవాహనుల తొలి రాజు వేయించిన నాణేలను కనుక్కొన్నది?","options":[{"label":"A","text":"ప్రజలు"},{"label":"B","text":"బౌద్ధులు"},{"label":"C","text":"పురావస్తు శాఖ"},{"label":"D","text":"కోటిలింగాల గ్రామపెద్దలు"}],"answer":"C"},
+
+{"number":38,"question":"ప్రస్తుతం శ్రీముఖుడి కోటకు సంబంధించిన విషయంలో కింది వానిలో సరైనది ఏది?","options":[{"label":"A","text":"కరీంనగర్ లో ఉంది."},{"label":"B","text":"పుణ్యక్షేత్రంలో ఉంది."},{"label":"C","text":"గోదావరీ ప్రాంతం కోటిలింగాల దగ్గరి గ్రామాల్లో ఉంది."},{"label":"D","text":"కోటిలింగాల కోట కనబడుట లేదు."}],"answer":"D"},
+
+{"number":39,"question":"'ప్రాల్మాలి' పదానికి అర్థమేమిటి?","options":[{"label":"A","text":"రాయబారి"},{"label":"B","text":"సోమరితనం"},{"label":"C","text":"లింగపీఠం"},{"label":"D","text":"ప్రకాశం"}],"answer":"B"},
+
+{"number":40,"question":"\"వినయం, అణుకువ\" అనే పర్యాయపదాలు కల్గిన పదమేది?","options":[{"label":"A","text":"నమ్రత"},{"label":"B","text":"శుభ్రత"},{"label":"C","text":"సువ్రత"},{"label":"D","text":"చూవె"}],"answer":"A"},
+
+{"number":41,"question":"\"ఉద్యోగం, ఆస్థానం\" – అనే నానార్థాలను కలిగిన పదమేది?","options":[{"label":"A","text":"కాలము"},{"label":"B","text":"సాధువు"},{"label":"C","text":"కొలువు"},{"label":"D","text":"కొలను"}],"answer":"C"},
+
+{"number":42,"question":"\"చాగము\" పదానికి ప్రకృతి పదము ఏమిటి?","options":[{"label":"A","text":"త్యాగము"},{"label":"B","text":"భాగ్యము"},{"label":"C","text":"భాగము"},{"label":"D","text":"మేఘము"}],"answer":"A"},
+
+{"number":43,"question":"భిన్నమైన పదము ఏది?","options":[{"label":"A","text":"శుభకృతు"},{"label":"B","text":"శోభకృతు"},{"label":"C","text":"ఈశ్వర"},{"label":"D","text":"రమ"}],"answer":"D"},
+
+{"number":44,"question":"ప్రతి, అను, ఆహా - అను పదాలను ఏమంటారు?","options":[{"label":"A","text":"నామవాచకాలు"},{"label":"B","text":"అవ్యయాలు"},{"label":"C","text":"క్రియలు"},{"label":"D","text":"సర్వనామాలు"}],"answer":"B"},
+
+{"number":45,"question":"వాక్యములోని పదాల మధ్య సంబంధాన్ని ఏర్పరిచే వాటిని ఏమంటారు?","options":[{"label":"A","text":"విభక్తి ప్రత్యయాలు"},{"label":"B","text":"క్రియలు"},{"label":"C","text":"విశేషణాలు"},{"label":"D","text":"అవ్యయాలు"}],"answer":"A"},
+
+{"number":46,"question":"ద్వంద్వ సమాసం కానిదేది?","options":[{"label":"A","text":"కలిమిలేములు"},{"label":"B","text":"ప్రేమాభిమానాలు"},{"label":"C","text":"దేశభక్తులు"},{"label":"D","text":"దానధర్మాలు"}],"answer":"C"},
+
+{"number":47,"question":"\"ఙ, ఞ, ణ, న, మ\" - లను ఏమంటారు?","options":[{"label":"A","text":"అంతస్థాలు"},{"label":"B","text":"అనునాసికాలు"},{"label":"C","text":"పరుషాలు"},{"label":"D","text":"ఊష్మాలు"}],"answer":"B"},
+
+{"number":48,"question":"\"వచ్చినప్పుడు\" – విడదీసి రాస్తే ఏమవుతుంది?","options":[{"label":"A","text":"వచ్చిరి + అప్పుడు"},{"label":"B","text":"వచ్చిరి + ఇప్పుడు"},{"label":"C","text":"వచ్చారు + అప్పుడు"},{"label":"D","text":"వచ్చే + అప్పుడు"}],"answer":"A"},
+
+{"number":49,"question":"మంత్రకూటమును ప్రస్తుతం ఏమంటున్నారు?","options":[{"label":"A","text":"ధర్మపురి"},{"label":"B","text":"నిర్మల్"},{"label":"C","text":"బాసర"},{"label":"D","text":"మంథని"}],"answer":"D"},
+
+{"number":50,"question":"అమ్మవారికి వస్త్రాలను, ఒడి బియ్యాన్ని సమర్పించే తంతును ఏమంటారు?","options":[{"label":"A","text":"సాక"},{"label":"B","text":"వడిబియ్యం"},{"label":"C","text":"రంగమెక్కుడు"},{"label":"D","text":"బోనం"}],"answer":"B"},
+
+{"number":51,"question":"ఒగ్గు కథలో జానపదకీర్తిని జగమంత చాటిందెవరు?","options":[{"label":"A","text":"నటరాజ రామకృష్ణ"},{"label":"B","text":"కాపురాజయ్య"},{"label":"C","text":"మిద్దె రాములు"},{"label":"D","text":"కొండపల్లి శేషగిరిరావు"}],"answer":"C"},
+
+{"number":52,"question":"తెలుగులో తొలి రామాయణ కర్త ఎవరు?","options":[{"label":"A","text":"గోన బుద్ధారెడ్డి"},{"label":"B","text":"హుళక్కి భాస్కరుడు"},{"label":"C","text":"ఆతుకూరి మొల్ల"},{"label":"D","text":"అయ్యల రాజు రామభద్రుడు"}],"answer":"A"},
+
+{"number":53,"question":"పొట్లపల్లి రామారావు రచించిన \"జైలు\" అనే గ్రంథం","options":[{"label":"A","text":"కవితా సంపుటి"},{"label":"B","text":"ఖండకావ్యం"},{"label":"C","text":"కథల సంపుటి"},{"label":"D","text":"నాటికల సంపుటి"}],"answer":"C"},
+
+{"number":54,"question":"\"రాయబాగిన్\" అనే బిరుదు ఎవరికున్నది?","options":[{"label":"A","text":"చిట్యాల ఐలమ్మ"},{"label":"B","text":"రాణిశంకరమ్మ"},{"label":"C","text":"మల్లు స్వరాజ్యం"},{"label":"D","text":"సంగెం లక్ష్మీబాయి"}],"answer":"B"},
+
+{"number":55,"question":"పరిశీలనలు, ముఖాముఖి, శోధనసూచికలు, వ్యక్తి అధ్యయనం వంటి మూల్యాంకనాంశాలను ఇలా అంటారు","options":[{"label":"A","text":"మనోవైజ్ఞానిక పద్ధతులు"},{"label":"B","text":"ప్రవర్తనాధ్యయన పద్ధతులు"},{"label":"C","text":"లోపనివారణ పద్ధతులు"},{"label":"D","text":"అప్రామాణిక పద్ధతులు"}],"answer":"B"},
+
+{"number":56,"question":"వ్యాకరణాంశాల బోధనలో వ్యాకరణ పద్ధతి, ఆధునిక పద్ధతి, ఉదాహరణ పద్ధతి అని వ్యవహింపబడు బోధన పద్ధతి","options":[{"label":"A","text":"నిగమోపపత్తి పద్ధతి"},{"label":"B","text":"అనుకరణ పద్ధతి"},{"label":"C","text":"అనుమానోపపత్తి పద్ధతి"},{"label":"D","text":"అభివర్ణన పద్ధతి"}],"answer":"C"},
+
+{"number":57,"question":"మన రాష్ట్రంలో ప్రస్తుతం వాడుకలో ఉన్న తెలుగు పాఠ్యపుస్తకాల తయారీలో ప్రధానంగా దృష్టియందుంచుకున్న అంశాలలో ఒకటి","options":[{"label":"A","text":"సాహిత్య ప్రధాన అంశాలకే ప్రాధాన్యతనిచ్చుట"},{"label":"B","text":"భాషాశాస్త్ర మౌలిక స్వభావాలను విస్తృతంగా పరిచయం చేయుట"},{"label":"C","text":"తెలుగుపై ఇతర భాషల ప్రభావాన్ని తెలియజెప్పుట"},{"label":"D","text":"బట్టీ విధానాలకు బదులు అర్థవంతమైన చర్యలు, కృత్యాల కల్పన"}],"answer":"D"},
+
+{"number":58,"question":"'బోధనోపకరణం విషయచిత్రీకరణమునకు, విషయవ్యాఖ్యానానికి, సులభంగా అర్థం చేసుకోవడానికి, శాశ్వత విషయ అవగాహనకు ఉపయోగపడుతుంది' అని అభిప్రాయపడిన వారు","options":[{"label":"A","text":"రవీంద్రుడు"},{"label":"B","text":"అబ్దుల్ కలాం"},{"label":"C","text":"హుమాయూన్ కబీర్"},{"label":"D","text":"మౌలానా అబుల్ కలాం ఆజాద్"}],"answer":"C"},
+
+{"number":59,"question":"విద్యార్థుల శ్రవణ శక్తిని పెంచి, వేగంగా రాయగల శక్తిని పెంపొందించగల లేఖన భేదం","options":[{"label":"A","text":"అదృశ్య లేఖనం"},{"label":"B","text":"దృష్ట లేఖనం"},{"label":"C","text":"విస్తార లేఖనం"},{"label":"D","text":"ఉక్త లేఖనం"}],"answer":"D"},
+
+{"number":60,"question":"బోధన మాధ్యమంగా మాతృభాషా ప్రాధాన్యతను 1910 లో నొక్కి చెప్పినది","options":[{"label":"A","text":"హర్టాగ్ కమిటీ నివేదిక"},{"label":"B","text":"ఉడ్ మరియు విల్సన్ నివేదిక"},{"label":"C","text":"'హరిజన' పత్రికలో గాంధీజీ చేసిన ప్రతిపాదన"},{"label":"D","text":"గోపాలకృష్ణ గోఖలే ప్రవేశపెట్టిన బిల్లు"}],"answer":"D"}
+
+];
+
+const quiz=document.getElementById('quiz');
+
 function render(){
- const root=document.getElementById('quiz');root.innerHTML='';
- qs.forEach((q,i)=>{
-  // ప్రశ్నల సమూహానికి సంబంధించిన పద్య/గద్య భాగాన్ని ముందుగా చూపించు
-  if(i===0 || i===4){
-   const passage=document.createElement('section');
-   passage.className='card';
-   if(i===0){
-    passage.innerHTML='<div class="qtop"><b>పద్యభాగం • ప్రశ్నలు 31–34</b><span>చదివి సమాధానాలు గుర్తించండి</span></div><div class="question" style="text-align:center;line-height:2"><b>పాలసునికైన యాపద<br>జాలిండి తీర్చి గదను సర్వజ్ఞు డకున్<br>దేలంగి బడగ బట్టి న<br>మేలెరుగునే మీటుగా మేదిని సమహే!</b></div>';
-   }else{
-    passage.innerHTML='<div class="qtop"><b>గద్యభాగం • ప్రశ్నలు 35–38</b><span>చదివి సమాధానాలు గుర్తించండి</span></div><div style="font-size:17px;line-height:1.9">నిజాం రాజ్యంలో, ఒకనాడు నిజాం ప్రభుత్వం ప్రాంతీయ భాషల మీద దాడి సలిపినప్పుడు శ్రీ సురవరం ప్రతాపరెడ్డి గారు గోలకొండ పత్రిక ద్వారా ఆ దాడిని ఎదుర్కొని తెలంగాణాలో కోటి మంది తెలుగువాళ్లకు భాషాభిక్ష పెట్టినారు. ఆంధ్రసాహితీ రంగంలో తెలంగాణా చేసిన సాహిత్య కృషిని, గోలకొండ కవుల సంచిక ద్వారా యావదాంధ్రదేశానికి వెల్లడించి, సాహితీరంగంలో సోదరాంధ్రులచే విస్మరింపబడిన తెలంగాణానికి విశిష్ట స్థానాన్ని సంపాదించిపెట్టినారు. గతకాలపు మన మనసు చీకటి గుహల్లో మరుగునపడిపోయిన గ్రామీణాంధ్రుల జీవిత చరిత్రను త్రవ్వి పైకెత్తి అందుల సామాజిక చరిత్ర ద్వారా భావికాలం వారికి వెలుతురును ప్రసాదించినారు.</div>';
-   }
-   root.append(passage);
-  }
-  const box=document.createElement('section');box.className='card';
-  const top=document.createElement('div');top.className='qtop';top.innerHTML=`<span>ప్రశ్న ${i+1+( 31)-1}</span><span>${q[2]===null?'సమీక్ష అవసరం':'ఒక్క ప్రశ్న • 1 మార్కు'}</span>`;
-  const title=document.createElement('div');title.className='question';title.textContent=q[0];
-  box.append(top,title);
-  q[1].forEach((op,j)=>{
-   const label=document.createElement('label');label.className='option';label.innerHTML=`<input type="radio" name="q${i}" ${picks[i]===j?'checked':''} ${locked[i]?'disabled':''}><span><b>${letters[j]})</b> ${op}</span>`;
-   label.onclick=(e)=>{if(locked[i]){e.preventDefault();return}picks[i]=j;locked[i]=true;render();};
-   if(locked[i]&&q[2]!==null&&j===q[2])label.classList.add('correct');
-   if(locked[i]&&picks[i]===j&&q[2]!==null&&j!==q[2])label.classList.add('wrong');
-   if(locked[i]&&q[2]===null&&picks[i]===j)label.classList.add('wrong');
-   box.append(label);
-  });
-  if(locked[i]){
-   const f=document.createElement('div');f.className='feedback show';
-   if(q[2]===null)f.innerHTML='<b>సమీక్ష అవసరం:</b> '+q[3];
-   else f.innerHTML=(picks[i]===q[2]?'<b style="color:#12845b">సరైన సమాధానం!</b>':'<b style="color:#c0392b">తప్పు సమాధానం.</b>')+'<br><b>సరైన ఎంపిక:</b> '+letters[q[2]]+') '+q[1][q[2]]+'<br>'+q[3];
-   box.append(f);
-  }
-  root.append(box);
- });
- updateStats();
+
+quiz.innerHTML='';
+
+questions.forEach(q=>{
+
+const card=document.createElement('section');
+card.className='qcard';
+
+card.innerHTML=
+`<div class="qtitle">${q.number}. ${q.question}</div>`+
+q.options.map(o=>
+`<label class="option" id="opt-${q.number}-${o.label}">
+<input type="radio" name="q${q.number}" value="${o.label}"
+onchange="checkAnswer(${q.number},'${o.label}')">
+<span><b>${o.label})</b> ${o.text}</span>
+</label>`
+).join('')+
+`<div class="feedback" id="fb-${q.number}"></div>`;
+
+quiz.appendChild(card);
+
+/* 34వ ప్రశ్న తర్వాత గద్యం */
+
+if(q.number===34){
+
+const passage=document.createElement('section');
+passage.className='panel';
+
+passage.innerHTML=`
+<div class="passage-title">35–38 ప్రశ్నలకు సంబంధించిన గద్యం</div>
+
+<div>
+కరీంనగర్ నుండి లక్షెట్టిపేట వెళ్ళే మార్గంలో కోటిలింగాల ఊరున్నది. గోదావరి నది తీరానగల ఈ ఊరు ప్రసిద్ధ పుణ్యక్షేత్రంగా ప్రజలకు సుపరిచితమే. అయితే 1979లో పురావస్తుశాఖవారు తవ్వకాలు జరిపేంతవరకు శాతవాహనులు పాలించిన ప్రదేశం అని ఎవ్వరికీ తెలియదు. క్రీ.పూ. 4వ శతాబ్దానికి చెందిన బౌద్ధ స్థూపములు కూడా ఇక్కడ బయటపడ్డాయి. వీటి మీద బ్రాహ్మీలిపిలో బౌద్ధుల ధర్మసూత్రాలు రాయబడ్డాయి.
+
+<br><br>
+
+పురావస్తు శాఖ తవ్వకాలలో శాతవాహనుల తొలి రాజైన శ్రీముఖుడు వేయించిన నాణాలు బయటపడ్డాయి. అంతేకాకుండా పెద్ద పరిమాణం గల ఇటుకలు, మట్టిపెంకులు, జనవాసాలు మొదలైనవి కనిపించాయి. ప్రస్తుతం కోటిలింగాల కోట కానరాకపోయినా తవ్వకాల్లో లభించిన ఆధారాల ప్రకారం తొలి తెలుగు రాజధాని “కోటిలింగాలే” నని మనం గుర్తించవచ్చు.
+</div>
+`;
+
+quiz.appendChild(passage);
+
 }
-function updateStats(){
- let ans=picks.filter(x=>x!==null).length, right=0,wrong=0;
- qs.forEach((q,i)=>{if(picks[i]!==null&&q[2]!==null){if(picks[i]===q[2])right++;else wrong++;}});
- document.getElementById('answered').textContent=ans;
- document.getElementById('right').textContent=right;
- document.getElementById('wrong').textContent=wrong;
- document.getElementById('bar').style.width=(ans/qs.length*100)+'%';
+
+});
+
+updateProgress();
+
 }
-function showResult(){
- let valid=qs.filter(q=>q[2]!==null).length, right=0,wrong=0,unanswered=0,review=qs.filter(q=>q[2]===null).length;
- qs.forEach((q,i)=>{if(q[2]!==null){if(picks[i]===null)unanswered++;else if(picks[i]===q[2])right++;else wrong++;}});
- let pct=valid?Math.round(right/valid*100):0;
- const r=document.getElementById('result');r.style.display='block';
- r.innerHTML=`<h2>మీ ఫలితాలు</h2><div class="stats"><div class="pill">స్కోరు: <b>${right} / ${valid}</b></div><div class="pill">సరైనవి: <b>${right}</b></div><div class="pill">తప్పులు: <b>${wrong}</b></div><div class="pill">మిగిలినవి: <b>${unanswered}</b></div><div class="pill">శాతం: <b>${pct}%</b></div></div>${review?'<p>సమీక్ష అవసరమైన/ఎంపికల్లో సరైన సమాధానం లేని ప్రశ్నలు: '+review+'</p>':''}`;
- r.scrollIntoView({behavior:'smooth'});
+
+function checkAnswer(num,choice){
+
+const q=questions.find(x=>x.number===num);
+
+q.options.forEach(o=>{
+
+const el=document.getElementById(`opt-${num}-${o.label}`);
+
+el.classList.remove('correct','wrong');
+
+if(o.label===q.answer){
+el.classList.add('correct');
 }
-function resetQuiz(){picks=Array(qs.length).fill(null);locked=Array(qs.length).fill(false);document.getElementById('result').style.display='none';render();window.scrollTo({top:0,behavior:'smooth'});}
+
+if(o.label===choice && choice!==q.answer){
+el.classList.add('wrong');
+}
+
+});
+
+const fb=document.getElementById('fb-'+num);
+
+fb.textContent=choice===q.answer
+?'✓ సరైన సమాధానం!'
+:'✗ తప్పు సమాధానం. సరైన సమాధానం: '+q.answer;
+
+fb.style.color=choice===q.answer?'#13834c':'#c62828';
+
+updateProgress();
+
+}
+
+function updateProgress(){
+
+let count=questions.filter(q=>
+document.querySelector(`input[name="q${q.number}"]:checked`)
+).length;
+
+document.getElementById('progressText').textContent=
+count+' / 30 సమాధానాలు';
+
+document.getElementById('progressFill').style.width=
+(count/30*100)+'%';
+
+}
+
+function finishQuiz(){
+
+let attempted=0,correct=0;
+
+questions.forEach(q=>{
+
+const s=document.querySelector(`input[name="q${q.number}"]:checked`);
+
+if(s){
+
+attempted++;
+
+if(s.value===q.answer){
+correct++;
+}
+
+}
+
+});
+
+document.getElementById('score').textContent=correct+' / 30';
+
+document.getElementById('resultText').textContent=
+'సమాధానాలు: '+attempted+
+' | సరైనవి: '+correct+
+' | తప్పులు: '+(attempted-correct)+
+' | సమాధానం ఇవ్వనివి: '+(30-attempted);
+
+document.getElementById('result').style.display='block';
+
+document.getElementById('result').scrollIntoView({behavior:'smooth'});
+
+}
+
+function restartQuiz(){
+
+document.querySelectorAll('input[type=radio]').forEach(x=>{
+x.checked=false;
+});
+
+questions.forEach(q=>{
+
+q.options.forEach(o=>{
+
+document.getElementById(`opt-${q.number}-${o.label}`)
+.classList.remove('correct','wrong');
+
+});
+
+document.getElementById('fb-'+q.number).textContent='';
+
+});
+
+document.getElementById('result').style.display='none';
+
+updateProgress();
+
+window.scrollTo({top:0,behavior:'smooth'});
+
+}
+
 render();
-</script></body></html>
+
+</script></body>
+</html>
