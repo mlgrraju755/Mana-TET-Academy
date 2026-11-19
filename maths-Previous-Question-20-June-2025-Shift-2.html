@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | గణితం ప్రశ్నలు 91–120</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:"Noto Sans Telugu","Gautami","Nirmala UI",Arial,sans-serif;line-height:1.65}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:#fff;padding:20px 14px;text-align:center}
+header h1{margin:0;font-size:25px}
+header p{margin:5px 0 0;font-size:15px}
+.wrap{max-width:1000px;margin:18px auto;padding:0 12px}
+.topbar{position:sticky;top:0;z-index:5;background:#fff;padding:12px 14px;border-radius:12px;box-shadow:0 2px 10px #00000012;margin-bottom:16px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+#progressText{font-weight:700;color:#123c69}
+.track{height:8px;background:#e5eaf1;border-radius:20px;overflow:hidden;margin-top:6px;width: min(420px,75vw)}
+#progressBar{height:100%;width:0;background:#159d70;transition:width .2s}
+.question{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin:12px 0;box-shadow:0 2px 7px #00000008}
+.qtitle{font-weight:700;font-size:17px;margin-bottom:10px;color:#172b4d}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.option{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;border:1px solid #dce3ec;border-radius:9px;cursor:pointer;background:#fbfcfe}
+.option:hover{background:#f0f6ff;border-color:#8bb8e8}
+.option input{margin-top:6px;accent-color:#1769aa;flex-shrink:0}
+.option.correct{background:#e8f7ee;border-color:#269653}
+.option.wrong{background:#fff0f0;border-color:#d94b4b}
+.feedback{font-size:14px;font-weight:700;margin-top:8px;min-height:22px}
+.feedback.good{color:#168344}.feedback.bad{color:#c62828}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0}
+button{border:0;border-radius:9px;padding:12px 22px;font-size:16px;font-weight:700;cursor:pointer}
+#finishBtn{background:#147d55;color:white}#restartBtn{background:#174f83;color:white}
+#result{display:none;background:#fff;border-radius:12px;padding:20px;margin:18px 0;text-align:center;box-shadow:0 2px 10px #00000012}
+#result h2{color:#123c69;margin-top:0}
+.key{margin-top:10px;color:#526174;font-size:14px}
+@media(max-width:600px){header h1{font-size:21px}.options{grid-template-columns:1fr}.question{padding:13px}.qtitle{font-size:16px}.topbar{position:static}}
+</style>
+</head>
+<body>
+<header>
+<h1>MANA-TET-2026</h1>
+<p>Paper-I | గణితం (తెలుగు మీడియం) | ప్రశ్నలు 91–120</p>
+</header>
+<div class="wrap">
+<div class="topbar">
+<div><div id="progressText">సమాధానాలు: 0 / 30</div><div class="track"><div id="progressBar"></div></div></div>
+<div id="scoreLive">ఎంచుకున్నవి: 0</div>
+</div>
+<div id="quiz"></div>
+<div class="actions"><button id="finishBtn" onclick="finishQuiz()">పరీక్ష ముగించు / ఫలితాలు</button><button id="restartBtn" onclick="restartQuiz()">మళ్లీ ప్రారంభించు</button></div>
+<div id="result"></div>
+</div>
+<script>
+const questions = [
+{q:"100 కోట్ల సంఖ్యలో ఉండే అంకెల సంఖ్య",o:["8","11","10","9"],a:2},
+{q:"ఒక లీటరు డీజిల్ ధర ₹95.70. ఒక పెట్రోల్ బంక్ ఒక రోజు 700 లీటర్ల డీజిల్ అమ్మితే, ఆ రోజు వారికి ఎంత డబ్బు వస్తుంది?",o:["₹65,990","₹66,990","₹64,890","₹67,930"],a:1},
+{q:"శ్రీనివాస రామానుజన్ 125వ జయంతిని పురస్కరించుకుని భారత ప్రభుత్వం ఈ సంవత్సరాన్ని జాతీయ గణిత సంవత్సరంగా ప్రకటించింది.",o:["2013","2011","2010","2012"],a:3},
+{q:"రెండు పూర్ణాంకాల మొత్తం ఎల్లప్పుడూ ఒక",o:["పూర్ణాంకం","భిన్నం","ఋణ సంఖ్య","ప్రధాన సంఖ్య"],a:0},
+{q:"క్రింది వానిలో 8 చే భాగించబడని సంఖ్య ఏది?",o:["859456","531048","726352","613684"],a:3},
+{q:"క్రింది వానిలో అసత్య వాక్యాన్ని గుర్తించండి.",o:["ఒక సరళ రేఖకు తుది బిందువులు ఉండవు","రెండు విభిన్న బిందువుల గుండా మనం ఎన్ని రేఖలయినా గీయవచ్చు","రేఖలో కిరణం ఒక భాగము","రేఖా ఖండము నిర్దిష్ట పొడవు కలిగి ఉంటుంది."],a:1},
+{q:"ఒక వృత్తంలో ఒక చాపం మరియు రెండు వ్యాసార్థాల చేత చుట్టబడిన ప్రాంతాన్ని ఇలా పిలుస్తాము",o:["త్రిజ్యాంతరము (వృత్తం యొక్క సెక్టర్)","వృత్తాకార ప్రాంతము","వృత్త ఖండము","చాపము"],a:0},
+{q:"5:00 గంటలకు, గడియారంలోని నిమిషాల మరియు గంటల ముళ్ల మధ్య ఏ రకమైన కోణం ఏర్పడుతుంది?",o:["సరళ కోణం","లంబ కోణం","అధిక కోణం","అల్ప కోణం"],a:2},
+{q:"-2025, 2025 కంటే ఎంత తక్కువ?",o:["0","4050","-4050","1"],a:1},
+{q:"(-10) - (-18) + (36)(-3) - (-97) =",o:["-3","3","0","95"],a:0},
+{q:"క్రింది భిన్నాలను ఆరోహణ క్రమంలో రాయండి: 1/3, 1/4, 5/8, 3/6, 7/12",o:["1/4, 1/3, 5/8, 3/6, 7/12","1/4, 1/3, 3/6, 7/12, 5/8","7/12, 1/3, 1/4, 3/6, 5/8","7/12, 5/8, 3/6, 1/4, 1/3"],a:1},
+{q:"అర్జున్ బస్సులో 9 కి.మీ 27 మీ, కారులో 4 కి.మీ 325 మీ మరియు నడకలో 2 కి.మీ 630 మీ ప్రయాణించాడు. అతను మొత్తం ఎంత దూరం ప్రయాణించాడు?",o:["16 కి.మీ 225 మీ","15 కి.మీ 415 మీ","15 కి.మీ 982 మీ","16 కి.మీ 25 మీ"],a:2},
+{q:"భారత సాంఖ్యక శాస్త్ర పితామహుడుగా ఎవరిని పిలుస్తారు?",o:["ఆర్యభట్ట","శ్రీనివాస రామానుజన్","శకుంతలా దేవి","పి.సి. మహాలనోబిస్"],a:3},
+{q:"4x + 3(x - 2) = 2x + 9 అయితే x =",o:["2","3","4","5"],a:1},
+{q:"రమేష్ 100 మీటర్ల పొడవు మరియు 50 మీటర్ల వెడల్పు కలిగిన దీర్ఘచతురస్రాకార ప్లాటునకు కంచె వేయాలనుకుంటున్నాడు. కంచె వేయుటకు ఖర్చు ఒక మీటర్ కు ₹20 అయితే, ఆ ప్లాటు చుట్టూ కంచె వేయడానికి అయ్యే మొత్తం ఖర్చు",o:["₹3000","₹10000","₹6000","₹20000"],a:2},
+{q:"12 సెం.మీ భుజంగా గల ఒక క్రమపంచభుజి యొక్క చుట్టుకొలత (సెం.మీ.లలో)",o:["60","120","90","144"],a:0},
+{q:"ఒక పాలవ్యాపారి 1 లీటరు పాలకు 400 మి.లీ. నీరు కలుపుతాడు. అతను అమ్మే పాలలో నీరు, పాల నిష్పత్తి",o:["1 : 3","2 : 5","1 : 5","3 : 4"],a:1},
+{q:"359 × 953 లబ్దంలో, పదుల స్థానంలోని మరియు ఒకట్ల స్థానంలోని అంకెల మొత్తం",o:["12","8","10","9"],a:3},
+{q:"26.858 ÷ 2.6 =",o:["10.03","10.31","10.33","10.13"],a:2},
+{q:"(0.0625)^(3/4) =",o:["0.25","0.125","0.025","0.0125"],a:1},
+{q:"7*87*4 అనే సంఖ్యలో, '*' స్థానంలో ఒకే అంకె ఉంది మరియు దాని స్థాన విలువలో వ్యత్యాసం 59940 అయితే ఆ అంకె ఏమిటి?",o:["5","7","8","6"],a:3},
+{q:"క్రింది వానిలో ప్రధాన సంఖ్యల సమితి ఏది?",o:["{109, 139, 149, 179}","{109, 119, 149, 189}","{109, 129, 159, 199}","{109, 139, 149, 169}"],a:0},
+{q:"9 మామిడి పండ్ల ధర ₹288 అయితే, 4¾ డజను మామిడి పండ్ల ధర ఎంత?",o:["₹1814","₹1834","₹1824","₹1844"],a:2},
+{q:"ఒక త్రిభుజాకార పిరమిడ్ యొక్క అంచులు మరియు శీర్షాల సంఖ్య వరుసగా E మరియు V అయితే, V/E =",o:["3/2","2/3","1/2","9/4"],a:1},
+{q:"“ఒక విద్యార్థి దశాంశాలను ఆరోహణ, అవరోహణ క్రమంలో రాయగలడు”. అయితే ఆ విద్యార్థి సాధించిన లక్ష్యం:",o:["జ్ఞానం","అవగాహన","వినియోగం","నైపుణ్యం"],a:1},
+{q:"కృత్యాధార పద్ధతిలో విద్యార్థులు చేసిన పనిని ప్రదర్శించడం యొక్క ముఖ్య ఉద్దేశ్యం:",o:["తరగతి గదిని పరిశుభ్రంగా ఉంచడం","తరగతి గదిని అందంగా మార్చడం","తరగతి గదిని ఆసక్తికరమైన అభ్యసన కేంద్రంగా మార్చడం","తరగతి గదిని అలంకరించడం"],a:2},
+{q:"కింది గణిత బోధనా వనరులలో, ఇది మానవ వనరు కాదు:",o:["దర్జీ","వడ్రంగి","తోట మాలి","తపాలా ఆఫీసు"],a:3},
+{q:"పాఠ్యపథక రచనలో, ఉపాధ్యాయుడు బోధించిన పాఠ్యాంశంపై విద్యార్థులు ఆర్జించిన సామర్థ్యాలను పరీక్షించే హెర్బార్షియన్ సోపానము:",o:["సన్నాహం","సమర్పణ","సంసర్గం","పునర్విమర్శ"],a:3},
+{q:"“కోణాల జతలు” అనే పాఠ్యాంశ బోధనాభ్యసనలో పరిపుష్టినిచ్చే మదింపు:",o:["నిర్మాణాత్మక మదింపు","సంగ్రహణాత్మక మదింపు","నిరంతర సమగ్ర మదింపు","ప్రాగుక్తిక మదింపు"],a:0},
+{q:"గణిత పాఠ్యపుస్తకాలలో “ఇవి చేయండి” అని ఇవ్వబడిన సమస్యల ముఖ్య ఉద్దేశ్యం:",o:["సమూహాలలో చర్చించిన తర్వాత మాత్రమే సమస్యలను సాధించడం","బోధించిన భావనలపై విద్యార్థుల అవగాహనను తెలుసుకోవడం","సమస్యలను విద్యార్థులకు ఇంటిపనిగా ఇవ్వడం","విద్యార్థులలో తార్కిక ఆలోచనను పెంపొందించడం"],a:1}
+];
+let selected = {};
+const quiz = document.getElementById('quiz');
+function render(){
+ quiz.innerHTML = '';
+ questions.forEach((item,i)=>{
+  const card=document.createElement('section'); card.className='question'; card.id='q'+i;
+  const title=document.createElement('div'); title.className='qtitle'; title.textContent=(i+91)+'. '+item.q; card.appendChild(title);
+  const opts=document.createElement('div'); opts.className='options';
+  item.o.forEach((op,j)=>{
+   const label=document.createElement('label'); label.className='option';
+   const input=document.createElement('input'); input.type='radio'; input.name='q'+i; input.value=j;
+   input.checked=selected[i]===j;
+   input.addEventListener('change',()=>{selected[i]=j; showFeedback(i); updateProgress();});
+   const span=document.createElement('span'); span.textContent=String.fromCharCode(65+j)+') '+op;
+   label.append(input,span); opts.appendChild(label);
+  });
+  card.appendChild(opts);
+  const fb=document.createElement('div'); fb.className='feedback'; fb.id='fb'+i; card.appendChild(fb);
+  quiz.appendChild(card);
+  if(selected[i]!==undefined) showFeedback(i);
+ });
+ updateProgress();
+}
+function showFeedback(i){
+ const item=questions[i], card=document.getElementById('q'+i), fb=document.getElementById('fb'+i);
+ card.querySelectorAll('.option').forEach((el,j)=>{el.classList.remove('correct','wrong'); if(j===item.a)el.classList.add('correct'); if(selected[i]===j && j!==item.a)el.classList.add('wrong');});
+ if(selected[i]===undefined){fb.textContent='';return;}
+ if(selected[i]===item.a){fb.textContent='✓ సరైన సమాధానం';fb.className='feedback good';}
+ else{fb.textContent='✗ తప్పు సమాధానం. సరైన సమాధానం: '+String.fromCharCode(65+item.a)+') '+item.o[item.a];fb.className='feedback bad';}
+}
+function updateProgress(){
+ const n=Object.keys(selected).length;
+ document.getElementById('progressText').textContent='సమాధానాలు: '+n+' / 30';
+ document.getElementById('scoreLive').textContent='ఎంచుకున్నవి: '+n;
+ document.getElementById('progressBar').style.width=(n/30*100)+'%';
+}
+function finishQuiz(){
+ let correct=0,wrong=0,unanswered=0;
+ questions.forEach((q,i)=>{if(selected[i]===undefined)unanswered++;else if(selected[i]===q.a)correct++;else wrong++;});
+ const result=document.getElementById('result');result.style.display='block';
+ result.innerHTML='<h2>మీ పరీక్ష ఫలితాలు</h2><p style="font-size:22px;font-weight:700;color:#168344">సాధించిన మార్కులు: '+correct+' / 30</p><p>సరైన సమాధానాలు: '+correct+' &nbsp; | &nbsp; తప్పు సమాధానాలు: '+wrong+' &nbsp; | &nbsp; సమాధానం ఇవ్వనివి: '+unanswered+'</p><div class="key">సమాధాన కీ ఆధారంగా ఫలితాలు చూపించబడ్డాయి.</div>';
+ result.scrollIntoView({behavior:'smooth'});
+}
+function restartQuiz(){selected={};render();const r=document.getElementById('result');r.style.display='none';r.innerHTML='';window.scrollTo({top:0,behavior:'smooth'});}
+render();
+</script>
+</body>
+</html>
