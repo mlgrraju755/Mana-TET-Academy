@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | Mathematics Q91–120</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:#fff;padding:22px 16px;text-align:center}
+header h1{margin:0 0 7px;font-size:25px} header p{margin:4px 0;font-size:14px}
+.wrap{max-width:900px;margin:20px auto;padding:0 14px}
+.panel{background:#fff;border-radius:14px;padding:16px;box-shadow:0 3px 14px #102a4320;margin-bottom:16px}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.badge{background:#e8f1fb;color:#123c69;padding:9px 13px;border-radius:9px;font-weight:700}
+#timer{font-size:20px;color:#b42318;font-weight:700}
+.progress{height:9px;background:#e6ebf2;border-radius:20px;overflow:hidden;margin-top:13px}
+#bar{height:100%;width:0;background:#16835d;transition:.2s}
+.qcard{background:#fff;border-radius:13px;padding:18px;margin:14px 0;box-shadow:0 2px 10px #102a4312;border-left:4px solid #1d70a2}
+.qtitle{font-weight:700;line-height:1.5;margin-bottom:13px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:11px;border:1px solid #dce3ec;border-radius:9px;margin:8px 0;cursor:pointer;line-height:1.4}
+.opt:hover{background:#f4f8fc}.opt input{margin-top:3px;accent-color:#123c69}
+.opt.correct{border-color:#16835d;background:#e9f7ef}.opt.wrong{border-color:#d92d20;background:#fff0ef}
+.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+button{border:0;border-radius:9px;padding:13px 20px;font-size:15px;font-weight:700;cursor:pointer}
+#submit{background:#123c69;color:#fff}#restart{background:#e8edf4;color:#243447}
+#result{display:none}.score{font-size:28px;color:#16835d;font-weight:800;text-align:center}
+.review{padding:12px;border-bottom:1px solid #e5eaf0;line-height:1.5}.review b{color:#123c69}
+footer{text-align:center;color:#667085;font-size:12px;padding:18px}
+@media(max-width:600px){header h1{font-size:21px}.qcard{padding:14px}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<header>
+<h1>MANA-TET-2026</h1>
+<p>Paper I – Mathematics | Questions 91–120</p>
+<p>English Medium • 30 Questions • 30 Marks</p>
+</header>
+<div class="wrap">
+<div class="panel">
+ <div class="topbar">
+  <span class="badge">Time: 30 Minutes</span>
+  <span id="timer">30:00</span>
+  <span class="badge" id="count">Answered: 0 / 30</span>
+ </div>
+ <div class="progress"><div id="bar"></div></div>
+ <p style="margin:12px 0 0;color:#475467;font-size:14px">Choose one correct answer for each question. Click Submit Test to view your score and answer review.</p>
+</div>
+<div id="quiz"></div>
+<div class="actions"><button id="submit" onclick="submitTest(false)">Submit Test</button><button id="restart" onclick="restartTest()">Restart Test</button></div>
+<div class="panel" id="result"></div>
+<footer>MANA-TET-2026 | Mathematics Practice Test</footer>
+</div>
+<script>
+const questions = [{"q": "With which of the following measurements can a triangle be formed?", "opts": ["4 cm, 7 cm, 14 cm", "2 cm, 3 cm, 6 cm", "3 cm, 4 cm, 6 cm", "5 cm, 7 cm, 13 cm"], "ans": 2}, {"q": "The smallest odd prime number among the following is", "opts": ["2", "3", "1", "5"], "ans": 1}, {"q": "The median of the numbers 5/19, 1/3, 4/13, 2/7 and 3/11 is", "opts": ["5/19", "1/3", "3/11", "2/7"], "ans": 3}, {"q": "The present ages of a father and son are in the ratio 7 : 2. After 8 years, the ratio becomes 9 : 4. The present age (in years) of the son is", "opts": ["8", "6", "10", "4"], "ans": 0}, {"q": "If (x² − x − 20) / (x + 4) = x − A, where x ≠ −4, then A =", "opts": ["−5", "4", "10", "5"], "ans": 3}, {"q": "Ten thousands + Ten hundreds + Ten ones =", "opts": ["101010", "11100", "11010", "11001"], "ans": 2}, {"q": "The sum of three consecutive multiples of 7 is 357. The largest multiple of them is", "opts": ["119", "126", "112", "133"], "ans": 1}, {"q": "If the lengths of the sides of a right-angled triangle are x cm, (x + 1) cm and (x + 2) cm, then the value of x is", "opts": ["5", "4", "3", "6"], "ans": 2}, {"q": "1000 litres is equal to how many cubic metres?", "opts": ["100", "0.1", "10", "1"], "ans": 3}, {"q": "A 42 cm long wire is used to form the following shapes. Which of them will have the longest side?", "opts": ["A regular pentagon", "A square", "An equilateral triangle", "A regular hexagon"], "ans": 2}, {"q": "(26³ + 9³) / (26 + 9) =", "opts": ["523", "757", "1225", "991"], "ans": 0}, {"q": "In a histogram, the height of each bar represents", "opts": ["The value of data", "The frequency of the data in that interval", "The average of the interval", "The total number of data points"], "ans": 1}, {"q": "Which of the following shapes has no line of symmetry?", "opts": ["A standard parallelogram", "A rectangle", "An isosceles right-angled triangle", "A pentagon"], "ans": 0}, {"q": "If three cubes, each of edge 10 cm, are joined end to end, then the lateral surface area of the resulting cuboid (in sq. cm) is", "opts": ["960", "1200", "800", "1080"], "ans": 2}, {"q": "The number of solutions of 4x + 5y = 20 is", "opts": ["0", "1", "2", "∞"], "ans": 3}, {"q": "The twin primes among the following are", "opts": ["(117, 119)", "(107, 109)", "(111, 113)", "(103, 105)"], "ans": 1}, {"q": "15625 written as a power of 5 is", "opts": ["5⁵", "5⁷", "5⁶", "4⁵"], "ans": 2}, {"q": "The perimeter (in cm) of an equilateral triangle whose area is 64√3 cm² is", "opts": ["48", "32", "64", "40"], "ans": 0}, {"q": "If the mean of 0.5, 3.0, 4.5, 4.0, 7.5, p, 8.5 and 7.0 is 5, then the value of p is", "opts": ["8", "6", "5", "7"], "ans": 2}, {"q": "(2³)² ÷ 8 =", "opts": ["3²", "2³", "6²", "2²"], "ans": 1}, {"q": "Rani can do 3/5 of a work in 18 days. In how many days can Rani complete 1/2 of the work?", "opts": ["12", "9", "24", "15"], "ans": 3}, {"q": "The number of end points of a line segment is", "opts": ["∞", "2", "0", "1"], "ans": 1}, {"q": "Which of the following is NOT a prime number when n is the least whole number?", "opts": ["5n + 9", "3n³ + 5", "2n² + 3", "4n² + 7"], "ans": 0}, {"q": "If the product of prime numbers less than 10 is M and the sum of odd numbers less than 10 is N, then M − N =", "opts": ["81", "175", "185", "75"], "ans": 2}, {"q": "“A student is able to represent decimals on a number line.” The objective achieved by the student is", "opts": ["Knowledge", "Understanding", "Application", "Skill"], "ans": 3}, {"q": "The main purpose of identifying individual differences in the activity-based method is", "opts": ["Providing similar activities for all children", "Providing activities according to the level and learning speed of the children", "Providing similar activities for backward and intelligent students", "Providing activities keeping in view of the average students"], "ans": 1}, {"q": "Among the following resources for teaching mathematics, which is NOT an institutional resource?", "opts": ["Bank", "Post office", "Historical building", "Market place / Market"], "ans": 2}, {"q": "In writing a period plan, the Herbartian step in which the teacher elicits students’ prior knowledge of the topic through questions is", "opts": ["Preparation", "Presentation", "Association", "Recapitulation"], "ans": 0}, {"q": "Conducting a Scholastic Achievement Test (SAT) is this type of evaluation", "opts": ["Formative evaluation", "Summative evaluation", "Diagnostic evaluation", "Prognostic evaluation"], "ans": 1}, {"q": "The main purpose of problems given under “Try This” in mathematics textbooks is", "opts": ["Solving the problem mechanically by students", "Giving problems as homework to students", "Developing logical thinking in students", "Students solve the problem on their own only"], "ans": 2}];
+let remaining=30*60, timerId=null, submitted=false;
+function render(){
+ const root=document.getElementById('quiz'); root.innerHTML='';
+ questions.forEach((item,i)=>{
+  const card=document.createElement('div'); card.className='qcard'; card.id='q'+i;
+  const title=document.createElement('div'); title.className='qtitle'; title.textContent=(i+91)+'. '+item.q; card.appendChild(title);
+  item.opts.forEach((opt,j)=>{
+   const label=document.createElement('label'); label.className='opt';
+   label.innerHTML='<input type="radio" name="q'+i+'" value="'+j+'"><span><b>'+String.fromCharCode(65+j)+'.</b> '+escapeHTML(opt)+'</span>';
+   label.querySelector('input').addEventListener('change',updateProgress); card.appendChild(label);
+  });
+  root.appendChild(card);
+ });
+ updateProgress();
+}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function updateProgress(){
+ let n=questions.filter((q,i)=>document.querySelector('input[name="q'+i+'"]:checked')).length;
+ document.getElementById('count').textContent='Answered: '+n+' / 30';
+ document.getElementById('bar').style.width=(n/30*100)+'%';
+}
+function startTimer(){
+ clearInterval(timerId);
+ timerId=setInterval(()=>{
+  if(submitted){clearInterval(timerId);return;}
+  remaining--; let m=Math.floor(remaining/60),s=remaining%60;
+  document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  if(remaining<=0)submitTest(true);
+ },1000);
+}
+function submitTest(auto){
+ if(submitted)return;
+ if(!auto && !confirm('Are you sure you want to submit the test?'))return;
+ submitted=true;clearInterval(timerId);
+ let score=0,correct=0,wrong=0,unanswered=0, review='';
+ questions.forEach((q,i)=>{
+  const chosen=document.querySelector('input[name="q'+i+'"]:checked');
+  const val=chosen?Number(chosen.value):-1;
+  if(val===q.ans) {score++;correct++;} else if(val===-1) unanswered++; else wrong++;
+  const labels=document.querySelectorAll('#q'+i+' .opt');
+  labels.forEach((lab,j)=>{lab.querySelector('input').disabled=true;if(j===q.ans)lab.classList.add('correct');if(j===val && val!==q.ans)lab.classList.add('wrong');});
+  review+='<div class="review"><b>Q'+(i+91)+'.</b> '+(val===q.ans?'<span style="color:#16835d">Correct</span>':val===-1?'<span style="color:#b54708">Not answered</span>':'<span style="color:#d92d20">Incorrect</span>')+'<br>Correct answer: <b>'+String.fromCharCode(65+q.ans)+'. '+escapeHTML(q.opts[q.ans])+'</b></div>';
+ });
+ const result=document.getElementById('result');result.style.display='block';
+ result.innerHTML='<h2 style="text-align:center;margin-top:0">Test Result</h2><div class="score">'+score+' / 30</div><p style="text-align:center">'+(auto?'Time is up. Your test has been submitted.':'Test submitted successfully.')+'</p><div class="topbar"><span class="badge">Correct: '+correct+'</span><span class="badge">Incorrect: '+wrong+'</span><span class="badge">Unanswered: '+unanswered+'</span></div><h3>Answer Review</h3>'+review;
+ document.getElementById('submit').disabled=true;result.scrollIntoView({behavior:'smooth'});
+}
+function restartTest(){
+ if(!confirm('Restart the test? All selected answers will be cleared.'))return;
+ submitted=false;remaining=1800;document.getElementById('timer').textContent='30:00';
+ document.getElementById('result').style.display='none';document.getElementById('submit').disabled=false;
+ render();startTimer();window.scrollTo({top:0,behavior:'smooth'});
+}
+render();startTimer();
+</script>
+</body>
+</html>
