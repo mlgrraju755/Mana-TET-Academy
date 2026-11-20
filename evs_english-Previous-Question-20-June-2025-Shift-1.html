@@ -1,1 +1,106 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MANA-TET-2026 | EVS Questions 121-150</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f6fb;color:#202124;font-family:Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#123c69,#1d70a2);color:#fff;padding:24px 16px;text-align:center}
+header h1{margin:0;font-size:25px} header p{margin:7px 0 0}
+.wrap{max-width:950px;margin:20px auto;padding:0 14px}
+.panel{background:#fff;border-radius:14px;padding:18px;margin-bottom:16px;box-shadow:0 3px 14px #193b5a12}
+.info{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:bold;color:#123c69}
+.progress{height:9px;background:#e5ebf2;border-radius:20px;overflow:hidden;margin-top:12px}
+#bar{height:100%;width:0;background:#16845b;transition:.2s}
+.question{border:1px solid #e0e7ef;border-radius:12px;padding:17px;margin:14px 0;background:#fff}
+.question h3{margin:0 0 12px;color:#123c69;font-size:17px}
+.stem{white-space:pre-line;margin-bottom:12px}
+.option{display:block;border:1px solid #d9e1ea;border-radius:9px;padding:10px 12px;margin:8px 0;cursor:pointer}
+.option:hover{background:#f3f8fc}
+.option input{margin-right:9px}
+.correct{background:#e7f7ed!important;border-color:#23945d!important}
+.wrong{background:#fff0f0!important;border-color:#d94b4b!important}
+.explanation{font-weight:bold;margin-top:10px;color:#176b45}
+button{border:0;border-radius:9px;padding:12px 20px;font-size:16px;font-weight:bold;cursor:pointer;background:#123c69;color:white;margin:5px}
+button.secondary{background:#e7edf4;color:#123c69}
+.actions{text-align:center;padding:12px}
+#result{display:none;text-align:center}
+.score{font-size:30px;font-weight:bold;color:#14734e}
+.small{color:#5d6b7a;font-size:13px}
+@media(max-width:600px){header h1{font-size:21px}.question{padding:13px}.question h3{font-size:16px}}
+</style>
+</head>
+<body>
+<header>
+<h1>MANA-TET-2026</h1>
+<p>Paper I Telugu | 20 June 2025 – Shift 1</p>
+<p><b>Environmental Studies (EVS) | Questions 121–150</b></p>
+</header>
+<div class="wrap">
+<div class="panel">
+<div class="info"><span id="count">30 Questions</span><span id="attempted">Attempted: 0 / 30</span></div>
+<div class="progress"><div id="bar"></div></div>
+<p class="small">Select one answer for each question. You can change your answers before submitting.</p>
+</div>
+<div id="quiz"></div>
+<div class="actions"><button onclick="submitQuiz()">Submit Test</button><button class="secondary" onclick="resetQuiz()">Reset</button></div>
+<div class="panel" id="result">
+<h2>Test Result</h2><div class="score" id="score"></div><p id="summary"></p>
+<button onclick="showReview()">Review Answers</button>
+</div>
+</div>
+<script>
+const questions = [{"number": 121, "text": "Ravi's doctor advised him to eat more iron-rich food. His mother should often give him the following", "options": ["Boiled rice", "Ice cream", "Buttered bread", "Palak dal"], "answer": 3}, {"number": 122, "text": "In India, the percentage of milk used to prepare products like cheese, kova, ghee, curd, and milk powder (approximately) is", "options": ["30%", "40%", "80%", "60%"], "answer": 3}, {"number": 123, "text": "Identify, the plants considered as bee flora, from the following", "options": ["A & B only", "B & C only", "A & C only", "A, B & C"], "answer": 0}, {"number": 124, "text": "In case of unconsciousness, which of the following is the most appropriate first aid step that can help the person?", "options": ["Make the person sit upright and give water", "Lift the legs up and bend the head sideways to maintain an open airway", "Splash cold water and shake the person", "Cover the person with a blanket and wait"], "answer": 1}, {"number": 125, "text": "Which of the following animals reproduce by binary fission?", "options": ["Amoeba", "Earthworm", "Butterfly", "Frog"], "answer": 0}, {"number": 126, "text": "Among the following, one of the major non-conventional energy resources is", "options": ["Biodiesel", "Coal", "Natural Gas", "Petroleum"], "answer": 0}, {"number": 127, "text": "Identify the INCORRECT statement about floods:", "options": ["A flash flood of half a foot depth can make a person fall.", "A one-foot-deep flood can make vehicles like cars fall.", "A two-foot-deep flash flood can sweep away vehicles like cars.", "A one-foot-deep flood can safely be crossed by foot or car."], "answer": 3}, {"number": 128, "text": "Based on the following statements, choose the correct answer:", "options": ["Only Statement I is correct.", "Only Statement II is correct.", "Both Statement I and Statement II are correct.", "Neither Statement I nor Statement II is correct."], "answer": 2}, {"number": 129, "text": "Birds evolved from reptiles during this era", "options": ["Paleozoic Era", "Mesozoic Era", "Cenozoic Era", "Precambrian Era"], "answer": 1}, {"number": 130, "text": "The small intestine in adults is approximately:", "options": ["3 meters long", "5 meters long", "7 meters long", "10 meters long"], "answer": 2}, {"number": 131, "text": "If the levels of fluoride concentration (in ppm) in drinking water exceeds this level, it can cause dental problems in children", "options": ["0.5", "1.5", "1.0", "1.2"], "answer": 1}, {"number": 132, "text": "Wind always blows from one place to another due to:", "options": ["A only", "B only", "Both A and B", "Neither A nor B"], "answer": 2}, {"number": 133, "text": "For thousands of years, the waters of this river have been helping to irrigate the fields of Egypt", "options": ["River Congo", "River Nile", "River Zambezie", "River Chad"], "answer": 1}, {"number": 134, "text": "One of the following is known as 'The Greatest circle'", "options": ["Equator", "Tropic of Cancer", "Tropic of Capricorn", "Arctic circle"], "answer": 0}, {"number": 135, "text": "These mountain ranges form the eastern edges of the Deccan Plateau", "options": ["The Satpura Ranges", "The Mahadev, the Kaimur range and a portion of Maikal Range", "Westen Ghats", "Nilagiri Mountain Ranges"], "answer": 1}, {"number": 136, "text": "In this type of farming, the land is used for growing food and fodder crops and also for rearing livestock", "options": ["Mixed Farming", "Organic farming", "Multiple Cropping", "Inter Cropping"], "answer": 0}, {"number": 137, "text": "As per the Chola Inscription, 'Shalabhoga' refers to", "options": ["Land donated to Jaina Institutions", "Land gifted to brahmins", "Land given for the maintenance of a school", "Land gifted to temples"], "answer": 2}, {"number": 138, "text": "Among the following, identify the Harappan Civilisation sites located in India", "options": ["Kalibangan, Chanudharo and Lothal", "Mohenjo Daro, Shortugai and Sutkagendor", "Kalibangan, Ropar and Harappa", "Kalibangan, Ropar and Lothal"], "answer": 3}, {"number": 139, "text": "From among the following, identify the inscription that does NOT belong to Kakatiyas", "options": ["Motupally Inscription", "Uttara Merur Inscription", "Palampet Inscription", "Bayyaram Inscription"], "answer": 1}, {"number": 140, "text": "Sunkara Satyanarayana wrote the Burrakatha 'Telangana', which focused on", "options": ["The heroic struggle of Osmania University Students for freedom", "The heroism of Shaik Bandagi, a Muslim peasant", "The heroic struggle of the people of Telangana for separate state", "The heroic struggle of the people against Razakars of Hyderabad State"], "answer": 1}, {"number": 141, "text": "The Public Distribution System is used as an important activity of the Government not only to ensure food security to the people and particularly the poor ones during the inflationary situation but also to", "options": ["To regulate the prices of essential goods", "To boost the economy of farmers", "To increase the prices of producer's goods", "To enhance the income of the common people"], "answer": 0}, {"number": 142, "text": "In August 1969, the state of Meghalaya was created out of these districts of Assam", "options": ["Khasi, Jhantio and Garo Hills", "Baksa, Barpeta and Garo Hills", "Khasi, Barpeta and Garo Hills", "Jantia, Barpeta and Garo Hills"], "answer": 0}, {"number": 143, "text": "As per the provision of this article of the Indian Constitution, the Governor of a state can recommend to the president for the dismissal of State Government and dissolution of the State Assembly", "options": ["Art. 352", "Art.360", "Art. 356", "Art. 368"], "answer": 2}, {"number": 144, "text": "The only iron and Steel Industry in India before 1947 was", "options": ["The Indian Iron & Steel Company (IISCO)", "The Bokaro Steel Plant", "Bhilai Steel Plant", "The Tata Iron and Steel Company"], "answer": 3}, {"number": 145, "text": "Identify an example of a co-curricular activity from the following", "options": ["Conducting a mock assembly to practice leadership and public speaking", "Preparing and presenting a science project on weather patterns", "Taking a written test on environmental concepts", "Listening to a classroom lecture on environmental conservation"], "answer": 0}, {"number": 146, "text": "A student of Class 5 took two cups of equal size, poured normal tap water in one cup and salt water in the other with equal quantity, and placed both cups in the refrigerator. As an EVS teacher, what is the \"hypothesis\" that you give to students for this experiment?", "options": ["Record the time taken for each cup to freeze completely and write a report.", "Observe the cups every 30 minutes to see which one freezes first.", "Measure the temperature of both cups before putting them in the refrigerator.", "The salt water will freezes slower than the tap water because salt lowers the freezing point of water."], "answer": 3}, {"number": 147, "text": "In teaching Environmental Studies (EVS), the most important role of the teacher is to:", "options": ["Deliver information through lectures", "Facilitate students' exploration and active learning", "Test students through frequent quizzes", "Focus mainly on textbook content"], "answer": 1}, {"number": 148, "text": "Match the following List-A with List-B", "options": ["A–iii, B–i, C–iv, D–ii", "A–iii, B–iv, C–i, D–ii", "A–iv, B–iii, C–i, D–ii", "A–iv, B–i, C–ii, D–iii"], "answer": 1}, {"number": 149, "text": "After completing the lesson 'plants and animals' – A class–V student is growing plants, school garden and showing love and sympathy towards animals and birds. The academic standard reflected in this activity.", "options": ["Reflection on contemporary issues", "Information skills and project works", "Appreciation and sensitivity", "Experiments and field observation"], "answer": 2}, {"number": 150, "text": "The following tools are mainly used in the Formative Assessment of EVS (Environmental Studies)", "options": ["A, B, C, D", "B, C, D only", "A, C, D only", "A, B, C only"], "answer": 3}];
+const quiz=document.getElementById('quiz');
+questions.forEach((q,i)=>{
+ const card=document.createElement('section');card.className='question';card.id='q'+i;
+ const h=document.createElement('h3');h.textContent='Q'+q.number+'.';card.appendChild(h);
+ const stem=document.createElement('div');stem.className='stem';stem.textContent=q.text;card.appendChild(stem);
+ q.options.forEach((op,j)=>{
+  const label=document.createElement('label');label.className='option';label.id=`opt-${i}-${j}`;
+  label.innerHTML=`<input type="radio" name="q${i}" value="${j}"> <b>${j+1})</b> ${escapeHtml(op)}`;
+  label.querySelector('input').addEventListener('change',updateProgress);card.appendChild(label);
+ });
+ quiz.appendChild(card);
+});
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function updateProgress(){
+ let n=questions.filter((q,i)=>document.querySelector(`input[name=q${i}]:checked`)).length;
+ document.getElementById('attempted').textContent=`Attempted: ${n} / ${questions.length}`;
+ document.getElementById('bar').style.width=(n/questions.length*100)+'%';
+}
+function submitQuiz(){
+ let score=0,attempted=0;
+ questions.forEach((q,i)=>{
+  const chosen=document.querySelector(`input[name=q${i}]:checked`);
+  if(chosen)attempted++;
+  if(chosen && Number(chosen.value)===q.answer)score++;
+  q.options.forEach((_,j)=>{
+   const el=document.getElementById(`opt-${i}-${j}`);
+   el.classList.remove('correct','wrong');
+   if(j===q.answer)el.classList.add('correct');
+   if(chosen && Number(chosen.value)===j && j!==q.answer)el.classList.add('wrong');
+  });
+  const old=document.querySelector(`#q${i} .explanation`);if(old)old.remove();
+  const note=document.createElement('div');note.className='explanation';
+  note.textContent='Correct Answer: Option '+(q.answer+1)+' — '+q.options[q.answer];
+  document.querySelector(`#q${i}`).appendChild(note);
+ });
+ document.getElementById('result').style.display='block';
+ document.getElementById('score').textContent=`${score} / ${questions.length}`;
+ document.getElementById('summary').textContent=`Attempted: ${attempted} | Correct: ${score} | Incorrect: ${attempted-score} | Not answered: ${questions.length-attempted}`;
+ document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+function showReview(){document.querySelectorAll('.explanation')[0]?.scrollIntoView({behavior:'smooth'});}
+function resetQuiz(){
+ if(!confirm('Are you sure you want to reset the test?'))return;
+ document.querySelectorAll('input[type=radio]').forEach(x=>x.checked=false);
+ document.querySelectorAll('.correct,.wrong').forEach(x=>x.classList.remove('correct','wrong'));
+ document.querySelectorAll('.explanation').forEach(x=>x.remove());
+ document.getElementById('result').style.display='none';updateProgress();window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
