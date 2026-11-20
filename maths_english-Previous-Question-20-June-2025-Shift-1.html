@@ -20,7 +20,11 @@ header h1{margin:0 0 7px;font-size:25px} header p{margin:4px 0;font-size:14px}
 .qtitle{font-weight:700;line-height:1.5;margin-bottom:13px}
 .opt{display:flex;gap:10px;align-items:flex-start;padding:11px;border:1px solid #dce3ec;border-radius:9px;margin:8px 0;cursor:pointer;line-height:1.4}
 .opt:hover{background:#f4f8fc}.opt input{margin-top:3px;accent-color:#123c69}
-.opt.correct{border-color:#16835d;background:#e9f7ef}.opt.wrong{border-color:#d92d20;background:#fff0ef}
+.opt.correct{border-color:#16835d;background:#e9f7ef;font-weight:700}
+.opt.wrong{border-color:#d92d20;background:#fff0ef}
+.instant-fb{margin-top:10px;padding:10px 12px;border-radius:8px;font-weight:700;font-size:14.5px;display:none}
+.instant-fb.right{display:block;background:#e9f7ef;color:#16835d;border-left:4px solid #16835d}
+.instant-fb.wrong{display:block;background:#fff0ef;color:#d92d20;border-left:4px solid #d92d20}
 .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:20px 0}
 button{border:0;border-radius:9px;padding:13px 20px;font-size:15px;font-weight:700;cursor:pointer}
 #submit{background:#123c69;color:#fff}#restart{background:#e8edf4;color:#243447}
@@ -42,9 +46,10 @@ footer{text-align:center;color:#667085;font-size:12px;padding:18px}
   <span class="badge">Time: 30 Minutes</span>
   <span id="timer">30:00</span>
   <span class="badge" id="count">Answered: 0 / 30</span>
+  <span class="badge" id="liveScore">Correct: 0</span>
  </div>
  <div class="progress"><div id="bar"></div></div>
- <p style="margin:12px 0 0;color:#475467;font-size:14px">Choose one correct answer for each question. Click Submit Test to view your score and answer review.</p>
+ <p style="margin:12px 0 0;color:#475467;font-size:14px">Choose an option to see instant Right/Wrong feedback. Click Submit Test to view your final score and answer review.</p>
 </div>
 <div id="quiz"></div>
 <div class="actions"><button id="submit" onclick="submitTest(false)">Submit Test</button><button id="restart" onclick="restartTest()">Restart Test</button></div>
@@ -62,17 +67,47 @@ function render(){
   item.opts.forEach((opt,j)=>{
    const label=document.createElement('label'); label.className='opt';
    label.innerHTML='<input type="radio" name="q'+i+'" value="'+j+'"><span><b>'+String.fromCharCode(65+j)+'.</b> '+escapeHTML(opt)+'</span>';
-   label.querySelector('input').addEventListener('change',updateProgress); card.appendChild(label);
+   label.querySelector('input').addEventListener('change',()=>onOptionSelect(i,j));
+   card.appendChild(label);
   });
+  const fb=document.createElement('div'); fb.className='instant-fb'; fb.id='fb'+i;
+  card.appendChild(fb);
   root.appendChild(card);
  });
  updateProgress();
 }
+function onOptionSelect(qIdx, chosenIdx){
+ if(submitted) return;
+ const q=questions[qIdx];
+ const labels=document.querySelectorAll('#q'+qIdx+' .opt');
+ labels.forEach((lab,j)=>{
+  lab.classList.remove('correct','wrong');
+  if(j===q.ans) lab.classList.add('correct');
+  else if(j===chosenIdx) lab.classList.add('wrong');
+ });
+ const fb=document.getElementById('fb'+qIdx);
+ if(chosenIdx===q.ans){
+  fb.className='instant-fb right';
+  fb.textContent='✓ Right Answer!';
+ }else{
+  fb.className='instant-fb wrong';
+  fb.textContent='✗ Wrong Answer! Correct option: '+String.fromCharCode(65+q.ans)+'. '+q.opts[q.ans];
+ }
+ updateProgress();
+}
 function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function updateProgress(){
- let n=questions.filter((q,i)=>document.querySelector('input[name="q'+i+'"]:checked')).length;
- document.getElementById('count').textContent='Answered: '+n+' / 30';
- document.getElementById('bar').style.width=(n/30*100)+'%';
+ let answered=0, liveCorrect=0;
+ questions.forEach((q,i)=>{
+  const checked=document.querySelector('input[name="q'+i+'"]:checked');
+  if(checked){
+   answered++;
+   if(Number(checked.value)===q.ans) liveCorrect++;
+  }
+ });
+ document.getElementById('count').textContent='Answered: '+answered+' / 30';
+ document.getElementById('liveScore').textContent='Correct: '+liveCorrect;
+ document.getElementById('bar').style.width=(answered/30*100)+'%';
 }
 function startTimer(){
  clearInterval(timerId);
@@ -94,10 +129,10 @@ function submitTest(auto){
   if(val===q.ans) {score++;correct++;} else if(val===-1) unanswered++; else wrong++;
   const labels=document.querySelectorAll('#q'+i+' .opt');
   labels.forEach((lab,j)=>{lab.querySelector('input').disabled=true;if(j===q.ans)lab.classList.add('correct');if(j===val && val!==q.ans)lab.classList.add('wrong');});
-  review+='<div class="review"><b>Q'+(i+91)+'.</b> '+(val===q.ans?'<span style="color:#16835d">Correct</span>':val===-1?'<span style="color:#b54708">Not answered</span>':'<span style="color:#d92d20">Incorrect</span>')+'<br>Correct answer: <b>'+String.fromCharCode(65+q.ans)+'. '+escapeHTML(q.opts[q.ans])+'</b></div>';
+  review+='<div class="review"><b>Q'+(i+91)+'.</b> '+(val===q.ans?'<span style="color:#16835d">Right</span>':val===-1?'<span style="color:#b54708">Not answered</span>':'<span style="color:#d92d20">Wrong</span>')+'<br>Correct answer: <b>'+String.fromCharCode(65+q.ans)+'. '+escapeHTML(q.opts[q.ans])+'</b></div>';
  });
  const result=document.getElementById('result');result.style.display='block';
- result.innerHTML='<h2 style="text-align:center;margin-top:0">Test Result</h2><div class="score">'+score+' / 30</div><p style="text-align:center">'+(auto?'Time is up. Your test has been submitted.':'Test submitted successfully.')+'</p><div class="topbar"><span class="badge">Correct: '+correct+'</span><span class="badge">Incorrect: '+wrong+'</span><span class="badge">Unanswered: '+unanswered+'</span></div><h3>Answer Review</h3>'+review;
+ result.innerHTML='<h2 style="text-align:center;margin-top:0">Test Result</h2><div class="score">'+score+' / 30</div><p style="text-align:center">'+(auto?'Time is up. Your test has been submitted.':'Test submitted successfully.')+'</p><div class="topbar"><span class="badge">Right: '+correct+'</span><span class="badge">Wrong: '+wrong+'</span><span class="badge">Unanswered: '+unanswered+'</span></div><h3>Answer Review</h3>'+review;
  document.getElementById('submit').disabled=true;result.scrollIntoView({behavior:'smooth'});
 }
 function restartTest(){
