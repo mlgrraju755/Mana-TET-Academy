@@ -1,381 +1,598 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper I Telugu (27th Jun 2025 Shift 2) - Questions 91 to 120 - Subject: Mathematics (English Medium)</title>
+<div id="paper1-math-quiz-wrapper">
     <style>
-        :root {
-            --primary: #1e3a8a;
-            --primary-light: #eff6ff;
-            --accent: #2563eb;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #1e293b;
-            --muted: #64748b;
-            --border: #e2e8f0;
-            --success-bg: #dcfce7;
-            --success-border: #16a34a;
-            --success-text: #14532d;
-            --error-bg: #fee2e2;
-            --error-border: #dc2626;
-            --error-text: #7f1d1d;
+        #paper1-math-quiz-wrapper {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 860px;
+            margin: 20px auto;
+            padding: 16px;
+            background: #ffffff;
+            color: #111827;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            line-height: 1.55;
         }
-
-        * {
-            box-sizing: border-box;
+        #paper1-math-quiz-wrapper .quiz-header {
+            border-bottom: 2px solid #1d4ed8;
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+        #paper1-math-quiz-wrapper .quiz-header h2 {
+            margin: 0 0 4px 0;
+            font-size: 20px;
+            color: #1e3a8a;
+        }
+        #paper1-math-quiz-wrapper .quiz-header p {
             margin: 0;
-            padding: 0;
+            font-size: 14px;
+            color: #374151;
         }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding-bottom: 4rem;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
-        }
-
-        header h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-        }
-
-        header p {
-            font-size: 1.05rem;
-            opacity: 0.92;
-            font-weight: 500;
-        }
-
-        .toolbar {
+        #paper1-math-quiz-wrapper .quiz-topbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            background: #f3f4f6;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-bottom: 20px;
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            padding: 0.75rem 1rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            z-index: 50;
+            border: 1px solid #e5e7eb;
         }
-
-        .toolbar-inner {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
+        #paper1-math-quiz-wrapper .score-box {
+            font-weight: bold;
+            font-size: 15px;
+            color: #111827;
         }
-
-        .score-pill {
-            background: var(--primary-light);
-            color: var(--primary);
-            border: 1px solid #bfdbfe;
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .toolbar-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            padding: 0.45rem 0.9rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #ffffff;
-            color: var(--text);
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-
-        .btn:hover {
-            background: #f1f5f9;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: #ffffff;
-            border-color: var(--accent);
-        }
-
-        .btn-primary:hover {
+        #paper1-math-quiz-wrapper .reset-btn {
             background: #1d4ed8;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 1.5rem auto;
-            padding: 0 1rem;
-        }
-
-        .q-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.4rem;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            scroll-margin-top: 75px;
-        }
-
-        .q-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.85rem;
-        }
-
-        .q-badge {
-            background: var(--primary);
             color: #ffffff;
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.7rem;
-            border-radius: 6px;
-            letter-spacing: 0.02em;
-        }
-
-        .reveal-btn {
-            background: transparent;
-            border: 1px solid #cbd5e1;
-            color: var(--muted);
-            font-size: 0.8rem;
-            padding: 0.25rem 0.65rem;
-            border-radius: 6px;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: bold;
         }
-
-        .reveal-btn:hover {
-            background: #f1f5f9;
-            color: var(--text);
+        #paper1-math-quiz-wrapper .reset-btn:hover {
+            background: #1e40af;
         }
-
-        .q-content {
-            font-size: 1.03rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
+        #paper1-math-quiz-wrapper .question-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 14px;
+            margin-bottom: 16px;
+            background: #fafafa;
         }
-
-        .q-line {
-            margin-bottom: 0.35rem;
+        #paper1-math-quiz-wrapper .q-title {
+            font-size: 15.5px;
+            margin-bottom: 10px;
+            color: #111827;
         }
-
-        .sub-statement {
-            padding-left: 1rem;
-            margin: 0.3rem 0;
-            color: #334155;
-            font-weight: 500;
+        #paper1-math-quiz-wrapper .q-text {
+            display: inline;
+            margin: 0;
         }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 0.65rem;
+        #paper1-math-quiz-wrapper .stmt-line {
+            margin: 4px 0 4px 18px;
+            color: #1f2937;
         }
-
-        .option-btn {
+        #paper1-math-quiz-wrapper .options-list {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            width: 100%;
-            text-align: left;
-            padding: 0.7rem 0.9rem;
-            border: 1.5px solid var(--border);
-            border-radius: 9px;
-            background: #ffffff;
-            color: var(--text);
-            font-size: 0.96rem;
-            cursor: pointer;
-            transition: all 0.15s ease;
+            flex-direction: column;
+            gap: 7px;
         }
-
-        .option-btn:hover {
+        #paper1-math-quiz-wrapper .opt-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 8px 10px;
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14.5px;
+        }
+        #paper1-math-quiz-wrapper .opt-item:hover {
+            background: #eff6ff;
             border-color: #93c5fd;
-            background: #f8fafc;
         }
-
-        .opt-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: #f1f5f9;
-            color: #475569;
-            font-weight: 700;
-            font-size: 0.85rem;
+        #paper1-math-quiz-wrapper .opt-item input[type="radio"] {
+            margin-top: 3px;
+            cursor: pointer;
         }
-
-        .opt-text {
-            flex: 1;
+        #paper1-math-quiz-wrapper .opt-correct {
+            background: #dcfce7 !important;
+            border-color: #16a34a !important;
+            color: #14532d !important;
+            font-weight: bold;
         }
-
-        .option-btn.correct {
-            background: var(--success-bg);
-            border-color: var(--success-border);
-            color: var(--success-text);
-            font-weight: 600;
+        #paper1-math-quiz-wrapper .opt-wrong {
+            background: #fee2e2 !important;
+            border-color: #dc2626 !important;
+            color: #7f1d1d !important;
         }
-
-        .option-btn.correct .opt-badge {
-            background: var(--success-border);
-            color: #ffffff;
+        #paper1-math-quiz-wrapper .feedback-box {
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 5px;
+            font-size: 14px;
         }
-
-        .option-btn.wrong {
-            background: var(--error-bg);
-            border-color: var(--error-border);
-            color: var(--error-text);
+        #paper1-math-quiz-wrapper .fb-correct {
+            background: #dcfce7;
+            border-left: 4px solid #16a34a;
+            color: #14532d;
         }
-
-        .option-btn.wrong .opt-badge {
-            background: var(--error-border);
-            color: #ffffff;
-        }
-
-        .answer-box {
-            display: none;
-            margin-top: 0.9rem;
-            padding: 0.65rem 0.95rem;
-            background: #f0fdf4;
-            border-left: 4px solid var(--success-border);
-            border-radius: 6px;
-            color: var(--success-text);
-            font-size: 0.93rem;
-        }
-
-        .answer-box.visible {
-            display: block;
-        }
-
-        .answer-key-section {
-            margin-top: 2.5rem;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        }
-
-        .answer-key-section h2 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-light);
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        th, td {
-            border: 1px solid var(--border);
-            padding: 0.6rem 0.75rem;
-            text-align: left;
-        }
-
-        th {
-            background: var(--primary-light);
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .td-qno {
-            font-weight: 700;
-            white-space: nowrap;
-            background: #f8fafc;
-        }
-
-        .td-qno a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .td-qno a:hover {
-            text-decoration: underline;
-        }
-
-        @media print {
-            .toolbar, .reveal-btn {
-                display: none !important;
-            }
-            body {
-                background: #ffffff;
-            }
-            .q-card {
-                break-inside: avoid;
-                box-shadow: none;
-                border: 1px solid #cbd5e1;
-            }
-            .answer-box {
-                display: block !important;
-            }
+        #paper1-math-quiz-wrapper .fb-wrong {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            color: #7f1d1d;
         }
     </style>
-</head>
-<body>
 
-<header>
-    <h1>Paper I Telugu (27th Jun 2025 Shift 2) - Questions 91 to 120</h1>
-    <p>Subject: Mathematics (English Medium)</p>
-</header>
-
-<div class="toolbar">
-    <div class="toolbar-inner">
-        <div class="score-pill" id="score-display">Score: 0 / 30 (Attempted: 0)</div>
-        <div class="toolbar-actions">
-            <button type="button" class="btn btn-primary" id="toggle-all-btn" onclick="toggleAllAnswers()">Show All Answers</button>
-            <button type="button" class="btn" onclick="resetQuiz()">Reset</button>
-            <button type="button" class="btn" onclick="window.print()">Print / PDF</button>
-        </div>
+    <div class="quiz-header">
+        <h2>Paper I Telugu (27th Jun 2025 Shift 2) - Questions 91 to 120</h2>
+        <p>Subject: Mathematics (English Medium) (30 Questions)</p>
     </div>
-</div>
 
-<main class="container">
-    
-        <article class="q-card" id="card-Q91" data-correct="1">
-            <div class="q-header">
-                <span class="q-badge">Q91</span>
-                <button type="button" class="reveal-btn" onclick="toggleSingleAnswer('Q91')">Show Answer</button>
-            </div>
-            <div class="q-content">
-                <p class="q-line">Read the statements related to integers.</p>
-<div class="sub-statement">A) The product of 2025 negative integers is a negative integer.</div>
-<div class="sub-statement">B) When we divide a negative integer by a negative integer, we get a negative integer as the quotient.</div>
-<p class="q-line">Choose the correct answer.</p>
-            </div>
-            <div class="options-grid">
-                
-            <button type="button" class="option-btn" data-opt="1" onclick="selectOption(this, 'Q91', '1', '1')">
-                <span class="opt-badge">1</span>
-                <span class="opt-text">Statement A is true and Statement B is false.</span>
-                <span class="opt-status"></span>
-            </button>
+    <div class="quiz-topbar">
+        <div class="score-box" id="quiz-score-text">Score: 0 / 30 | Answered: 0 / 30</div>
+        <button type="button" class="reset-btn" onclick="resetAllQuiz()">Reset All</button>
+    </div>
+
+    <div id="questions-container">
         
-            <button type="button" class="option-btn" data-opt="2"
+        <div class="question-box" id="qbox-Q91">
+            <div class="q-title"><strong>Q91.</strong> <p class="q-text">Read the statements related to integers.</p>
+<div class="stmt-line">A) The product of 2025 negative integers is a negative integer.</div>
+<div class="stmt-line">B) When we divide a negative integer by a negative integer, we get a negative integer as the quotient.</div>
+<p class="q-text">Choose the correct answer.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q91" value="1" onchange="checkAnswer('Q91', '1', '1')">
+                <span class="opt-label"><strong>1)</strong> Statement A is true and Statement B is false.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q91" value="2" onchange="checkAnswer('Q91', '2', '1')">
+                <span class="opt-label"><strong>2)</strong> Statement A is false and Statement B is true.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q91" value="3" onchange="checkAnswer('Q91', '3', '1')">
+                <span class="opt-label"><strong>3)</strong> Both the statements A and B are true.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q91" value="4" onchange="checkAnswer('Q91', '4', '1')">
+                <span class="opt-label"><strong>4)</strong> Both the statements A and B are false.</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q91" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q92">
+            <div class="q-title"><strong>Q92.</strong> <p class="q-text">Choose pair of supplementary angles from the following.</p>
+<div class="stmt-line">A) 90°, 90°</div>
+<div class="stmt-line">B) 124°, 66°</div>
+<div class="stmt-line">C) 54°, 36°</div>
+<div class="stmt-line">D) 92°, 88°</div></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q92" value="1" onchange="checkAnswer('Q92', '1', '3')">
+                <span class="opt-label"><strong>1)</strong> A, B &amp; D only</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q92" value="2" onchange="checkAnswer('Q92', '2', '3')">
+                <span class="opt-label"><strong>2)</strong> C only</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q92" value="3" onchange="checkAnswer('Q92', '3', '3')">
+                <span class="opt-label"><strong>3)</strong> A &amp; D only</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q92" value="4" onchange="checkAnswer('Q92', '4', '3')">
+                <span class="opt-label"><strong>4)</strong> B &amp; D only</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q92" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q93">
+            <div class="q-title"><strong>Q93.</strong> <p class="q-text">A cloth of length 45/2 metres has to be cut into smaller pieces of length 5/4 metres each, then the number of pieces we get is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q93" value="1" onchange="checkAnswer('Q93', '1', '2')">
+                <span class="opt-label"><strong>1)</strong> 9</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q93" value="2" onchange="checkAnswer('Q93', '2', '2')">
+                <span class="opt-label"><strong>2)</strong> 18</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q93" value="3" onchange="checkAnswer('Q93', '3', '2')">
+                <span class="opt-label"><strong>3)</strong> 28</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q93" value="4" onchange="checkAnswer('Q93', '4', '2')">
+                <span class="opt-label"><strong>4)</strong> 32</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q93" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q94">
+            <div class="q-title"><strong>Q94.</strong> <p class="q-text">The lowest marks scored by a student in the class is one-third of the highest marks plus 4. The lowest mark scored by the student is 35, then the highest mark scored by the student is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q94" value="1" onchange="checkAnswer('Q94', '1', '4')">
+                <span class="opt-label"><strong>1)</strong> 81</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q94" value="2" onchange="checkAnswer('Q94', '2', '4')">
+                <span class="opt-label"><strong>2)</strong> 105</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q94" value="3" onchange="checkAnswer('Q94', '3', '4')">
+                <span class="opt-label"><strong>3)</strong> 101</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q94" value="4" onchange="checkAnswer('Q94', '4', '4')">
+                <span class="opt-label"><strong>4)</strong> 93</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q94" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q95">
+            <div class="q-title"><strong>Q95.</strong> <p class="q-text">If &#x27;x&#x27; and &#x27;y&#x27; are inversely proportional to each other (y₁, y₂ are the values of y corresponding to the values x₁, x₂ of x respectively), then choose the correct relation from the following.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q95" value="1" onchange="checkAnswer('Q95', '1', '4')">
+                <span class="opt-label"><strong>1)</strong> x₁ / y₁ = x₂ / y₂</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q95" value="2" onchange="checkAnswer('Q95', '2', '4')">
+                <span class="opt-label"><strong>2)</strong> x₁ / x₂ = y₁ / y₂</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q95" value="3" onchange="checkAnswer('Q95', '3', '4')">
+                <span class="opt-label"><strong>3)</strong> x₁ / y₂ = y₁ / x₂</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q95" value="4" onchange="checkAnswer('Q95', '4', '4')">
+                <span class="opt-label"><strong>4)</strong> x₁ / y₂ = x₂ / y₁</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q95" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q96">
+            <div class="q-title"><strong>Q96.</strong> <p class="q-text">Sharan bought some books for ₹1250 and he sold them for ₹1500 whereas Varun bought some books for ₹1000 and he sold them for ₹1250, then choose the correct statement from the following.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q96" value="1" onchange="checkAnswer('Q96', '1', '2')">
+                <span class="opt-label"><strong>1)</strong> Sharan earns 5% more profit than Varun.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q96" value="2" onchange="checkAnswer('Q96', '2', '2')">
+                <span class="opt-label"><strong>2)</strong> Varun earns 5% more profit than Sharan.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q96" value="3" onchange="checkAnswer('Q96', '3', '2')">
+                <span class="opt-label"><strong>3)</strong> Both Sharan and Varun earns 25% of profit.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q96" value="4" onchange="checkAnswer('Q96', '4', '2')">
+                <span class="opt-label"><strong>4)</strong> Sharan earns 10% less profit than Varun.</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q96" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q97">
+            <div class="q-title"><strong>Q97.</strong> <p class="q-text">If the median of the data 49, 38, 35, 20, 28, 17, 14, 11, 21, 53 is &#x27;x&#x27; and the median of the data obtained by replacing 11 by 31 and 17 by 27 in the data is &#x27;y&#x27;, then y − x =</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q97" value="1" onchange="checkAnswer('Q97', '1', '3')">
+                <span class="opt-label"><strong>1)</strong> 5</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q97" value="2" onchange="checkAnswer('Q97', '2', '3')">
+                <span class="opt-label"><strong>2)</strong> 4</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q97" value="3" onchange="checkAnswer('Q97', '3', '3')">
+                <span class="opt-label"><strong>3)</strong> 3</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q97" value="4" onchange="checkAnswer('Q97', '4', '3')">
+                <span class="opt-label"><strong>4)</strong> 6</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q97" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q98">
+            <div class="q-title"><strong>Q98.</strong> <p class="q-text">Read the following statements related to triangles.</p>
+<div class="stmt-line">A) In a right-angled triangle the two altitudes of a triangle are two of its sides.</div>
+<div class="stmt-line">B) The point of concurrency of altitudes of a triangle is called the centroid of the triangle.</div>
+<p class="q-text">Choose the correct answer.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q98" value="1" onchange="checkAnswer('Q98', '1', '1')">
+                <span class="opt-label"><strong>1)</strong> Statement A is true and Statement B is false.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q98" value="2" onchange="checkAnswer('Q98', '2', '1')">
+                <span class="opt-label"><strong>2)</strong> Statement A is false and Statement B is true.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q98" value="3" onchange="checkAnswer('Q98', '3', '1')">
+                <span class="opt-label"><strong>3)</strong> Both the statements A and B are true.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q98" value="4" onchange="checkAnswer('Q98', '4', '1')">
+                <span class="opt-label"><strong>4)</strong> Both the statements A and B are false.</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q98" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q99">
+            <div class="q-title"><strong>Q99.</strong> <p class="q-text">Sindhu, Karthik and Kiran go for a walk every morning. Sindhu goes around an equilateral triangular park of side 80m, Karthik goes around a rectangular park with length 80m and breadth 40m and Kiran goes around a square park of side 60m. If they walk for 3 rounds, then choose the correct statement from the following for the above data.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q99" value="1" onchange="checkAnswer('Q99', '1', '3')">
+                <span class="opt-label"><strong>1)</strong> Both Sindhu and Karthik covers 120m of distance in 3 rounds.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q99" value="2" onchange="checkAnswer('Q99', '2', '3')">
+                <span class="opt-label"><strong>2)</strong> Karthik covers 360m of more distance than Sindhu and Kiran in 3 rounds.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q99" value="3" onchange="checkAnswer('Q99', '3', '3')">
+                <span class="opt-label"><strong>3)</strong> All the three Sindhu, Karthik and Kiran covers 720m of distance in 3 rounds.</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q99" value="4" onchange="checkAnswer('Q99', '4', '3')">
+                <span class="opt-label"><strong>4)</strong> Both Kiran and Karthik covers 480m of distance in 3 rounds.</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q99" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q100">
+            <div class="q-title"><strong>Q100.</strong> <p class="q-text">A polyhedron has 15 edges and 7 faces, then the number of vertices it has:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q100" value="1" onchange="checkAnswer('Q100', '1', '2')">
+                <span class="opt-label"><strong>1)</strong> 20</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q100" value="2" onchange="checkAnswer('Q100', '2', '2')">
+                <span class="opt-label"><strong>2)</strong> 10</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q100" value="3" onchange="checkAnswer('Q100', '3', '2')">
+                <span class="opt-label"><strong>3)</strong> 24</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q100" value="4" onchange="checkAnswer('Q100', '4', '2')">
+                <span class="opt-label"><strong>4)</strong> 6</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q100" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q101">
+            <div class="q-title"><strong>Q101.</strong> <p class="q-text">The circumference of a circle (in cm) inscribed in a square of side 35cm is (Use π = 22/7):</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q101" value="1" onchange="checkAnswer('Q101', '1', '1')">
+                <span class="opt-label"><strong>1)</strong> 110</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q101" value="2" onchange="checkAnswer('Q101', '2', '1')">
+                <span class="opt-label"><strong>2)</strong> 220</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q101" value="3" onchange="checkAnswer('Q101', '3', '1')">
+                <span class="opt-label"><strong>3)</strong> 55</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q101" value="4" onchange="checkAnswer('Q101', '4', '1')">
+                <span class="opt-label"><strong>4)</strong> 962.5</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q101" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q102">
+            <div class="q-title"><strong>Q102.</strong> <p class="q-text">Hari a fruit seller had some oranges. He sold 26% oranges and left with 777 oranges, then the number of oranges he had at the beginning is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q102" value="1" onchange="checkAnswer('Q102', '1', '3')">
+                <span class="opt-label"><strong>1)</strong> 2900</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q102" value="2" onchange="checkAnswer('Q102', '2', '3')">
+                <span class="opt-label"><strong>2)</strong> 1323</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q102" value="3" onchange="checkAnswer('Q102', '3', '3')">
+                <span class="opt-label"><strong>3)</strong> 1050</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q102" value="4" onchange="checkAnswer('Q102', '4', '3')">
+                <span class="opt-label"><strong>4)</strong> 1596</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q102" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q103">
+            <div class="q-title"><strong>Q103.</strong> <p class="q-text">33 percent of a number is 759, then 21 percent of the same number is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q103" value="1" onchange="checkAnswer('Q103', '1', '4')">
+                <span class="opt-label"><strong>1)</strong> 458</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q103" value="2" onchange="checkAnswer('Q103', '2', '4')">
+                <span class="opt-label"><strong>2)</strong> 504</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q103" value="3" onchange="checkAnswer('Q103', '3', '4')">
+                <span class="opt-label"><strong>3)</strong> 460</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q103" value="4" onchange="checkAnswer('Q103', '4', '4')">
+                <span class="opt-label"><strong>4)</strong> 483</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q103" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q104">
+            <div class="q-title"><strong>Q104.</strong> <p class="q-text">If x̄ is the mean of the data x₁, x₂, ....., xₙ, then the mean of the data x₁/a, x₂/a, ......., xₙ/a (a ≠ 0) is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q104" value="1" onchange="checkAnswer('Q104', '1', '1')">
+                <span class="opt-label"><strong>1)</strong> x̄ / a</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q104" value="2" onchange="checkAnswer('Q104', '2', '1')">
+                <span class="opt-label"><strong>2)</strong> a·x̄ / 2</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q104" value="3" onchange="checkAnswer('Q104', '3', '1')">
+                <span class="opt-label"><strong>3)</strong> a·x̄ / 2n</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q104" value="4" onchange="checkAnswer('Q104', '4', '1')">
+                <span class="opt-label"><strong>4)</strong> x̄ / an</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q104" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q105">
+            <div class="q-title"><strong>Q105.</strong> <p class="q-text">If △ABC ≅ △XZY, then choose the correct relation from the following.</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q105" value="1" onchange="checkAnswer('Q105', '1', '3')">
+                <span class="opt-label"><strong>1)</strong> AB = ZY</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q105" value="2" onchange="checkAnswer('Q105', '2', '3')">
+                <span class="opt-label"><strong>2)</strong> ∠ABC = ∠XYZ</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q105" value="3" onchange="checkAnswer('Q105', '3', '3')">
+                <span class="opt-label"><strong>3)</strong> ∠BAC = ∠ZXY</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q105" value="4" onchange="checkAnswer('Q105', '4', '3')">
+                <span class="opt-label"><strong>4)</strong> AC = XZ</span>
+            </label>
+        
+            </div>
+            <div class="feedback-box" id="fb-Q105" style="display:none;"></div>
+        </div>
+    
+        <div class="question-box" id="qbox-Q106">
+            <div class="q-title"><strong>Q106.</strong> <p class="q-text">If 2⁻⁶ × 2ᵃ = 1024 then the value of a² is:</p></div>
+            <div class="options-list">
+                
+            <label class="opt-item" data-opt="1">
+                <input type="radio" name="Q106" value="1" onchange="checkAnswer('Q106', '1', '4')">
+                <span class="opt-label"><strong>1)</strong> 512</span>
+            </label>
+        
+            <label class="opt-item" data-opt="2">
+                <input type="radio" name="Q106" value="2" onchange="checkAnswer('Q106', '2', '4')">
+                <span class="opt-label"><strong>2)</strong> 64</span>
+            </label>
+        
+            <label class="opt-item" data-opt="3">
+                <input type="radio" name="Q106" value="3" onchange="checkAnswer('Q106', '3', '4')">
+                <span class="opt-label"><strong>3)</strong> 16</span>
+            </label>
+        
+            <label class="opt-item" data-opt="4">
+                <input type="radio" name="Q106" value="4" onchange="checkAnswer('Q106', '4', '4')">
+                <span
