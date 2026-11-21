@@ -1,59 +1,294 @@
-<!doctype html>
-<html lang="te"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TG TET PREVIOUS PAPER – JUNE 2025 SHIFT 2 | MANA TET</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mana TET 2026 - TG TET Paper-I Environmental Studies Practice Test">
+<title>Mana TET 2026 | Environmental Studies (Q121–Q150)</title>
 <style>
-:root{font-family:"Noto Sans Telugu","Gautami",sans-serif;color:#182235;background:#f3f6fb}
-body{margin:0;padding:18px}.wrap{max-width:850px;margin:auto}.hero{background:#173b70;color:white;padding:22px;border-radius:16px;margin-bottom:16px}
-h1{font-size:24px;margin:0 0 8px}.sub{opacity:.9}.bar{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.pill{background:#ffffff22;padding:8px 12px;border-radius:20px}
-.card{background:white;border:1px solid #dce4ef;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 2px 8px #18345a0a}
-.qtitle{font-size:18px;font-weight:700;line-height:1.7;margin-bottom:12px}.statement{line-height:1.8;background:#f7f9fc;padding:10px 13px;border-radius:9px;margin:6px 0}
-.option{display:flex;gap:10px;align-items:flex-start;border:1px solid #d9e1ec;padding:11px 12px;border-radius:10px;margin:8px 0;cursor:pointer;line-height:1.6}
-.option:hover{background:#f4f8ff}.option input{margin-top:6px;accent-color:#1763c6}.option.correct{border-color:#18834b;background:#eaf8ef}.option.wrong{border-color:#c83c3c;background:#fff0f0}
-.feedback{font-weight:700;margin-top:10px;line-height:1.7}.good{color:#137642}.bad{color:#b3261e}
-button{border:0;background:#1763c6;color:white;padding:12px 18px;border-radius:10px;font-size:16px;cursor:pointer;margin:8px 6px 8px 0}
-button.secondary{background:#52647c}.result{background:#e8f1ff;padding:18px;border-radius:14px;font-size:18px;font-weight:700;margin:18px 0}
-.small{font-size:14px;color:#52647c;line-height:1.6}.hide{display:none}
-</style></head><body><div class="wrap">
-<header class="hero"><h1>TG TET PREVIOUS PAPER – JUNE 2025 SHIFT 2</h1><div class="sub">ప్రశ్నలు 121–150 | మొత్తం 30 ప్రశ్నలు</div><div class="bar"><span class="pill" id="progress">సమాధానాలు: 0 / 30</span><span class="pill">ప్రతి ప్రశ్నకు వెంటనే ఫలితం</span></div></header>
-<div class="small">సరైన ఆప్షన్‌ను టిక్ చేయండి. ఎంపిక చేసిన వెంటనే సరైనదో కాదో కనిపిస్తుంది. చివరలో మీ స్కోర్ చూడటానికి “స్కోర్ చూడండి” నొక్కండి.</div>
-<div id="quiz"></div><button onclick="showScore()">స్కోర్ చూడండి</button><button class="secondary" onclick="resetQuiz()">మళ్లీ ప్రారంభించండి</button>
-<div id="result" class="result hide"></div>
-<div class="small">గమనిక: సమాధానాలు అప్‌లోడ్ చేసిన PDFలోని సమాధాన సూచిక ఆధారంగా ఉన్నాయి. మూల PDFలో వివరణలు లేవు కాబట్టి అదనపు వివరణలు కల్పించలేదు.</div>
+:root{--primary:#174ea6;--accent:#ffb300;--bg:#f3f6fb;--ink:#172033;--muted:#64748b;--green:#16834a;--red:#c62828}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:"Noto Sans Telugu","Gautami","Nirmala UI",Arial,sans-serif;color:var(--ink);line-height:1.65}
+header{background:linear-gradient(135deg,#123b78,#2468c7);color:white;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:clamp(23px,5vw,32px)}
+header p{margin:5px 0 0;font-size:15px}
+.wrap{max-width:900px;margin:18px auto;padding:0 12px 45px}
+.topbar,.card,.final-box{background:#fff;border-radius:14px;box-shadow:0 3px 14px #13294b12}
+.topbar{padding:14px 18px;margin-bottom:16px;position:sticky;top:8px;z-index:20;border:1px solid #e2e8f0}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:700;color:#24456f}
+.progress{height:9px;background:#e5eaf2;border-radius:20px;margin-top:10px;overflow:hidden}
+#bar{height:100%;width:0;background:var(--accent);transition:width .25s}
+.card{padding:20px;margin-bottom:16px}
+.qhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.badge{background:#e8f0fe;color:var(--primary);font-weight:800;padding:4px 12px;border-radius:20px;font-size:14px}
+.question{font-size:17px;font-weight:700;white-space:pre-line}
+.options{display:grid;gap:9px;margin-top:14px}
+.option{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border:1.5px solid #d9e1ee;border-radius:10px;cursor:pointer;background:#fff;transition:.15s}
+.option:hover{border-color:#6b91d5;background:#f7faff}
+.option input{margin-top:5px;accent-color:var(--primary);transform:scale(1.12);cursor:pointer}
+.option.disabled{cursor:default}
+.option.correct{border-color:var(--green);background:#eaf7ef;color:#115e34;font-weight:700}
+.option.wrong{border-color:var(--red);background:#fff0f0;color:#9b1c1c;font-weight:700}
+.feedback{margin-top:12px;padding:10px 13px;border-radius:9px;font-weight:700;display:none;font-size:15px}
+.feedback.good{display:block;background:#eaf7ef;color:#12683b;border:1px solid #a7e3c0}
+.feedback.bad{display:block;background:#fff0f0;color:#a51e1e;border:1px solid #f5b5b5}
+.copy-btn{background:#fff8e1;color:#8a5a00;border:1px solid #ffd54f;border-radius:8px;padding:6px 11px;font-size:12.5px;font-weight:700;cursor:pointer}
+.copy-btn:hover{background:#ffecb3}
+.actions-bar{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
+button.main-btn{border:0;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer}
+.primary{background:var(--primary);color:white}
+.secondary{background:#e8edf5;color:#24344e}
+.final-box{padding:24px;text-align:center;margin-top:20px;border:2px solid #cbd5e1}
+.final-box h2{margin:0 0 8px;color:var(--primary)}
+.score-big{font-size:34px;font-weight:800;margin:8px 0;color:#111827}
+.small{font-size:13px;color:var(--muted);text-align:center;margin-top:18px}
+</style>
+</head>
+<body>
+<header>
+<h1>Mana TET 2026</h1>
+<p>Paper–I | Environmental Studies (పర్యావరణ అధ్యయనం)</p>
+<p>Previous Question Paper • 27 June 2025 • Shift–2 • English Medium</p>
+</header>
+
+<main class="wrap">
+<section class="topbar">
+<div class="meta">
+<span id="progressText">Answered: 0 / 30</span>
+<span id="liveScoreText">Right: 0 | Wrong: 0</span>
 </div>
+<div class="progress"><div id="bar"></div></div>
+</section>
+
+<div id="allQuestionsContainer"></div>
+
+<div class="actions-bar">
+<button class="main-btn primary" type="button" onclick="showFinalScore(true)">Final Score Chupinchandi</button>
+<button class="main-btn secondary" type="button" onclick="resetQuiz()">Reset All</button>
+</div>
+
+<section id="finalResultBox" class="final-box" style="display:none;"></section>
+
+<p class="small">TG TET Paper-I • Environmental Studies Questions 121–150 • Mana TET Academy</p>
+</main>
+
 <script>
-const data = [{ "n": 121, "q": "ఒక గ్రామంలో చాలా మందికి మెడ వాపు ఉన్నట్లు గుర్తించారు. దీనికి ప్రధాన కారణం ఏమై ఉండవచ్చు?", "opts": ["అయోడిన్ లోపం", "వ్యాయామం లేకపోవడం", "అధికంగా పాలు తాగడం", "కారం ఎక్కువగా ఉన్న ఆహారం తినడం"], "ans": 0}, {"n": 122, "q": "కింది వాటిలో సముద్రపు చేప ఏది?", "opts": ["ట్యూనా", "కట్ల", "రోహు", "మృగాల్"], "ans": 0}, {"n": 123, "q": "‘లైలా’ అనేది కింది వాటిలో ఏ ప్రకృతి వైపరీత్యానికి పెట్టిన పేరు?", "opts": ["భూకంపం", "సునామీ", "తుఫాను", "వరద"], "ans": 2}, {"n": 124, "q": "కింది మొక్కల్లో పూలు పూయనిది ఏది?", "opts": ["గడ్డి", "మొక్కజొన్న", "మిరప", "ఫెర్న్"], "ans": 3}, {"n": 125, "q": "గాలి ఈ దిశల్లో ఒత్తిడిని కలిగిస్తుంది:", "statements": ["A) పైకి", "B) కిందికి", "C) పక్కలకు"], "opts": ["A మరియు B మాత్రమే", "B మరియు C మాత్రమే", "A మరియు C మాత్రమే", "A, B మరియు C"], "ans": 3}, {"n": 126, "q": "కొత్త సహజ వనరులను సృష్టించడం సాధ్యం కాదు. కాబట్టి మనం ఏమి చేయాలి?", "opts": ["వేగవంతమైన అభివృద్ధి కోసం ఎక్కువ శిలాజ ఇంధనాలను ఉపయోగించాలి", "పునరుత్పాదకమైనవి కాబట్టి మరిన్ని సహజ వనరులను ఉపయోగించాలి", "సహజ వనరులను ఎట్టి పరిస్థితుల్లోనూ ఉపయోగించకూడదు", "సహజ వనరులను సరైన, సుస్థిరమైన పద్ధతిలో ఉపయోగించాలి"], "ans": 3}, {"n": 127, "q": "భూకంపం సంభవించినప్పుడు భూమి కంపనాలను లేదా ప్రకంపనలను కొలవడానికి దేనిని ఉపయోగిస్తారు?", "opts": ["థర్మామీటర్", "బారోమీటర్", "రిక్టర్ స్కేల్", "అనిమోమీటర్"], "ans": 2}, {"n": 128, "q": "గొర్రె ఉన్నిలో ప్రధానంగా ఉండే ప్రోటీన్ ఏది?", "opts": ["కొల్లాజెన్", "కెరాటిన్", "ఎలాస్టిన్", "కేసిన్"], "ans": 1}, {"n": 129, "q": "పత్తి విత్తనాల నుంచి పత్తి నారను వేరు చేసే ప్రక్రియను ఏమంటారు?", "opts": ["స్పిన్నింగ్", "జిన్నింగ్", "నేత", "కార్డింగ్"], "ans": 1}, {"n": 130, "q": "మనుషుల్లో మెడ వెన్నుపూసల సంఖ్య జిరాఫీలతో పోలిస్తే ఎలా ఉంటుంది?", "opts": ["జిరాఫీల కంటే తక్కువ", "జిరాఫీల కంటే ఎక్కువ", "జిరాఫీలతో సమానం", "జిరాఫీల సంఖ్యకు రెండింతలు"], "ans": 2}, {"n": 131, "q": "పెప్టిక్ అల్సర్‌కు ప్రధాన కారణం ఏమిటి?", "opts": ["వైరల్ ఇన్‌ఫెక్షన్", "హెలికోబాక్టర్ పైలోరి అనే బ్యాక్టీరియా సంక్రమణ", "నీరు తక్కువగా తాగడం", "రక్తంలో చక్కెర తక్కువగా ఉండటం"], "ans": 1}, {"n": 132, "q": "కింది రక్తకణాలను వాటి ఇతర పేర్లతో జతపరచి సరైన సమాధానాన్ని ఎంచుకోండి.", "statements": ["A) ప్లేట్‌లెట్లు", "B) ఎర్ర రక్తకణాలు", "C) తెల్ల రక్తకణాలు"], "matching": ["i) ఎరిథ్రోసైట్లు", "ii) ల్యూకోసైట్లు", "iii) థ్రాంబోసైట్లు"], "opts": ["A–iii, B–i, C–ii", "A–ii, B–iii, C–i", "A–i, B–ii, C–iii", "A–iii, B–ii, C–i"], "ans": 0}, {"n": 133, "q": "కింది వాటిలో నిత్య ప్రవాహ నదులను గుర్తించండి.", "opts": ["కృష్ణా మరియు గోదావరి", "తుంగభద్ర మరియు మహానది", "నర్మదా మరియు తపతి", "యమునా మరియు సట్లెజ్"], "ans": 3}, {"n": 134, "q": "భూమిపై గరిష్ఠ ఆవిరీకరణ మరియు మేఘాల ఏర్పాట్లు ప్రధానంగా ఎక్కడ జరుగుతాయి?", "opts": ["భూమిపై", "పర్వతాలపై", "మహాసముద్రాలు మరియు సముద్రాలపై", "నదులు మరియు జలాశయాలపై"], "ans": 2}, {"n": 135, "q": "వేసవి కాలం చివర్లో కేరళ, కర్ణాటక ప్రాంతాల్లో కురిసే ముందస్తు రుతుపవన వర్షాలు దేనికి సహాయపడతాయి?", "opts": ["రైతులు వ్యవసాయ పనులు ప్రారంభించడానికి", "మామిడి పండ్లు నాశనం కావడానికి", "మామిడి పండ్లు ముందుగానే పక్వానికి రావడానికి", "వరి పంట నాశనం కావడానికి"], "ans": 2}, {"n": 136, "q": "రైత్వారీ వ్యవస్థను తొలిసారిగా ప్రవేశపెట్టిన ఘనత ఎవరికి దక్కుతుంది?", "opts": ["లార్డ్ కార్న్‌వాలిస్", "థామస్ మన్రో", "చార్లెస్ మెట్కాఫ్", "లార్డ్ విలియం బెంటింక్"], "ans": 1}, {"n": 137, "q": "భారత ప్రభుత్వం చేపట్టిన ప్రజా పంపిణీ వ్యవస్థ ప్రధాన ఉద్దేశం ఏమిటి?", "opts": ["ప్రజలందరికీ ఆహార భద్రత కల్పించడం", "పేదరిక రేఖకు దిగువన ఉన్న వారికే ఆహారాన్ని క్రమబద్ధంగా పంపిణీ చేయడం", "పేదరిక రేఖకు దిగువన ఉన్న వారికే ఆహార భద్రత కల్పించడం", "ప్రజలందరికీ ఉచితంగా ఆహార పదార్థాలు సరఫరా చేయడం"], "ans": 0}, {"n": 138, "q": "ఈ ఖాతాలో జమ చేసిన డబ్బును అవసరమైనప్పుడు బ్యాంకు నుంచి ఉపసంహరించుకోవడం సాధ్యం కాదు. ఆ ఖాతా ఏది?", "opts": ["సేవింగ్స్ బ్యాంక్ ఖాతా", "కరెంట్ ఖాతా", "చిన్న పొదుపు ఖాతా", "ఫిక్స్‌డ్ డిపాజిట్ ఖాతా"], "ans": 3}, {"n": 139, "q": "భారత జాతీయ కాంగ్రెస్ ప్రారంభమైన తొలి 20 సంవత్సరాల్లో కాంగ్రెస్‌కు నాయకత్వం వహించినవారు ఎవరు?", "opts": ["ప్రజాస్వామ్యవాదులు", "తీవ్రవాద జాతీయవాదులు", "మితవాద జాతీయవాదులు", "గాంధేయవాదులు"], "ans": 2}, {"n": 140, "q": "కింది వారిలో ‘సహజ కవి’ అని ఎవరిని పిలుస్తారు?", "opts": ["నన్నయ్య", "తిక్కన", "పోతన", "ఎర్రప్రగడ"], "ans": 2}, {"n": 141, "q": "ఖజురాహోలోని కందారియా మహాదేవ ఆలయాన్ని నిర్మించిన రాజవంశం ఏది?", "opts": ["బాదామి చాళుక్యులు", "సాళువ రాజవంశ పాలకులు", "చోళ రాజవంశ పాలకులు", "చందేల రాజవంశ పాలకులు"], "ans": 3}, {"n": 142, "q": "తెలంగాణ రాష్ట్రంలో ఒక బిల్లు చట్టంగా మారాలంటే ఏ ప్రక్రియ పూర్తవ్వాలి?", "opts": ["రాష్ట్ర శాసనసభలో మాత్రమే బిల్లు ఆమోదం పొందాలి", "రాష్ట్ర శాసనసభ, శాసనమండలి రెండింటిలో మాత్రమే బిల్లు ఆమోదం పొందాలి", "రాష్ట్ర శాసనసభ, శాసనమండలిలో బిల్లు ఆమోదం పొంది, రాష్ట్ర గవర్నర్ ఆమోదం పొందాలి", "రాష్ట్ర గవర్నర్ మరియు ప్రధాన కార్యదర్శి ఆమోదం పొందాలి"], "ans": 2}, {"n": 143, "q": "కింది అంశాల్లో ఏ అంశంపై చట్టాలు రూపొందించే అధికారం పార్లమెంటుకు మాత్రమే ఉంటుంది?", "opts": ["సాగునీరు, పోలీసు మరియు ఆరోగ్యం", "విద్య", "ద్రవ్యం మరియు బ్యాంకింగ్ వ్యవస్థ", "కర్మాగారాలు లేదా పరిశ్రమలు"], "ans": 2}, {"n": 144, "q": "మొహర్రం పండుగ దేనిని స్మరించుకుంటూ జరుపుకుంటారు?", "opts": ["కర్బలా యుద్ధంలో ప్రవక్త మహమ్మద్ మనవడు హతమైన సంఘటనను", "ప్రవక్త మహమ్మద్ జన్మదినాన్ని", "పవిత్ర ఖురాన్ రచించబడిన రోజును", "కనౌజ్ వీరులు యుద్ధంలో గెలిచిన రోజును"], "ans": 0}, {"n": 145, "q": "గ్రాఫిక్ ఆర్గనైజర్లలో ‘DIGA’లోని ప్రతి అక్షరం దేనిని సూచిస్తుంది?", "opts": ["విభజించు, ఊహించు, రూపొందించు, అంచనా వేయు", "వర్ణించు, అర్థం చేసుకో, సాధారణీకరించు, అన్వయించు", "నిర్ధారించు, ప్రారంభించు, రూపొందించు, సవరించు", "వర్ణించు, ఊహించు, సాధారణీకరించు, హాజరుకావు"], "ans": 1}, {"n": 146, "q": "ప్రాజెక్ట్‌లో ఉండకూడని లక్షణం ఏది?", "opts": ["సవాలుతో కూడుకున్నదిగా ఉండాలి", "విద్యార్థులు ప్రజాస్వామ్య పద్ధతిలో కలిసి పనిచేసేలా ఉండాలి", "నిజ జీవితంలో అన్వయించగలిగేలా ఉండాలి", "ఎక్కువ సమయం తీసుకునేదిగా, ఖర్చుతో కూడుకున్నదిగా ఉండాలి"], "ans": 3}, {"n": 147, "q": "హంటర్ స్కోర్ కార్డు ద్వారా పాఠ్యపుస్తకాన్ని మూల్యాంకనం చేసేటప్పుడు, మొత్తం 1000 పాయింట్లలో పాఠ్యపుస్తకంలోని అసైన్‌మెంట్లు మరియు ప్రాజెక్టులకు కేటాయించిన పాయింట్లు ఎన్ని?", "opts": ["140", "250", "60", "100"], "ans": 0}, {"n": 148, "q": "పర్యావరణ అధ్యయనాలకు సంబంధించిన కింది వాక్యాల్లో సరైనవి ఏవి?", "statements": ["A) పర్యావరణం సహజ మరియు సామాజిక అనే రెండు రకాలుగా ఉంటుంది.", "B) సహజ పర్యావరణం, సామాజిక పర్యావరణం పరస్పరం సంబంధం లేకుండా స్వతంత్రంగా ఉంటాయి.", "C) జీవ పర్యావరణంలో మొక్కలు మరియు జంతువులు ఉంటాయి."], "opts": ["A, B మరియు C", "A మరియు B మాత్రమే", "A మరియు C మాత్రమే", "B మరియు C మాత్రమే"], "ans": 2}, {"n": 149, "q": "సమస్యా పరిష్కార పద్ధతిలో ‘సమస్యను నిర్వచించడం’ అనే దశ తర్వాత వచ్చే దశ ఏది?", "opts": ["సమాచారాన్ని క్రమబద్ధీకరించడం", "దత్తాంశ సేకరణ", "సమస్యను గుర్తించడం", "పరిష్కారాన్ని కనుగొనడం"], "ans": 1}, {"n": 150, "q": "కొండ ప్రాంతాల్లో, మైదాన ప్రాంతాల్లోని రహదారులను పటంలో ఎలా చూపిస్తారు?", "opts": ["రెండింటినీ సరళ రేఖలతో చూపిస్తారు", "రెండింటినీ వక్ర రేఖలతో చూపిస్తారు", "వరుసగా సరళ రేఖలు, వక్ర రేఖలతో చూపిస్తారు", "వరుసగా వక్ర రేఖలు, సరళ రేఖలతో చూపిస్తారు"], "ans": 3}];
-const letters=['A','B','C','D']; let chosen={};
-function render(){
- const root=document.getElementById('quiz'); root.innerHTML='';
- data.forEach((q,idx)=>{
-  const card=document.createElement('section');card.className='card';card.id='q'+q.n;
-  let s=`<div class="qtitle">${q.n}. ${q.q}</div>`;
-  (q.statements||[]).forEach(x=>s+=`<div class="statement">${x}</div>`);
-  (q.matching||[]).forEach(x=>s+=`<div class="statement">${x}</div>`);
-  s+=q.opts.map((o,i)=>`<label class="option" id="opt-${q.n}-${i}"><input type="radio" name="q${q.n}" value="${i}" onchange="answer(${q.n},${i})"><span><b>${letters[i]})</b> ${o}</span></label>`).join('');
-  s+=`<div class="feedback" id="fb-${q.n}" aria-live="polite"></div>`;
-  card.innerHTML=s;root.appendChild(card);
- });
- updateProgress();
+const questions = [
+  {"num": "Q121", "q": "In a village, many people were found to have swollen necks. What could be the main reason behind this?", "opts": ["Deficiency of iodine", "Lack of exercise", "Drinking too much milk", "Eating spicy food"], "a": 1},
+  {"num": "Q122", "q": "Identify the marine fish among the following:", "opts": ["Tuna", "Catla", "Rohu", "Mrigal"], "a": 1},
+  {"num": "Q123", "q": "“Lyla” is the name of which of the following natural phenomena?", "opts": ["Earthquake", "Tsunami", "Cyclone", "Flood"], "a": 3},
+  {"num": "Q124", "q": "From the following plant, which one does NOT have flowers?", "opts": ["Grass", "Maize", "Chilli", "Fern"], "a": 4},
+  {"num": "Q125", "q": "Air exerts pressure in this direction:\nA) Upward direction\nB) Downward direction\nC) Sideways\nWhich of the following is correct?", "opts": ["A & B only", "B & C only", "A & C only", "A, B & C"], "a": 4},
+  {"num": "Q126", "q": "Creating new natural resources is NOT possible, so we should:", "opts": ["Use more fossil fuels for faster development", "Use more natural resources because they are renewable", "Avoid using any natural resources at all", "Use natural resources in a proper and sustainable way"], "a": 4},
+  {"num": "Q127", "q": "What is used to measure the tremors or vibrations of the Earth during an earthquake?", "opts": ["Thermometer", "Barometer", "Richter Scale", "Anemometer"], "a": 3},
+  {"num": "Q128", "q": "The protein mainly contained in the fleece of a sheep is:", "opts": ["Collagen", "Keratin", "Elastin", "Casein"], "a": 2},
+  {"num": "Q129", "q": "When cotton fiber is separated from seeds, the process is called:", "opts": ["Spinning", "Ginning", "Weaving", "Carding"], "a": 2},
+  {"num": "Q130", "q": "The number of neck bones in humans compared to that in giraffes is:", "opts": ["Less than giraffes", "More than giraffes", "The same as giraffes", "Twice the number of giraffes"], "a": 3},
+  {"num": "Q131", "q": "Peptic ulcer is caused due to:", "opts": ["Viral infection", "Bacterial infection by Helicobacter pylori", "Lack of water intake", "Low blood sugar"], "a": 2},
+  {"num": "Q132", "q": "Match the following blood components with their other names and choose the correct option:\nBlood Components: A) Platelets | B) Red blood cells | C) White blood cells\nOther Names: i) Erythrocytes | ii) Leucocytes | iii) Thrombocytes", "opts": ["A – iii, B – i, C – ii", "A – ii, B – iii, C – i", "A – i, B – ii, C – iii", "A – iii, B – ii, C – i"], "a": 1},
+  {"num": "Q133", "q": "Among the following, identify the perennial rivers:", "opts": ["The Krishna and the Godavari", "The Thunga bhadra and the Mahanadi", "The Narmada and the Tapati", "The Yamuna and the Sutlez"], "a": 4},
+  {"num": "Q134", "q": "On the surface of this, the maximum evaporation and the cloud formation takes place:", "opts": ["Land", "Mountains", "Oceans and seas", "Rivers and Reservoirs"], "a": 3},
+  {"num": "Q135", "q": "Towards the close of the summer season, pre-monsoon showers are common especially in Kerala and Karnataka, which help for the:", "opts": ["Undertaking of agricultural activities by the farmers", "Destruction of mango fruits", "Early ripening of mangoes", "Destruction of Paddy crop"], "a": 3},
+  {"num": "Q136", "q": "Who among the following was credited with the initial introduction of the Ryotwari system in the Madras Presidency?", "opts": ["Lord Cornwallis", "Thomas Munro", "Charles Metcalfe", "Lord William Bentick"], "a": 2},
+  {"num": "Q137", "q": "Public Distribution System is the most important step taken by the Government of India towards:", "opts": ["ensuring food security to all the people", "systematic distribution of food to all the people of the country especially who are below poverty line", "ensuring food security only to the people who are in below poverty line", "supplying of food material to all the people at free of cost"], "a": 2},
+  {"num": "Q138", "q": "The money deposited in this account CANNOT be withdrawn from the bank as and when required by the depositor:", "opts": ["Savings Bank Account", "Current Account", "Small Savings Account", "Fixed Account Deposit"], "a": 4},
+  {"num": "Q139", "q": "During the first 20 years of the Indian National Congress, the congress was led by these leaders:", "opts": ["Democrats", "Extremist Nationalists", "Moderate Nationalists", "Gandhians"], "a": 3},
+  {"num": "Q140", "q": "Who among the following was called as ‘Sahaja Kavi’?", "opts": ["Nannayya", "Thikkanna", "Pothana", "Erra Pragada"], "a": 3},
+  {"num": "Q141", "q": "Khandariya Mahadeva Temple was constructed by this dynasty ruler:", "opts": ["Chalukyas of Badami", "Saluva Dynasty rulers", "Chola Dynasty rulers", "Chandela Dynasty rulers"], "a": 4},
+  {"num": "Q142", "q": "In a state of Telangana, the ‘Bill’ becomes an Act, when:", "opts": ["the bill is passed in the State Legislative Assembly only", "the bill is passed in the State Legislative Assembly and the State Legislative Council only", "the bill is passed in the State Legislative Assembly and the State Legislative Council and after the approval of the State Governor", "When the bill is approved by the Governor and the Chief Secretary"], "a": 3},
+  {"num": "Q143", "q": "The Parliament of India alone is empowered to make laws on this subject:", "opts": ["Irrigation, Police and Health", "Education", "Money and Banking", "Factories or Industries"], "a": 3},
+  {"num": "Q144", "q": "The festival of Moharram is celebrated commemorating:", "opts": ["the battle of Karbala in which the grandson of Prophet Mohammed was killed", "the birth of Prophet Mohammed", "the day on which the holy book ‘Quran’ is written", "The day in which the heroes of Kanauj won the war"], "a": 1},
+  {"num": "Q145", "q": "What does each letter in ‘DIGA’ in Graphic organizers represent?", "opts": ["Divide, Infer, Generate, Assess", "Describe, Interpret, Generalize, Apply", "Deduce, Initiate, Generate, Amend", "Describe, Infer, Generalize, Attend"], "a": 2},
+  {"num": "Q146", "q": "Which of the following is NOT a characteristic feature of a ‘Project’?", "opts": ["Should be challenging", "Should enable the students work democratically", "Should be applicable in real life", "Should be more time consuming and expensive"], "a": 4},
+  {"num": "Q147", "q": "In assessing a textbook using Hunter’s Score Card, out of 1000 points of the scale, the points allotted to assignments and projects given in the textbook are:", "opts": ["140", "250", "60", "100"], "a": 1},
+  {"num": "Q148", "q": "Which of the following statements relating to environmental studies are TRUE?\nA) Environment is of two types – natural and social\nB) Natural and social environment are independent and do not interact with each other\nC) Biological environment includes plants and animals\nChoose the correct answer:", "opts": ["A, B & C", "A & B only", "A & C only", "B & C only"], "a": 3},
+  {"num": "Q149", "q": "In Problem Solving method the step that follows ‘defining problem’:", "opts": ["Organising information", "Collection of data", "Identifying problem", "Finding solution"], "a": 2},
+  {"num": "Q150", "q": "In a map roads on hills and on plane land:", "opts": ["both are shown by straight lines", "both are shown by curved lines", "are shown by straight and curved lines respectively", "are shown by curved and straight lines respectively"], "a": 4}
+];
+
+const userAnswers = Array(questions.length).fill(null);
+
+function renderAllQuestions() {
+  const container = document.getElementById("allQuestionsContainer");
+  container.innerHTML = "";
+
+  questions.forEach((item, qIdx) => {
+    const card = document.createElement("section");
+    card.className = "card";
+    card.id = `card-${qIdx}`;
+
+    const qhead = document.createElement("div");
+    qhead.className = "qhead";
+
+    const badge = document.createElement("span");
+    badge.className = "badge";
+    badge.textContent = item.num;
+
+    const copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.className = "copy-btn";
+    copyBtn.textContent = "Copy Q & Answer";
+    copyBtn.onclick = () => copySingleQuestion(qIdx, copyBtn);
+
+    qhead.append(badge, copyBtn);
+
+    const qText = document.createElement("div");
+    qText.className = "question";
+    qText.textContent = item.q;
+
+    const optsDiv = document.createElement("div");
+    optsDiv.className = "options";
+    optsDiv.id = `opts-${qIdx}`;
+
+    item.opts.forEach((optText, oIdx) => {
+      const optNum = oIdx + 1;
+      const label = document.createElement("label");
+      label.className = "option";
+      label.id = `opt-${qIdx}-${optNum}`;
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `q_${qIdx}`;
+      input.value = optNum;
+      input.addEventListener("change", () => handleSelect(qIdx, optNum));
+
+      const span = document.createElement("span");
+      span.textContent = `${optNum}) ${optText}`;
+
+      label.append(input, span);
+      optsDiv.appendChild(label);
+    });
+
+    const feedback = document.createElement("div");
+    feedback.className = "feedback";
+    feedback.id = `fb-${qIdx}`;
+
+    card.append(qhead, qText, optsDiv, feedback);
+    container.appendChild(card);
+  });
+
+  updateTopBar();
 }
-function answer(n,i){
- if(chosen[n]!==undefined)return;
- chosen[n]=i;const q=data.find(x=>x.n===n);const ok=i===q.ans;
- document.querySelectorAll(`input[name="q${n}"]`).forEach(el=>el.disabled=true);
- document.getElementById(`opt-${n}-${q.ans}`).classList.add('correct');
- if(!ok)document.getElementById(`opt-${n}-${i}`).classList.add('wrong');
- const fb=document.getElementById(`fb-${n}`);
- fb.className='feedback '+(ok?'good':'bad');
- fb.textContent=ok?'✓ సరైన సమాధానం!':`✗ తప్పు సమాధానం. సరైన సమాధానం: ${letters[q.ans]}) ${q.opts[q.ans]}`;
- updateProgress();
+
+function handleSelect(qIdx, selectedNum) {
+  if (userAnswers[qIdx] !== null) return;
+  userAnswers[qIdx] = selectedNum;
+
+  const item = questions[qIdx];
+  const isRight = selectedNum === item.a;
+  const feedback = document.getElementById(`fb-${qIdx}`);
+
+  for (let i = 1; i <= item.opts.length; i++) {
+    const optLabel = document.getElementById(`opt-${qIdx}-${i}`);
+    const radio = optLabel.querySelector("input");
+    radio.disabled = true;
+    optLabel.classList.add("disabled");
+
+    if (i === item.a) {
+      optLabel.classList.add("correct");
+    }
+    if (i === selectedNum && !isRight) {
+      optLabel.classList.add("wrong");
+    }
+  }
+
+  feedback.className = "feedback " + (isRight ? "good" : "bad");
+  if (isRight) {
+    feedback.textContent = `Right! సరైన సమాధానం: ${item.a}) ${item.opts[item.a - 1]}`;
+  } else {
+    feedback.textContent = `Wrong! Right Answer: ${item.a}) ${item.opts[item.a - 1]}`;
+  }
+
+  updateTopBar();
+
+  if (userAnswers.every(ans => ans !== null)) {
+    showFinalScore(false);
+  }
 }
-function updateProgress(){document.getElementById('progress').textContent=`సమాధానాలు: ${Object.keys(chosen).length} / ${data.length}`;}
-function showScore(){
- const total=Object.keys(chosen).length,score=data.filter(q=>chosen[q.n]===q.ans).length;
- const r=document.getElementById('result');r.classList.remove('hide');
- r.innerHTML=`మీ స్కోర్: ${score} / ${data.length}<br><span style="font-size:15px;font-weight:400">సమాధానాలు ఇచ్చినవి: ${total} | మిగిలినవి: ${data.length-total} | శాతం: ${Math.round(score/data.length*100)}%</span>`;
- r.scrollIntoView({behavior:'smooth'});
+
+function updateTopBar() {
+  const answeredCount = userAnswers.filter(a => a !== null).length;
+  let rightCount = 0;
+  let wrongCount = 0;
+
+  userAnswers.forEach((ans, idx) => {
+    if (ans !== null) {
+      if (ans === questions[idx].a) rightCount++;
+      else wrongCount++;
+    }
+  });
+
+  document.getElementById("progressText").textContent = `Answered: ${answeredCount} / ${questions.length}`;
+  document.getElementById("liveScoreText").textContent = `Right: ${rightCount} | Wrong: ${wrongCount}`;
+  document.getElementById("bar").style.width = `${(answeredCount / questions.length) * 100}%`;
 }
-function resetQuiz(){chosen={};render();document.getElementById('result').classList.add('hide');window.scrollTo({top:0,behavior:'smooth'});}
-render();
-</script></body></html>
+
+function showFinalScore(scrollToBox) {
+  let rightCount = 0;
+  let wrongCount = 0;
+  let unansweredCount = 0;
+
+  questions.forEach((q, idx) => {
+    const ans = userAnswers[idx];
+    if (ans === null) unansweredCount++;
+    else if (ans === q.a) rightCount++;
+    else wrongCount++;
+  });
+
+  const percentage = Math.round((rightCount / questions.length) * 100);
+  const box = document.getElementById("finalResultBox");
+  box.style.display = "block";
+  box.innerHTML = `
+    <h2>Final Score</h2>
+    <div class="score-big">${rightCount} / ${questions.length}</div>
+    <p><strong>Percentage:</strong> ${percentage}%</p>
+    <p><strong>Right:</strong> ${rightCount} &nbsp;|&nbsp; <strong>Wrong:</strong> ${wrongCount} &nbsp;|&nbsp; <strong>Unanswered:</strong> ${unansweredCount}</p>
+  `;
+
+  if (scrollToBox) {
+    box.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function resetQuiz() {
+  for (let i = 0; i < userAnswers.length; i++) {
+    userAnswers[i] = null;
+  }
+  document.getElementById("finalResultBox").style.display = "none";
+  renderAllQuestions();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function copySingleQuestion(qIdx, btnEl) {
+  const item = questions[qIdx];
+  const text = `${item.num}. ${item.q}\n` +
+    item.opts.map((o, idx) => `${idx + 1}) ${o}`).join("\n") +
+    `\nAnswer: ${item.a}) ${item.opts[item.a - 1]}`;
+
+  const done = () => {
+    const old = btnEl.textContent;
+    btnEl.textContent = "Copied!";
+    setTimeout(() => { btnEl.textContent = old; }, 1400);
+  };
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+
+function fallbackCopy(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand("copy");
+  document.body.removeChild(ta);
+  done();
+}
+
+renderAllQuestions();
+</script>
+</body>
+</html>
