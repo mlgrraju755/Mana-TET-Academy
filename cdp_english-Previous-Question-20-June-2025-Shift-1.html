@@ -1,1 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Development and Pedagogy Quiz (20th Jun 2025 - Shift 1)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Child Development and Pedagogy</h1>
+    <div class="subtitle">Paper I Telugu (20th Jun 2025 - Shift 1) - Questions 1 to 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "Q1. Read the following statements and identify the correct answer:\nA) According to the Principle of Individual Differences, there can be differences in the development of even identical twins\nB) An implication of the Principle of Individual Differences is that all children grow at a same pace",
+            options: ["1) Both A and B are false", "2) A is false B is true", "3) Both A and B are true", "4) A is true B is false"],
+            answer: 3
+        },
+        {
+            q: "Q2. Identify the INCORRECT statement among the following:",
+            options: [
+                "1) Maturation is a developmental process",
+                "2) Maturation depends on learning",
+                "3) Blue prints of maturation are carried in one's cells from the time of one's conception",
+                "4) Maturation is natural unfolding of inherited tendencies"
+            ],
+            answer: 1
+        },
+        {
+            q: "Q3. Individual's mental abilities are the product of:",
+            options: ["1) both heredity and environment", "2) heredity only", "3) environment only", "4) neither heredity nor environment"],
+            answer: 0
+        },
+        {
+            q: "Q4. Read the following statements and identify the correct answer:\nStatement A – Developmental task is one which arises at a certain period in life of the individual and failure to accomplish it leads to difficulty with later tasks\nStatement B – Rachana is worried that her 6 month old son still does not turn by himself as she felt this may also effect his later activities such as crawling, standing, etc.",
+            options: [
+                "1) Statement A is false",
+                "2) Statement A is true but does not offer correct explanation for statement B",
+                "3) Statement A is true and offers correct explanation for statement B",
+                "4) Statement A and B are not related"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q5. According to Kohlberg, stages of moral development are:",
+            options: ["1) culture specific", "2) universal", "3) different in boys and girls", "4) not identifiable"],
+            answer: 1
+        },
+        {
+            q: "Q6. Saparna, a grade II student knows to do addition. Her teacher has introduced multiplication by giving a sum as 2 × 3 and is explaining it by showing that 2 × 3 is adding 2, 3 times. According to Piaget, Saparna who is trying to grasp the concept of multiplication is in a state of:",
+            options: ["1) Equilibration", "2) Disequilibrium", "3) Irreversibility", "4) Assimilation"],
+            answer: 1
+        },
+        {
+            q: "Q7. Identify the activity among the following that DOES NOT represent thinking:",
+            options: [
+                "1) A teacher taking suggestions from students to reduce pollution",
+                "2) A man preparing his tour plan to use his budget optimally",
+                "3) A group discussing about using a particular product relating to health care",
+                "4) A girl drawing a horse by looking at a picture of horse"
+            ],
+            answer: 3
+        },
+        {
+            q: "Q8. 'Our perception and ideas about our capabilities and qualities' is known as:",
+            options: ["1) Self concept", "2) Self esteem", "3) Self regulation", "4) Self efficacy"],
+            answer: 0
+        },
+        {
+            q: "Q9. One of the following is NOT a cause of truancy:",
+            options: [
+                "1) Negative attitude of teachers",
+                "2) Improper physical and mental health of the child",
+                "3) Parents encouragement",
+                "4) Autocratic administration in schools"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q10. A primary school teacher has initiated a study to see the effect of parent's involvement in improving the performance of students in general. She has selected children whose parents are all graduates and requested the parents to spend exactly one hour time with the children after school without fail and help them in studies. All parents followed the teacher's instruction accurately. The intervening variables in this study among the following is:\nA) Ability of the student\nB) Performance of students\nC) Parent's involvement\nD) Learning style of the students\nChoose the correct answer:",
+            options: ["1) A & D only", "2) A, B, C, D", "3) A & B only", "4) B & C only"],
+            answer: 0
+        },
+        {
+            q: "Q11. Learning of which of the following activities require achieving a certain level of maturation:\nA) Infant learning to control bowel movement\nB) Pre-school child learning to hold pencil\nC) Adolescent learning to respect others feelings\nChoose the correct answer:",
+            options: ["1) A, B & C", "2) A & B only", "3) B & C only", "4) A & C only"],
+            answer: 0
+        },
+        {
+            q: "Q12. One of the following CANNOT be considered as process related factor in learning:",
+            options: ["1) Selection of suitable methods", "2) Using maximum senses", "3) Providing practice work", "4) Teacher qualification"],
+            answer: 3
+        },
+        {
+            q: "Q13. When we say right moments for learning according to Thorndike's Law of Readiness, it is readiness concerning to learner's:",
+            options: ["1) leisure time", "2) state of mind", "3) intelligence", "4) aptitude"],
+            answer: 1
+        },
+        {
+            q: "Q14. Yamini is a two year old girl. Whenever her mother refused to give anything, Yamini used to throw all the things around her. To avoid this behaviour Yamini's mother gave her whatever she asked. Eventually, as Yamini was growing her mother wanted to change Yamini's behaviour and started to ignore even when she was throwing all the things. Slowly, Yamini stopped throwing things and started listening to her mother. This is an example of this principle of learning according to Pavlov:",
+            options: ["1) Generalisation", "2) Spontaneous recovery", "3) Extinction", "4) Discrimination"],
+            answer: 2
+        },
+        {
+            q: "Q15. Jaya, a school going student, studies very sincerely to get good marks in all her exams as her mother gives her a gift after every terminal exam. The reinforcement schedule followed here is:",
+            options: [
+                "1) Continuous reinforcement schedule",
+                "2) Fixed ratio reinforcement schedule",
+                "3) Fixed interval reinforcement schedule",
+                "4) Variable reinforcement schedule"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q16. Smriti has taken her dog for a walk on the road. The dog freed itself and ran away. Smriti chased the dog and caught hold of it but on seeing around she realized that she is in a new place. To go back to her place, she looked around and based on a sign board showing direction to the market near her home she started back home. This is an example of learning by:",
+            options: ["1) Conditioning", "2) Trial and error", "3) Insightful", "4) Modeling"],
+            answer: 2
+        },
+        {
+            q: "Q17. A father has taken his daughter to an orphanage to sensitise her towards the orphans. The domain of learning targeted by the father is:",
+            options: ["1) Conative", "2) Affective", "3) Cognitive", "4) Psycho motor"],
+            answer: 1
+        },
+        {
+            q: "Q18. Ketaki wanted to become a civil servant and appeared for the exam. She got selected for next lower cadre post of central services and not civil services. In the meantime for self sustenance, she joined central services and continued preparation for civil services. This indicates that:",
+            options: [
+                "1) Motivated behaviour is false",
+                "2) Motivated behaviour cannot stick to the goal",
+                "3) Motivated behaviour never sustains",
+                "4) Motivated behaviour seeks equilibrium between needs and their satisfaction"
+            ],
+            answer: 3
+        },
+        {
+            q: "Q19. Rama went to a shopping mall when suddenly some anti social elements came, destroyed the shops and ran away. Police have booked a case. As requested by the police, Rama as eyewitness has narrated the incident before the magistrate after a few months. The memory of Rama in this case is:",
+            options: ["1) Episodic memory", "2) Semantic memory", "3) Short term memory", "4) Immediate memory"],
+            answer: 0
+        },
+        {
+            q: "Q20. Usha has memorised one stanza of a song in ten sessions of 15 minutes each. She took another ten sessions of the same duration to memorise the second stanza of the same song. The transfer of learning that happened here is:",
+            options: ["1) Active transfer", "2) Positive transfer", "3) Negative transfer", "4) Zero transfer"],
+            answer: 3
+        },
+        {
+            q: "Q21. Identify the INCORRECT statement relating to 'indirect ways of teaching':",
+            options: [
+                "1) Role play is an example of indirect ways of teaching",
+                "2) In indirect ways of teaching, students are actively involved in learning",
+                "3) Indirect ways of teaching help in greater retention",
+                "4) In indirect ways of teaching, teacher is at the centre"
+            ],
+            answer: 3
+        },
+        {
+            q: "Q22. Which among the following happen during the pre-active phase of teaching?\nA) Fixing the aims and objectives of teaching and learning\nB) Sequential arrangement of content\nChoose the correct answer:",
+            options: ["1) Both A & B", "2) A only", "3) B only", "4) Neither A nor B"],
+            answer: 0
+        },
+        {
+            q: "Q23. Identify the disadvantage of problem solving method:",
+            options: [
+                "1) Takes less time",
+                "2) Providing materials and sources required for solving a problem",
+                "3) Easy to use",
+                "4) Can be used with all lessons"
+            ],
+            answer: 1
+        },
+        {
+            q: "Q24. One among the following should NOT be done by the teacher in an inclusive set up:",
+            options: [
+                "1) Sensitize children without disability about children with disabilities",
+                "2) Updation of knowledge about disability, inclusion and current trends in education",
+                "3) Discourage peer tutoring",
+                "4) Structure the physical environment of the class to enhance learning of the child with disability"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q25. As per Rule 1(c) of Section 12 of the Right of Children to Free and Compulsory Education Act, 2009, Navodaya Vidyalayas shall admit in Class I, children from the neighbourhood belonging to weaker and disadvantaged groups to this extent of the strength of that class:",
+            options: ["1) 33%", "2) 50%", "3) 10%", "4) 25%"],
+            answer: 3
+        },
+        {
+            q: "Q26. Telangana Teacher Eligibility Test (TGTET) is a:\nA) Norm-referenced test\nB) Criterion-referenced test\nChoose the correct answer:",
+            options: ["1) B only", "2) A only", "3) Both A & B", "4) Neither A nor B"],
+            answer: 0
+        },
+        {
+            q: "Q27. Child abuse is the intentional, non-accidental injury, maltreatment of children caused by:\nA) Parents\nB) Care-takers\nC) Employers\nD) Others\nChoose the correct answer:",
+            options: ["1) B, C & D only", "2) A, B, C & D", "3) A, B & C only", "4) B & C only"],
+            answer: 1
+        },
+        {
+            q: "Q28. Which among the following relating to learner does NOT help in effective learning?",
+            options: [
+                "1) Learner's action on feedback",
+                "2) Learner's awareness of learning goals",
+                "3) Inactive role of learners",
+                "4) Learner's past experience"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q29. This leadership style is also called non-interfering:",
+            options: ["1) Laissez Faire", "2) Autocratic", "3) Democratic", "4) Authoritative"],
+            answer: 0
+        },
+        {
+            q: "Q30. A three year old girl could draw a picture of a bird that she has seen. According to Bruner, she is in this mode of representation:",
+            options: ["1) Iconic", "2) Enactive", "3) Symbolic", "4) Operational"],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
