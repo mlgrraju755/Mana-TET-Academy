@@ -1,1 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Development and Pedagogy Quiz (Q1 to Q30)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Child Development and Pedagogy</h1>
+    <div class="subtitle">Paper I Telugu (27th Jun 2025 Shift 2) - Questions 1 to 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "Q1. Due to lack of which among the following in rural and remote areas learning outcomes are affected?\nA) Transport facilities\nB) Technology\nC) Parental care\nChoose the correct answer:",
+            options: ["1) A & C only", "2) A & B only", "3) B & C only", "4) A, B & C"],
+            answer: 3
+        },
+        {
+            q: "Q2. Appropriate testing tools for recapitulation are used during this phase of teaching:",
+            options: ["1) Post-active", "2) Pre-active", "3) Inter-active", "4) Introductory phase"],
+            answer: 0
+        },
+        {
+            q: "Q3. 'Wikipedia', a free, online encyclopedia is a good example for this type of learning where many people are involved together in knowledge creation and problem solving:",
+            options: ["1) Observational learning", "2) Collaborative learning", "3) Enquiry based approach", "4) Project based approach"],
+            answer: 1
+        },
+        {
+            q: "Q4. This section of the Rights of Persons with Disabilities (RPWD) Act, 2016 deals with protection of persons with disabilities from abuse, violence and exploitation:",
+            options: ["1) Section 7", "2) Section 5", "3) Section 4", "4) Section 6"],
+            answer: 0
+        },
+        {
+            q: "Q5. One of the following is NOT recommended in the National Curriculum Framework, 2005:",
+            options: [
+                "1) Reducing the curriculum load based on insights provided in 'Learning without Burden'",
+                "2) Strengthening a national system of education in a pluralistic society",
+                "3) Providing education based on the financial status of the child",
+                "4) Providing quality education for all children"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q6. A teacher who displays one of the following behaviours cannot bring about expected learning in students:",
+            options: ["1) Determination", "2) Self control", "3) Flexibility", "4) Disciplinarian"],
+            answer: 3
+        },
+        {
+            q: "Q7. In Protection of Children from Sexual Offences (POCSO) Act, 2012, the punishment given under Section 12 for any person who commits sexual harassment as given under Section 11 of the Act is imprisonment for these many years and shall also be liable to fine:",
+            options: ["1) 1 year", "2) 5 years", "3) 3 years", "4) 7 years"],
+            answer: 2
+        },
+        {
+            q: "Q8. A teacher assigning a research project to her students to find solution to a local problem along with a local agency reflects using of this as a learning resource:",
+            options: ["1) Technology", "2) School", "3) Play", "4) Community"],
+            answer: 3
+        },
+        {
+            q: "Q9. Rushika has completed her engineering and is trying to get a job in her area of specialization but could not. She was feeling frustrated and decided to seek help. The type of guidance Rushika needs to get acquainted about the growing trend in employment market and job opportunities is:",
+            options: ["1) Educational", "2) Vocational", "3) Psychological", "4) Directive"],
+            answer: 1
+        },
+        {
+            q: "Q10. Two girls who went to a new place entered into a restaurant for having dinner. After entering, seeing the atmosphere inside sensed some kind of insecurity and came out immediately. This is an example of:",
+            options: ["1) Intuitive thinking", "2) Divergent thinking", "3) Analytic thinking", "4) Convergent thinking"],
+            answer: 0
+        },
+        {
+            q: "Q11. Read the following statements and identify the correct answer:\nA) According to the Principle of Proximo Distal Tendency, development proceeds from centre to periphery.\nB) A child at first sits with support and then stands and walks.",
+            options: [
+                "1) Both A and B are true and B is an example of A",
+                "2) Both A and B are true and B is not an example of A",
+                "3) A is true B is false",
+                "4) A is false B is true"
+            ],
+            answer: 1
+        },
+        {
+            q: "Q12. Among the following processes that influence growth and development, except one all other can be controlled:",
+            options: ["1) Motivation", "2) Learning", "3) Maturation", "4) Environment"],
+            answer: 2
+        },
+        {
+            q: "Q13. Varsha, a normal infant who was only recognizing her mother, now started recognizing and smiling at other family members staying with her. Based on this social development, the age of Varsha will be about:",
+            options: ["1) Six months", "2) One month", "3) 12 months", "4) 24 months"],
+            answer: 0
+        },
+        {
+            q: "Q14. The age at which an individual is expected to perform certain developmental tasks is termed as:",
+            options: ["1) Chronological age", "2) Mental age", "3) Biological age", "4) Critical age"],
+            answer: 0
+        },
+        {
+            q: "Q15. Encouraging positive behaviour in a 4 year old child will result in developing a sense of this according to Erikson's Psycho-Social Development theory:",
+            options: ["1) Industry", "2) Initiative", "3) Trust", "4) Autonomy"],
+            answer: 1
+        },
+        {
+            q: "Q16. Identify the example among the following that relates to pre-conceptual phase of cognitive development of Piaget:",
+            options: [
+                "1) A child preparing a model showing eco friendly disposal of waste",
+                "2) A child telling his teacher my favourite color is pink but my sister's is yellow",
+                "3) A two year boy calling a dog on the road by his pet dog's name",
+                "4) A child who can understand that in spite of difference in shapes capacity of two glasses can be same"
+            ],
+            answer: 2
+        },
+        {
+            q: "Q17. Problem solving behaviour occurs when solution is not obtainable by:",
+            options: ["1) simple habitual acts", "2) mental work", "3) deliberate acts", "4) systematically organized steps"],
+            answer: 0
+        },
+        {
+            q: "Q18. Kowmudi asked her parents for permission to go for trekking along with friends. They said, 'you can go but on condition that you will be responsible, you can enjoy but don't do anything that causes trouble to you or others'. Child rearing practice of Kowmudi's parents:",
+            options: ["1) Uninvolved", "2) Authoritarian", "3) Permissive", "4) Authoritative"],
+            answer: 3
+        },
+        {
+            q: "Q19. Chitra's teacher did not give her marks for assignment as she has not submitted it. After coming home she told her mother because her father didn't drop her at bus stop she forgot the book in a hurry as she had to walk to the bus stop. The defense mechanism used by Chitra here is:",
+            options: ["1) Displacement", "2) Rationalisation", "3) Repression", "4) Compensation"],
+            answer: 1
+        },
+        {
+            q: "Q20. Kajal wanted to study the social development of VII grade students. She selected a school and took reports of related events that occurred in the life of few children from parents, teachers, peers, etc. The reports collected by Kajal are:",
+            options: ["1) Questionnaire", "2) Personality Inventory", "3) Anecdotal records", "4) Interview"],
+            answer: 2
+        },
+        {
+            q: "Q21. Learning goals are set, when there is demand for satisfaction of:",
+            options: ["1) Motives", "2) Barriers", "3) Knowledge", "4) Reinforcement"],
+            answer: 0
+        },
+        {
+            q: "Q22. Identify among the following examples relating to learner's physical or mental health that influence learning:\nA) A child who is emotionally disturbed because of separation from mother\nB) A child who met with an accident and got injured\nC) A child suffering from common cold\nD) A child suffering from chronic disease",
+            options: ["1) A, B & C only", "2) A, B & D only", "3) B, C & D only", "4) A, B, C & D"],
+            answer: 3
+        },
+        {
+            q: "Q23. Shravan has put his two year old daughter in the swimming pool in a tube. His daughter got frightened and cried a lot. He removed her from the pool and could not make her get into the swimming pool for many years after that. This can be explained by this law of learning of Thorndike:",
+            options: ["1) Law of readiness", "2) Law of varied reactions", "3) Law of exercise", "4) Law of use"],
+            answer: 0
+        },
+        {
+            q: "Q24. Yaadav went to a new place where the local food is different from the food that they eat in their home. He did not like the taste of the first local food item that he ate and did not want to taste any other local food item as he developed an aversion to such food items. The aversion for food items in this example as explained by the phenomenon of stimulus generalisation of classical conditioning theory is:",
+            options: ["1) Unconditioned stimulus", "2) Unconditioned response", "3) Conditioned stimulus", "4) Conditioned response"],
+            answer: 3
+        },
+        {
+            q: "Q25. Yuvika hails from a very conservative family. To teach her daughter to respect elders she initially motivated her daughter to greet elders and then reinforcing step by step could make her daughter attend to the needs of elders in their family. The process of building behaviour as in this example according to Skinner is:",
+            options: ["1) Shaping", "2) Chaining", "3) Cueing", "4) Discrimination"],
+            answer: 0
+        },
+        {
+            q: "Q26. In the examples given below identify those that indicate the knowledge of 'Zone of Proximal Development' put forth by Vygotsky:\nA) Ramani does not want her daughter to fail in any task and always gives tasks on par with or below her age level irrespective of her daughter getting bored of those activities\nB) Ragini wants her daughter to aim high and always gives very difficult tasks many of which she cannot do and gets frustrated\nC) Rajini wants her daughter to be familiar with tasks that will be introduced a little later and helps her in doing such tasks to learn more\nChoose the correct answer:",
+            options: ["1) A, B & C", "2) A only", "3) B only", "4) C only"],
+            answer: 3
+        },
+        {
+            q: "Q27. A teacher has given an assignment to her students to write about ways of dealing with mosquito menace. The domain of learning involved in this assignment is:",
+            options: ["1) Psycho motor", "2) Cognitive", "3) Affective", "4) Conative"],
+            answer: 1
+        },
+        {
+            q: "Q28. Chandrika and her friends went to a party. A man was repeatedly coming to them and disturbing them. They asked him 'why are you disturbing us?'. The 'why' here denotes the person's:",
+            options: ["1) Tension", "2) Need", "3) Motive", "4) Desire"],
+            answer: 2
+        },
+        {
+            q: "Q29. Repression is:",
+            options: ["1) Natural", "2) Abnormal", "3) General", "4) Organic"],
+            answer: 1
+        },
+        {
+            q: "Q30. Building generalizations between different learning situations helps in:",
+            options: ["1) Negative transfer", "2) Zero transfer", "3) Positive transfer", "4) Temporary transfer"],
+            answer: 2
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
