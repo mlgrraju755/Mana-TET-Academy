@@ -1,1 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - Mathematics (Questions 91 - 120)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation-box {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background-color: #fff8e6;
+            border-left: 4px solid #f39c12;
+            border-radius: 4px;
+            color: #444;
+            font-weight: normal;
+            font-size: 0.96em;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Mathematics</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - Questions 91 to 120</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. ((6.56 × 6.56 - 3.44 × 3.44) / (6.56 - 3.44)) ÷ 0.5 =",
+            options: ["1) 10", "2) 4", "3) 20", "4) 5"],
+            answer: 2,
+            explanation: "Using a² - b² = (a + b)(a - b): (6.56² - 3.44²) / (6.56 - 3.44) = 6.56 + 3.44 = 10. Now 10 ÷ 0.5 = 10 ÷ (1/2) = 20."
+        },
+        {
+            q: "92. The total number of factors of the number 256 is:",
+            options: ["1) 12", "2) 8", "3) 16", "4) 9"],
+            answer: 3,
+            explanation: "256 = 2⁸. Total number of factors of aⁿ is (n + 1), so 8 + 1 = 9 factors (1, 2, 4, 8, 16, 32, 64, 128, 256)."
+        },
+        {
+            q: "93. The largest number that divides 136, 192 and 256 completely is:",
+            options: ["1) 12", "2) 8", "3) 6", "4) 16"],
+            answer: 1,
+            explanation: "The largest number dividing all three completely is their HCF. 136 = 8 × 17, 192 = 8 × 24, 256 = 8 × 32. HCF = 8."
+        },
+        {
+            q: "94. The number of centimeters contained in a length of 100 km is:",
+            options: ["1) 10⁷", "2) 10⁴", "3) 10⁶", "4) 10⁵"],
+            answer: 0,
+            explanation: "1 km = 1000 m = 10³ m, and 1 m = 100 cm = 10² cm. So 100 km = 10² × 10³ × 10² = 10⁷ cm."
+        },
+        {
+            q: "95. If (2/3)⁻⁸ × (3/2)⁻¹² = (2/3)ⁿ, then the value of n is:",
+            options: ["1) 2", "2) 4", "3) 3", "4) 5"],
+            answer: 1,
+            explanation: "(3/2)⁻¹² = (2/3)¹². So (2/3)⁻⁸ × (2/3)¹² = (2/3)⁻⁸⁺¹² = (2/3)⁴. Hence, n = 4."
+        },
+        {
+            q: "96. 'A' and 'B' together can do a work in 15 days. 'A' alone can do the work in 20 days. If they are paid ₹1200 for the work, the share of 'A' is:",
+            options: ["1) ₹600", "2) ₹800", "3) ₹900", "4) ₹700"],
+            answer: 2,
+            explanation: "(A + B)'s 1-day work = 1/15; A's 1-day work = 1/20. B's 1-day work = 1/15 - 1/20 = 1/60. Ratio of A : B = (1/20) : (1/60) = 3 : 1. A's share = (3/4) × ₹1200 = ₹900."
+        },
+        {
+            q: "97. The average of 4, 7, 5, p, 6, 8 is 6.5. The value of p is:",
+            options: ["1) 9.5", "2) 8.5", "3) 8", "4) 9"],
+            answer: 3,
+            explanation: "Sum of 6 numbers = 6.5 × 6 = 39. Sum of known numbers = 4 + 7 + 5 + 6 + 8 = 30. So p = 39 - 30 = 9."
+        },
+        {
+            q: "98. A one digit natural number is added to 150 and the same number is subtracted from 150. The sum of the two resulting numbers so obtained is:",
+            options: ["1) 300", "2) 150", "3) 100", "4) 200"],
+            answer: 0,
+            explanation: "Let the number be x. (150 + x) + (150 - x) = 300. The x terms cancel out regardless of which natural number is chosen."
+        },
+        {
+            q: "99. If a = 9 then (a + √a) / (a / 3) =",
+            options: ["1) 2", "2) 4", "3) 6", "4) 8"],
+            answer: 1,
+            explanation: "Substitute a = 9: Numerator = 9 + √9 = 9 + 3 = 12. Denominator = 9 / 3 = 3. Result = 12 / 3 = 4."
+        },
+        {
+            q: "100. 40% of 220 + 30% of 160 =",
+            options: ["1) 124", "2) 138", "3) 142", "4) 136"],
+            answer: 3,
+            explanation: "40% of 220 = 0.40 × 220 = 88. 30% of 160 = 0.30 × 160 = 48. Total = 88 + 48 = 136."
+        },
+        {
+            q: "101. What is the maximum number of bisectors and perpendicular bisectors that can be drawn for a line segment, respectively?",
+            options: ["1) 1, ∞", "2) ∞, 1", "3) 1, 2", "4) 2, 2"],
+            answer: 0,
+            explanation: "A line segment has a unique midpoint, so only 1 bisector passes through it, whereas infinitely many (∞) lines can pass through that midpoint at right angles (perpendicular bisectors)."
+        },
+        {
+            q: "102. How many rational numbers are there between two rational numbers?",
+            options: ["1) ∞", "2) 0", "3) 1", "4) 2"],
+            answer: 0,
+            explanation: "Rational numbers are dense in real numbers; there are infinitely many (∞) rational numbers between any two distinct rational numbers."
+        },
+        {
+            q: "103. Number of seconds in 12 hours is equal to the number of minutes in these no. of days:",
+            options: ["1) 36", "2) 20", "3) 30", "4) 12"],
+            answer: 2,
+            explanation: "Seconds in 12 hours = 12 × 60 × 60 = 43,200. Minutes in 1 day = 24 × 60 = 1,440. Number of days = 43,200 ÷ 1,440 = 30 days."
+        },
+        {
+            q: "104. The length of a rectangle is two times that of side of a square whose perimeter is 60 cm. If breadth of the rectangle is 15 cm, then the area (in sq.cm) of the rectangle exceeds the area of the square by:",
+            options: ["1) 225", "2) 350", "3) 275", "4) 325"],
+            answer: 0,
+            explanation: "Square side = 60 ÷ 4 = 15 cm; square area = 15² = 225 sq.cm. Rectangle length = 2 × 15 = 30 cm, breadth = 15 cm; rectangle area = 30 × 15 = 450 sq.cm. Difference = 450 - 225 = 225 sq.cm."
+        },
+        {
+            q: "105. The sum of remainders obtained on dividing 13215 by 12 and 14226 by 14 is:",
+            options: ["1) 4", "2) 2", "3) 3", "4) 5"],
+            answer: 3,
+            explanation: "13215 ÷ 12 gives quotient 1101 and remainder 3. 14226 ÷ 14 gives quotient 1016 and remainder 2. Sum of remainders = 3 + 2 = 5."
+        },
+        {
+            q: "106. Which of the following statements is FALSE?",
+            options: [
+                "1) A rectangle is not a square",
+                "2) A kite is not a parallelogram",
+                "3) A trapezium is a parallelogram",
+                "4) A rhombus is not a square"
+            ],
+            answer: 2,
+            explanation: "A trapezium only has one pair of parallel sides, whereas a parallelogram has two pairs of parallel sides. Every parallelogram is a trapezium, not every trapezium is a parallelogram."
+        },
+        {
+            q: "107. In an isosceles triangle, if the unequal angle is twice the sum of the equal angles, then each equal angle is:",
+            options: ["1) 60°", "2) 45°", "3) 90°", "4) 30°"],
+            answer: 3,
+            explanation: "Let each equal angle be x. Sum of equal angles = 2x, so third angle = 2(2x) = 4x. Sum of angles in a triangle = x + x + 4x = 6x = 180° ⇒ x = 30°."
+        },
+        {
+            q: "108. When a number is divided by 16, it gives 4 as remainder. If the sum of divisor and quotient is 30, then what is the number?",
+            options: ["1) 260", "2) 228", "3) 244", "4) 224"],
+            answer: 1,
+            explanation: "Divisor = 16. Since divisor + quotient = 30, quotient = 30 - 16 = 14. Dividend = (Divisor × Quotient) + Remainder = (16 × 14) + 4 = 224 + 4 = 228."
+        },
+        {
+            q: "109. When the sum of 897 and 405 is subtracted from the sum of 724 and 1188, then the resultant is:",
+            options: ["1) 700", "2) 710", "3) 610", "4) 600"],
+            answer: 2,
+            explanation: "724 + 1188 = 1912. 897 + 405 = 1302. Subtracting: 1912 - 1302 = 610."
+        },
+        {
+            q: "110. Arrange the following fractions in the descending order:  1/4,  5/7,  2/3,  6/8",
+            options: [
+                "1) 6/8,  5/7,  2/3,  1/4",
+                "2) 1/4,  2/3,  5/7,  6/8",
+                "3) 6/8,  1/4,  2/3,  5/7",
+                "4) 1/4,  5/7,  6/8,  2/3"
+            ],
+            answer: 0,
+            explanation: "In decimal form: 6/8 = 0.75, 5/7 ≈ 0.714, 2/3 ≈ 0.667, 1/4 = 0.25. In descending order (largest to smallest): 6/8, 5/7, 2/3, 1/4."
+        },
+        {
+            q: "111. The sum of natural numbers from 20 to 29 is:",
+            options: ["1) 235", "2) 255", "3) 245", "4) 265"],
+            answer: 2,
+            explanation: "There are 10 numbers from 20 to 29. Sum = (n/2) × (first + last) = (10/2) × (20 + 29) = 5 × 49 = 245."
+        },
+        {
+            q: "112. The smallest prime number among the following is:",
+            options: ["1) 3", "2) 1", "3) 0", "4) 2"],
+            answer: 3,
+            explanation: "A prime number has exactly two distinct factors (1 and itself). 0 and 1 are not prime; 2 is the smallest prime number (and the only even prime)."
+        },
+        {
+            q: "113. Which of the following English letters can be divided into two equal symmetrical halves by a vertical line?",
+            options: ["1) H", "2) K", "3) E", "4) R"],
+            answer: 0,
+            explanation: "A vertical line of symmetry divides H into two identical left and right halves. E has a horizontal line of symmetry; K and R have neither."
+        },
+        {
+            q: "114. Which of the following rational number have terminating decimal expansion?",
+            options: ["1) 72/455", "2) 84/1600", "3) 31/343", "4) 59/300"],
+            answer: 1,
+            explanation: "A rational number in simplest form has a terminating decimal if its denominator's prime factorization is only of the form 2ᵐ × 5ⁿ. 84/1600 = 21/400, and 400 = 2⁴ × 5² (terminating)."
+        },
+        {
+            q: "115. Match the roles of the teacher with the functions:\nList I:\nA) Facilitator\nB) Evaluator\nC) Guide\nD) Motivator\nList II:\ni) Encourages students\nii) Provides direction\niii) Assesses student performance\niv) Supports the learning process\nChoose the correct answer:",
+            options: [
+                "1) A-iv, B-iii, C-ii, D-i",
+                "2) A-iii, B-iv, C-i, D-ii",
+                "3) A-i, B-ii, C-iv, D-iii",
+                "4) A-ii, B-i, C-iii, D-iv"
+            ],
+            answer: 0,
+            explanation: "Facilitator supports learning (iv), Evaluator assesses performance (iii), Guide provides direction (ii), and Motivator encourages students (i) ⇒ A-iv, B-iii, C-ii, D-i."
+        },
+        {
+            q: "116. Choose the correct option from the two sentences given below, assertion and reason:\nAssertion (A): The \"connection\" standard concerns the relationship between mathematics and other subjects.\nReason (R): Mathematics is an isolated subject with no relation to other disciplines.",
+            options: [
+                "1) Both A and R are true, and R is the correct explanation of A",
+                "2) Both A and R are true, but R is NOT the correct explanation of A",
+                "3) A is true, but R is false",
+                "4) A is false, but R is true"
+            ],
+            answer: 2,
+            explanation: "Assertion (A) is true because mathematical connections link math with other subjects and real life. Reason (R) is false because mathematics connects strongly with science, economics, engineering, etc."
+        },
+        {
+            q: "117. Essential reason for revising the curriculum:",
+            options: [
+                "1) Maintain only the tradition to revise it.",
+                "2) Avoid changing the syllabus",
+                "3) Meet the changing needs of society",
+                "4) Reduce or increase the syllabus"
+            ],
+            answer: 2,
+            explanation: "Curriculum revision is essential primarily to keep education relevant to the evolving needs of society, technology, and learners."
+        },
+        {
+            q: "118. The reason why mathematics is considered a universal language:",
+            options: [
+                "1) It is written in English worldwide.",
+                "2) It uses symbols that are understood globally.",
+                "3) It is based on global culture.",
+                "4) It varies from one region to another across the world."
+            ],
+            answer: 1,
+            explanation: "Mathematical symbols, numbers, and formulas (like +, -, =, π) mean the same thing across different languages and countries."
+        },
+        {
+            q: "119. Which of the following indicates the deductive nature of mathematics?",
+            options: [
+                "1) Arriving at conclusions based on experiments only",
+                "2) Examining various contexts and examples, and generalizing based on them.",
+                "3) Making random guesses to obtain results",
+                "4) Deriving some more theorems from already proven theorems."
+            ],
+            answer: 3,
+            explanation: "Deductive reasoning moves from general truths/axioms/proven theorems to specific conclusions or new theorems. Examining examples to generalize is inductive reasoning."
+        },
+        {
+            q: "120. The main purpose of using TLM in teaching Mathematics is:",
+            options: [
+                "1) To increase syllabus load and expenses",
+                "2) To make learning concrete and meaningful",
+                "3) To make learning abstract and easy",
+                "4) To reduce student participation in the class"
+            ],
+            answer: 1,
+            explanation: "Teaching-Learning Materials (TLM) help learners visualize concepts and move from concrete experiences to abstract mathematical ideas meaningfully."
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span><div class="explanation-box"><strong>Explanation:</strong> ${item.explanation}</div>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
