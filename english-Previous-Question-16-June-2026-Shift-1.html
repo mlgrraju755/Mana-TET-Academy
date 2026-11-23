@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - Language II - English (Questions 61 - 90)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 24px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .passage-section {
+            background-color: #eef6fc;
+            border: 1px solid #b8daf0;
+            border-left: 5px solid #2980b9;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+        }
+        .passage-title {
+            font-weight: bold;
+            color: #1f4e78;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .passage-text {
+            white-space: pre-line;
+            font-size: 1.02em;
+            color: #222;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed #9fc5e8;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 18px;
+        }
+        .passage-section .question-card {
+            background: #ffffff;
+            border-left-color: #2980b9;
+        }
+        .passage-section .question-card:last-child {
+            margin-bottom: 0;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Language II - English</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - Questions 61 to 90</div>
+
+    <div class="passage-section" id="passage-section">
+        <div class="passage-title">(61-65) Read the following passage and choose the correct option for each question:</div>
+        <div class="passage-text">Tourism is one of the fastest growing sectors of the global economy. It brings high income, foreign exchange, and supports infrastructure development. It also introduces new management and educational practices. These benefits help overall social and economic growth. Many developed countries like Switzerland, Austria, and France earn a large part of their income from tourism. Tourism contributes about 10% of the world's income and provides jobs to nearly one tenth of the global workforce. It creates employment in both big cities and small communities. In some places, it is the main economic activity. Tourism is often called an "industry without chimney" because it generates income without heavy pollution. It also helps balance foreign trade. In India, the idea of "Athithi Devo Bhava" shows the importance of guests. People treat guests with great respect and care, making proper arrangements for their comfortable stay.</div>
+        <div id="passage-questions"></div>
+    </div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "61. Tourism is often called an \"industry without chimney\" because it earns income:",
+            options: [
+                "1) without using any vehicle.",
+                "2) without foreign exchange.",
+                "3) without heavy pollution.",
+                "4) without comfortable stay."
+            ],
+            answer: 2,
+            group: "passage"
+        },
+        {
+            q: "62. The following one is NOT a result of tourism sector:",
+            options: [
+                "1) infrastructure development",
+                "2) foreign exchange",
+                "3) new educational practices",
+                "4) increases unemployment"
+            ],
+            answer: 3,
+            group: "passage"
+        },
+        {
+            q: "63. The total number of people who are working or available to work in a country is called:",
+            options: [
+                "1) staff.",
+                "2) workforce.",
+                "3) population.",
+                "4) residents."
+            ],
+            answer: 1,
+            group: "passage"
+        },
+        {
+            q: "64. Name the developed country mentioned in the passage:",
+            options: [
+                "1) Austria",
+                "2) Japan",
+                "3) Australia",
+                "4) Germany"
+            ],
+            answer: 0,
+            group: "passage"
+        },
+        {
+            q: "65. The idea of \"Athithi Devo Bhava\" shows the importance of:",
+            options: [
+                "1) hosts.",
+                "2) crowds.",
+                "3) guests.",
+                "4) leaders."
+            ],
+            answer: 2,
+            group: "passage"
+        },
+        {
+            q: "66. The boy writes ______ a pencil. Choose the correct option to complete the sentence.",
+            options: ["1) by", "2) on", "3) with", "4) through"],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "67. He pronounced the words quite correctly. The word 'quite' is a/an:",
+            options: ["1) verb.", "2) adjective.", "3) adverb.", "4) preposition."],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "68. Identify the part with an error in the given sentence. A number of questions (A) / asked in (B) / the exam (C) / is irrelevant. (D)",
+            options: ["1) A", "2) B", "3) C", "4) D"],
+            answer: 3,
+            group: "general"
+        },
+        {
+            q: "69. Read the following two sentences. Sentence A: His house is next to mine. Sentence B: His house is nearly to mine. Choose the correct option.",
+            options: [
+                "1) Only the sentence A is correct.",
+                "2) Only the sentence B is correct.",
+                "3) Both the sentences A and B are correct.",
+                "4) Both the sentences A and B are incorrect."
+            ],
+            answer: 0,
+            group: "general"
+        },
+        {
+            q: "70. The pen is ______ than the sword. Complete the sentence with correct option.",
+            options: ["1) mighty", "2) mightier", "3) mightiest", "4) might"],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "71. Choose the correct sentence.",
+            options: [
+                "1) A cow is an useful animal.",
+                "2) The cow is an useful animal.",
+                "3) An cow is the useful animal.",
+                "4) The cow is a useful animal."
+            ],
+            answer: 3,
+            group: "general"
+        },
+        {
+            q: "72. They ______ admitted their guilt. Choose the appropriate option to complete the sentence.",
+            options: ["1) theirself", "2) themselves", "3) themself", "4) theirselves"],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "73. Every Sunday he ______ to the ground for a walk. Choose the correct option to complete the sentence.",
+            options: ["1) is going", "2) has gone", "3) goes", "4) go"],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "74. Choose the correctly spelt word.",
+            options: ["1) Monotonus", "2) Monatonous", "3) Monotonoes", "4) Monotonous"],
+            answer: 3,
+            group: "general"
+        },
+        {
+            q: "75. The promise of a high salary can lure people to big cities. Identify the opposite meaning of the word 'lure.'",
+            options: ["1) deter", "2) attract", "3) invite", "4) draw"],
+            answer: 0,
+            group: "general"
+        },
+        {
+            q: "76. The country is facing a dearth of skilled workers. Identify the meaning of the word 'dearth'",
+            options: ["1) abundance", "2) plenty", "3) scarcity", "4) surplus"],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "77. Choose the correctly punctuated sentence.",
+            options: [
+                "1) All the students' assignments were submitted last Friday.",
+                "2) All the students' assignment's were submitted last Friday.",
+                "3) All the students' assignments were submitted last friday.",
+                "4) All the students' assignments were submitted last Friday\""
+            ],
+            answer: 0,
+            group: "general"
+        },
+        {
+            q: "78. Choose the grammatically correct sentence.",
+            options: [
+                "1) The children the bell rang for joy.",
+                "2) The children rang the bell for joy.",
+                "3) The children for rang the bell joy.",
+                "4) The bell joy for rang the children."
+            ],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "79. The man said, \"This is the best house on this street.\" Identify the appropriate indirect sentence.",
+            options: [
+                "1) The man said that, this was the best house on that street.",
+                "2) The man said that these is the best house on that street.",
+                "3) The man said this that was the best house on this street.",
+                "4) The man said that that was the best house on that street."
+            ],
+            answer: 3,
+            group: "general"
+        },
+        {
+            q: "80. The violin is being played by Vinod. Choose the appropriate Active Voice sentence.",
+            options: [
+                "1) Vinod was playing the violin.",
+                "2) Vinod plays the violin.",
+                "3) Vinod is playing the violin.",
+                "4) Vinod has been playing the violin."
+            ],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "81. Arrange the following words to form a meaningful sentence. P: India's monsoon. Q: agricultural land R: converting S: is weakening T: forests into Choose the correct option.",
+            options: [
+                "1) R, S, T, P, Q",
+                "2) R, T, Q, S, P",
+                "3) R, Q, T, S, P",
+                "4) R, T, S, Q, P"
+            ],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "82. Everyone is here, ______? Choose the correct option to complete the sentence.",
+            options: ["1) aren't they", "2) are they", "3) were they", "4) weren't they"],
+            answer: 0,
+            group: "general"
+        },
+        {
+            q: "83. A written public declaration of motives is called:",
+            options: ["1) Confession.", "2) Manifesto.", "3) Report.", "4) Dissertation."],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "84. \"Are you coming to college?\" Name the type of the sentence.",
+            options: [
+                "1) Declarative Sentence",
+                "2) Imperative Sentence",
+                "3) Interrogative Sentence",
+                "4) Exclamatory Sentence"
+            ],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "85. Identify the oral discourse from the following.",
+            options: ["1) Message", "2) Debate", "3) Poster", "4) Essay"],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "86. The best technique to learn to articulate meaningful sounds in a foreign language is to begin naming:",
+            options: [
+                "1) familiar objects around us.",
+                "2) pictures of the unfamiliar objects.",
+                "3) basic words given in the textbooks.",
+                "4) new words given in the dictionary."
+            ],
+            answer: 0,
+            group: "general"
+        },
+        {
+            q: "87. Identify the effective Teaching Learning Material (TLM) for the English classroom at the primary level.",
+            options: ["1) grammar books", "2) words lists", "3) story cards", "4) blackboard"],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "88. This is known as the Magna Carta of Indian Education.",
+            options: [
+                "1) Macaulay Minutes",
+                "2) Kothari Commission's Report",
+                "3) Wood's Despatch",
+                "4) Hunter Commission's Report"
+            ],
+            answer: 2,
+            group: "general"
+        },
+        {
+            q: "89. This is NOT a targeted discourse at primary level in Telangana State Board.",
+            options: ["1) Story", "2) Film review", "3) Conversation", "4) Description"],
+            answer: 1,
+            group: "general"
+        },
+        {
+            q: "90. Phonetics is the study of:",
+            options: [
+                "1) meanings of words.",
+                "2) writing system.",
+                "3) speech sounds.",
+                "4) language rules."
+            ],
+            answer: 2,
+            group: "general"
+        }
+    ];
+
+    const passageQuestions = document.getElementById('passage-questions');
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        if (item.group === "passage") {
+            passageQuestions.appendChild(card);
+        } else {
+            quizContainer.appendChild(card);
+        }
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
