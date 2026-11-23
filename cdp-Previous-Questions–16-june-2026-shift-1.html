@@ -1,1 +1,519 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - శిశు వికాసం మరియు బోధనా శాస్త్రం</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .timer-bar {
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.15em;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 25px;
+        }
+        .timer-display {
+            background-color: #1abc9c;
+            color: #ffffff;
+            padding: 5px 14px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.25em;
+            letter-spacing: 1px;
+        }
+        .timer-display.warning {
+            background-color: #e67e22;
+        }
+        .timer-display.danger {
+            background-color: #e74c3c;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>శిశు వికాసం మరియు బోధనా శాస్త్రం</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - ప్రశ్నలు 1 నుండి 30</div>
+
+    <div class="timer-bar">
+        <span>మిగిలిన సమయం (Time Remaining):</span>
+        <span id="timer" class="timer-display">30:00</span>
+    </div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. ఈ కారకం మొత్తం పెరుగుదల మరియు వికాసాలకు నిజమైన నాంది మరియు ఆధారం:",
+            options: ["1) ఉద్వేగం", "2) అనువంశికత", "3) సాంఘిక స్వభావం", "4) ప్రజ్ఞ"],
+            answer: 1
+        },
+        {
+            q: "2. ఈ పెరుగుదల మరియు వికాస సూత్రం ప్రకారం, వికాసం అనేది ఒక దశలవారీ ప్రక్రియ, పురోగతి అనేది సరళ రేఖలో కాకుండా, తదుపరి పురోగతికి ముందు పాత నైపుణ్యాలను మరింత పటిష్టపరుచుకుంటూ ఒక చక్రీయ ప్రయాణంగా ముందుకు సాగుతుంది:",
+            options: [
+                "1) వైయక్తిక బేధాల సూత్రం",
+                "2) సర్పిల vs రేఖీయ పురోగతి సూత్రం",
+                "3) వికాసం సమీప-దూరస్థ దిశగా సాగుతుందనే సూత్రం",
+                "4) వికాసంలో శిరః-పాదాభిముఖ దిశగా సాగుతుందనే సూత్రం"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. కింది వాటిలో ఒకటి అసాంఘిక లక్షణం:",
+            options: [
+                "1) సంఘర్షణ నిర్వహణ (Conflict management)",
+                "2) సమాచార ప్రసరణ",
+                "3) అహం కేంద్రవాదం",
+                "4) నిశ్చయత"
+            ],
+            answer: 2
+        },
+        {
+            q: "4. కింది రెండు స్టేట్ మెంట్లను చదవండి:\nస్టేట్ మెంట్ A: తన విద్యార్థుల వికాసానికి సౌకర్యకర్తగా పని చేయవలసిన బాధ్యత ఉపాధ్యాయురాలికి ఉంటుంది.\nస్టేట్ మెంట్ B: ఉపాధ్యాయురాలికి వికాస మనో వైజ్ఞానిక శాస్త్రం గురించిన సరైన జ్ఞానం ఉండాలి.\nసరైన సమాధానాన్ని గుర్తించండి:",
+            options: [
+                "1) స్టేట్ మెంట్ B మాత్రమే సరైనది",
+                "2) స్టేట్ మెంట్లు A మరియు B రెండూ సరికావు",
+                "3) స్టేట్ మెంట్ A మాత్రమే సరైనది",
+                "4) స్టేట్ మెంట్లు A మరియు B రెండూ సరైనవి"
+            ],
+            answer: 3
+        },
+        {
+            q: "5. ఛాంస్కీ ప్రకారం, భాష సముపార్జన పరికరం (LAD) అనేది:",
+            options: [
+                "1) సహజమైనది",
+                "2) నేర్చుకొనబడినది",
+                "3) పరిసరంపై ఆధారపడినది",
+                "4) సాపేక్షమైనది"
+            ],
+            answer: 0
+        },
+        {
+            q: "6. సాయి పాఠశాలకు వెళ్లే అబ్బాయి. అతను ప్రతిరోజూ ఉదయం 7:00 గంటలకు నిద్రలేచి, 7:30 గంటలకు బస్సు ఎక్కడానికి సిద్ధమవడానికి తన పనులన్నింటినీ ప్రతిరోజూ ఒకే క్రమంలో, అదే సమయంలో చేస్తాడు. ఈ ప్రవర్తన దీనికి ఒక ఉదాహరణ:",
+            options: ["1) సహజాతం", "2) అభిరుచి", "3) అలవాటు", "4) అభ్యాసం"],
+            answer: 2
+        },
+        {
+            q: "7. మొదటి బినెట్-సైమన్ ప్రజ్ఞా పరీక్ష ఈ వయస్సు వారి కోసం అభివృద్ధి చేయబడింది:",
+            options: [
+                "1) 20 సంవత్సరాలు మరియు ఆపైన",
+                "2) 0 – 4 సంవత్సరాలు",
+                "3) 16 – 20 సంవత్సరాలు",
+                "4) 3 – 13 సంవత్సరాలు"
+            ],
+            answer: 3
+        },
+        {
+            q: "8. పారాథైరాయిడ్ గ్రంథి పనిచేయకపోవడం వల్ల ఒక పిల్లవాడు శారీరక కృత్యాలు చేసేటప్పుడు త్వరగా అలసిపోయేవాడు. అతని చుట్టూ ఉన్నవారందరూ అతన్ని సోమరిగా చూశారు మరియు కాలక్రమేణా అతనిలో నిమ్నమైన స్వీయవిలువ భావన ఏర్పడింది. అతని మూర్తిమత్వం గురించి అతని స్వీయ-గ్రహణకు దోహదపడిన కారకాలు:\nA. జీవసంబంధమైనవి\nB. పరిసర సంబంధమైనవి\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A మరియు B రెండూ",
+                "2) A మాత్రమే",
+                "3) B మాత్రమే",
+                "4) A లేదా B రెండూ కాదు"
+            ],
+            answer: 0
+        },
+        {
+            q: "9. తగిన నైపుణ్యాలు లేని ఒక బాస్ అది కప్పిపుచ్చుకోవటానికి తన కింది ఉద్యోగులతో అతిగా స్నేహంగా ఉండటం ఈ రక్షక తంత్రానికి ఒక ఉదాహరణ:",
+            options: ["1) పరిహారం", "2) తాదాత్మ్యం", "3) హేతుకీకరణ", "4) దమనం"],
+            answer: 0
+        },
+        {
+            q: "10. కింద చూపిన అంశాలతో కూడిన సాధనాన్ని గుర్తించండి:\nA. భారతదేశంలో మీకు ఇష్టమైన ప్రదేశం ఏది?\nB. ఏ విషయాలు ఈ ప్రదేశాన్ని మీకు ఇష్టమైనదిగా చేసాయి?\nC. మీరు ఆ ప్రదేశాన్ని ఎన్నిసార్లు సందర్శించారు?",
+            options: [
+                "1) ప్రశ్నావళి",
+                "2) మూర్తిమత్వ శోధిక",
+                "3) నిర్ధారణ మాపని",
+                "4) వృత్తాంత రికార్డు"
+            ],
+            answer: 0
+        },
+        {
+            q: "11. అభ్యసన పద్ధతి దీనికి సంబంధించినది:\nA. ఇన్పుట్\nB. అవుట్పుట్\nC. ప్రక్రియ\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) B మరియు C మాత్రమే",
+                "2) A మరియు C మాత్రమే",
+                "3) C మాత్రమే",
+                "4) A, B మరియు C"
+            ],
+            answer: 2
+        },
+        {
+            q: "12. యువాన్ష్ ఫుట్బాల్ ఆటగాడు కావాలనుకున్నాడు. తన ప్రాంతంలో ఫుట్బాల్ నేర్చుకోవడానికి సరైన సౌకర్యాలు మరియు కోచ్ లేని సవాలుతో కూడిన పరిస్థితి ఉన్నప్పటికీ, అతను ఒక మంచి ఫుట్బాల్ ఆటగాడిగా ఎదిగాడు. అతని విజయానికి దోహదపడిన కారకం దీనికి సంబంధించినది:",
+            options: ["1) పరిసరం", "2) అభ్యాసకుడు", "3) బహుమతులు", "4) శిక్షణ రకం"],
+            answer: 1
+        },
+        {
+            q: "13. తేజ చిన్నపాటి ప్రేరేపణకే కోపం తెచ్చుకుని, ఇతరులను కొట్టే అలవాటు చేసుకున్నాడు. అతని తల్లిదండ్రులు ఒక నిపుణుడి సహాయంతో అతని ప్రవర్తనలో మార్పు తీసుకువచ్చారు, దానివల్ల చాలా కాలం పాటు అతనికి కోపం రావడం సంభవించలేదు. అకస్మాత్తుగా, ఒక రోజు కొంతమంది తన సోదరిని ఎగతాళి చేయడం చూసి అతను కోపంతో వారందరినీ కొట్టాడు. ఇది దీనికి ఉదాహరణ:",
+            options: [
+                "1) విరమణ",
+                "2) విచక్షణ",
+                "3) సాధారణీకరణ",
+                "4) అయత్న సిద్ధ స్వాస్థ్యం"
+            ],
+            answer: 3
+        },
+        {
+            q: "14. ఆట స్థలంలోని యంత్రంలో నాణేలు వేసి బంతులు పొందిన అనుభవం ఉన్న ఒక చిన్న పిల్లవాడు, మాల్లో చూసిన వెండింగ్ మెషీన్ లో శీతల పానీయాల సీసాలు పొందడానికి నాణేలు వేశాడు. ఇది థార్న్ డైక్ యొక్క ఈ క్రింది అభ్యసన నియమానికి ఉదాహరణ:",
+            options: [
+                "1) బహుళ ప్రతిస్పందనల నియమం",
+                "2) సంసిద్ధత నియమం",
+                "3) సారూప్యత నియమం",
+                "4) వైఖరి నియమం"
+            ],
+            answer: 2
+        },
+        {
+            q: "15. పియాజె ప్రకారం, ఈ దశ నుండి పిల్లవాడు ఊహాజనిత పద్ధతిలో ఆలోచించడం ప్రారంభిస్తాడు:",
+            options: [
+                "1) మూర్త ప్రచాలక దశ",
+                "2) అమూర్త ప్రచాలక దశ",
+                "3) పూర్వ-ప్రచాలక దశ",
+                "4) అంతర్బుద్ధి దశ (Intuitive phase)"
+            ],
+            answer: 1
+        },
+        {
+            q: "16. పాఠశాల క్రీడా దినోత్సవ కార్యక్రమంలో పిల్లలు డ్రిల్ చేస్తున్నప్పుడు, అకస్మాత్తుగా ప్రేక్షకులందరూ చప్పట్లు కొట్టడం ప్రారంభించారు, ఎందుకంటే విద్యార్థులు తమ పాఠశాల పేరులా అనిపించే విధంగా తమను తాము ఏర్పాటు చేసుకున్నారు. డ్రిల్ చేస్తున్న విద్యార్థుల మధ్య దూరం ఉన్నప్పటికీ, భాగాలను వాటి సామీప్యత ప్రకారం సమూహపరిచే ధోరణి కారణంగా ప్రేక్షకులు దానిని పాఠశాల పేరుగా గ్రహించారు. ఈ ప్రత్యక్షవ్యవస్థీకరణ నియమాన్ని గెస్టాల్ట్ వాదులు ఈ విధంగా పిలిచారు:",
+            options: ["1) విచక్షణ", "2) సరళత", "3) సారూప్యత", "4) సామీప్యత"],
+            answer: 3
+        },
+        {
+            q: "17. కింది మనో వైజ్ఞానిక శాస్త్రవేత్తలలో ఒకరు వికాసం యొక్క నిర్దిష్ట దశలను ప్రస్తావించలేదు:",
+            options: ["1) కోల్బర్గ్", "2) పియాజె", "3) వైగోట్స్కీ", "4) ఎరిక్సన్"],
+            answer: 2
+        },
+        {
+            q: "18. కింది రెండు స్టేట్ మెంట్లను చదవండి:\nస్టేట్ మెంట్ A: ఏ ప్రేరణ ప్రక్రియలోనైనా ఆసక్తి అనేది కీలక పదం మరియు కేంద్ర అంశం.\nస్టేట్ మెంట్ B: ఉపాధ్యాయులు బోధనాభ్యసన కృత్యాలను వీలైనంత ఆసక్తికరంగా చేయాలి.\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) స్టేట్ మెంట్ B మాత్రమే సరైనది",
+                "2) స్టేట్ మెంట్లు A మరియు B రెండూ సరికావు",
+                "3) స్టేట్ మెంట్లు A మరియు B రెండూ సరైనవి",
+                "4) స్టేట్ మెంట్ A మాత్రమే సరైనది"
+            ],
+            answer: 2
+        },
+        {
+            q: "19. శక్తి రెండు వేర్వేరు డిజైన్లలో దండలు అల్లడం నేర్చుకుంది. కొన్ని రోజుల తర్వాత ఆమె మొదటి డిజైన్ దండను అల్లడానికి ప్రయత్నించినప్పుడు, రెండవ డిజైన్ ఆటంకం కలిగించింది. ఇది దీనికి ఉదాహరణ:",
+            options: [
+                "1) క్షయం",
+                "2) పురోగమన అవరోధం",
+                "3) దమనం",
+                "4) తిరోగమన అవరోధం"
+            ],
+            answer: 3
+        },
+        {
+            q: "20. అర్థవంతమైన సంబంధాలు లేకపోవడం వల్ల, ఈ రకమైన అభ్యసనం సానుకూల అభ్యసన బదలాయింపుకి సహాయపడదు:",
+            options: [
+                "1) బట్టీ అభ్యసనం",
+                "2) అంతర్దృష్టి అభ్యసనం",
+                "3) పరిశీలనాత్మక అభ్యసనం",
+                "4) ఆవిష్కరణ అభ్యసనం"
+            ],
+            answer: 0
+        },
+        {
+            q: "21. వికలాంగుల హక్కుల చట్టం, 2016లో, ఒకటి కంటే ఎక్కువ వైకల్యతలు ఉన్న వ్యక్తులను ఈ క్రింది వాటి కింద చేర్చారు:",
+            options: [
+                "1) విజాతీయ వైకల్యతలు",
+                "2) మిశ్రమ వైకల్యతలు",
+                "3) ఇతర వైకల్యతలు",
+                "4) బహుళ వైకల్యతలు"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. ఈ పద్ధతిలో, ఒక సమస్యకు పరిష్కారం కనుగొనడానికి కొంతమంది వ్యక్తులు కలిసి అనేక ఆలోచనలను రూపొందిస్తారు:",
+            options: ["1) పరిశీలన", "2) సర్వే", "3) ప్రాజెక్ట్", "4) మేధో మధనం"],
+            answer: 3
+        },
+        {
+            q: "23. 'ఆట'కు సంబంధించి సరికాని స్టేట్ మెంట్ ను గుర్తించండి:",
+            options: [
+                "1) ఇది బోధనకు ఒక ప్రత్యక్ష పద్ధతి",
+                "2) అభ్యసన కృత్యాల ద్వారా జరుగుతుంది",
+                "3) అభ్యాసకులు చురుకుగా ఉంటారు",
+                "4) ఇది ఆనందదాయకం మరియు అభ్యాసకులు అభ్యసనాన్ని ఒక భారంగా భావించరు"
+            ],
+            answer: 0
+        },
+        {
+            q: "24. ఒక ఉపాధ్యాయుడు విద్యార్థులకు ఒక వాక్యాన్నిచ్చి, అందులో గీత గీసిన పదం యొక్క అర్థాన్ని చెప్పమని అడిగాడు. బ్రూనర్ ప్రకారం, ఇది కింది వాటిలో దీనిని పెంపొందించడానికి ఒక ఉదాహరణ:",
+            options: [
+                "1) సృజనాత్మక ఆలోచన",
+                "2) అంతర్బుద్ధి ఆలోచన",
+                "3) అమూర్త ఆలోచన",
+                "4) నిగమన ఆలోచన"
+            ],
+            answer: 1
+        },
+        {
+            q: "25. విద్యార్థుల వాస్తవ ప్రవర్తన మార్పును ఆశించిన ప్రవర్తనతో పోల్చడం బోధన యొక్క ఈ దశలో జరుగుతుంది:",
+            options: [
+                "1) ప్రీ-యాక్టివ్",
+                "2) పోస్ట్-యాక్టివ్",
+                "3) ఇంటర్-యాక్టివ్",
+                "4) ప్రాథమిక"
+            ],
+            answer: 1
+        },
+        {
+            q: "26. కింది వాటిలో ఒకటి విద్యలో ICT వల్ల కలిగే ప్రయోజనం కాదు:",
+            options: [
+                "1) పిల్లల అభ్యసన పరిసరాన్ని ICT విస్తరిస్తుంది",
+                "2) విభిన్న అభ్యాసకులను సర్దుబాటుచేయడానికి అనుగుణంగా అనేక రకాల సాధనాలను ICT అందిస్తుంది",
+                "3) నిష్క్రియాత్మక అభ్యసనాన్ని ICT ప్రోత్సహిస్తుంది",
+                "4) భావనల పునశ్చరణలో ICT ని ఉపయోగించవచ్చు"
+            ],
+            answer: 2
+        },
+        {
+            q: "27. మార్గదర్శకత్వం యొక్క లక్ష్యం:\nA. భవిష్యత్తు కోసం సిద్ధం చేయడం\nB. ప్రస్తుత సవాళ్లను పరిష్కరించడం\nC. గత సంఘటనలను సరిదిద్దడం\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A మరియు B మాత్రమే",
+                "2) A మరియు C మాత్రమే",
+                "3) C మాత్రమే",
+                "4) B మరియు C మాత్రమే"
+            ],
+            answer: 0
+        },
+        {
+            q: "28. 'లైంగిక నేరాల నుండి పిల్లల రక్షణ చట్టం (పోక్సో), 2012'లోని సెక్షన్ 21 ప్రకారం, ఏదైనా నేరం జరిగినట్లు నివేదించడంలో విఫలమైన వ్యక్తికి ఇంత కాలపరిమితి వరకు జైలు శిక్ష విధించబడుతుంది:",
+            options: [
+                "1) ఐదు సంవత్సరాలు",
+                "2) ఒక సంవత్సరం",
+                "3) రెండు సంవత్సరాలు",
+                "4) ఆరు నెలలు"
+            ],
+            answer: 3
+        },
+        {
+            q: "29. కింది వాటిలో 'నిరంతర మూల్యాంకనం' కు సంబంధించిన సరికాని స్టేట్ మెంట్ ను గుర్తించండి:",
+            options: [
+                "1) నిరంతర మూల్యాంకనం మౌఖిక రీతిలో మాత్రమే నిర్వహించబడాలి",
+                "2) నిరంతర మూల్యాంకనం స్వభావరీత్యా నిర్మాణాత్మకమైనది",
+                "3) నిరంతర మూల్యాంకనం పాఠశాల ఆధారితమైనది",
+                "4) అభ్యసనాన్ని మెరుగుపరచడం నిరంతర మూల్యాంకనం లక్ష్యం"
+            ],
+            answer: 0
+        },
+        {
+            q: "30. ఈ నివేదికలో అందించిన అంతర్దృష్టుల ఆధారంగా పాఠ్యప్రణాళిక భారాన్ని తగ్గించాలని జాతీయ పాఠ్యప్రణాళిక చట్రం (NCF), 2005 సిఫార్సు చేసింది:",
+            options: [
+                "1) ఇండియన్ ఎడ్యుకేషన్ కమిషన్",
+                "2) సెకండరీ ఎడ్యుకేషన్ కమిషన్",
+                "3) లర్నింగ్ వితౌట్ బర్డెన్",
+                "4) యూనివర్సిటీ ఎడ్యుకేషన్ కమిషన్"
+            ],
+            answer: 2
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    let totalSeconds = 30 * 60;
+    let isSubmitted = false;
+    const timerElement = document.getElementById('timer');
+
+    const countdown = setInterval(() => {
+        if (isSubmitted) {
+            clearInterval(countdown);
+            return;
+        }
+
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        const formattedMin = String(minutes).padStart(2, '0');
+        const formattedSec = String(seconds).padStart(2, '0');
+        timerElement.textContent = `${formattedMin}:${formattedSec}`;
+
+        if (totalSeconds <= 60) {
+            timerElement.className = 'timer-display danger';
+        } else if (totalSeconds <= 300) {
+            timerElement.className = 'timer-display warning';
+        }
+
+        if (totalSeconds <= 0) {
+            clearInterval(countdown);
+            timerElement.textContent = '00:00';
+            calculateFinalScore(true);
+        } else {
+            totalSeconds-
