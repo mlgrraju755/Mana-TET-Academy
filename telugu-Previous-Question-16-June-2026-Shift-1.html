@@ -36,24 +36,27 @@
             font-weight: bold;
             font-size: 1.1em;
         }
-        .passage-box {
+        .passage-section {
             background-color: #eef6fc;
             border: 1px solid #b8daf0;
             border-left: 5px solid #2980b9;
-            border-radius: 6px;
-            padding: 16px 20px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
         }
         .passage-title {
             font-weight: bold;
             color: #1f4e78;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-size: 1.05em;
         }
         .passage-text {
             white-space: pre-line;
             font-size: 1.02em;
             color: #222;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed #9fc5e8;
         }
         .question-card {
             background: #fafafa;
@@ -61,7 +64,14 @@
             border-left: 5px solid #3498db;
             border-radius: 6px;
             padding: 18px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
+        .passage-section .question-card {
+            background: #ffffff;
+            border-left-color: #2980b9;
+        }
+        .passage-section .question-card:last-child {
+            margin-bottom: 0;
         }
         .question-text {
             font-weight: bold;
@@ -140,17 +150,19 @@
     <h1>భాష I - తెలుగు</h1>
     <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - ప్రశ్నలు 31 నుండి 60</div>
 
-    <div class="passage-box">
-        <div class="passage-title">కింది పేరాను చదవండి. అడిగిన ప్రశ్నలకు (31 - 34) సరైన సమాధానాలు గుర్తించండి:</div>
+    <div class="passage-section" id="gadyam-section">
+        <div class="passage-title">కింది గద్యాన్ని చదవండి. అడిగిన ప్రశ్నలకు (31 - 34) సరైన సమాధానాలు గుర్తించండి:</div>
         <div class="passage-text">నాగోబా జాతర ఆదిలాబాద్ జిల్లాలో జరిగే పెద్ద గిరిజన జాతర. వరంగల్ సమ్మక్క - సారలమ్మ జాతర తర్వాత రెండో పెద్ద గిరిజన జాతర ఇది. గోండుల ఆరాధ్యదేవత నాగోబా. సర్పజాతిని గోండులు పూజించడమే నాగోబా జాతర ప్రత్యేకత. ఆదిమ గిరిజనుల్లో మేస్రం వంశీయుల ఆరాధ్య దైవం నాగోబా. నాగోబా అంటే పాము జాతి. ఆదిలాబాద్ కు నలభై కిలోమీటర్ల దూరంలో ఇంద్రవెల్లి మండలం ముత్నూరు దగ్గర కేస్లాపూర్ గ్రామంలో నాగోబా దేవాలయం ఉంది. ఈ జాతరను రాష్ట్ర ప్రభుత్వం రాష్ట్ర పండుగగా ప్రకటించింది. ఈ పండుగ ప్రతి ఏటా పదిరోజులు జరుగుతుంది. ఇరుగు పొరుగు రాష్ట్రాలనుంచి లక్షలాది గిరిజనులు ఈ జాతరకు హాజరవుతారు. ప్రతి సంవత్సరం పుష్య అమావాస్య రోజున నాగోబా జాతర ప్రారంభం అవుతుంది.</div>
+        <div id="gadyam-questions"></div>
     </div>
 
-    <div class="passage-box">
+    <div class="passage-section" id="padhyam-section">
         <div class="passage-title">కింది పద్యాన్ని చదవండి. ప్రశ్నలకు (35 - 38) జవాబులు రాయండి:</div>
         <div class="passage-text">ఆఁకొన్న కూడె యమృతము
 తాఁ కొందక నిచ్చువాఁడె దాత ధరిత్రిన్
 సోఁ కోర్చువాఁడె మనుజుఁడు
 తేఁకువ గలవాఁడె వంశతిలకుండు సుమతీ!</div>
+        <div id="padhyam-questions"></div>
     </div>
     
     <div id="quiz-container"></div>
@@ -165,37 +177,44 @@
         {
             q: "31. రెండవ అతి పెద్ద గిరిజన జాతర ఏది?",
             options: ["1) సమ్మక్క - సారలమ్మ జాతర", "2) నాగోబా జాతర", "3) ఇంద్రవెల్లి జాతర", "4) ఏడుపాయల జాతర"],
-            answer: 1
+            answer: 1,
+            group: "gadyam"
         },
         {
             q: "32. నాగోబా అంటే?",
             options: ["1) తేలు జాతి", "2) గిరిజన జాతి", "3) గోండు జాతి", "4) పాము జాతి"],
-            answer: 3
+            answer: 3,
+            group: "gadyam"
         },
         {
             q: "33. నాగోబా దేవాలయం ఉన్న గ్రామం:",
             options: ["1) ఆదిలాబాద్", "2) కేస్లాపూర్", "3) ముత్నూరు", "4) ఇంద్రవెల్లి"],
-            answer: 1
+            answer: 1,
+            group: "gadyam"
         },
         {
             q: "34. నాగోబా జాతర ప్రారంభమయ్యే రోజు:",
             options: ["1) శ్రావణ అమావాస్య", "2) పుష్య అమావాస్య", "3) ఫాల్గుణ అమావాస్య", "4) కార్తీక అమావాస్య"],
-            answer: 1
+            answer: 1,
+            group: "gadyam"
         },
         {
             q: "35. నిజమైన మనిషి ఎవరు?",
             options: ["1) ఆకలితో ఉన్నవాడు", "2) కష్టాలకు ఓర్చువాడు", "3) ధైర్యం ఉన్నవాడు", "4) దానం చేసేవాడు"],
-            answer: 1
+            answer: 1,
+            group: "padhyam"
         },
         {
             q: "36. ధైర్యం ఉన్నవాడు ఎవరు?",
             options: ["1) దాత", "2) మనుజుడు", "3) వంశతిలకుడు", "4) తేకువ కలవాడు"],
-            answer: 2
+            answer: 2,
+            group: "padhyam"
         },
         {
             q: "37. దాతకు ఇది ఉండకూడదు:",
             options: ["1) విసుగు", "2) సోకు", "3) తేకువ", "4) సహనం"],
-            answer: 0
+            answer: 0,
+            group: "padhyam"
         },
         {
             q: "38. ఈ పద్యం ప్రకారం ఏది 'అమృతం'?",
@@ -205,47 +224,56 @@
                 "3) ఆకలి ఉన్నప్పుడు దొరికిన ఆహారం",
                 "4) నీరు"
             ],
-            answer: 2
+            answer: 2,
+            group: "padhyam"
         },
         {
             q: "39. 'సీమ' పదానికి నానార్థం కానిది:",
             options: ["1) హద్దు", "2) వరిమడి", "3) గుర్తు", "4) భాగం"],
-            answer: 2
+            answer: 2,
+            group: "general"
         },
         {
             q: "40. 'చీకటి' పదానికి పర్యాయ పదం:",
             options: ["1) అసి", "2) నలుపు", "3) ధ్వాంతం", "4) మొగులు"],
-            answer: 2
+            answer: 2,
+            group: "general"
         },
         {
             q: "41. 'కుల్య' పదానికి వికృతి:",
             options: ["1) కత", "2) కైత", "3) కాలువ", "4) కర్ణం"],
-            answer: 2
+            answer: 2,
+            group: "general"
         },
         {
             q: "42. 'చిల్వ' పదానికి అర్థం:",
             options: ["1) సంపద", "2) పాము", "3) స్నేహం", "4) కోరిక"],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "43. 'అళి' పదానికి అర్థం కానిది:",
             options: ["1) గుంపు", "2) మిగులు", "3) సమూహం", "4) వరుస"],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "44. య, ర, ల, వ లను ఇలా అంటారు:",
             options: ["1) ఊష్మాలు", "2) అంతస్థాలు", "3) అనునాసికాలు", "4) వర్గయుక్కులు"],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "45. సప్తమీ విభక్తి ప్రత్యయాలు:",
             options: ["1) నిన్, నున్, లన్", "2) అందున్, నన్", "3) కొఱకున్, కై", "4) లోన్, లోపలన్"],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "46. 'అతడెక్కడ' సంధి:",
             options: ["1) అత్త్వసంధి", "2) ఇత్త్వసంధి", "3) ఉత్త్వసంధి", "4) గుణసంధి"],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "47. 'షట్చక్రవర్తులు' సమాసం:",
@@ -255,12 +283,14 @@
                 "3) బహువ్రీహి సమాసం",
                 "4) విశేషణ పూర్వపద కర్మధారయ సమాసం"
             ],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "48. 'పాప వచ్చి భోజనం చేస్తుంది'. ఈ వాక్యం ఏ కాలానికి చెందింది?",
             options: ["1) భూతకాలం", "2) భవిష్యత్ కాలం", "3) వర్తమాన కాలం", "4) తద్ధర్మ కాలం"],
-            answer: 3
+            answer: 3,
+            group: "general"
         },
         {
             q: "49. కొఱవి గోపరాజు రచన:",
@@ -270,7 +300,8 @@
                 "3) యయాతి చరిత్ర",
                 "4) విజయవిలాసం"
             ],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "50. 'శబ్నం' కవితాసంపుటి ఎవరి రచన?",
@@ -280,7 +311,8 @@
                 "3) కృష్ణమూర్తి యాదవ్",
                 "4) పొట్లపల్లి రామారావు"
             ],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "51. 'పల్లెటూరి పిల్లగాడా!' పాట రచయిత:",
@@ -290,12 +322,14 @@
                 "3) గోరటి వెంకన్న",
                 "4) సుద్దాల హనుమంతు"
             ],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "52. జినవల్లభుని శాసనంలోని ఛందస్సు:",
             options: ["1) ఆటవెలది", "2) కందం", "3) తేటగీతి", "4) మధ్యాక్కర"],
-            answer: 3
+            answer: 3,
+            group: "general"
         },
         {
             q: "53. తెలుగులో తొలి రామాయణం:",
@@ -305,7 +339,8 @@
                 "3) గోవింద రామాయణం",
                 "4) మొల్ల రామాయణం"
             ],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "54. 'జైలు' కథాసంపుటి వీరి రచన:",
@@ -315,7 +350,8 @@
                 "3) కాళోజీ నారాయణరావు",
                 "4) దాశరథి కృష్ణమాచార్య"
             ],
-            answer: 1
+            answer: 1,
+            group: "general"
         },
         {
             q: "55. పిల్లల భాగస్వామ్యం – ప్రతిస్పందనలు, రాత అంశాలు, ప్రాజెక్టు పనులు- లఘుపరీక్ష నిర్వహిస్తే ఆ మూల్యాంకనం:",
@@ -325,7 +361,8 @@
                 "3) ప్రాగుక్తిక మూల్యాంకనం",
                 "4) ప్రాయోజిత మూల్యాంకనం"
             ],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "56. ప్రాథమిక స్థాయి విద్యార్థులలో పదజాలం పెంపొందించడానికి ఉపకరించే వనరు:",
@@ -335,7 +372,8 @@
                 "3) చిత్ర కథా పుస్తకం",
                 "4) వ్యాసాల సంకలనం"
             ],
-            answer: 2
+            answer: 2,
+            group: "general"
         },
         {
             q: "57. విద్యార్థుల దస్తూరీపై ప్రభావాన్ని చూపించే అంశాల్లో ఒకటి:",
@@ -345,12 +383,14 @@
                 "3) విద్యార్థి పాటించు క్రమశిక్షణ",
                 "4) విద్యార్థి కూర్చుండు విధానం"
             ],
-            answer: 3
+            answer: 3,
+            group: "general"
         },
         {
             q: "58. \"విభిన్న భాషణ అలవాట్లతో కూడిన సంక్లిష్ట వ్యవస్థ భాష” అన్నవారు:",
             options: ["1) హాకెట్", "2) స్టర్ట్ వర్ట్", "3) క్రేట్స్", "4) వర్మ"],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "59. తెలుగు పాఠ్యపుస్తకాల్లో “ఆలోచించండి - చెప్పండి\" అను శీర్షికతో 'చిత్రాలు' చేర్చుటకు కారణం:",
@@ -360,7 +400,8 @@
                 "3) విద్యార్థులు రంగులు నింపుటకు",
                 "4) పాఠ్యవిషయాన్ని సంక్లిష్టం చేయుటకు"
             ],
-            answer: 0
+            answer: 0,
+            group: "general"
         },
         {
             q: "60. పాఠశాలల్లో విద్యార్థులు 'గోడ పత్రిక' రాయుట దీనికి దోహదపడుతుంది:",
@@ -370,10 +411,13 @@
                 "3) ఉపాధ్యాయుని బోధనాభారం తగ్గించుటకు",
                 "4) ఉపాధ్యాయుల కొరత తీర్చుటకు"
             ],
-            answer: 1
+            answer: 1,
+            group: "general"
         }
     ];
 
+    const gadyamQuestions = document.getElementById('gadyam-questions');
+    const padhyamQuestions = document.getElementById('padhyam-questions');
     const quizContainer = document.getElementById('quiz-container');
     const userAnswers = new Array(quizData.length).fill(null);
 
@@ -412,7 +456,13 @@
         feedbackDiv.id = `feedback_${qIndex}`;
         card.appendChild(feedbackDiv);
 
-        quizContainer.appendChild(card);
+        if (item.group === "gadyam") {
+            gadyamQuestions.appendChild(card);
+        } else if (item.group === "padhyam") {
+            padhyamQuestions.appendChild(card);
+        } else {
+            quizContainer.appendChild(card);
+        }
     });
 
     function checkAnswer(qIndex, selectedIndex) {
