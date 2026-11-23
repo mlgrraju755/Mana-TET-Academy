@@ -1,1 +1,446 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - పరిసరాల అధ్యయనం (ప్రశ్నలు 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>పరిసరాల అధ్యయనం</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - ప్రశ్నలు 121 నుండి 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. కిరణజన్య సంయోగక్రియ ప్రయోగాలలో కార్బన్ డయాక్సైడ్ ను శోషించుకోవడానికి ఏ రసాయనాన్ని ఉపయోగిస్తారు?",
+            options: ["1) సోడియం క్లోరైడ్", "2) పొటాషియం హైడ్రాక్సైడ్", "3) కాపర్ సల్ఫేట్", "4) కాల్షియం కార్బోనేట్"],
+            answer: 1
+        },
+        {
+            q: "122. కింది వ్యాఖ్యలను చదివి, సరైన సమాధానాన్ని ఎంచుకోండి:\nవ్యాఖ్య I: విత్తనాల వ్యాప్తికి పండ్లు ముఖ్యమైనవి.\nవ్యాఖ్య II: విత్తనాలను వ్యాప్తి చేయడంలో సహాయపడే జంతువులను పండ్లు ఆకర్షిస్తాయి.",
+            options: [
+                "1) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ సత్యం",
+                "2) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ అసత్యం",
+                "3) వ్యాఖ్య I అసత్యం, కానీ వ్యాఖ్య II సత్యం",
+                "4) వ్యాఖ్య I సత్యం, కానీ వ్యాఖ్య II అసత్యం"
+            ],
+            answer: 0
+        },
+        {
+            q: "123. బీజదళాలు వీటిలో నిల్వ ఉన్న ఆహారాన్ని వినియోగించుకుని అభివృద్ధి చెందుతాయి:",
+            options: ["1) మూలాంకురం", "2) కాండాంకురం", "3) అంకురచ్ఛదం", "4) బీజకవచం"],
+            answer: 2
+        },
+        {
+            q: "124. ధాన్యాన్ని నిల్వ చేయడానికి ముందు ఎండబెట్టడం యొక్క ప్రధాన ఉద్దేశ్యం:",
+            options: [
+                "1) నిల్వ సమయంలో ధాన్యం బరువును పెంచడం",
+                "2) నిల్వ తర్వాత ధాన్యం రుచిని మెరుగుపరచడం",
+                "3) తేమను తగ్గించి, సూక్ష్మజీవుల పెరుగుదలను నివారించడం",
+                "4) నిల్వ సమయంలో ధాన్యం రంగును మార్చడం"
+            ],
+            answer: 2
+        },
+        {
+            q: "125. కింది వాటిలో, జనసమ్మర్దం ఉండే ప్రదేశాలలో వ్యాధులు వేగంగా వ్యాపించడానికి గల కారణాలలో ఒకటి",
+            options: [
+                "1) పరిసరాలలో ఆక్సిజన్ స్థాయి పెరగడం",
+                "2) జనసమ్మర్దం వలన గాలి ప్రసరణ తగ్గడం",
+                "3) అధికంగా సూర్యరశ్మికి ప్రదర్శితమవడం",
+                "4) సమీపంలో మొక్కల సంఖ్య పెరగడం"
+            ],
+            answer: 1
+        },
+        {
+            q: "126. చెర్నోబిల్ దుర్ఘటన జరగడానికి ప్రధాన కారణం:",
+            options: [
+                "1) విషపూరిత వాయువు లీకేజీ",
+                "2) రసాయన కర్మాగారం పేలుడు",
+                "3) అధిక వేడికి అణు విద్యుత్ రియాక్టర్ కరగడం",
+                "4) రెండు విమానాలు ఢీకొనడం"
+            ],
+            answer: 2
+        },
+        {
+            q: "127. ఒక రైతు మోతాదుకు మించి ఎరువులను ఉపయోగిస్తాడు. ఇది చాలా వరకు దీనికి దారితీస్తుంది:",
+            options: [
+                "1) నీటి శుద్ధి",
+                "2) సమీప జలవనరులలో యూట్రోఫికేషన్",
+                "3) నీటిలో ఆక్సిజన్ పెరుగుదల",
+                "4) అన్ని చోట్ల మొక్కల పెరుగుదల తగ్గిపోవడం"
+            ],
+            answer: 1
+        },
+        {
+            q: "128. కింది కాలుష్య కారకాలను వాటి మూలాలతో జతపరచండి:\nజాబితా-I (కాలుష్య కారకం):\nA) సల్ఫర్ డయాక్సైడ్\nB) కార్బన్ మోనాక్సైడ్\nC) క్లోరోఫ్లోరోకార్బన్లు\nD) ఫార్మాల్డిహైడ్\nజాబితా-II (మూలం):\ni) రిఫ్రిజిరేటర్లు మరియు ఎయిర్ కండిషనర్లు\nii) మోటారు వాహనాల నుండి వెలువడే పొగ\niii) థర్మల్ పవర్ ప్లాంట్లలో బొగ్గును కాల్చడం\niv) ప్లైవుడ్, పార్టికల్ బోర్డ్, జిగురులు మరియు ఇంటి లోపలి ఫర్నిషింగ్లు\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A-iii, B-ii, C-i, D-iv",
+                "2) A-ii, B-iii, C-iv, D-i",
+                "3) A-iii, B-i, C-ii, D-iv",
+                "4) A-iv, B-ii, C-i, D-iii"
+            ],
+            answer: 0
+        },
+        {
+            q: "129. జీవ విచ్ఛిన్న వ్యర్థాలు ప్రధానంగా వీటిని కలిగి ఉంటాయి",
+            options: [
+                "1) ఎలక్ట్రానిక్ వ్యర్థాలు",
+                "2) ప్లాస్టిక్ మరియు పాలిథిన్ పదార్థాలు",
+                "3) గాజు సీసాలు మరియు లోహాలు",
+                "4) మానవ మరియు జంతువుల వ్యర్థాలు"
+            ],
+            answer: 3
+        },
+        {
+            q: "130. కృత్రిమంగా తయారు చేసిన కొన్ని ఆహార పదార్థాల రుచిని ఇలా పిలుస్తారు:",
+            options: ["1) మెటాలిక్ రుచి", "2) ఉప్పు రుచి", "3) చేదు రుచి", "4) పులుపు రుచి"],
+            answer: 0
+        },
+        {
+            q: "131. నోటి ద్వారా ఇచ్చే పోలియో టీకా (OPV) ను అభివృద్ధి చేసినవారు:",
+            options: ["1) ఎడ్వర్డ్ జెన్నర్", "2) జోనాస్ సాల్క్", "3) లూయిస్ పాశ్చర్", "4) ఆల్బర్ట్ సాబిన్"],
+            answer: 3
+        },
+        {
+            q: "132. కింది వాటిలో సరికాని వ్యాఖ్యను గుర్తించండి.",
+            options: [
+                "1) ఎడమ కర్ణిక మరియు ఎడమ జఠరిక మధ్య ఉండే కవాటాన్ని అగ్రద్వయ కవాటం అంటారు.",
+                "2) కుడి కర్ణిక మరియు కుడి జఠరిక మధ్య ఉండే కవాటాన్ని అగ్రత్రయ కవాటం అంటారు.",
+                "3) మహాధమని మరియు పుపుస ధమని మూలాల వద్ద అర్ధచంద్రాకార కవాటాలు ఉంటాయి.",
+                "4) ఎడమ కర్ణిక మరియు కుడి జఠరిక మధ్య ఉండే కవాటాన్ని అగ్రద్వయ కవాటం అంటారు."
+            ],
+            answer: 3
+        },
+        {
+            q: "133. తూర్పు కనుమలు ఈ జిల్లాకు తూర్పు సరిహద్దులో ఉన్నాయి",
+            options: ["1) జయశంకర్ భూపాలపల్లి", "2) మహబూబ్ నగర్", "3) ఆదిలాబాద్", "4) నల్గొండ"],
+            answer: 0
+        },
+        {
+            q: "134. ప్రస్తుతం ఢిల్లీలోని కుతుబ్ మినార్ సముదాయంలో ఉన్న ప్రసిద్ధ మెహ్రౌలీ ఇనుప స్తంభాన్ని వీరు నెలకొల్పారు",
+            options: ["1) సముద్రగుప్తుడు", "2) చంద్రగుప్తుడు II", "3) ఇల్ టుట్ మిష్", "4) కుతుబుద్దీన్ ఐబక్"],
+            answer: 1
+        },
+        {
+            q: "135. నైలు నది ఈ సరస్సు నుండి ఉద్భవిస్తుంది.",
+            options: ["1) హురాన్ సరస్సు (Lake Huron)", "2) విక్టోరియా సరస్సు", "3) న్యాసా సరస్సు", "4) సుపీరియర్ సరస్సు"],
+            answer: 1
+        },
+        {
+            q: "136. క్రీ.శ. 1764లో, ఈ ఆర్కాట్ నవాబు ఫ్రెంచ్ కంపెనీతో పోరాడటానికి తన సైన్యాన్ని పంపాడు",
+            options: ["1) షా ఆలం", "2) సిరాజుద్దౌలా", "3) అన్వరుద్దీన్ ఖాన్", "4) ముజఫర్ జంగ్"],
+            answer: 2
+        },
+        {
+            q: "137. ప్రసిద్ధి చెందిన మరియు సరసమైన ధరలో లభించే, విశిష్టమైన (Tan Brown) లేత గోధుమ రంగు గ్రానైట్ నిక్షేపాలు ఈ జిల్లాలో ఉన్నాయి",
+            options: ["1) వికారాబాద్", "2) ఖమ్మం", "3) కరీంనగర్", "4) నల్గొండ"],
+            answer: 2
+        },
+        {
+            q: "138. అక్బర్ యొక్క రెవెన్యూ మంత్రి తోడర్మల్ అనుసరించిన రెవెన్యూ విధానం",
+            options: ["1) జబ్త్ (Zabt)", "2) ఇక్తా (Ikta)", "3) భాగ (Bhaga)", "4) శుల్క"],
+            answer: 0
+        },
+        {
+            q: "139. డిసెంబర్ 2008లో, భారత రాష్ట్రపతి నుండి ఈ గ్రామం 'నిర్మల గ్రామ పురస్కారాన్ని' పొందింది",
+            options: ["1) గంగదేవిపల్లి", "2) హాజిపురా", "3) అంకాపూర్", "4) రామచంద్రాపురం"],
+            answer: 0
+        },
+        {
+            q: "140. \"మనం ఇతర జీవులకు దుఃఖాన్ని కలిగించినప్పుడు, మన పాపాల భారాన్ని పెంచుకుంటాము\" అని బోధించినవారు",
+            options: ["1) అజిత కేశకంబలిన్", "2) గౌతమ బుద్ధుడు", "3) మహావీరుడు", "4) మక్ఖలి గోశాల"],
+            answer: 2
+        },
+        {
+            q: "141. ఈ పర్వత శ్రేణులు ఐరోపా యొక్క దక్షిణ సరిహద్దును ఏర్పరుస్తున్నాయి",
+            options: ["1) యూరల్ పర్వతాలు", "2) ఆల్ప్స్ పర్వతాలు", "3) పైరినీస్ పర్వతాలు", "4) కాకసస్ పర్వతాలు"],
+            answer: 1
+        },
+        {
+            q: "142. డచ్ కార్టోగ్రఫీ పితామహుడు",
+            options: ["1) గెరార్డస్ మెర్కేటర్", "2) టాలమీ", "3) అల్-ఇద్రిసి", "4) సాదిక్ ఇస్ఫాహానీ"],
+            answer: 0
+        },
+        {
+            q: "143. \"సామ్యవాదం, లౌకిక వాదం మరియు సమగ్రత\" అనే పదాలు భారత రాజ్యాంగ పీఠికకు ఈ కింది చట్టం ద్వారా జోడించబడ్డాయి",
+            options: [
+                "1) 41వ రాజ్యాంగ సవరణ",
+                "2) 43వ రాజ్యాంగ సవరణ",
+                "3) 42వ రాజ్యాంగ సవరణ",
+                "4) 44వ రాజ్యాంగ సవరణ"
+            ],
+            answer: 2
+        },
+        {
+            q: "144. 2011 జనాభా లెక్కల ప్రకారం, తెలంగాణలో అక్షరాస్యత శాతం",
+            options: [
+                "1) పురుషులు - 53, స్త్రీలు – 29",
+                "2) పురుషులు – 75, స్త్రీలు - 58",
+                "3) పురుషులు – 68, స్త్రీలు - 46",
+                "4) పురుషులు - 52, స్త్రీలు - 28"
+            ],
+            answer: 2
+        },
+        {
+            q: "145. కొత్త సాక్ష్యం లభ్యమైనప్పుడు శాస్త్రీయ వివరణ మారవచ్చని ఒక విద్యార్థి వాదిస్తున్నాడు. ఇది ఈ క్రింది వాటిపై అవగాహనను ప్రతిబింబిస్తుంది:",
+            options: [
+                "1) విజ్ఞానశాస్త్రం యొక్క సామాజిక ప్రయోజనం",
+                "2) శాస్త్రీయ జ్ఞానం యొక్క సంచిత స్వభావం",
+                "3) శాస్త్రీయ జ్ఞానం యొక్క తాత్కాలిక స్వభావం",
+                "4) విజ్ఞానశాస్త్రం యొక్క ఆచరణాత్మక విలువ"
+            ],
+            answer: 2
+        },
+        {
+            q: "146. \"ప్రదర్శన పద్ధతి\" మరియు \"ప్రయోగశాల పద్ధతి\" ల మధ్య ఉన్న ప్రధాన వ్యత్యాసాలలో ఒకటి:",
+            options: [
+                "1) విద్యార్థులు పరిశీలిస్తారు వర్సెస్ విద్యార్థులు ప్రయోగాలు చేస్తారు",
+                "2) రెండింటిలోనూ విద్యార్థుల స్వానుభవ భాగస్వామ్యం ఉంటుంది",
+                "3) ప్రయోగశాల సైద్ధాంతికమైనది, ప్రదర్శన ఆచరణాత్మకమైనది",
+                "4) రెండూ కేవలం ఉపాధ్యాయుని కేంద్రీకృతమైనవి"
+            ],
+            answer: 0
+        },
+        {
+            q: "147. సైన్స్ ప్రయోగాల మదింపులో రూబ్రిక్లను ఉపయోగించడం వల్ల కలిగే ప్రధాన ప్రయోజనం:",
+            options: [
+                "1) ఇది ఉపాధ్యాయుల పనిభారాన్ని పూర్తిగా తగ్గిస్తుంది",
+                "2) ఇది గ్రేడింగ్లో వ్యక్తిగత నిర్ణయాన్ని నిర్ధారిస్తుంది",
+                "3) ఇది స్కోరింగ్ లో పారదర్శకత మరియు స్థిరత్వాన్ని మెరుగుపరుస్తుంది",
+                "4) ఇది ప్రయోగాత్మక పరీక్షల అవసరాన్ని తొలగిస్తుంది"
+            ],
+            answer: 2
+        },
+        {
+            q: "148. ఈ కింది వాటిలో, ఏది ఉపాధ్యాయుని పరిసరాల అధ్యయన తరగతి గదిలో సహజ అభ్యసన వాతావరణమును కల్పించుటకు తోడ్పడదు?",
+            options: [
+                "1) అనుభవపూర్వక అభ్యసనం",
+                "2) అనుకరణాత్మక అభ్యసనం",
+                "3) కృత్యాధార అభ్యసనం",
+                "4) కార్యక్రమయుత అభ్యసనం"
+            ],
+            answer: 1
+        },
+        {
+            q: "149. చిత్రాలు, పటాలకు సంబంధించి ఈ కింది వానిలో సరికాని వాక్యమును గుర్తించండి.",
+            options: [
+                "1) రెండింటిలోను రంగులుంటాయి.",
+                "2) పటంలో చిత్రాలు చిన్నపరిమాణంలో గుర్తులుగా చూపించబడుతాయి",
+                "3) సర్వే ఆఫ్ ఇండియా వారు ప్రామాణిక పటాలను, చిత్రాలను తయారు చేస్తారు",
+                "4) చిత్రాలు, పటాలు భావనల అభివృద్ధికి, పునర్బలనానికి ఉపయోగపడుతాయి."
+            ],
+            answer: 2
+        },
+        {
+            q: "150. ఒక ఉపాధ్యాయుడు, విద్యార్థుల యొక్క చురుకైన భాగస్వామ్యంతో ఆర్టిఫిషియల్ ఇంటిలిజెన్స్ టెక్నిక్లను ఉపయోగించి పరిసరాల అధ్యయన భావనలను బోధిస్తున్నాడు. ఇచ్చట ఉపాధ్యాయుడు....\nA) బోధనను అభ్యాసకుల యొక్క ప్రతిచర్యలతో అనుసంధానించాడు\nB) బోధనను కేవలం పాఠ్యవిషయానికే పరిమితం చేశాడు\nC) సాంకేతికతను బోధనతో సమైక్యము చేశాడు\nD) సాంప్రదాయిక బోధనాభ్యసన యుక్తులను అనుసరించాడు.\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A, B, C & D",
+                "2) A, B & D మాత్రమే",
+                "3) A, C & D మాత్రమే",
+                "4) A & C మాత్రమే"
+            ],
+            answer: 3
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
