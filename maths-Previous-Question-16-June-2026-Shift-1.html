@@ -1,1 +1,405 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - గణితం (ప్రశ్నలు 91 - 120)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>గణితం</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - ప్రశ్నలు 91 నుండి 120</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. ((6.56 × 6.56 - 3.44 × 3.44) / (6.56 - 3.44)) ÷ 0.5 =",
+            options: ["1) 10", "2) 4", "3) 20", "4) 5"],
+            answer: 2
+        },
+        {
+            q: "92. సంఖ్య 256 యొక్క మొత్తం కారణాంకాల సంఖ్య:",
+            options: ["1) 12", "2) 8", "3) 16", "4) 9"],
+            answer: 3
+        },
+        {
+            q: "93. 136, 192 మరియు 256 లను నిశ్శేషంగా భాగించే అతిపెద్ద సంఖ్య:",
+            options: ["1) 12", "2) 8", "3) 6", "4) 16"],
+            answer: 1
+        },
+        {
+            q: "94. పొడవు 100 కి.మీ.లలో ఉన్న సెంటీమీటర్ల సంఖ్య:",
+            options: ["1) 10⁷", "2) 10⁴", "3) 10⁶", "4) 10⁵"],
+            answer: 0
+        },
+        {
+            q: "95. (2/3)⁻⁸ × (3/2)⁻¹² = (2/3)ⁿ అయితే, n విలువ:",
+            options: ["1) 2", "2) 4", "3) 3", "4) 5"],
+            answer: 1
+        },
+        {
+            q: "96. 'A' మరియు 'B' కలిసి ఒక పనిని 15 రోజుల్లో చేయగలరు. 'A' ఒక్కడే ఆ పనిని 20 రోజుల్లో చేయగలడు. వారికి ఆ పనికి ₹1200 చెల్లిస్తే, 'A' యొక్క వాటా:",
+            options: ["1) ₹600", "2) ₹800", "3) ₹900", "4) ₹700"],
+            answer: 2
+        },
+        {
+            q: "97. 4, 7, 5, p, 6, 8 ల సరాసరి 6.5 అయితే, p యొక్క విలువ:",
+            options: ["1) 9.5", "2) 8.5", "3) 8", "4) 9"],
+            answer: 3
+        },
+        {
+            q: "98. ఒక అంకె సహజ సంఖ్యను 150 కు కలుపగా మరియు అదే సంఖ్యను 150 నుండి తీసివేయగా వచ్చిన రెండు సంఖ్యల యొక్క మొత్తం:",
+            options: ["1) 300", "2) 150", "3) 100", "4) 200"],
+            answer: 0
+        },
+        {
+            q: "99. a = 9 అయితే, (a + √a) / (a / 3) =",
+            options: ["1) 2", "2) 4", "3) 6", "4) 8"],
+            answer: 1
+        },
+        {
+            q: "100. 220 లో 40% + 160 లో 30% =",
+            options: ["1) 124", "2) 138", "3) 142", "4) 136"],
+            answer: 0
+        },
+        {
+            q: "101. ఒక రేఖాఖండానికి వరుసగా గీయగల గరిష్ట సమద్విఖండనరేఖలు మరియు లంబ సమద్విఖండనరేఖలు ఎన్ని?",
+            options: ["1) 1, ∞", "2) ∞, 1", "3) 1, 2", "4) 2, 2"],
+            answer: 0
+        },
+        {
+            q: "102. రెండు అకరణీయ సంఖ్యల మధ్య ఎన్ని అకరణీయ సంఖ్యలు ఉన్నాయి?",
+            options: ["1) ∞", "2) 0", "3) 1", "4) 2"],
+            answer: 0
+        },
+        {
+            q: "103. 12 గంటల్లో సెకన్ల సంఖ్య ఇన్ని రోజులలోని నిమిషాల సంఖ్యకు సమానం:",
+            options: ["1) 36", "2) 20", "3) 30", "4) 12"],
+            answer: 2
+        },
+        {
+            q: "104. ఒక దీర్ఘచతురస్రం పొడవు, చుట్టుకొలత 60 సెం.మీ.గా ఉన్న చతురస్రం భుజం పొడవుకు రెండు రెట్లు. ఆ దీర్ఘచతురస్రం వెడల్పు 15 సెం.మీ. అయితే, ఆ దీర్ఘచతురస్రం వైశాల్యం (చ.సెం.మీ.లలో) ఆ చతురస్రం వైశాల్యం కంటే ఎంత ఎక్కువ:",
+            options: ["1) 225", "2) 350", "3) 275", "4) 325"],
+            answer: 2
+        },
+        {
+            q: "105. 13215 ను 12 తో మరియు 14226 ను 14 తో భాగిస్తే వచ్చే శేషాల మొత్తం:",
+            options: ["1) 4", "2) 2", "3) 3", "4) 5"],
+            answer: 0
+        },
+        {
+            q: "106. కింది వాక్యాలలో ఏది తప్పు?",
+            options: [
+                "1) ఒక దీర్ఘచతురస్రం ఒక చతురస్రం కాదు",
+                "2) ఒక గాలిపటం ఒక సమాంతర చతుర్భుజం కాదు",
+                "3) ఒక సమలంబ చతుర్భుజం ఒక సమాంతర చతుర్భుజం",
+                "4) ఒక సమ చతుర్భుజం ఒక చతురస్రం కాదు"
+            ],
+            answer: 2
+        },
+        {
+            q: "107. ఒక సమద్విబాహు త్రిభుజంలో, అసమాన కోణం సమాన కోణాల మొత్తానికి రెండు రెట్లు అయితే, ప్రతి సమాన కోణం:",
+            options: ["1) 60°", "2) 45°", "3) 90°", "4) 30°"],
+            answer: 3
+        },
+        {
+            q: "108. ఒక సంఖ్యను 16 తో భాగించినప్పుడు, శేషం 4 వస్తుంది. విభాజకం మరియు భాగఫలంల మొత్తం 30 అయితే, ఆ సంఖ్య ఎంత?",
+            options: ["1) 260", "2) 228", "3) 244", "4) 224"],
+            answer: 2
+        },
+        {
+            q: "109. 897 మరియు 405 ల మొత్తాన్ని 724 మరియు 1188 ల మొత్తం నుండి తీసివేసినప్పుడు, వచ్చే ఫలితం:",
+            options: ["1) 700", "2) 710", "3) 610", "4) 600"],
+            answer: 2
+        },
+        {
+            q: "110. కింది భిన్నాలను అవరోహణ క్రమంలో అమర్చండి:  1/4,  5/7,  2/3,  6/8",
+            options: [
+                "1) 6/8,  5/7,  2/3,  1/4",
+                "2) 1/4,  2/3,  5/7,  6/8",
+                "3) 6/8,  1/4,  2/3,  5/7",
+                "4) 1/4,  5/7,  6/8,  2/3"
+            ],
+            answer: 0
+        },
+        {
+            q: "111. 20 నుండి 29 వరకు ఉన్న సహజ సంఖ్యల మొత్తం:",
+            options: ["1) 235", "2) 255", "3) 245", "4) 265"],
+            answer: 2
+        },
+        {
+            q: "112. కింది వాటిలో అతి చిన్న ప్రధాన సంఖ్య:",
+            options: ["1) 3", "2) 1", "3) 0", "4) 2"],
+            answer: 3
+        },
+        {
+            q: "113. కింది ఆంగ్ల అక్షరాలలో దేనిని నిలువు రేఖ ద్వారా రెండు సమానమైన మరియు సౌష్టవ భాగాలుగా విభజించవచ్చు?",
+            options: ["1) H", "2) K", "3) E", "4) R"],
+            answer: 0
+        },
+        {
+            q: "114. కింది వాటిలో ఏ అకరణీయ సంఖ్య అంతమయ్యే దశాంశ విస్తరణను కలిగి ఉంటుంది?",
+            options: ["1) 72/455", "2) 84/1600", "3) 31/343", "4) 59/300"],
+            answer: 1
+        },
+        {
+            q: "115. ఉపాధ్యాయుని పాత్రలను వారి విధులతో జతపరచండి:\nజాబితా I:\nA) సౌలభ్యకర్త (Facilitator)\nB) మూల్యాంకనం చేయువాడు (Evaluator)\nC) మార్గదర్శి (Guide)\nD) ప్రేరకుడు (Motivator)\nజాబితా II:\ni) విద్యార్థులను ప్రోత్సహిస్తాడు\nii) దిశానిర్దేశం చేస్తాడు\niii) విద్యార్థి పనితీరును అంచనా వేస్తాడు\niv) అభ్యసన ప్రక్రియకు సహకరిస్తాడు\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A-iv, B-iii, C-ii, D-i",
+                "2) A-iii, B-iv, C-i, D-ii",
+                "3) A-i, B-ii, C-iv, D-iii",
+                "4) A-ii, B-i, C-iii, D-iv"
+            ],
+            answer: 0
+        },
+        {
+            q: "116. క్రింద ఇవ్వబడిన ప్రతిపాదన మరియు కారణం అను రెండు వాక్యాలలో సరైన ఎంపికను ఎంచుకోండి:\nప్రతిపాదన (A): “అనుసంధానం” అను ప్రమాణం గణితానికి మరియు ఇతర విషయాలకు మధ్య ఉన్న సంబంధానికి సంబంధించినది.\nకారణం (R): గణితం అనేది ఇతర శాస్త్రాలతో సంబంధం లేని ఒక ప్రత్యేకమైన విషయం.",
+            options: [
+                "1) A మరియు R రెండూ సత్యం, మరియు R అనేది A కు సరైన వివరణ.",
+                "2) A మరియు R రెండూ సత్యం, కానీ R అనేది A కు సరైన వివరణ కాదు.",
+                "3) A సత్యం, కానీ R అసత్యం.",
+                "4) A అసత్యం, కానీ R సత్యం."
+            ],
+            answer: 2
+        },
+        {
+            q: "117. కరికులంను సవరించడానికి అవసరమైన కారణం:",
+            options: [
+                "1) సవరించే సంప్రదాయాన్ని కొనసాగించడానికి మాత్రమే",
+                "2) సిలబస్ ను మార్చకుండా ఉండటానికి",
+                "3) సమాజం యొక్క మారుతున్న అవసరాలను తీర్చడానికి",
+                "4) సిలబస్ ను తగ్గించడానికి లేదా పెంచడానికి"
+            ],
+            answer: 2
+        },
+        {
+            q: "118. గణితాన్ని ఒక సార్వత్రిక భాషగా పరిగణించడానికి గల కారణం:",
+            options: [
+                "1) ఇది ప్రపంచవ్యాప్తంగా ఆంగ్లంలో వ్రాయబడుతుంది",
+                "2) ఇది ప్రపంచవ్యాప్తంగా అర్థమయ్యే సంకేతాలను ఉపయోగిస్తుంది",
+                "3) ఇది ప్రపంచ సంస్కృతిపై ఆధారపడుతుంది",
+                "4) ఇది ఒక ప్రాంతం నుండి మరొక ప్రాంతానికి ప్రపంచవ్యాప్తంగా మారుతుంది"
+            ],
+            answer: 1
+        },
+        {
+            q: "119. కింది వాటిలో ఏది గణితశాస్త్ర నిగమన స్వభావాన్ని (deductive nature) సూచిస్తుంది?",
+            options: [
+                "1) ప్రయోగాల ఆధారంగా మాత్రమే నిర్ధారణలకు రావడం",
+                "2) వివిధ సందర్భాలను, ఉదాహరణలను పరిశీలించి వాటి ఆధారంగా సాధారణీకరించడం",
+                "3) ఫలితాల కోసం యాదృచ్ఛికంగా ఊహించడం",
+                "4) ఇప్పటికే నిరూపించబడిన సిద్ధాంతాల నుండి మరికొన్ని సిద్ధాంతాలను రాబట్టడం"
+            ],
+            answer: 3
+        },
+        {
+            q: "120. గణిత బోధనలో TLM (బోధనాభ్యసన సామగ్రి) ఉపయోగించడం యొక్క ప్రధాన ఉద్దేశ్యం:",
+            options: [
+                "1) సిలబస్ భారాన్ని మరియు ఖర్చులను పెంచడం",
+                "2) అభ్యసనాన్ని మూర్తంగా మరియు అర్థవంతంగా చేయడం",
+                "3) అభ్యసనాన్ని అమూర్తంగా మరియు సులభంగా చేయడం",
+                "4) తరగతిలో విద్యార్థుల భాగస్వామ్యాన్ని తగ్గించడం"
+            ],
+            answer: 1
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
