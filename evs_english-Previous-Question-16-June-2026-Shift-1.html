@@ -1,1 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - Environmental Studies (Questions 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Environmental Studies</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - Questions 121 to 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. Which chemical is used to absorb carbon dioxide in photosynthesis experiments?",
+            options: ["1) Sodium chloride", "2) Potassium hydroxide", "3) Copper sulphate", "4) Calcium carbonate"],
+            answer: 1
+        },
+        {
+            q: "122. Read the following statements and choose the correct answer:\nStatement I: Fruits are important for seed dispersal.\nStatement II: Fruits attract animals that help spread seeds.",
+            options: [
+                "1) Both Statement I and Statement II are true",
+                "2) Both Statement I and Statement II are false",
+                "3) Statement I is false, but Statement II is true",
+                "4) Statement I is true, but Statement II is false"
+            ],
+            answer: 0
+        },
+        {
+            q: "123. The cotyledons develop by utilising the food stored in:",
+            options: ["1) Radicle", "2) Plumule", "3) Endosperm", "4) Seed coat"],
+            answer: 2
+        },
+        {
+            q: "124. The main purpose of drying grains before storage is",
+            options: [
+                "1) to increase grain weight during storage",
+                "2) to improve the taste of grains after storage",
+                "3) to reduce moisture and prevent microbial growth",
+                "4) to change the colour of grains during storage"
+            ],
+            answer: 2
+        },
+        {
+            q: "125. Among the following, one of the reasons for the rapid spread of diseases in crowded places is",
+            options: [
+                "1) increased oxygen in the surroundings",
+                "2) reduced air circulation in crowded places",
+                "3) increased exposure to sunlight",
+                "4) increased number of plants nearby"
+            ],
+            answer: 1
+        },
+        {
+            q: "126. The main reason behind the Chernobyl incident was",
+            options: [
+                "1) Leakage of poisonous gas",
+                "2) Explosion of a chemical factory",
+                "3) Meltdown of a nuclear power reactor due to excess heat",
+                "4) Collision of two aircrafts"
+            ],
+            answer: 2
+        },
+        {
+            q: "127. A farmer uses excessive fertilizers. This most likely leads to:",
+            options: [
+                "1) Water purification",
+                "2) Eutrophication in nearby water bodies",
+                "3) Increased oxygen in water",
+                "4) Decreased plant growth everywhere"
+            ],
+            answer: 1
+        },
+        {
+            q: "128. Match the Following Pollutants with their Sources:\nList-I (Pollutant):\nA) Sulphur dioxide\nB) Carbon monoxide\nC) Chlorofluorocarbons\nD) Formaldehyde\nList-II (Source):\ni) Refrigerators and air conditioners\nii) Motor vehicle exhaust\niii) Burning of coal in thermal power plants\niv) Plywood, particle board, adhesives, and indoor furnishings\nChoose the correct answer:",
+            options: [
+                "1) A-iii, B-ii, C-i, D-iv",
+                "2) A-ii, B-iii, C-iv, D-i",
+                "3) A-iii, B-i, C-ii, D-iv",
+                "4) A-iv, B-ii, C-i, D-iii"
+            ],
+            answer: 0
+        },
+        {
+            q: "129. Biodegradable wastes mainly consist of",
+            options: [
+                "1) Electronic waste",
+                "2) Plastic and polythene materials",
+                "3) Glass bottles and metals",
+                "4) Human and animal waste"
+            ],
+            answer: 3
+        },
+        {
+            q: "130. The taste of some artificial processed food materials is called",
+            options: ["1) Metallic taste", "2) Salty taste", "3) Bitter taste", "4) Sour taste"],
+            answer: 0
+        },
+        {
+            q: "131. The oral polio vaccine (OPV) was developed by",
+            options: ["1) Edward Jenner", "2) Jonas Salk", "3) Louis Pasteur", "4) Albert Sabin"],
+            answer: 3
+        },
+        {
+            q: "132. Identify the INCORRECT statement from the following.",
+            options: [
+                "1) The valve present between left atrium and left ventricle is called bicuspid valve.",
+                "2) The valve present between right atrium and right ventricle is called tricuspid valve.",
+                "3) The semilunar valves are present at the base of aorta and pulmonary artery.",
+                "4) The valve present between left atrium and right ventricle is called bicuspid valve."
+            ],
+            answer: 3
+        },
+        {
+            q: "133. Eastern ghats are located on the eastern border of this district",
+            options: ["1) Jayashanker Bhoopalapally", "2) Mahaboob Nagar", "3) Adilabad", "4) Nalgonda"],
+            answer: 0
+        },
+        {
+            q: "134. The famous Mehrauli Iron Pillar now in Qutub Minar Complex in Delhi was probably set up by",
+            options: ["1) Samudra Gupta", "2) Chandra Gupta II", "3) Iltutmish", "4) Qutubuddin Aibak"],
+            answer: 1
+        },
+        {
+            q: "135. The Nile River originates from this lake",
+            options: ["1) Lake Huron", "2) Lake Victoria", "3) Lake Nyasa", "4) Lake Superior"],
+            answer: 1
+        },
+        {
+            q: "136. In 1764 CE, the Nawab of Arcot who sent his army to fight against French company was",
+            options: ["1) Shah Alam", "2) Sirajuddaula", "3) Anwaruddin Khan", "4) Muzaffar Jang"],
+            answer: 2
+        },
+        {
+            q: "137. The unique Tan Brown granite that is popular and affordable natural stone deposits are found in this district of Telangana",
+            options: ["1) Vikarabad", "2) Khammam", "3) Karimnagar", "4) Nalgonda"],
+            answer: 2
+        },
+        {
+            q: "138. The revenue system followed by Akbar's revenue minister Todarmal was known as",
+            options: ["1) Zabt", "2) Ikta", "3) Bhaga", "4) Shulka"],
+            answer: 0
+        },
+        {
+            q: "139. In December 2008, this village got the 'Nirmala Grama Puraskar' from the President of India",
+            options: ["1) Gangadevipalli", "2) Hazipura", "3) Ankapur", "4) Ramachandrapuram"],
+            answer: 0
+        },
+        {
+            q: "140. \"When we inflict sorrow on other living beings, we add to our load of sins\", taught by",
+            options: ["1) Ajita Keshkambalin", "2) Gautama Buddha", "3) Mahaveera", "4) Makhkhali Goshala"],
+            answer: 2
+        },
+        {
+            q: "141. The mountain ranges that form the Southern boundary of Europe are",
+            options: ["1) The Ural Mountains", "2) The Alps Mountains", "3) The Pyrenees Mountains", "4) The Caucasian Mountains"],
+            answer: 1
+        },
+        {
+            q: "142. The Father of Dutch Cartography was",
+            options: ["1) Gerardus Mercator", "2) Ptolemy", "3) Al Idrisi", "4) Sadiq Isfahan"],
+            answer: 0
+        },
+        {
+            q: "143. The words \"Socialist, Secular and Integrity\" were added to the Preamble of the Indian Constitution by this act",
+            options: [
+                "1) 41st amendment act",
+                "2) 43rd amendment act",
+                "3) 42nd amendment act",
+                "4) 44th amendment act"
+            ],
+            answer: 2
+        },
+        {
+            q: "144. As per 2011 Census, the Literacy rate in Telangana was",
+            options: [
+                "1) Male 53, Female - 29",
+                "2) Male 75, Female - 58",
+                "3) Male 68, Female - 46",
+                "4) Male 52, Female - 28"
+            ],
+            answer: 2
+        },
+        {
+            q: "145. A student argues that a scientific explanation may change when new evidence becomes available. This reflects an understanding of:",
+            options: [
+                "1) the social utility of science",
+                "2) the cumulative nature of scientific knowledge",
+                "3) the tentative nature of scientific knowledge",
+                "4) the practical value of science"
+            ],
+            answer: 2
+        },
+        {
+            q: "146. One of the main differences between \"demonstration method\" and \"laboratory method\" is",
+            options: [
+                "1) Students observe vs students perform experiments",
+                "2) Both include students hands on participation",
+                "3) Laboratory is theoretical, demonstration is practical",
+                "4) Both are teacher-centered only"
+            ],
+            answer: 0
+        },
+        {
+            q: "147. The main advantage of using rubrics in science practical assessment is:",
+            options: [
+                "1) It reduces teacher workload completely",
+                "2) It ensures subjective judgment in grading",
+                "3) It improves transparency and consistency in scoring",
+                "4) It eliminates need for practical exams"
+            ],
+            answer: 2
+        },
+        {
+            q: "148. Which one of the following is NOT helpful to the teacher to create the natural learning atmosphere in EVS classroom?",
+            options: [
+                "1) Experiential learning",
+                "2) Imitational learning",
+                "3) Activity based learning",
+                "4) Programmed learning"
+            ],
+            answer: 1
+        },
+        {
+            q: "149. Identify the WRONG statement from the following about pictures and maps",
+            options: [
+                "1) Both have colours",
+                "2) In map, pictures are shown in small size in symbolic form",
+                "3) Survey of India prepares standard maps and pictures",
+                "4) Pictures and Maps are useful for development of concepts and reinforcement"
+            ],
+            answer: 2
+        },
+        {
+            q: "150. With the active participation of students, a teacher is teaching EVS concepts with the help of Artificial Intelligence techniques. Here the teacher...\nA) Linked the teaching with learner's interaction\nB) Limited the teaching with text only\nC) Integrated the technology with teaching\nD) Followed the traditional teaching learning techniques\nChoose the correct answer:",
+            options: [
+                "1) A, B, C & D",
+                "2) A, B & D only",
+                "3) A, C & D only",
+                "4) A & C only"
+            ],
+            answer: 3
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
