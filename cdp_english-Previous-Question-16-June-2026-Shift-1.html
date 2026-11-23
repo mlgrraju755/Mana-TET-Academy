@@ -1,1 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 1) - Child Development and Pedagogy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Child Development and Pedagogy</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 1) - Questions 1 to 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. This factor is the real starting point and basis for all the growth and development:",
+            options: ["1) Emotional", "2) Heredity", "3) Social nature", "4) Intelligence"],
+            answer: 1
+        },
+        {
+            q: "2. According to this Principle of Growth and Development, development is step-by-step process, showing progress isn't a straight line but a cyclical journey where old skills are consolidated before advancing further:",
+            options: [
+                "1) Principle of individual differences",
+                "2) Principle of spiral vs linear advancement",
+                "3) Principle of proximo-distal direction in development",
+                "4) Principle of cephalo caudal direction in development"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. One among the following is an unsocial character:",
+            options: [
+                "1) Conflict management",
+                "2) Communication",
+                "3) Ego centric",
+                "4) Assertiveness"
+            ],
+            answer: 2
+        },
+        {
+            q: "4. Read the following two statements:\nStatement A: Teacher has the responsibility of playing the role of a facilitator in the development of her students.\nStatement B: Teacher must have proper knowledge of developmental psychology.\nChoose the correct answer:",
+            options: [
+                "1) Only statement B is correct",
+                "2) Both statements A & B are incorrect",
+                "3) Only statement A is correct",
+                "4) Both statements A & B are correct"
+            ],
+            answer: 3
+        },
+        {
+            q: "5. Language Acquisition Device (LAD) according to Chomsky is:",
+            options: ["1) Innate", "2) Acquired", "3) Environment based", "4) Relative"],
+            answer: 0
+        },
+        {
+            q: "6. Sai is a school going boy who wakes up daily at 7.00 am. To catch the bus at 7.30 a.m. he does all his activities for getting ready in a same sequential order and within the same time daily. This behaviour is an example for:",
+            options: ["1) Instinct", "2) Interest", "3) Habit", "4) Exercise"],
+            answer: 2
+        },
+        {
+            q: "7. The first Binet-Simon test of intelligence was developed for the age group of:",
+            options: ["1) 20 years and above", "2) 0-4 years", "3) 16-20 years", "4) 3-13 years"],
+            answer: 3
+        },
+        {
+            q: "8. A child due to parathyroid malfunction used to feel fatigued quickly while doing activities. Everyone around him saw him as a lazy person and over a period of time he developed a sense of low self-worth. The factors that contributed to his self-perception about his personality are:\nA. Biological\nB. Environmental\nChoose the correct answer:",
+            options: ["1) Both A & B", "2) A only", "3) B only", "4) Neither A nor B"],
+            answer: 0
+        },
+        {
+            q: "9. A boss being excessively friendly with his subordinates to hide his insufficient skills is an example for this defense mechanism:",
+            options: ["1) Compensation", "2) Identification", "3) Rationalisation", "4) Repression"],
+            answer: 0
+        },
+        {
+            q: "10. Identify the tool from the items shown below that are part of it:\nA. Which is your favourite place in India?\nB. What are the things that make this place your favourite?\nC. How many times did you visit that place?",
+            options: [
+                "1) Questionnaire",
+                "2) Personality inventory",
+                "3) Rating scale",
+                "4) Anecdotal record"
+            ],
+            answer: 0
+        },
+        {
+            q: "11. Methodology of learning is related to:\nA. Input\nB. Output\nC. Process\nChoose the correct answer:",
+            options: ["1) B & C only", "2) A & C only", "3) C only", "4) A, B & C"],
+            answer: 2
+        },
+        {
+            q: "12. Yuvansh wanted to be a football player. Inspite of the challenging situation of lack of proper facilities and coach for learning football at his place he became a good football player. The factor that contributed to his success is associated with the:",
+            options: ["1) Environment", "2) Learner", "3) Rewards", "4) Type of training"],
+            answer: 1
+        },
+        {
+            q: "13. Teja has developed a habit of getting angry and hitting people even for slightest stimulation. His parents with the help of an expert have brought a change in his behaviour that there was no incidence of anger for quite a long time. Suddenly, when one day he saw some people ridiculing his sister he got angry and hit all of them. This is an example for:",
+            options: [
+                "1) Extinction",
+                "2) Discrimination",
+                "3) Generalisation",
+                "4) Spontaneous recovery"
+            ],
+            answer: 3
+        },
+        {
+            q: "14. A small child who had the experience of getting balls by putting coins in the machine in the play zone inserted coins to get soft drink bottles from the vending machine he saw in a mall. This is an example for this law of learning of Thorndike:",
+            options: [
+                "1) Law of multiple responses",
+                "2) Law of readiness",
+                "3) Law of analogy",
+                "4) Law of attitude"
+            ],
+            answer: 2
+        },
+        {
+            q: "15. According to Piaget, a child starts to think hypothetically from this stage:",
+            options: [
+                "1) Concrete operational",
+                "2) Formal operational",
+                "3) Pre-operational",
+                "4) Intuitive phase"
+            ],
+            answer: 1
+        },
+        {
+            q: "16. In a school sports day event children were performing a drill when suddenly all spectators started clapping because the students have organised themselves in such a way that it appeared like their school's name. There was a gap between students performing the drill but the tendency to group elements according to their nearness has made the spectators perceive it as the school's name. This law of perceptual organisation was called by Gestalts as:",
+            options: ["1) Discrimination", "2) Simplicity", "3) Similarity", "4) Proximity"],
+            answer: 3
+        },
+        {
+            q: "17. One among the following psychologists has NOT mentioned specific stages of development:",
+            options: ["1) Kohlberg", "2) Piaget", "3) Vygotsky", "4) Erickson"],
+            answer: 2
+        },
+        {
+            q: "18. Read the following two statements:\nStatement A: Interest is the key word and central figure in any process of motivation.\nStatement B: Teachers should make teaching learning tasks as interesting as possible.\nChoose the correct answer:",
+            options: [
+                "1) Only statement B is correct",
+                "2) Both statements A & B are incorrect",
+                "3) Both statements A & B are correct",
+                "4) Only statement A is correct"
+            ],
+            answer: 2
+        },
+        {
+            q: "19. Shakthi has learned to make two different designs of garlands. After some days when she tried to make the first design of garland the second design was interfering. This is an example for:",
+            options: [
+                "1) Decay",
+                "2) Pro-active inhibition",
+                "3) Repression",
+                "4) Retro-active inhibition"
+            ],
+            answer: 3
+        },
+        {
+            q: "20. Due to lack of meaningful connections, this type of learning does NOT help in positive transfer of learning:",
+            options: [
+                "1) Rote learning",
+                "2) Insightful learning",
+                "3) Observational learning",
+                "4) Discovery learning"
+            ],
+            answer: 0
+        },
+        {
+            q: "21. In the Rights of Persons with Disabilities (RPwD) Act, 2016, persons with more than one disability condition are included under:",
+            options: [
+                "1) Heterogenous disabilities",
+                "2) Mixed disabilities",
+                "3) Miscellaneous disabilities",
+                "4) Multiple disabilities"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. In this method, a group of people sit and generate a number of ideas to arrive at a solution for the problem:",
+            options: ["1) Observation", "2) Survey", "3) Project", "4) Brainstorming"],
+            answer: 3
+        },
+        {
+            q: "23. Identify the INCORRECT statement relating to 'play':",
+            options: [
+                "1) It is a direct method of teaching",
+                "2) Learning takes place through activities",
+                "3) Learners remain active",
+                "4) It is joyful and learners do not feel learning as a burden"
+            ],
+            answer: 0
+        },
+        {
+            q: "24. A teacher has given a sentence to the students and asked them to guess the meaning of the underlined word. According to Bruner, this is an example for fostering:",
+            options: [
+                "1) Creative thinking",
+                "2) Intuitive thinking",
+                "3) Abstract thinking",
+                "4) Deductive thinking"
+            ],
+            answer: 1
+        },
+        {
+            q: "25. Comparison of actual behaviour change of students with the expected behaviour happens during this phase of teaching:",
+            options: [
+                "1) Pre-active",
+                "2) Post-active",
+                "3) Inter-active",
+                "4) Preliminary"
+            ],
+            answer: 1
+        },
+        {
+            q: "26. One among the following is NOT an advantage of ICT in education:",
+            options: [
+                "1) ICT extends the child's learning environment",
+                "2) ICT offers a range of tools to accommodate different learners",
+                "3) ICT promotes passive learning",
+                "4) ICT can be used in revision of concepts"
+            ],
+            answer: 2
+        },
+        {
+            q: "27. Guidance aims to:\nA. prepare for future\nB. address present challenges\nC. correct past incidents\nChoose the correct answer:",
+            options: [
+                "1) A & B only",
+                "2) A & C only",
+                "3) C only",
+                "4) B & C only"
+            ],
+            answer: 0
+        },
+        {
+            q: "28. Under Section 21 of 'The Protection of Children from Sexual Offences Act (POCSO), 2012', any person who fails to report the commission of an offence shall be punished with imprisonment which may extend to:",
+            options: ["1) Five years", "2) One year", "3) Two years", "4) Six months"],
+            answer: 3
+        },
+        {
+            q: "29. Identify the INCORRECT statement relating to 'Continuous Evaluation' among the following:",
+            options: [
+                "1) Continuous evaluation is to be conducted in oral mode only",
+                "2) Continuous evaluation is formative in nature",
+                "3) Continuous evaluation is school based",
+                "4) Continuous evaluation aims to improve learning"
+            ],
+            answer: 0
+        },
+        {
+            q: "30. The National Curriculum Framework (NCF), 2005 has recommended for reducing the curriculum load based on insights provided in this report:",
+            options: [
+                "1) Indian Education Commission",
+                "2) Secondary Education Commission",
+                "3) Learning without burden",
+                "4) University Education Commission"
+            ],
+            answer: 2
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const correctIndex = quizData[qIndex].answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${quizData[qIndex].options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
