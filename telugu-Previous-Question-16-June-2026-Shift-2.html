@@ -1,1 +1,571 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - భాష I - తెలుగు (ప్రశ్నలు 31 - 60)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .passage-box {
+            background: #eef6fc;
+            border: 1px solid #b8daf5;
+            border-left: 5px solid #2980b9;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 24px 0 18px 0;
+        }
+        .passage-title {
+            font-weight: bold;
+            color: #1f4e78;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .passage-text {
+            font-size: 1.02em;
+            color: #222;
+            white-space: pre-line;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>భాష I - తెలుగు</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - ప్రశ్నలు 31 నుండి 60</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const gadyamBlock = {
+        beforeQuestionIndex: 0,
+        title: "గద్యం (ప్రశ్నలు 31 నుండి 34 వరకు)",
+        text: "పంచతంత్ర కథలు అంటే తెలియని వారుండరు. వాటి ప్రశస్తి ప్రపంచవ్యాప్తం. ఆ కథలు ఆ నోటా ఈ నోటా పడి ఎన్నెన్నో భాషల్లోకి మారిపోయాయి. క్రీ.పూ. 200 లో విష్ణుశర్మ పంచతంత్ర కథలను రాశాడు. పంచతంత్రంలోని కొన్ని కథలకు రుగ్వేదకాలంలో ఆనవాళ్లు దొరికాయి. చారిత్రకంగా ఈ కథలు చాలా పురాతనమైనవి. ఈ కథలు వచ్చి రెండువేల యేళ్లకు పైగా అయినప్పటికీ ప్రజలను చదివింపచేసే లక్షణం ఉండడం వాటి గొప్పతనానికి సాక్ష్యం. ఎనిమిదవ శతాబ్దంలో పంచతంత్రానికి అరబిక్ అనువాదం, పదకొండవ శతాబ్దంలో గ్రీకు అనువాదం వచ్చింది. ఇంతేకాదు, అనేక యూరోపియన్ భాషల్లో పంచతంత్ర కథలు కనిపిస్తాయి. మొత్తంగా యాభైకి పైగా ప్రపంచ ప్రధాన భాషల్లో పంచతంత్రం దర్శనమిస్తుంది."
+    };
+
+    const padyamBlock = {
+        beforeQuestionIndex: 4,
+        title: "పద్యం (ప్రశ్నలు 35 నుండి 38 వరకు)",
+        text: "ఇచ్చునదే విద్య రణమునజొచ్చునదే మగతనంబు సుకవీశ్వరులున్మెచ్చునదె నేర్పు వాదుకువచ్చునదే కీడు సుమ్ము వసుధను సుమతీ!"
+    };
+
+    const quizData = [
+        {
+            q: "31. అనేక భాషల్లోకి మారిపోయిన కథలు",
+            options: [
+                "1) మర్యాద రామన్న కథలు",
+                "2) పంచతంత్ర కథలు",
+                "3) విక్రమార్క కథలు",
+                "4) పేదరాసి పెద్దమ్మ కథలు"
+            ],
+            answer: 1
+        },
+        {
+            q: "32. ఈ వేదకాలంలో పంచతంత్ర కథల ఆనవాళ్లు దొరికాయి",
+            options: [
+                "1) సామవేద కాలం",
+                "2) అధర్వణవేద కాలం",
+                "3) రుగ్వేద కాలం",
+                "4) యజుర్వేద కాలం"
+            ],
+            answer: 2
+        },
+        {
+            q: "33. పంచతంత్ర కథల గొప్పతనానికి సాక్ష్యం",
+            options: [
+                "1) పురాతన కథలు కావడం",
+                "2) అనేక భాషల్లోకి మారడం",
+                "3) విష్ణుశర్మ రాయడం",
+                "4) ప్రజలను చదివింపచేసే లక్షణం"
+            ],
+            answer: 3
+        },
+        {
+            q: "34. పంచతంత్ర కథలు కనబడే ప్రపంచ ప్రధాన భాషలు",
+            options: [
+                "1) 8 కి పైగా",
+                "2) 11 కి పైగా",
+                "3) 50 కి పైగా",
+                "4) 200 కు పైగా"
+            ],
+            answer: 2
+        },
+        {
+            q: "35. ఈ పద్యంలో 'సుమతీ' అనే పదం",
+            options: [
+                "1) ఆదిప్రాస",
+                "2) అంత్యప్రాస",
+                "3) మకుటం",
+                "4) యతి"
+            ],
+            answer: 2
+        },
+        {
+            q: "36. పలువురికి పంచి పెట్టాల్సింది",
+            options: [
+                "1) మగతనం",
+                "2) నేర్పు",
+                "3) వాదు",
+                "4) విద్య"
+            ],
+            answer: 3
+        },
+        {
+            q: "37. 'నేర్పు' అంటే",
+            options: [
+                "1) జ్ఞానాన్ని పంచడం",
+                "2) యుద్ధంలో ప్రవేశించడం",
+                "3) నింద నుండి తప్పించుకోవడం",
+                "4) మంచికవులు మెచ్చుకోవడం"
+            ],
+            answer: 3
+        },
+        {
+            q: "38. నింద రావడమనేది",
+            options: [
+                "1) మేలు",
+                "2) కీడు",
+                "3) నేర్పు",
+                "4) మగతనం"
+            ],
+            answer: 1
+        },
+        {
+            q: "39. 'ఎగ్గులు' పదానికి అర్థం",
+            options: [
+                "1) ఒప్పు",
+                "2) కొట్లాట",
+                "3) ఇంద్రజాలం",
+                "4) తిట్లు"
+            ],
+            answer: 3
+        },
+        {
+            q: "40. నవరసాలలో ఒకటి కానిది",
+            options: [
+                "1) వీరం",
+                "2) క్రోధం",
+                "3) హాస్యం",
+                "4) భయానకం"
+            ],
+            answer: 0
+        },
+        {
+            q: "41. 'పాదము' పదానికి నానార్థం",
+            options: [
+                "1) కిరణము",
+                "2) తనువు",
+                "3) కొమ్మ",
+                "4) చెట్టు"
+            ],
+            answer: 0
+        },
+        {
+            q: "42. 'యుగ్మం' పదానికి అర్థం",
+            options: [
+                "1) రాయి",
+                "2) వంతెన",
+                "3) జంట",
+                "4) చెమట"
+            ],
+            answer: 2
+        },
+        {
+            q: "43. మేఘానికి పర్యాయపదం కానిది",
+            options: [
+                "1) మొగులు",
+                "2) జీమూతం",
+                "3) వారిదం",
+                "4) మారుతం"
+            ],
+            answer: 3
+        },
+        {
+            q: "44. రాజు పులిని చూసి అమ్మో! అంటూ పరుగెత్తాడు. గీత గీసిన పదం ('అమ్మో!')",
+            options: [
+                "1) విశేషణం",
+                "2) విశేష్యం",
+                "3) అవ్యయం",
+                "4) సర్వనామం"
+            ],
+            answer: 2
+        },
+        {
+            q: "45. తల్లిదండ్రులు పిల్లలను ప్రేమగా చూసుకుంటారు. గీత గీసిన పదంలోని ('తల్లిదండ్రులు') సమాసం",
+            options: [
+                "1) ద్విగు సమాసం",
+                "2) ద్వంద్వ సమాసం",
+                "3) బహువ్రీహి సమాసం",
+                "4) కర్మధారయ సమాసం"
+            ],
+            answer: 1
+        },
+        {
+            q: "46. 'నీటినిసుమంత' పదంలోని సంధి రూపం",
+            options: [
+                "1) నీటి + నిసుమంత",
+                "2) నీటిని + సుమంత",
+                "3) నీటిని + అసుమంత",
+                "4) నీటిని + ఇసుమంత"
+            ],
+            answer: 3
+        },
+        {
+            q: "47. పూర్వస్వరం అంటే",
+            options: [
+                "1) మొదటి పదంలోని చివరి అచ్చు",
+                "2) రెండవ పదంలోని మొదటి అచ్చు",
+                "3) మొదటి పదంలోని మొదటి అక్షరం",
+                "4) రెండవ పదంలోని చివరి అక్షరం"
+            ],
+            answer: 0
+        },
+        {
+            q: "48. 'పింగళి వెంకయ్య త్రివర్ణ పతాకాన్ని అందంగా రూపొందించాడు' వాక్యంలో 'కర్మ'ను సూచించే పదం",
+            options: [
+                "1) పింగళి వెంకయ్య",
+                "2) అందం",
+                "3) త్రివర్ణ పతాకం",
+                "4) రూపొందించాడు"
+            ],
+            answer: 2
+        },
+        {
+            q: "49. 'మన జెండా' గీత రచయిత",
+            options: [
+                "1) రాయప్రోలు సుబ్బారావు",
+                "2) సుద్దాల హనుమంతు",
+                "3) శేషం లక్ష్మీనారాయణాచార్య",
+                "4) వేముగంటి నరసింహాచార్యులు"
+            ],
+            answer: 2
+        },
+        {
+            q: "50. 'స్నేహబంధం' కథ పంచతంత్రం పుస్తకంలోని ఈ భాగం లోనిది",
+            options: [
+                "1) మిత్రభేదం",
+                "2) మిత్రలాభం",
+                "3) కాకోలూకీయం",
+                "4) లబ్ధ ప్రణాశం"
+            ],
+            answer: 1
+        },
+        {
+            q: "51. పొట్లపల్లి రామారావు రచన",
+            options: [
+                "1) మణిమాల",
+                "2) జయధ్వజయం",
+                "3) చుక్కలు",
+                "4) జీవనవేదం"
+            ],
+            answer: 0
+        },
+        {
+            q: "52. 'ఏ కులం?' అనే చెరబండరాజు గేయం ఉన్న కవితా సంపుటి",
+            options: [
+                "1) జన్మహక్కు",
+                "2) గమ్యం",
+                "3) ముట్టడి",
+                "4) పల్లవి"
+            ],
+            answer: 2
+        },
+        {
+            q: "53. ఖమ్మం జిల్లా నేలకొండపల్లికి చెందిన కవి.",
+            options: [
+                "1) శేషప్ప కవి",
+                "2) కంచెర్ల గోపన్న",
+                "3) ఆడెపు చంద్రమౌళి",
+                "4) ధూపాటి సంపత్కుమారాచార్య"
+            ],
+            answer: 2
+        },
+        {
+            q: "54. 'మాతలకు మాత సకల సంపత్సమేత' అని భరతమాత గొప్పదనాన్ని చాటిన కవి",
+            options: [
+                "1) ఆచ్చి వేంకటాచార్యులు",
+                "2) కొఱవి గోపరాజు",
+                "3) గుఱ్ఱం జాషువా",
+                "4) రాయప్రోలు సుబ్బారావు"
+            ],
+            answer: 3
+        },
+        {
+            q: "55. ఉపాధ్యాయులు వైయక్తికంగా లేదా సామూహికంగా విద్యార్థుల అభ్యసన లోపాలను గుర్తించుటకు నిర్వహించేది",
+            options: [
+                "1) లోప నివారణ నికష",
+                "2) లోప నిర్ధారణ నికష",
+                "3) లోప సంగ్రహ నికష",
+                "4) లోపాలోప నికష"
+            ],
+            answer: 1
+        },
+        {
+            q: "56. బోధన లక్ష్య సాధన, సృజనాత్మక బోధనలకు ఉపాధ్యాయులకు సహకరించునది",
+            options: [
+                "1) ప్రణాళిక",
+                "2) నిఘంటువు",
+                "3) ఛందస్సు",
+                "4) వ్యాకరణము"
+            ],
+            answer: 0
+        },
+        {
+            q: "57. జాగ్రత్తగా ధ్వనులను విని, వాటిని గుర్తించి అవి ఏ భాషా ధ్వనులో పోల్చుకొనగల్గుట ఒక ఉత్తమ",
+            options: [
+                "1) పఠన లక్షణము",
+                "2) అన్వేషణా లక్షణము",
+                "3) పరిశోధన లక్షణము",
+                "4) శ్రవణ లక్షణము"
+            ],
+            answer: 3
+        },
+        {
+            q: "58. మనిషి మానవుడయ్యాడు అను నానుడి ఏర్పడుటకు కారణమైనది.",
+            options: [
+                "1) ప్రాణము",
+                "2) సంస్కృతి",
+                "3) ఆచారము",
+                "4) భాష"
+            ],
+            answer: 3
+        },
+        {
+            q: "59. తెలుగు విషయ నిర్మాణాత్మక మూల్యాంకనంలోని ఒక సాధనాన్ని గుర్తించండి",
+            options: [
+                "1) లఘుపరీక్ష",
+                "2) ప్రయోగశాల కృత్యం",
+                "3) పటనైపుణ్యం",
+                "4) ఉక్తలేఖనం"
+            ],
+            answer: 0
+        },
+        {
+            q: "60. పాఠశాలల్లో 'విజ్ఞాన గవాక్షాలు' అని పేరు గలది",
+            options: [
+                "1) తరగతి గదులు",
+                "2) గ్రంథాలయాలు",
+                "3) క్రీడా మైదానాలు",
+                "4) సమావేశ మందిరాలు"
+            ],
+            answer: 1
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    function createPassageBox(block) {
+        const box = document.createElement('div');
+        box.className = 'passage-box';
+
+        const titleEl = document.createElement('div');
+        titleEl.className = 'passage-title';
+        titleEl.textContent = block.title;
+        box.appendChild(titleEl);
+
+        const textEl = document.createElement('div');
+        textEl.className = 'passage-text';
+        textEl.textContent = block.text;
+        box.appendChild(textEl);
+
+        return box;
+    }
+
+    quizData.forEach((item, qIndex) => {
+        if (qIndex === gadyamBlock.beforeQuestionIndex) {
+            quizContainer.appendChild(createPassageBox(gadyamBlock));
+        }
+        if (qIndex === padyamBlock.beforeQuestionIndex) {
+            quizContainer.appendChild(createPassageBox(padyamBlock));
+        }
+
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
