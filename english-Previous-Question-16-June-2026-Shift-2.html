@@ -1,1 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - Language II - English (Questions 61 - 90)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.65;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .passage-box {
+            background: #eef6fc;
+            border: 1px solid #b8daf5;
+            border-left: 5px solid #2980b9;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin: 24px 0 18px 0;
+        }
+        .passage-title {
+            font-weight: bold;
+            color: #1f4e78;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        .passage-text {
+            font-size: 1.02em;
+            color: #222;
+            white-space: pre-line;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Language II - English</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - Questions 61 to 90</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const passageBlock = {
+        beforeQuestionIndex: 0,
+        title: "Passage (Questions 61 - 65): Read the following passage and choose the correct option for each question.",
+        text: "The challenge of sustainable development requires integration of quest for economic development with environmental concerns. Traditional methods of resource use result into generating enormous quantity of waste as well as create other environmental problems. Hence, sustainable development calls for the protection of resources for the future generations. There is an urgent need to conserve the resources. The alternative energy sources like solar power, wind, wave, geothermal energy are inexhaustible resources. These resources should be developed to replace the traditional exhaustible resources. In case of metallic minerals, use of scrap metals will enable recycling of metals. Use of scrap is especially significant in metals like copper, lead and zinc in which India's reserves are meagre. Use of substitutes for scarce metals may also reduce their consumption. Export of strategic and scarce minerals must be reduced, so that the existing reserve may be used for a longer period."
+    };
+
+    const quizData = [
+        {
+            q: "61. Sustainable development requires the integration of economic development with",
+            options: [
+                "1) political steadiness",
+                "2) environmental concerns",
+                "3) cultural backgrounds",
+                "4) scientific growth"
+            ],
+            answer: 1
+        },
+        {
+            q: "62. Based on the context of the passage, the word 'exhaustible' means",
+            options: [
+                "1) renewable.",
+                "2) infinite.",
+                "3) non-renewable.",
+                "4) unlimited."
+            ],
+            answer: 2
+        },
+        {
+            q: "63. As per the passage, identify the metal reserve which is meagre in India.",
+            options: [
+                "1) zinc",
+                "2) manganese",
+                "3) iron ore",
+                "4) mica"
+            ],
+            answer: 0
+        },
+        {
+            q: "64. Identify the inexhaustible resource mentioned in the passage.",
+            options: [
+                "1) copper",
+                "2) natural gas",
+                "3) coal",
+                "4) wind"
+            ],
+            answer: 3
+        },
+        {
+            q: "65. Based on the passage, export of strategic and scarce minerals must be reduced to",
+            options: [
+                "1) reduce mining costs.",
+                "2) increase international trade.",
+                "3) improve transportation facilities.",
+                "4) enable their sustained use."
+            ],
+            answer: 3
+        },
+        {
+            q: "66. ASAP is the ________ for 'as soon as possible'.\nChoose the correct option to complete the sentence.",
+            options: [
+                "1) antonym",
+                "2) synonym",
+                "3) homonym",
+                "4) acronym"
+            ],
+            answer: 3
+        },
+        {
+            q: "67. A pair of socks ________ lying under the table.\nSelect the correct option to complete the sentence.",
+            options: [
+                "1) is",
+                "2) are",
+                "3) were",
+                "4) be"
+            ],
+            answer: 0
+        },
+        {
+            q: "68. If you ________ a mistake, I will correct it.\nChoose the correct word to complete the sentence.",
+            options: [
+                "1) commit",
+                "2) commits",
+                "3) committed",
+                "4) committing"
+            ],
+            answer: 0
+        },
+        {
+            q: "69. You're requested to wait for ________.\nChoose the most appropriate option to complete the sentence.",
+            options: [
+                "1) hour",
+                "2) an hour",
+                "3) a hour",
+                "4) all hour"
+            ],
+            answer: 1
+        },
+        {
+            q: "70. His decision had an adverse impact on the project.\nIdentify the opposite meaning of the word 'adverse.'",
+            options: [
+                "1) risky",
+                "2) positive",
+                "3) harsh",
+                "4) hostile"
+            ],
+            answer: 1
+        },
+        {
+            q: "71. The place where food and crockery are stored is called",
+            options: [
+                "1) aviary.",
+                "2) pantry.",
+                "3) hangar.",
+                "4) vault."
+            ],
+            answer: 1
+        },
+        {
+            q: "72. Choose correctly spelt word.",
+            options: [
+                "1) redundent",
+                "2) redandant",
+                "3) redundunt",
+                "4) redundant"
+            ],
+            answer: 3
+        },
+        {
+            q: "73. I asked him why he was looking through the window.\nChoose the correct direct speech of the sentence.",
+            options: [
+                "1) I asked him, \"Why are you looking through the window?\"",
+                "2) I asked him, \"Why you are looking through the window?\"",
+                "3) \"Are you looking through the window?\" I asked him.",
+                "4) \"Do not look through the window,\" I said to him."
+            ],
+            answer: 0
+        },
+        {
+            q: "74. Choose the correct sentence.",
+            options: [
+                "1) The furniture at his office are expensive.",
+                "2) The furniture at his office were expensive.",
+                "3) The furniture at his office is expensive.",
+                "4) The furniture at his office expensive."
+            ],
+            answer: 2
+        },
+        {
+            q: "75. Select the correctly punctuated sentence.",
+            options: [
+                "1) What a beautiful !scene this is!",
+                "2) What a beautiful scene this is!",
+                "3) What a beautiful scene this is?",
+                "4) What a beautiful scene this is."
+            ],
+            answer: 1
+        },
+        {
+            q: "76. On account of his age, he was disqualified ________ competing.\nComplete the sentence with correct option.",
+            options: [
+                "1) to",
+                "2) of",
+                "3) with",
+                "4) from"
+            ],
+            answer: 3
+        },
+        {
+            q: "77. Choose the meaningful sentence.",
+            options: [
+                "1) From innovation and comes curiosity effort.",
+                "2) Curiosity comes and innovation from effort.",
+                "3) Innovation comes from curiosity and effort.",
+                "4) Effort from comes curiosity and innovation."
+            ],
+            answer: 2
+        },
+        {
+            q: "78. Arrange the following words to form a meaningful sentence.\nP: brings happiness\nQ: destruction and suffering,\nR: and harmony.\nS: while peace\nT: War brings\nChoose the correct option.",
+            options: [
+                "1) T, Q, S, P, R",
+                "2) T, P, Q, S, R",
+                "3) T, R, P, S, Q",
+                "4) T, S, Q, P, R"
+            ],
+            answer: 0
+        },
+        {
+            q: "79. That new phone costs an arm and a leg; I can't buy it now.\nIdentify the meaning of the idiom 'an arm and a leg'.",
+            options: [
+                "1) low-priced",
+                "2) cheaper",
+                "3) expensive",
+                "4) sporadic"
+            ],
+            answer: 2
+        },
+        {
+            q: "80. They have barely enough to pay the rent this month.\nThe phrase 'barely enough' means",
+            options: [
+                "1) no more than what is needed.",
+                "2) expected less than what is needed.",
+                "3) less than what is needed.",
+                "4) surplus than what is needed."
+            ],
+            answer: 0
+        },
+        {
+            q: "81. Did he buy that car?\nIdentify the passive voice sentence.",
+            options: [
+                "1) Was that car being bought by him?",
+                "2) Has that car been bought by him?",
+                "3) Was that car bought by him?",
+                "4) Has that car bought by him?"
+            ],
+            answer: 2
+        },
+        {
+            q: "82. Soldiers who fight on horseback",
+            options: [
+                "1) Artillery.",
+                "2) Infantry.",
+                "3) Armoured.",
+                "4) Cavalry."
+            ],
+            answer: 3
+        },
+        {
+            q: "83. ________ of the banana tree is used by humans.",
+            options: [
+                "1) Many part",
+                "2) Every part",
+                "3) Most part",
+                "4) All part"
+            ],
+            answer: 1
+        },
+        {
+            q: "84. Mr. Venkatesh knows five languages, ________?\nComplete the sentence with correct option.",
+            options: [
+                "1) hasn't he",
+                "2) didn't he",
+                "3) wasn't he",
+                "4) doesn't he"
+            ],
+            answer: 3
+        },
+        {
+            q: "85. This is NOT a feature of Language acquisition.",
+            options: [
+                "1) Acquisition occurs without any exposure to language input.",
+                "2) It is largely an unconscious process.",
+                "3) This is mostly associated with mother tongue.",
+                "4) The learners never get to study the rules of grammar formally."
+            ],
+            answer: 0
+        },
+        {
+            q: "86. The English language has ________ distinct speech sounds.",
+            options: [
+                "1) 40",
+                "2) 48",
+                "3) 26",
+                "4) 44"
+            ],
+            answer: 3
+        },
+        {
+            q: "87. The activity most commonly considered effective for teaching action words is",
+            options: [
+                "1) dictation.",
+                "2) memorization of words.",
+                "3) mime.",
+                "4) copy writing."
+            ],
+            answer: 2
+        },
+        {
+            q: "88. This approach to grammar tells people how language should be used according to established rules and standards.",
+            options: [
+                "1) Descriptive Grammar",
+                "2) Prescriptive grammar",
+                "3) Transformational Grammar",
+                "4) Functional Grammar"
+            ],
+            answer: 1
+        },
+        {
+            q: "89. Select the best reference material for teaching English to primary-level students from the following options.",
+            options: [
+                "1) Advanced grammar textbook",
+                "2) Research journal on linguistics.",
+                "3) Books on English literature",
+                "4) Picture dictionary"
+            ],
+            answer: 3
+        },
+        {
+            q: "90. Each word that is defined in a dictionary is called",
+            options: [
+                "1) a hard word.",
+                "2) a guide word.",
+                "3) a bottom word.",
+                "4) a head word."
+            ],
+            answer: 3
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    function createPassageBox(block) {
+        const box = document.createElement('div');
+        box.className = 'passage-box';
+
+        const titleEl = document.createElement('div');
+        titleEl.className = 'passage-title';
+        titleEl.textContent = block.title;
+        box.appendChild(titleEl);
+
+        const textEl = document.createElement('div');
+        textEl.className = 'passage-text';
+        textEl.textContent = block.text;
+        box.appendChild(textEl);
+
+        return box;
+    }
+
+    quizData.forEach((item, qIndex) => {
+        if (qIndex === passageBlock.beforeQuestionIndex) {
+            quizContainer.appendChild(createPassageBox(passageBlock));
+        }
+
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
