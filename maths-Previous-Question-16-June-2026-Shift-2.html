@@ -1,1 +1,572 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - గణితం (Mathematics) (ప్రశ్నలు 91 - 120) - Explanation తో</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation-box {
+            margin-top: 12px;
+            padding: 12px 15px;
+            background-color: #eef6fc;
+            border-left: 4px solid #2980b9;
+            border-radius: 4px;
+            color: #1c2833;
+            font-size: 0.96em;
+            line-height: 1.7;
+            white-space: pre-line;
+            display: none;
+        }
+        .explanation-title {
+            font-weight: bold;
+            color: #1f4e78;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>గణితం (Mathematics)</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - ప్రశ్నలు 91 నుండి 120 (వివరణలతో)</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. (901³ − 456³) / (901² + 901 × 456 + 456²) =",
+            options: [
+                "1) 345",
+                "2) 445",
+                "3) 645",
+                "4) 455"
+            ],
+            answer: 1,
+            explanation: "బీజగణిత సూత్రం: a³ − b³ = (a − b)(a² + ab + b²)\nఇక్కడ a = 901, b = 456.\nకాబట్టి (a³ − b³) / (a² + ab + b²) = a − b = 901 − 456 = 445."
+        },
+        {
+            q: "92. ఒక వస్తువు యొక్క కొన్న వెల మరియు అమ్మిన వెలల నిష్పత్తి 4 : 3 అయిన, నష్ట శాతం",
+            options: [
+                "1) 30%",
+                "2) 20%",
+                "3) 33.33%",
+                "4) 25%"
+            ],
+            answer: 3,
+            explanation: "కొన్న వెల (CP) = 4x, అమ్మిన వెల (SP) = 3x అనుకుందాం.\nనష్టం = CP − SP = 4x − 3x = x.\nనష్ట శాతం = (నష్టం / CP) × 100 = (x / 4x) × 100 = 25%."
+        },
+        {
+            q: "93. రెండు సంఖ్యల గ.సా.భా మరియు క.సా.గు.లు వరుసగా 20 మరియు 240. వానిలో, మొదటి సంఖ్యను 4 తో భాగించినప్పుడు భాగఫలం 15 మరియు శేషం 0 అయితే, రెండవ సంఖ్య",
+            options: [
+                "1) 60",
+                "2) 90",
+                "3) 80",
+                "4) 70"
+            ],
+            answer: 2,
+            explanation: "మొదటి సంఖ్య = 4 × 15 + 0 = 60.\nరెండు సంఖ్యల లబ్దం = గ.సా.భా × క.సా.గు\n60 × రెండవ సంఖ్య = 20 × 240\nరెండవ సంఖ్య = (20 × 240) / 60 = 4800 / 60 = 80."
+        },
+        {
+            q: "94. √9025 = 95 అయితే, (√90.25 + √0.9025 + √0.009025) విలువ",
+            options: [
+                "1) 10.545",
+                "2) 11.545",
+                "3) 9.545",
+                "4) 10.455"
+            ],
+            answer: 0,
+            explanation: "√90.25 = 9.5\n√0.9025 = 0.95\n√0.009025 = 0.095\nమొత్తం = 9.5 + 0.95 + 0.095 = 10.545."
+        },
+        {
+            q: "95. 11/12, 1/2, 4/7, 5/9, 12/15 అనే భిన్నాలను అవరోహణ క్రమంలో అమర్చినట్లయితే, ఏ భిన్నం రెండవ స్థానంలో ఉంటుంది?",
+            options: [
+                "1) 1/2",
+                "2) 11/12",
+                "3) 12/15",
+                "4) 5/9"
+            ],
+            answer: 2,
+            explanation: "భిన్నాల దశాంశ విలువలు:\n11/12 ≈ 0.9167\n12/15 = 0.80\n4/7 ≈ 0.5714\n5/9 ≈ 0.5556\n1/2 = 0.50\nఅవరోహణ క్రమం (పెద్ద నుండి చిన్నకి): 11/12, 12/15, 4/7, 5/9, 1/2.\nరెండవ స్థానంలో ఉన్న భిన్నం: 12/15."
+        },
+        {
+            q: "96. 6, 8, 9 మరియు 4 అనే అంకెలను ఒకసారి మాత్రమే ఉపయోగించి ఏర్పరచగలిగే గరిష్ట నాలుగు అంకెల సంఖ్య ఏది?",
+            options: [
+                "1) 9468",
+                "2) 9864",
+                "3) 9648",
+                "4) 9846"
+            ],
+            answer: 1,
+            explanation: "ఇచ్చిన అంకెలు 9, 8, 6, 4 లను అవరోహణ క్రమంలో (పెద్ద నుండి చిన్నకి) రాస్తే గరిష్ట సంఖ్య 9864 వస్తుంది."
+        },
+        {
+            q: "97. అతి చిన్న సరి సంయుక్త సంఖ్య మరియు అతి పెద్ద రెండంకెల ప్రధాన సంఖ్యల యొక్క లబ్దం",
+            options: [
+                "1) 388",
+                "2) 356",
+                "3) 364",
+                "4) 372"
+            ],
+            answer: 0,
+            explanation: "అతి చిన్న సరి సంయుక్త సంఖ్య = 4.\nఅతి పెద్ద రెండంకెల ప్రధాన సంఖ్య = 97.\nవీటి లబ్దం = 4 × 97 = 388."
+        },
+        {
+            q: "98. 250 మీటర్ల పొడవున్న రైలు గంటకు 72 కిలోమీటర్ల వేగంతో ప్రయాణిస్తోంది. 350 మీటర్ల పొడవున్న ప్లాట్ ఫారమ్ను దాటడానికి దానికి ఎంత సమయం (సెకన్లలో) పడుతుంది?",
+            options: [
+                "1) 20",
+                "2) 25",
+                "3) 17.5",
+                "4) 30"
+            ],
+            answer: 3,
+            explanation: "మొత్తం దూరం = 250 + 350 = 600 మీ.\nవేగం = 72 km/h = 72 × (5/18) m/s = 20 m/s.\nపట్టే సమయం = దూరం / వేగం = 600 / 20 = 30 సెకన్లు."
+        },
+        {
+            q: "99. ఒక తండ్రి ప్రస్తుత వయస్సు అతని కుమారుని వయస్సుకి 4 రెట్లు మరియు వారి వయస్సుల మధ్య బేధం 36 సంవత్సరాలు అయితే, కుమారుని ప్రస్తుత వయస్సు (సంవత్సరాలలో)",
+            options: [
+                "1) 15",
+                "2) 12",
+                "3) 9",
+                "4) 10"
+            ],
+            answer: 1,
+            explanation: "కుమారుని వయస్సు = x అనుకుంటే, తండ్రి వయస్సు = 4x.\nబేధం: 4x − x = 36 ⇒ 3x = 36 ⇒ x = 12 సంవత్సరాలు."
+        },
+        {
+            q: "100. ఒక టేబుల్ మరియు ఒక కుర్చీల మొత్తం ధర ₹1,800. కుర్చీ ధర టేబుల్ ధర కంటే ₹300 తక్కువ అయితే, టేబుల్ యొక్క ధర",
+            options: [
+                "1) ₹1050",
+                "2) ₹1200",
+                "3) ₹1150",
+                "4) ₹1100"
+            ],
+            answer: 0,
+            explanation: "టేబుల్ ధర = T అనుకుంటే, కుర్చీ ధర = T − 300.\nT + (T − 300) = 1800 ⇒ 2T = 2100 ⇒ T = ₹1,050."
+        },
+        {
+            q: "101. ఒక దీర్ఘఘనం యొక్క ముఖాల సంఖ్య",
+            options: [
+                "1) 4",
+                "2) 8",
+                "3) 6",
+                "4) 12"
+            ],
+            answer: 2,
+            explanation: "ఒక దీర్ఘఘనం (Cuboid) కు 6 ముఖాలు (Faces), 8 శీర్షాలు (Vertices), 12 అంచులు (Edges) ఉంటాయి."
+        },
+        {
+            q: "102. ఒక రైతు తన పొలంలో 676 మొక్కలను, అడ్డు వరుసల సంఖ్య నిలువు వరుసల సంఖ్యకు సమానంగా ఉండేలా అమరిస్తే అతను ఎన్ని వరుసలను ఏర్పాటు చేయాలి?",
+            options: [
+                "1) 34",
+                "2) 26",
+                "3) 36",
+                "4) 24"
+            ],
+            answer: 1,
+            explanation: "అడ్డు వరుసలు = నిలువు వరుసలు = n అనుకుంటే, n² = 676.\nకాబట్టి n = √676 = 26 వరుసలు."
+        },
+        {
+            q: "103. ఒక దుకాణదారుడు ఉదయం 7:30 నుండి మధ్యాహ్నం 12:00 వరకు మరియు మధ్యాహ్నం 2:00 నుండి సాయంత్రం 6:00 వరకు పని చేస్తాడు. అతని మొత్తం పని చేసే సమయం (నిమిషాలలో)",
+            options: [
+                "1) 450",
+                "2) 540",
+                "3) 480",
+                "4) 510"
+            ],
+            answer: 3,
+            explanation: "ఉదయం 7:30 నుండి 12:00 వరకు = 4 గంటల 30 నిమిషాలు = 270 నిమిషాలు.\nమధ్యాహ్నం 2:00 నుండి సాయంత్రం 6:00 వరకు = 4 గంటలు = 240 నిమిషాలు.\nమొత్తం సమయం = 270 + 240 = 510 నిమిషాలు."
+        },
+        {
+            q: "104. ₹1020 లో 12% విలువ",
+            options: [
+                "1) 122.40",
+                "2) 124.0",
+                "3) 12.40",
+                "4) 12.24"
+            ],
+            answer: 0,
+            explanation: "1020 లో 12% = (12 / 100) × 1020 = 12240 / 100 = 122.40."
+        },
+        {
+            q: "105. ఒక దీర్ఘచతురస్రాకార పచ్చిక బయలు వైశాల్యం 285 మీ². దాని పొడవు 15 మీ. అయితే, దాని చుట్టుకొలత (మీ.లలో)",
+            options: [
+                "1) 34",
+                "2) 68",
+                "3) 38",
+                "4) 64"
+            ],
+            answer: 1,
+            explanation: "వైశాల్యం = పొడవు × వెడల్పు ⇒ 285 = 15 × వెడల్పు ⇒ వెడల్పు = 285 / 15 = 19 మీ.\nచుట్టుకొలత = 2 × (పొడవు + వెడల్పు) = 2 × (15 + 19) = 2 × 34 = 68 మీ."
+        },
+        {
+            q: "106. కింది భుజాల సమూహాలలో ఏవి త్రిభుజాన్ని ఏర్పరచగలవు?",
+            options: [
+                "1) 7 సెం.మీ, 8 సెం.మీ, 7 సెం.మీ",
+                "2) 1 సెం.మీ, 2 సెం.మీ, 4 సెం.మీ",
+                "3) 5 సెం.మీ, 3 సెం.మీ, 2 సెం.మీ",
+                "4) 3 సెం.మీ, 4 సెం.మీ, 8 సెం.మీ"
+            ],
+            answer: 0,
+            explanation: "త్రిభుజ ధర్మం ప్రకారం ఏవైనా రెండు భుజాల పొడవుల మొత్తం మూడవ భుజం కంటే ఎక్కువగా ఉండాలి.\n7 + 7 = 14 > 8, 7 + 8 = 15 > 7 కాబట్టి 7 సెం.మీ, 8 సెం.మీ, 7 సెం.మీ త్రిభుజాన్ని ఏర్పరచగలవు."
+        },
+        {
+            q: "107. ఒక సమావేశ మందిరంలో 645 సీట్లు ఉన్నాయి. ఒక సమావేశం జరుగుతున్నప్పుడు వానిలో 1/3 వంతు సీట్లు ఖాళీగా ఉన్నాయి. ఆ ఖాళీ సీట్ల సంఖ్య",
+            options: [
+                "1) 225",
+                "2) 205",
+                "3) 215",
+                "4) 235"
+            ],
+            answer: 2,
+            explanation: "ఖాళీ సీట్ల సంఖ్య = (1/3) × 645 = 215."
+        },
+        {
+            q: "108. 4.189 కి ఎంత కలిపితే 9 వస్తుంది?",
+            options: [
+                "1) 5.921",
+                "2) 4.811",
+                "3) 4.921",
+                "4) 5.811"
+            ],
+            answer: 1,
+            explanation: "కావలసిన సంఖ్య = 9.000 − 4.189 = 4.811."
+        },
+        {
+            q: "109. ఒక ఘనం యొక్క ఘనపరిమాణం 0.000729 ఘనపు మీటర్లు అయితే, దాని అంచు పొడవు (మీటర్లలో)",
+            options: [
+                "1) 0.9",
+                "2) 0.0009",
+                "3) 0.009",
+                "4) 0.09"
+            ],
+            answer: 3,
+            explanation: "ఘనపరిమాణం = a³ = 0.000729 = 729 / 1000000.\n∛729 = 9, ∛1000000 = 100.\nకాబట్టి అంచు పొడవు a = 9 / 100 = 0.09 మీ."
+        },
+        {
+            q: "110. ఒక సంఖ్యను 15, 11 మరియు 12 లతో భాగించినప్పుడు, ప్రతిసారీ శేషం 4 వస్తే ఆ సంఖ్య",
+            options: [
+                "1) 1328",
+                "2) 664",
+                "3) 1976",
+                "4) 656"
+            ],
+            answer: 1,
+            explanation: "15, 11, 12 ల క.సా.గు (LCM):\nLCM(15, 12) = 60; LCM(60, 11) = 660.\nప్రతిసారీ శేషం 4 రావాలి కాబట్టి ఆ సంఖ్య = 660 + 4 = 664."
+        },
+        {
+            q: "111. ఒక దత్తాంశాన్ని ఆరోహణ లేదా అవరోహణ క్రమంలో అమర్చినప్పుడు, మధ్యలో ఉన్న పరిశీలన దీనిని సూచిస్తుంది",
+            options: [
+                "1) బాహుళకం",
+                "2) సగటు",
+                "3) మధ్యగతం",
+                "4) వ్యాప్తి"
+            ],
+            answer: 2,
+            explanation: "దత్తాంశాన్ని ఆరోహణ లేదా అవరోహణ క్రమంలో అమర్చినప్పుడు సరిగ్గా మధ్యలో ఉండే విలువను మధ్యగతం (Median) అంటారు."
+        },
+        {
+            q: "112. కింది వాటిలో, 19 యొక్క గుణిజం కానిది",
+            options: [
+                "1) 1558",
+                "2) 1710",
+                "3) 1596",
+                "4) 1377"
+            ],
+            answer: 3,
+            explanation: "1558 = 19 × 82; 1710 = 19 × 90; 1596 = 19 × 84.\nకానీ 1377 ను 19 తో భాగిస్తే 1377 = 19 × 72 + 9 (శేషం 9 వస్తుంది). కాబట్టి ఇది 19 గుణిజం కాదు."
+        },
+        {
+            q: "113. రెండు సంఖ్యల బేధం 5 మరియు వాని మొత్తం 11 అయితే, ఆ సంఖ్యలు",
+            options: [
+                "1) 7, 4",
+                "2) 9, 4",
+                "3) 8, 3",
+                "4) 6, 5"
+            ],
+            answer: 2,
+            explanation: "8 + 3 = 11 (మొత్తం) మరియు 8 − 3 = 5 (బేధం).\nకాబట్టి ఆ సంఖ్యలు 8, 3."
+        },
+        {
+            q: "114. (8 − 2)(8² + 16 + 2²) =",
+            options: [
+                "1) 504",
+                "2) 512",
+                "3) 508",
+                "4) 506"
+            ],
+            answer: 0,
+            explanation: "ఇక్కడ 8 × 2 = 16, కాబట్టి ఇది (a − b)(a² + ab + b²) = a³ − b³ రూపంలో ఉంది.\n8³ − 2³ = 512 − 8 = 504."
+        },
+        {
+            q: "115. గణిత ప్రయోగశాలలను సరిగ్గా వివరించే వాక్యాలు:\nA) అవి ఆచరణాత్మక అభ్యసనాన్ని ప్రోత్సహిస్తాయి\nB) అవి నెమ్మదిగా నేర్చుకునే వారికి మాత్రమే ఉపయోగపడతాయి\nC) అవి భావనలను దృశ్యమానం చేయడానికి సహాయపడతాయి\nD) అవి చురుకైన భాగస్వామ్యాన్ని ప్రోత్సహిస్తాయి\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A, B & C మాత్రమే",
+                "2) B, C & D మాత్రమే",
+                "3) A, C & D మాత్రమే",
+                "4) A, B, C & D"
+            ],
+            answer: 2,
+            explanation: "గణిత ప్రయోగశాల (Math Lab) విద్యార్థులందరికీ ఆచరణాత్మక అభ్యసనాన్ని (A), భావనల దృశ్యీకరణను (C), చురుకైన భాగస్వామ్యాన్ని (D) అందిస్తుంది. కేవలం నెమ్మదిగా నేర్చుకునే వారికే పరిమితం కాదు (B తప్పు)."
+        },
+        {
+            q: "116. బోధనాభ్యసన వనరులను వాటి విధులతో జతపరచండి:\nజాబితా-I:\nA) గణిత పాఠ్యపుస్తకం\nB) వర్క్ షీట్లు\nC) అనుకరణలు\nD) సామాజిక వనరులు\nజాబితా-2:\ni) వాస్తవ జీవిత అభ్యసనం\nii) గతిశీల అన్వేషణ\niii) అభ్యాస పని\niv) వ్యవస్థీకృత అభ్యసనం\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A-iv, B-iii, C-ii, D-i",
+                "2) A-i, B-ii, C-iii, D-iv",
+                "3) A-iii, B-iv, C-i, D-ii",
+                "4) A-ii, B-i, C-iv, D-iii"
+            ],
+            answer: 0,
+            explanation: "గణిత పాఠ్యపుస్తకం → వ్యవస్థీకృత అభ్యసనం (A-iv)\nవర్క్ షీట్లు → అభ్యాస పని (B-iii)\nఅనుకరణలు (Simulations) → గతిశీల అన్వేషణ (C-ii)\nసామాజిక వనరులు → వాస్తవ జీవిత అభ్యసనం (D-i)."
+        },
+        {
+            q: "117. గణిత చిహ్నాలను సార్వత్రిక భాషగా ఎందుకు పరిగణిస్తారో వివరించమని ఒక ఉపాధ్యాయుడు విద్యార్థులను కోరారు. చిహ్నాల శాస్త్రంగా గణిత స్వభావాన్ని కింది సమాధానాలలో ఏది అత్యుత్తమంగా ప్రతిబింబిస్తుంది?",
+            options: [
+                "1) చిహ్నాల అర్థం వ్యక్తిని బట్టి మారుతూ ఉంటుంది.",
+                "2) చిహ్నాలు గణిత భావనలను ఖచ్చితంగా మరియు స్థిరంగా తెలియజేస్తాయి.",
+                "3) చిహ్నాలు కేవలం అంకగణిత లెక్కలలో మాత్రమే ఉపయోగపడతాయి.",
+                "4) చిహ్నాలు తార్కిక వివేచన అవసరాన్ని తగ్గిస్తాయి."
+            ],
+            answer: 1,
+            explanation: "గణిత చిహ్నాలు ప్రపంచవ్యాప్తంగా ఏ భాష మాట్లాడే వారికైనా ఒకే అర్థాన్ని ఖచ్చితంగా, స్థిరంగా తెలియజేస్తాయి."
+        },
+        {
+            q: "118. గణితంలో దృశ్యీకరణకు తోడ్పడనిది:",
+            options: [
+                "1) గ్రాఫ్ లు",
+                "2) రేఖాచిత్రాలు",
+                "3) హాజరు పట్టిక",
+                "4) నమూనాలు"
+            ],
+            answer: 2,
+            explanation: "గ్రాఫ్ లు, రేఖాచిత్రాలు, నమూనాలు గణిత భావనలను దృశ్యరూపంలో అర్థం చేసుకోవడానికి ఉపయోగపడతాయి. హాజరు పట్టిక (Attendance register) గణిత దృశ్యీకరణ సాధనం కాదు."
+        },
+        {
+            q: "119. క్రింద ఇవ్వబడిన రెండు వాక్యాలలో సరైన ఎంపికను ఎంచుకోండి:\nA: గణితం పూర్తిగా సైద్ధాంతికమై, ఎటువంటి ఆచరణాత్మక వినియోగాలు లేనిది.\nB: గణితం దైనందిన జీవితంలో ఎల్లప్పుడూ ఉపయోగించబడుతుంది.",
+            options: [
+                "1) A మాత్రమే సరియైనది",
+                "2) B మాత్రమే సరియైనది",
+                "3) A మరియు B రెండూ సరియైనవి",
+                "4) A గానీ, B గానీ సరియైనవికాదు"
+            ],
+            answer: 1,
+            explanation: "గణితానికి ఎన్నో ఆచరణాత్మక వినియోగాలు ఉన్నాయి కాబట్టి A తప్పు; దైనందిన జీవితంలో నిత్యం ఉపయోగపడుతుంది కాబట్టి B సరియైనది."
+        },
+        {
+            q: "120. ఈ వనరు స్వయం అభ్యసన సామగ్రి యొక్క డిజిటల్ రూపం:",
+            options: [
+                "1) ఘనాకారపు చెక్క ఆకారాలు",
+                "2) చార్టులు",
+                "3) జియోబోర్డు",
+                "4) శ్రవణ/దృశ్య మాధ్యమాలు"
+            ],
+            answer: 3,
+            explanation: "శ్రవణ/దృశ్య మాధ్యమాలు (Audio/Visual media) డిజిటల్ రూపంలో ఉండి విద్యార్థుల స్వయం అభ్యసనానికి తోడ్పడతాయి."
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        const expDiv = document.createElement('div');
+        expDiv.className = 'explanation-box';
+        expDiv.id = `explanation_${qIndex}`;
+        expDiv.innerHTML = `<span class="explanation-title">వివరణ (Explanation):</span>${item.explanation}`;
+        card.appendChild(expDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        const expDiv = document.getElementById(`explanation_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+        expDiv.style.display = 'block';
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
