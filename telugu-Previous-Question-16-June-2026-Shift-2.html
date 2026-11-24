@@ -55,6 +55,15 @@
             color: #222;
             white-space: pre-line;
         }
+        .padyam-lines {
+            font-size: 1.05em;
+            color: #1b2631;
+            line-height: 1.9;
+            padding-left: 8px;
+        }
+        .padyam-line {
+            margin: 2px 0;
+        }
         .question-card {
             background: #fafafa;
             border: 1px solid #e0e0e0;
@@ -150,17 +159,21 @@
 <script>
     const gadyamBlock = {
         beforeQuestionIndex: 0,
+        type: "gadyam",
         title: "గద్యం (ప్రశ్నలు 31 నుండి 34 వరకు)",
         text: "పంచతంత్ర కథలు అంటే తెలియని వారుండరు. వాటి ప్రశస్తి ప్రపంచవ్యాప్తం. ఆ కథలు ఆ నోటా ఈ నోటా పడి ఎన్నెన్నో భాషల్లోకి మారిపోయాయి. క్రీ.పూ. 200 లో విష్ణుశర్మ పంచతంత్ర కథలను రాశాడు. పంచతంత్రంలోని కొన్ని కథలకు రుగ్వేదకాలంలో ఆనవాళ్లు దొరికాయి. చారిత్రకంగా ఈ కథలు చాలా పురాతనమైనవి. ఈ కథలు వచ్చి రెండువేల యేళ్లకు పైగా అయినప్పటికీ ప్రజలను చదివింపచేసే లక్షణం ఉండడం వాటి గొప్పతనానికి సాక్ష్యం. ఎనిమిదవ శతాబ్దంలో పంచతంత్రానికి అరబిక్ అనువాదం, పదకొండవ శతాబ్దంలో గ్రీకు అనువాదం వచ్చింది. ఇంతేకాదు, అనేక యూరోపియన్ భాషల్లో పంచతంత్ర కథలు కనిపిస్తాయి. మొత్తంగా యాభైకి పైగా ప్రపంచ ప్రధాన భాషల్లో పంచతంత్రం దర్శనమిస్తుంది."
     };
 
     const padyamBlock = {
         beforeQuestionIndex: 4,
+        type: "padyam",
         title: "పద్యం (ప్రశ్నలు 35 నుండి 38 వరకు)",
-        text: "ఇచ్చునదే విద్య రణమున
-        జొచ్చునదే మగతనంబు సుకవీశ్వరులు
-        న్మెచ్చునదె నేర్పు వాదుకు
-        వచ్చునదే కీడు సుమ్ము వసుధను సుమతీ!"
+        lines: [
+            "ఇచ్చునదే విద్య రణమున",
+            "జొచ్చునదే మగతనంబు సుకవీశ్వరులున్",
+            "మెచ్చునదె నేర్పు వాదుకు",
+            "వచ్చునదే కీడు సుమ్ము వసుధను సుమతీ!"
+        ]
     };
 
     const quizData = [
@@ -478,10 +491,22 @@
         titleEl.textContent = block.title;
         box.appendChild(titleEl);
 
-        const textEl = document.createElement('div');
-        textEl.className = 'passage-text';
-        textEl.textContent = block.text;
-        box.appendChild(textEl);
+        if (block.type === "padyam" && Array.isArray(block.lines)) {
+            const linesWrapper = document.createElement('div');
+            linesWrapper.className = 'padyam-lines';
+            block.lines.forEach(line => {
+                const lineEl = document.createElement('div');
+                lineEl.className = 'padyam-line';
+                lineEl.textContent = line;
+                linesWrapper.appendChild(lineEl);
+            });
+            box.appendChild(linesWrapper);
+        } else {
+            const textEl = document.createElement('div');
+            textEl.className = 'passage-text';
+            textEl.textContent = block.text;
+            box.appendChild(textEl);
+        }
 
         return box;
     }
