@@ -1,1 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - Mathematics (Questions 91 - 120) - With Explanations</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.65em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation-box {
+            margin-top: 12px;
+            padding: 12px 15px;
+            background-color: #eef6fc;
+            border-left: 4px solid #2980b9;
+            border-radius: 4px;
+            color: #1c2833;
+            font-size: 0.96em;
+            line-height: 1.65;
+            white-space: pre-line;
+            display: none;
+        }
+        .explanation-title {
+            font-weight: bold;
+            color: #1f4e78;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Mathematics</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - Questions 91 to 120 (With Explanations)</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. (901³ − 456³) / (901² + 901 × 456 + 456²) =",
+            options: [
+                "1) 345",
+                "2) 445",
+                "3) 645",
+                "4) 455"
+            ],
+            answer: 1,
+            explanation: "Using the algebraic identity: a³ − b³ = (a − b)(a² + ab + b²)\nHere, a = 901 and b = 456.\nSo, (a³ − b³) / (a² + ab + b²) = a − b = 901 − 456 = 445."
+        },
+        {
+            q: "92. The ratio of the Cost Price and Selling Price of an article is 4 : 3. The loss percent is",
+            options: [
+                "1) 30%",
+                "2) 20%",
+                "3) 33.33%",
+                "4) 25%"
+            ],
+            answer: 3,
+            explanation: "Let Cost Price (CP) = 4x and Selling Price (SP) = 3x.\nLoss = CP − SP = 4x − 3x = x.\nLoss % = (Loss / CP) × 100 = (x / 4x) × 100 = 25%."
+        },
+        {
+            q: "93. The H.C.F. and L.C.M. of two numbers are 20 and 240 respectively. If the first number divided by 4 gives quotient 15 and remainder 0, then the second number is",
+            options: [
+                "1) 60",
+                "2) 90",
+                "3) 80",
+                "4) 70"
+            ],
+            answer: 2,
+            explanation: "First number = (Divisor × Quotient) + Remainder = (4 × 15) + 0 = 60.\nProduct of two numbers = H.C.F. × L.C.M.\n60 × Second number = 20 × 240\nSecond number = (20 × 240) / 60 = 4800 / 60 = 80."
+        },
+        {
+            q: "94. If √9025 = 95, then the value of (√90.25 + √0.9025 + √0.009025) is",
+            options: [
+                "1) 10.545",
+                "2) 11.545",
+                "3) 9.545",
+                "4) 10.455"
+            ],
+            answer: 0,
+            explanation: "√90.25 = 9.5\n√0.9025 = 0.95\n√0.009025 = 0.095\nSum = 9.5 + 0.95 + 0.095 = 10.545."
+        },
+        {
+            q: "95. If fractions 11/12, 1/2, 4/7, 5/9, 12/15 are arranged in descending order, which fraction will be in the second position?",
+            options: [
+                "1) 1/2",
+                "2) 11/12",
+                "3) 12/15",
+                "4) 5/9"
+            ],
+            answer: 2,
+            explanation: "Decimal equivalents of the fractions:\n11/12 ≈ 0.9167\n12/15 = 0.80\n4/7 ≈ 0.5714\n5/9 ≈ 0.5556\n1/2 = 0.50\nDescending order (largest to smallest): 11/12, 12/15, 4/7, 5/9, 1/2.\nThe fraction in the second position is 12/15."
+        },
+        {
+            q: "96. What is the maximum four-digit number that can be formed by using each of the digits 6, 8, 9, and 4 only once?",
+            options: [
+                "1) 9468",
+                "2) 9864",
+                "3) 9648",
+                "4) 9846"
+            ],
+            answer: 1,
+            explanation: "Arranging the digits 9, 8, 6, 4 in descending order gives the largest 4-digit number: 9864."
+        },
+        {
+            q: "97. The product of smallest even composite number and largest two-digit prime number is",
+            options: [
+                "1) 388",
+                "2) 356",
+                "3) 364",
+                "4) 372"
+            ],
+            answer: 0,
+            explanation: "Smallest even composite number = 4.\nLargest two-digit prime number = 97.\nProduct = 4 × 97 = 388."
+        },
+        {
+            q: "98. A 250 m long train travels at 72 km/h. How long (in seconds) will it take to cross a 350 m long platform?",
+            options: [
+                "1) 20",
+                "2) 25",
+                "3) 17.5",
+                "4) 30"
+            ],
+            answer: 3,
+            explanation: "Total distance = Length of train + Length of platform = 250 + 350 = 600 m.\nSpeed = 72 km/h = 72 × (5/18) m/s = 20 m/s.\nTime = Distance / Speed = 600 / 20 = 30 seconds."
+        },
+        {
+            q: "99. The present age of a father is 4 times that of his son. If the difference between their ages is 36 years, then the son's present age (in years) is",
+            options: [
+                "1) 15",
+                "2) 12",
+                "3) 9",
+                "4) 10"
+            ],
+            answer: 1,
+            explanation: "Let son's present age = x years; then father's present age = 4x years.\nDifference: 4x − x = 36 ⇒ 3x = 36 ⇒ x = 12 years."
+        },
+        {
+            q: "100. The total cost of a table and a chair is ₹1,800. The chair is ₹300 cheaper than the table. The cost of the table is",
+            options: [
+                "1) ₹1050",
+                "2) ₹1200",
+                "3) ₹1150",
+                "4) ₹1100"
+            ],
+            answer: 0,
+            explanation: "Let cost of table = T; then cost of chair = T − 300.\nT + (T − 300) = 1800 ⇒ 2T = 2100 ⇒ T = ₹1,050."
+        },
+        {
+            q: "101. Number of faces of a cuboid is",
+            options: [
+                "1) 4",
+                "2) 8",
+                "3) 6",
+                "4) 12"
+            ],
+            answer: 2,
+            explanation: "A cuboid has 6 faces, 8 vertices, and 12 edges."
+        },
+        {
+            q: "102. A farmer wants to arrange 676 plants in his field in such a way that the number of rows is equal to the number of columns. How many rows should he make?",
+            options: [
+                "1) 34",
+                "2) 26",
+                "3) 36",
+                "4) 24"
+            ],
+            answer: 1,
+            explanation: "Let number of rows = number of columns = n.\nn² = 676 ⇒ n = √676 = 26 rows."
+        },
+        {
+            q: "103. A shopkeeper works from 7:30 A.M. to 12:00 Noon and from 2:00 P.M. to 6:00 P.M. His total working time (in minutes) is",
+            options: [
+                "1) 450",
+                "2) 540",
+                "3) 480",
+                "4) 510"
+            ],
+            answer: 3,
+            explanation: "7:30 A.M. to 12:00 Noon = 4 hours 30 minutes = 270 minutes.\n2:00 P.M. to 6:00 P.M. = 4 hours = 240 minutes.\nTotal working time = 270 + 240 = 510 minutes."
+        },
+        {
+            q: "104. 12% of ₹1020 is",
+            options: [
+                "1) 122.40",
+                "2) 124.0",
+                "3) 12.40",
+                "4) 12.24"
+            ],
+            answer: 0,
+            explanation: "12% of 1020 = (12 / 100) × 1020 = 12240 / 100 = 122.40."
+        },
+        {
+            q: "105. The area of a rectangular lawn is 285 m². If its length is 15 m, then its perimeter (in m) is",
+            options: [
+                "1) 34",
+                "2) 68",
+                "3) 38",
+                "4) 64"
+            ],
+            answer: 1,
+            explanation: "Area = Length × Breadth ⇒ 285 = 15 × Breadth ⇒ Breadth = 285 / 15 = 19 m.\nPerimeter = 2 × (Length + Breadth) = 2 × (15 + 19) = 2 × 34 = 68 m."
+        },
+        {
+            q: "106. Which of the following sets of sides can form a triangle?",
+            options: [
+                "1) 7 cm, 8 cm, 7 cm",
+                "2) 1 cm, 2 cm, 4 cm",
+                "3) 5 cm, 3 cm, 2 cm",
+                "4) 3 cm, 4 cm, 8 cm"
+            ],
+            answer: 0,
+            explanation: "By the triangle inequality theorem, the sum of any two sides must be greater than the third side.\nFor 7 cm, 8 cm, 7 cm: 7 + 7 = 14 > 8 and 7 + 8 = 15 > 7, so it forms a triangle."
+        },
+        {
+            q: "107. A meeting hall has 645 seats. During a meeting 1/3 of seats are empty. The number of empty seats are",
+            options: [
+                "1) 225",
+                "2) 205",
+                "3) 215",
+                "4) 235"
+            ],
+            answer: 2,
+            explanation: "Number of empty seats = (1/3) × 645 = 215."
+        },
+        {
+            q: "108. What should be added to 4.189 to get 9?",
+            options: [
+                "1) 5.921",
+                "2) 4.811",
+                "3) 4.921",
+                "4) 5.811"
+            ],
+            answer: 1,
+            explanation: "Required number = 9.000 − 4.189 = 4.811."
+        },
+        {
+            q: "109. If the volume of a cube is 0.000729 cu.m, then, the length of its edge (in metre) is",
+            options: [
+                "1) 0.9",
+                "2) 0.0009",
+                "3) 0.009",
+                "4) 0.09"
+            ],
+            answer: 3,
+            explanation: "Volume of cube = a³ = 0.000729 = 729 / 1,000,000.\nCube root of 729 is 9, and cube root of 1,000,000 is 100.\nEdge length a = 9 / 100 = 0.09 m."
+        },
+        {
+            q: "110. When a number is divided by 15, 11 and 12, it gives the remainder 4 each time. Then, the number is",
+            options: [
+                "1) 1328",
+                "2) 664",
+                "3) 1976",
+                "4) 656"
+            ],
+            answer: 1,
+            explanation: "L.C.M. of 15, 11, and 12:\nL.C.M.(15, 12) = 60; L.C.M.(60, 11) = 660.\nSince it leaves remainder 4 each time, the number = 660 + 4 = 664."
+        },
+        {
+            q: "111. When data is arranged in ascending or descending order, the middle observation represents the",
+            options: [
+                "1) Mode",
+                "2) Mean",
+                "3) Median",
+                "4) Range"
+            ],
+            answer: 2,
+            explanation: "The middle value of an ordered dataset (ascending or descending) is called the Median."
+        },
+        {
+            q: "112. Among the following, which is NOT a multiple of 19 is",
+            options: [
+                "1) 1558",
+                "2) 1710",
+                "3) 1596",
+                "4) 1377"
+            ],
+            answer: 3,
+            explanation: "1558 = 19 × 82; 1710 = 19 × 90; 1596 = 19 × 84.\n1377 = 19 × 72 + 9 (remainder 9), so 1377 is not a multiple of 19."
+        },
+        {
+            q: "113. The difference of two numbers is 5 and their sum is 11. Then, the numbers are",
+            options: [
+                "1) 7, 4",
+                "2) 9, 4",
+                "3) 8, 3",
+                "4) 6, 5"
+            ],
+            answer: 2,
+            explanation: "8 + 3 = 11 (sum) and 8 − 3 = 5 (difference).\nThus, the numbers are 8 and 3."
+        },
+        {
+            q: "114. (8 − 2)(8² + 16 + 2²) =",
+            options: [
+                "1) 504",
+                "2) 512",
+                "3) 508",
+                "4) 506"
+            ],
+            answer: 0,
+            explanation: "Since 8 × 2 = 16, this matches (a − b)(a² + ab + b²) = a³ − b³.\n8³ − 2³ = 512 − 8 = 504."
+        },
+        {
+            q: "115. These statements accurately describe the mathematics laboratories:\nA) They promote hands-on learning.\nB) They are useful only for slow learners.\nC) They help in visualising concepts.\nD) They encourage active participation.\nChoose the correct answer:",
+            options: [
+                "1) A, B & C only",
+                "2) B, C & D only",
+                "3) A, C & D only",
+                "4) A, B, C & D"
+            ],
+            answer: 2,
+            explanation: "Mathematics laboratories benefit all students through hands-on learning (A), concept visualisation (C), and active participation (D). They are not only for slow learners (B is incorrect)."
+        },
+        {
+            q: "116. Match the teaching-learning resources with their functions:\nList-I:\nA) Mathematics Textbook\nB) Worksheets\nC) Simulations\nD) Community Resources\nList-2:\ni) Real-life learning\nii) Dynamic exploration\niii) Practice work\niv) Structured learning\nChoose the correct answer:",
+            options: [
+                "1) A-iv, B-iii, C-ii, D-i",
+                "2) A-i, B-ii, C-iii, D-iv",
+                "3) A-iii, B-iv, C-i, D-ii",
+                "4) A-ii, B-i, C-iv, D-iii"
+            ],
+            answer: 0,
+            explanation: "Mathematics Textbook → Structured learning (A-iv)\nWorksheets → Practice work (B-iii)\nSimulations → Dynamic exploration (C-ii)\nCommunity Resources → Real-life learning (D-i)."
+        },
+        {
+            q: "117. A teacher asks students to explain why mathematical symbols are considered a universal language. Which response best reflects the nature of mathematics as a science of symbols?",
+            options: [
+                "1) Symbols differ in meaning from one person to another.",
+                "2) Symbols communicate mathematical ideas accurately and consistently.",
+                "3) Symbols are useful only in arithmetic calculations.",
+                "4) Symbols reduce the need for logical reasoning."
+            ],
+            answer: 1,
+            explanation: "Mathematical symbols convey mathematical concepts accurately and consistently across different languages and regions."
+        },
+        {
+            q: "118. This does not support visualisation in Mathematics:",
+            options: [
+                "1) Graphs",
+                "2) Diagrams",
+                "3) Attendance register",
+                "4) Models"
+            ],
+            answer: 2,
+            explanation: "Graphs, diagrams, and models help visualise mathematical concepts, whereas an attendance register is a record-keeping tool, not a visualisation aid."
+        },
+        {
+            q: "119. Choose the correct option from the two sentences given below:\nA: Mathematics is entirely theoretical and has no practical applications.\nB: Mathematics is constantly used in daily life.",
+            options: [
+                "1) Only A is correct",
+                "2) Only B is correct",
+                "3) Both A and B are correct",
+                "4) Neither A nor B is correct"
+            ],
+            answer: 1,
+            explanation: "Statement A is false because mathematics has wide practical applications; Statement B is true because mathematics is used regularly in daily life."
+        },
+        {
+            q: "120. This resource is a digital form of self-learning materials:",
+            options: [
+                "1) Cubic wooden shapes",
+                "2) Charts",
+                "3) Geoboard",
+                "4) Audio/Visual media"
+            ],
+            answer: 3,
+            explanation: "Audio/Visual media provides digital self-learning resources, unlike physical manipulatives or static charts."
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        const expDiv = document.createElement('div');
+        expDiv.className = 'explanation-box';
+        expDiv.id = `explanation_${qIndex}`;
+        expDiv.innerHTML = `<span class="explanation-title">Explanation:</span>${item.explanation}`;
+        card.appendChild(expDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        const expDiv = document.getElementById(`explanation_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+        expDiv.style.display = 'block';
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
