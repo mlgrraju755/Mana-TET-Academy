@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - శిశు వికాసం మరియు బోధనా శాస్త్రం (ప్రశ్నలు 1 - 30)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>శిశు వికాసం మరియు బోధనా శాస్త్రం</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - ప్రశ్నలు 1 నుండి 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. బిడ్డ పెరుగుదల మరియు వికాసం ను ప్రభావితం చేసే 'గర్భధారణ సమయంలో తల్లికి పోషకాహార లోపం' అనే కారకాన్ని ఈ క్రింది విధంగా వర్గీకరించవచ్చు:\nA. జీవసంబంధమైన\nB. పరిసరసంబంధమైన",
+            options: [
+                "1) A & B రెండూ",
+                "2) A మరియు B రెండూ కాదు",
+                "3) A మాత్రమే",
+                "4) B మాత్రమే"
+            ],
+            answer: 3
+        },
+        {
+            q: "2. వికాసం సర్పిలాకారంలో సాగుతుందని చెప్పడాన్ని ఈ క్రిందివిధంగా అర్థం చేసుకోవాలి",
+            options: [
+                "1) వికాసం సరళరేఖా మార్గంలో స్థిరమైన వేగంతో సాగుతుంది",
+                "2) వికాసం సరళరేఖా మార్గంలో స్థిరమైన వేగంతో సాగదు",
+                "3) వికాసం ఏకరీతిగా సాగుతుంది",
+                "4) వికాసం గమనించలేనిది"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. కింది మానవ శరీర భాగాలలో ఒకదానిలో శోషరస కణుపులు ఉండవు",
+            options: [
+                "1) చంక (Armpit)",
+                "2) మెడ",
+                "3) ఛాతీ",
+                "4) వెన్నుపాము"
+            ],
+            answer: 3
+        },
+        {
+            q: "4. వికాస కృత్యాలు ఈ విధమైనవి:\nA. శారీరక\nB. సంజ్ఞానాత్మక\nC. సామాజిక",
+            options: [
+                "1) B & C మాత్రమే",
+                "2) A & B మాత్రమే",
+                "3) A, B & C",
+                "4) B మాత్రమే"
+            ],
+            answer: 2
+        },
+        {
+            q: "5. 'sand' అనే పదాన్ని పలకడం తెలిసిన ఒక పిల్లవాడు, 'and' అనే అక్షరం యొక్క ధ్వని ఆధారంగా 'band' అనే కొత్త పదాన్ని సరిగ్గా పలకడం అనేది పియాజె యొక్క ఈ భావనకు ఒక ఉదాహరణ",
+            options: [
+                "1) తిరోగమనం",
+                "2) అనుగుణ్యత",
+                "3) సాంశీకరణము",
+                "4) సర్వాత్మవాదం"
+            ],
+            answer: 2
+        },
+        {
+            q: "6. 5 ఏళ్ల ప్రార్థన తల్లి హెచ్చరించినప్పటికీ, తన తండ్రికి ఇష్టమైన షో పీస్తో ఆడుకుంటూ పొరపాటున దాన్ని పగలగొట్టింది. తాను దాన్ని పగలగొట్టిన విషయం తన తండ్రికి చెప్పవద్దని, అలా చెబితే ఆయన తనను కొడతారని ఆమె తన తల్లిని బతిమాలడం మొదలుపెట్టింది. కోల్బర్గ్ ప్రకారం ప్రార్థన యొక్క నైతిక వికాస స్థాయి",
+            options: [
+                "1) II",
+                "2) I",
+                "3) III",
+                "4) IV"
+            ],
+            answer: 1
+        },
+        {
+            q: "7. స్టాన్ఫోర్డ్ బినె ప్రజ్ఞా మాపనిని కనిష్టంగా ఈ వయస్సు నుండి ఉపయోగించవచ్చు",
+            options: [
+                "1) 2 సంవత్సరాలు",
+                "2) 0 సంవత్సరాలు",
+                "3) 4 సంవత్సరాలు",
+                "4) 6 సంవత్సరాలు"
+            ],
+            answer: 0
+        },
+        {
+            q: "8. పుష్ప తల్లిదండ్రులు ఆమెను సంగీత పాఠశాలలో చేర్పించారు, ఆమె ప్రతిరోజూ సాయంత్రం దానికి హాజరు కావాలి. పుష్పకు సంగీతంపై ఆసక్తి లేదు, కానీ ఆమె ఆ విషయాన్ని బయటపెట్టదు, ఎందుకంటే తన తల్లిదండ్రులు చెప్పినదల్లా పాటించాలని, లేకపోతే శిక్షించబడతానని ఆమెకు తెలుసు. పుష్ప తల్లిదండ్రుల పిల్లల పెంపక శైలి",
+            options: [
+                "1) జోక్యరహిత",
+                "2) బాధ్యతాయుత",
+                "3) అనుమతి పూర్వక",
+                "4) అధికార పూర్వక"
+            ],
+            answer: 3
+        },
+        {
+            q: "9. ప్రవర్తనా సమస్యలు తలెత్తే విధం యొక్క అవగాహన అవి ఈ విధమైనవి కావని తెలుస్తుంది",
+            options: [
+                "1) పుట్టుకతో వచ్చేవి",
+                "2) అలవాటు చేసుకొనేవి",
+                "3) నేర్చుకొనగలిగినవి",
+                "4) నయం చేయగలిగినవి"
+            ],
+            answer: 0
+        },
+        {
+            q: "10. విద్యార్థుల హాజరుపై మధ్యాహ్న భోజనం యొక్క ప్రభావాన్ని తెలుసుకోవడానికి నిర్వహించిన ఒక అధ్యయనంలో, పరతంత్ర చరరాశి",
+            options: [
+                "1) మధ్యాహ్న భోజనం",
+                "2) విద్యార్థుల హాజరు",
+                "3) ఆహారం యొక్క పోషక విలువ",
+                "4) విద్యార్థుల వయస్సు"
+            ],
+            answer: 1
+        },
+        {
+            q: "11. ప్రత్యక్ష లేదా పరోక్ష అనుభవాల కారణంగా వ్యక్తి ప్రవర్తనలో వచ్చే మార్పులను ఇలా పిలవవచ్చు",
+            options: [
+                "1) జ్ఞాపకశక్తి",
+                "2) మూర్తిమత్వం",
+                "3) అభ్యసనం",
+                "4) మానసిక ఆరోగ్యం"
+            ],
+            answer: 2
+        },
+        {
+            q: "12. నకుల్ అనే ఏడేళ్ల బాలుడు ప్రతిరోజూ తన పాఠశాల దుస్తులను ఆహారపు మరకలు, రంగులు, మట్టి మొదలైన వాటితో చాలా పాడుచేసేవాడు. ఒకరోజు ఆహారపు మరకలు లేకుండా అతని దుస్తులు కొంచెం మెరుగ్గా కనిపించినప్పుడు, అతని తల్లి, 'శబాష్ నకుల్, ఈరోజు నువ్వు సరిగ్గా తిన్నావు, నీ దుస్తులపై ఆహారపు మరకలు లేవు, ఇలాగే కొనసాగించు' అని చెప్పింది. ఈ ప్రశంస వల్ల, నకుల్ నెమ్మదిగా సరిగ్గా తినడం మరియు ప్రతి పనిని జాగ్రత్తగా చేయడం ప్రారంభించాడు, తద్వారా చివరికి ఇంటికి శుభ్రమైన దుస్తులతో తిరిగి రాసాగాడు. ఇది స్కిన్నర్ కార్యసాధక నిబంధన యొక్క ఈ భావనకు ఒక ఉదాహరణ.",
+            options: [
+                "1) సాధారణీకరణ",
+                "2) విచక్షణ",
+                "3) సూచన",
+                "4) షేపింగ్ / ఆకృతీకరణ"
+            ],
+            answer: 3
+        },
+        {
+            q: "13. శాస్త్రీయ నిబంధన యొక్క క్రింది సూత్రాలను వాటి సారాంశంతో జతపరచండి:\nA) విరమణం — i) స్పష్టంగా అంతరించిన నిబంధిత ప్రతిస్పందన తిరిగి కనిపించడం\nB) అయత్న సిద్ధ స్వాస్థ్యం — ii) విభిన్న పరిస్థితులకు విభిన్నంగా ప్రతిస్పందించడం\nC) ఉద్దీపన సాధారణీకరణ — iii) నిబంధిత ప్రతిస్పందన అంతర్ధానమవడం\nD) ఉద్దీపన విచక్షణ — iv) సాధారణ పద్ధతిలో ప్రతిస్పందించడం\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A-iii, B-iv, C-i, D-ii",
+                "2) A-ii, B-i, C-iv, D-iii",
+                "3) A-i, B-ii, C-iv, D-iii",
+                "4) A-iii, B-i, C-iv, D-ii"
+            ],
+            answer: 3
+        },
+        {
+            q: "14. ఈ సిద్ధాంతం ప్రకారం మనం సరైన పరిష్కారాన్ని పొందే ముందు అనేక యాదృచ్ఛిక మరియు సరికాని ప్రయత్నాలు చేస్తాము",
+            options: [
+                "1) కార్యసాధక నిబంధన",
+                "2) శాస్త్రీయ నిబంధన",
+                "3) యత్న దోష",
+                "4) పరిశీలన"
+            ],
+            answer: 2
+        },
+        {
+            q: "15. బండూరా ప్రకారం, ఈ క్రింది విధానాలలో ఒకదానిలో అభ్యసనం జరగదు",
+            options: [
+                "1) ఇతరుల ప్రవర్తనను కలుపుకోవడం మరియు అనుకరించడం",
+                "2) పరిసర ఉద్దీపనలకు గుడ్డిగా ప్రతిస్పందించడం",
+                "3) ఇతరులను చూడటం మరియు వినడం",
+                "4) ఇతరుల ఉదాహరణల నుండి"
+            ],
+            answer: 1
+        },
+        {
+            q: "16. అభ్యసన అనుభవాలలో ఐక్యత మరియు సమన్వయంను నొక్కి చెప్పడం ఈ అభ్యసన సిద్ధాంతం యొక్క ముఖ్యమైన అంశం",
+            options: [
+                "1) అంతర్ దృష్టి అభ్యసనం",
+                "2) పరిశీలనాత్మక అభ్యసనం",
+                "3) యత్నదోష అభ్యసనం",
+                "4) నిబంధన అభ్యసనం"
+            ],
+            answer: 0
+        },
+        {
+            q: "17. క్షీణించిన నాణ్యత గల గాలి వ్యక్తి యొక్క ఈ అవసరానికి ముప్పుగా పరిగణించబడుతుంది",
+            options: [
+                "1) ప్రాథమిక",
+                "2) గౌణ",
+                "3) మానసిక",
+                "4) సామాజిక"
+            ],
+            answer: 0
+        },
+        {
+            q: "18. కింది వాటిలో ఒకటి 'భావావేశ' రంగానికి సంబంధించినది కాదు",
+            options: [
+                "1) వైఖరి",
+                "2) ఆలోచన",
+                "3) అనుభూతి",
+                "4) ఉద్వేగం"
+            ],
+            answer: 1
+        },
+        {
+            q: "19. తన ముందు ఉంచిన అనేక కళాకృతుల నుండి తన బిడ్డ చేసిన కళాకృతిని ఒక తల్లి ఎంచుకోవడం దీనికి ఉదాహరణ",
+            options: [
+                "1) ప్రోబ్డ్ పునఃస్మరణ",
+                "2) క్రమానుగత గుర్తింపు",
+                "3) సాధారణ పునఃస్మరణ",
+                "4) ప్రత్యామ్నాయ గుర్తింపు"
+            ],
+            answer: 3
+        },
+        {
+            q: "20. గణితం నేర్చుకోవడం ప్రోగ్రామింగ్ నేర్చుకోవడంలో సహాయపడటం లేదా ఆటంకం కలిగించడం అనేది దీనికి ఉదాహరణ",
+            options: [
+                "1) పరోక్ష అభ్యసనం",
+                "2) నిబంధన ద్వారా అభ్యసనం",
+                "3) అభ్యసన బదలాయింపు",
+                "4) మూర్త అభ్యసనం"
+            ],
+            answer: 2
+        },
+        {
+            q: "21. ప్రత్యక్షం మరియు స్మృతి వంటి మానసిక ప్రక్రియల వైకల్యతల కారణంగా కలిగే సమస్యలతో కూడుకున్న వైకల్యత వర్గం",
+            options: [
+                "1) భాషణ వైకల్యత",
+                "2) శారీరక వైకల్యత",
+                "3) దృష్టి వైకల్యత",
+                "4) అభ్యసన వైకల్యత"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. కింది వాటిలో ఒకటి విచారణ - ఆధారిత అభ్యసనం యొక్క ప్రయోజనం",
+            options: [
+                "1) ఎక్కువ సమయం తీసుకుంటుంది",
+                "2) ఎక్కువ వనరులు అవసరం",
+                "3) స్వీయ అభ్యసనాన్ని ప్రోత్సహిస్తుంది",
+                "4) పాఠశాల పాఠ్యపుస్తకాలు సరిపోకపోవచ్చు"
+            ],
+            answer: 2
+        },
+        {
+            q: "23. విజాతీయ తరగతి గదిలో అభ్యసనాన్ని నిర్వహించడాన్ని ఈ విధంగా కూడా అర్థం చేసుకోవచ్చు",
+            options: [
+                "1) సమ వయస్కుల అభ్యసనాన్ని నిరుత్సాహపరచడం",
+                "2) విద్యార్థులందరికీ ఉపన్యాస పద్ధతిని ఉపయోగించడం",
+                "3) ఉమ్మడి అభ్యసన అవసరాలున్న విద్యార్థులకు ప్రత్యేక సూచనలు ఇవ్వడం",
+                "4) వైయక్తిక భేదాలకు అనుగుణంగా వ్యవహరించడం"
+            ],
+            answer: 3
+        },
+        {
+            q: "24. బ్రూనర్ ప్రకారం, ఈ దశలో పిల్లలు చలనాత్మక చర్యలు మరియు కదలికల ఆధారంగా అశాబ్దిక కృత్యాల ద్వారా వారి ఆలోచనా ప్రక్రియను చూపిస్తారు",
+            options: [
+                "1) క్రియాత్మకం",
+                "2) చిత్త - ప్రతిమ",
+                "3) ప్రతీకాత్మక",
+                "4) సహజమైన"
+            ],
+            answer: 0
+        },
+        {
+            q: "25. కింది ఉపాధ్యాయ కేంద్రీకృత పద్ధతులలో ఒక దానిలో విద్యార్థుల అవధానాన్ని నిలుపుకోవడం ప్రధాన సమస్య",
+            options: [
+                "1) క్రీడా పద్ధతి",
+                "2) ఉపన్యాసం",
+                "3) కృత్యాధార",
+                "4) ప్రాజెక్ట్"
+            ],
+            answer: 1
+        },
+        {
+            q: "26. కింది స్టేట్ మెంట్ లను చదివి సరైన సమాధానాన్ని గుర్తించండి:\nస్టేట్ మెంట్ A: ఆట సంజ్ఞానాత్మక వికాసాన్ని పెంపొందిస్తుంది.\nస్టేట్ మెంట్ B: సంజ్ఞానాత్మక వికాసాన్ని పెంపొందించడానికి మనం పిల్లలను అనేక పజిల్స్ పరిష్కరించేలా చేయాలి.",
+            options: [
+                "1) స్టేట్ మెంట్ A మరియు స్టేట్ మెంట్ B రెండూ సరైనవి",
+                "2) స్టేట్ మెంట్ A మరియు స్టేట్ మెంట్ B రెండూ సరికావు",
+                "3) స్టేట్ మెంట్ A మాత్రమే సరైనది",
+                "4) స్టేట్ మెంట్ B మాత్రమే సరైనది"
+            ],
+            answer: 2
+        },
+        {
+            q: "27. మార్గదర్శకత్వం అనగా",
+            options: [
+                "1) ఒక వ్యక్తిని ఇతరులపై ఆధారపడేలా చేయడం",
+                "2) దిశానిర్దేశం చేయడం",
+                "3) ఒక వ్యక్తి తనకు తాను సర్దుబాటు చేసుకోవడానికి సహాయపడే ప్రక్రియ",
+                "4) ఒకరి అభిప్రాయాన్ని మరొక వ్యక్తిపై రుద్దడం"
+            ],
+            answer: 2
+        },
+        {
+            q: "28. భారతదేశంలోని ప్రీ-కాన్సెప్షన్ & ప్రీ-నాటల్ డయాగ్నోస్టిక్స్ టెక్నిక్స్ యాక్ట్, 1994 ఈ క్రింది దానిని నిషేధిస్తుంది:",
+            options: [
+                "1) బాల్య వివాహం",
+                "2) శిశుహత్య",
+                "3) గర్భధారణకు ముందు లేదా తర్వాత లింగ నిర్ధారణ",
+                "4) బాల్యవ్యభిచారం"
+            ],
+            answer: 2
+        },
+        {
+            q: "29. పాఠశాలల్లో నిర్వహించే అభ్యసన మదింపు ప్రధానంగా వీటిని మదింపు చేయడంపై దృష్టి పెడుతుంది",
+            options: [
+                "1) యాదృచ్ఛిక అభ్యసన ఫలితాలు",
+                "2) ప్రణాళికాబద్ధమైన అభ్యసన ఫలితాలు",
+                "3) అప్రయత్న అభ్యసనం",
+                "4) అమూర్త అభ్యసనం"
+            ],
+            answer: 1
+        },
+        {
+            q: "30. 'పిల్లల ఉచిత మరియు నిర్బంధ విద్యా హక్కు చట్టం, 2009' యొక్క పాఠశాల నియమ నిబంధనల షెడ్యూల్ ప్రకారం, నూట ఇరవై ఒకటి నుండి రెండు వందల మంది విద్యార్థులున్న, ఒకటి నుండి ఐదవ తరగతి వరకు గల పాఠశాలలో ఉండవలసిన ఉపాధ్యాయుల సంఖ్య",
+            options: [
+                "1) ఐదు",
+                "2) నాలుగు",
+                "3) ఐదు మరియు ఒక ప్రధానోపాధ్యాయుడు",
+                "4) ముగ్గురు"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
