@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - పరిసరాల అధ్యయనం (EVS) (ప్రశ్నలు 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.55em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #27ae60;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eafaf1;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>పరిసరాల అధ్యయనం (Environmental Studies)</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - ప్రశ్నలు 121 నుండి 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. పుష్పంలోని రక్షక పత్రాల విధి",
+            options: [
+                "1) కీటకాలను ఆకర్షించడం",
+                "2) పరాగరేణువులను ఉత్పత్తి చేయడం",
+                "3) మొగ్గను రక్షించడం",
+                "4) విత్తనాలను ఏర్పరచడం"
+            ],
+            answer: 2
+        },
+        {
+            q: "122. మొక్కలలో కాండం సాధారణంగా నిర్వర్తించే విధులను గుర్తించండి:\nA) నీరు మరియు ఖనిజలవణాలను రవాణా చేయడం\nB) ఆకులు, పూలు మరియు పండ్లకు ఆధారాన్ని ఇవ్వడం\nC) మట్టి నుండి ఖనిజలవణాలను శోషించుకోవడం\nD) మట్టి నుండి నీటిని శోషించుకోవడం",
+            options: [
+                "1) A & B మాత్రమే",
+                "2) A & C మాత్రమే",
+                "3) B & D మాత్రమే",
+                "4) C & D మాత్రమే"
+            ],
+            answer: 0
+        },
+        {
+            q: "123. పరాగసంపర్కం జరిగినా, ఫలదీకరణం విఫలమైతే కింది వాటిలో ఏది జరగదు?",
+            options: [
+                "1) పరాగనాళం ఏర్పడటం",
+                "2) అండం విత్తనంగా అభివృద్ధి చెందడం",
+                "3) కీలాగ్రంపై పరాగరేణువులు పెరగడం",
+                "4) పరాగరేణువులు మొలకెత్తడం"
+            ],
+            answer: 1
+        },
+        {
+            q: "124. కింది వ్యాఖ్యలను చదివి, సరైన సమాధానాన్ని ఎంచుకోండి:\nవ్యాఖ్య I: శీతలీకరణం ఆహారం పాడయ్యే ప్రక్రియను నెమ్మదింపజేస్తుంది.\nవ్యాఖ్య II: తక్కువ ఉష్ణోగ్రత సూక్ష్మజీవుల పెరుగుదలను తగ్గిస్తుంది.",
+            options: [
+                "1) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ సత్యం",
+                "2) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ అసత్యం",
+                "3) వ్యాఖ్య I సత్యం మరియు వ్యాఖ్య II అసత్యం",
+                "4) వ్యాఖ్య I అసత్యం మరియు వ్యాఖ్య II సత్యం"
+            ],
+            answer: 0
+        },
+        {
+            q: "125. కింది వ్యాఖ్యలను చదివి, సరైన సమాధానాన్ని ఎంచుకోండి:\nవ్యాఖ్య I: సంతులిత ఆహారంలో పప్పుధాన్యాలు ఒక ముఖ్యమైన భాగం.\nవ్యాఖ్య II: పప్పుధాన్యాలలో ప్రోటీన్లు సమృద్ధిగా ఉంటాయి మరియు అవి శరీర నిర్మాణానికి సహాయపడతాయి.",
+            options: [
+                "1) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ సత్యం",
+                "2) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ అసత్యం",
+                "3) వ్యాఖ్య I అసత్యం, కానీ వ్యాఖ్య II సత్యం",
+                "4) వ్యాఖ్య I సత్యం, కానీ వ్యాఖ్య II అసత్యం"
+            ],
+            answer: 0
+        },
+        {
+            q: "126. కింది వాటిలో, అల్యూమినియం శుద్ధి చేసే సమయంలో విడుదలయ్యే ప్రధాన కాలుష్య కారకం ఏది?",
+            options: [
+                "1) క్లోరైడ్లు",
+                "2) సల్ఫేట్లు",
+                "3) ఫ్లోరైడ్లు",
+                "4) నైట్రేట్లు"
+            ],
+            answer: 2
+        },
+        {
+            q: "127. కింది వ్యాఖ్యలను చదివి, సరైన సమాధానాన్ని ఎంచుకోండి:\nవ్యాఖ్య I: అటవీ నిర్మూలన ద్వారా వరదలను తగ్గించవచ్చు.\nవ్యాఖ్య II: చెట్లు నీటిని పీల్చుకోవడంలో సహాయపడతాయి మరియు నీటి ప్రవాహాన్ని తగ్గిస్తాయి.",
+            options: [
+                "1) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ సత్యం",
+                "2) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ అసత్యం",
+                "3) వ్యాఖ్య I అసత్యం, వ్యాఖ్య II సత్యం",
+                "4) వ్యాఖ్య I సత్యం, వ్యాఖ్య II అసత్యం"
+            ],
+            answer: 2
+        },
+        {
+            q: "128. వర్షం పడే రోజులలో గాలిలో నీటి ఆవిరి పరిమాణం ఎక్కువగా ఉంటుంది; కాబట్టి గాలి",
+            options: [
+                "1) ఎక్కువ తేమగానూ ఉండదు, తక్కువ తేమగానూ ఉండదు",
+                "2) తక్కువ తేమగా ఉంటుంది",
+                "3) ఎక్కువ తేమగా లేదా తక్కువ తేమగా ఉండవచ్చు",
+                "4) ఎక్కువ తేమగా ఉంటుంది"
+            ],
+            answer: 3
+        },
+        {
+            q: "129. హైడ్రోజన్ ను \"భవిష్యత్తు ఇంధనం\"గా పరిగణిస్తారు, దీనికి కారణం:",
+            options: [
+                "1) ప్రకృతిలో అధిక పరిమాణంలో ఉచితంగా లభిస్తుంది",
+                "2) ఇంధనంగా ఉపయోగించినప్పుడు ఉప ఉత్పత్తిగా నీటిని మాత్రమే ఉత్పత్తి చేస్తుంది",
+                "3) శక్తి నష్టం లేకుండా బొగ్గు నుండి నేరుగా తీయవచ్చు",
+                "4) అన్ని శిలాజ ఇంధనాల కంటే చౌకైనది"
+            ],
+            answer: 1
+        },
+        {
+            q: "130. ఒక వ్యక్తి కాలిపై దోమ కుట్టినప్పుడు, దానికి ప్రతిస్పందన కలిగేలా చేసే నాడీ ప్రేరణ యొక్క సరైన క్రమం ఏది?",
+            options: [
+                "1) జ్ఞాన నాడులు → చాలక నాడులు → మెదడు → కండరాలు → ప్రతిస్పందన",
+                "2) చాలక నాడులు → మెదడు → జ్ఞాన నాడులు → కండరాలు → ప్రతిస్పందన",
+                "3) మెదడు → జ్ఞాన నాడులు → చాలక నాడులు → కండరాలు → ప్రతిస్పందన",
+                "4) జ్ఞాన నాడులు → మెదడు → చాలక నాడులు → కండరాలు → ప్రతిస్పందన"
+            ],
+            answer: 3
+        },
+        {
+            q: "131. కింది తెల్ల రక్త కణాలలో రేణురహిత కణాలను గుర్తించండి.",
+            options: [
+                "1) బాసోఫిల్",
+                "2) మోనోసైట్",
+                "3) ఈసినోఫిల్",
+                "4) న్యూట్రోఫిల్"
+            ],
+            answer: 1
+        },
+        {
+            q: "132. కింది వాటిలో సరైన జతను గుర్తించండి.",
+            options: [
+                "1) ఆక్సిజన్ లేకపోవడం – బాష్పోత్సేకం",
+                "2) ఆక్సిజన్ లేకపోవడం – కిరణజన్య సంయోగక్రియ",
+                "3) కాంతి సమక్షం – జీర్ణక్రియ",
+                "4) ఆక్సిజన్ సమక్షం – వాయుసహిత శ్వాసక్రియ"
+            ],
+            answer: 3
+        },
+        {
+            q: "133. ఈ కుతుబ్ షాహీ పాలకుని హయాంలో మీర్ మోమిన్ అస్తరాబాది ప్రధాన మంత్రిగా ఉన్నారు",
+            options: [
+                "1) కులీ కుతుబ్ షా",
+                "2) ఇబ్రహీం కుతుబ్ షా",
+                "3) ముహమ్మద్ కులీ కుతుబ్ షా",
+                "4) అబ్దుల్ హసన్ కుతుబ్ షా"
+            ],
+            answer: 2
+        },
+        {
+            q: "134. నది తనతో పాటు మోసుకొచ్చిన ఒండ్రు మట్టిని మరియు ఇసుకను తన నదీ గర్భం మరియు ఒడ్డు వెంబడి నిక్షేపించడం ఈ సందర్భంలో ప్రారంభిస్తుంది.",
+            options: [
+                "1) నది ఇరుకుగా మారినప్పుడు",
+                "2) నది తన ఆవిర్భావ స్థానం వద్ద ఉన్నప్పుడు",
+                "3) నది పర్వత శ్రేణుల వెంబడి ప్రవహిస్తున్నప్పుడు",
+                "4) నది వెడల్పుగా మరియు నెమ్మదిగా మారినప్పుడు"
+            ],
+            answer: 3
+        },
+        {
+            q: "135. కింది వాటిలో, ఎగువ తెలంగాణ పీఠభూమిలో ఉన్న కొండలు",
+            options: [
+                "1) రాఖీ కొండలు",
+                "2) దేవరకొండ కొండలు",
+                "3) కందికల్ కొండలు",
+                "4) సత్మాల కొండలు"
+            ],
+            answer: 0
+        },
+        {
+            q: "136. గ్రామ పంచాయతీ తీసుకున్న నిర్ణయాలన్నింటినీ అమలు చేయడం మరియు పంచాయతీ దైనందిన కార్యకలాపాలను పర్యవేక్షించడం వీరి బాధ్యత",
+            options: [
+                "1) గ్రామ కార్యదర్శి",
+                "2) మండల రెవెన్యూ అధికారి",
+                "3) గ్రామ సర్పంచ్",
+                "4) వ్యవసాయ విస్తరణ అధికారి"
+            ],
+            answer: 0
+        },
+        {
+            q: "137. \"తెలంగాణ పంచాయతీ రాజ్ చట్టం, 2018\" ప్రకారం, కింది వారిలో ఒకరు ప్రజలచే ప్రత్యక్షంగా ఎన్నుకోబడరు",
+            options: [
+                "1) మండల పరిషత్ ప్రాదేశిక నియోజకవర్గ సభ్యులు",
+                "2) జిల్లా పరిషత్ ప్రాదేశిక నియోజకవర్గ సభ్యులు",
+                "3) గ్రామ సర్పంచ్",
+                "4) మున్సిపల్ చైర్మన్"
+            ],
+            answer: 3
+        },
+        {
+            q: "138. ప్రాచీన భారతీయ సందర్భంలో, \"భాగ\" అనే పదం దీనిని సూచిస్తుంది",
+            options: [
+                "1) యుద్ధాలలో ఉపయోగించే ఒక రకమైన ఆయుధం",
+                "2) పురోహితులు నిర్వహించే ఒక మతపరమైన క్రతువు",
+                "3) పండిన పంటలో రాజుకు పన్నుగా చెల్లించే వాటా",
+                "4) భూమిని కొలిచే ఒక కొలమానం"
+            ],
+            answer: 2
+        },
+        {
+            q: "139. నాట్యం చేస్తున్న బాలిక యొక్క కంచు విగ్రహం మరియు మాతృదేవత యొక్క మట్టి బొమ్మ ఈ నాగరికత కాలంలో కనుగొనబడ్డాయి",
+            options: [
+                "1) వేద నాగరికత",
+                "2) సింధు లోయ నాగరికత",
+                "3) ఇరానియన్ నాగరికత",
+                "4) పెర్షియన్ నాగరికత"
+            ],
+            answer: 1
+        },
+        {
+            q: "140. 19వ శతాబ్దం ప్రారంభం నాటికి, ఆఫ్రికాలో ఈ ప్రాంతంలోని అధికభాగం గ్రేట్ బ్రిటన్ వలస పాలనలోకి తీసుకోబడింది",
+            options: [
+                "1) ఆఫ్రికా యొక్క వాయువ్య భాగం",
+                "2) ఆఫ్రికా యొక్క పశ్చిమ భాగం",
+                "3) ఆఫ్రికా యొక్క దక్షిణ మరియు ఈశాన్య భాగం",
+                "4) ఆఫ్రికా యొక్క నైరుతి భాగం"
+            ],
+            answer: 2
+        },
+        {
+            q: "141. తెలంగాణలోని పోచంపల్లి తన ఇక్కత్ చీరలకు ప్రసిద్ధి చెందింది. ఇక్కడ, \"ఇక్కత్\" అనేది దీనిని సూచిస్తుంది",
+            options: [
+                "1) ఒక ప్రత్యేక రకమైన పట్టు వస్త్రం",
+                "2) నేతలో ఉపయోగించే ఒక 'రెసిస్ట్ డైయింగ్' (రంగు అంటకుండా నిరోధించే) పద్ధతి",
+                "3) ఒక సంప్రదాయ చేనేత మగ్గం",
+                "4) నేత పూర్తయ్యాక ముద్రించే ఒక నమూనా"
+            ],
+            answer: 1
+        },
+        {
+            q: "142. పాట్నాలో నివసించే రామ్, తన వేసవి సెలవుల్లో జైపూర్ను సందర్శించాలని యోచిస్తున్నాడు. జైపూర్ చేరుకోవడానికి, రామ్ ఈ దిశగా ప్రయాణించాలి",
+            options: [
+                "1) ఉత్తరం",
+                "2) ఈశాన్యం",
+                "3) పడమర",
+                "4) ఆగ్నేయం"
+            ],
+            answer: 2
+        },
+        {
+            q: "143. అండమాన్ మరియు నికోబార్ దీవులలో, అగ్నిపర్వత మూలం కలిగిన దీవులు",
+            options: [
+                "1) నీల్ దీవి",
+                "2) హావ్ లాక్ దీవి",
+                "3) కార్ నికోబార్",
+                "4) బారెన్ దీవి"
+            ],
+            answer: 3
+        },
+        {
+            q: "144. భారతదేశంలో వార్షిక వర్షపాతంలో అధిక భాగం ఈ పవనాల ద్వారా లభిస్తుంది",
+            options: [
+                "1) తిరోగమిస్తున్న నైరుతి రుతుపవన గాలుల ద్వారా",
+                "2) నైరుతి రుతుపవన గాలుల ద్వారా",
+                "3) ఎగువ వాతావరణ ప్రసరణ ద్వారా",
+                "4) మధ్యధరా సముద్రం నుండి వచ్చే తుఫాను అల్పపీడనాల ద్వారా"
+            ],
+            answer: 1
+        },
+        {
+            q: "145. మొక్కల గురించి విద్యార్థులలో ఉన్నత స్థాయి ఆలోచనా విధానాన్ని ఉత్తమంగా ప్రోత్సహించే ప్రశ్న ఏది?",
+            options: [
+                "1) కిరణజన్య సంయోగక్రియ అంటే ఏమిటి?",
+                "2) పరాగసంపర్కాన్ని నిర్వచించండి.",
+                "3) ఎడారి మొక్కలకు ఆకులు తక్కువగా ఎందుకు ఉంటాయి?",
+                "4) పువ్వులోని భాగాలను పేర్కొనండి."
+            ],
+            answer: 2
+        },
+        {
+            q: "146. మానసిక చలన, జ్ఞానాత్మక, మరియు భావాత్మక రంగాలను ఏకకాలంలో ఉత్తమంగా ఏకీకృతం చేసే బోధనా పద్ధతి ఏది?",
+            options: [
+                "1) ఉపన్యాస పద్ధతి",
+                "2) ప్రదర్శన పద్ధతి",
+                "3) ప్రకల్పన పద్ధతి (Project method)",
+                "4) అభ్యాస పద్ధతి"
+            ],
+            answer: 2
+        },
+        {
+            q: "147. కింది వ్యాఖ్యలను చదివి సరైన సమాధానాన్ని ఎంచుకోండి:\nవ్యాఖ్య I: ఒక పరీక్షలోని అంశాల సంఖ్యను పెంచడం దాని సప్రమాణతను ఎల్లప్పుడూ మెరుగుపరుస్తుంది.\nవ్యాఖ్య II: సుదీర్ఘ పరీక్ష, విషయం యొక్క అన్ని జ్ఞానాత్మక స్థాయిలను స్వయంచాలకంగా కవర్ చేస్తుంది.",
+            options: [
+                "1) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ సత్యం",
+                "2) వ్యాఖ్య I మరియు వ్యాఖ్య II రెండూ అసత్యం",
+                "3) వ్యాఖ్య I సత్యం, కానీ వ్యాఖ్య II అసత్యం",
+                "4) వ్యాఖ్య I అసత్యం, కానీ వ్యాఖ్య II సత్యం"
+            ],
+            answer: 1
+        },
+        {
+            q: "148. విద్యా హక్కు చట్టం 2009 ప్రకారం, ఉపాధ్యాయుడు పరిసరాల అధ్యయనాన్ని బోధించునప్పుడు ఈ కింది అంశములను పరిగణనలోకి తీసుకొనవలయును:\nA) పిల్లల సర్వతోముఖాభివృద్ధి\nB) నిరంతర సమగ్ర మూల్యాంకనము\nC) బోధనాభ్యసన ఆంగ్ల భాషలోనే ఉండునట్లు చూచుట\nD) రాజ్యాంగ విలువలకన్నా వ్యక్తిగత విలువలను పెంపొందించుట పైననే దృష్టిని పెట్టుట\nసరైన సమాధానాన్ని ఎంచుకోండి:",
+            options: [
+                "1) A, B, C & D",
+                "2) A, B & C మాత్రమే",
+                "3) A & B మాత్రమే",
+                "4) A, C & D మాత్రమే"
+            ],
+            answer: 2
+        },
+        {
+            q: "149. ఒక 5వ తరగతి విద్యార్థి కొన్ని అర్థవంతమైన లక్షణాల ఆధారంగా వస్తువులను సమూహములుగా విడగొట్టుట - అనునది అతనిలో ఈ కింది ప్రక్రియా నైపుణ్య సాధనను సూచిస్తుంది.",
+            options: [
+                "1) నిర్ధారించుకోవడం",
+                "2) వర్గీకరించడం",
+                "3) కొలవడం/మాపనం",
+                "4) ఊహించటం"
+            ],
+            answer: 1
+        },
+        {
+            q: "150. ఈ కింది విద్యా ప్రమాణము పిల్లలలో స్వేచ్ఛ, సమానత్వం, న్యాయం మరియు జాతీయ సమైక్యతలను పెంపొందించుటపై ప్రధానంగా దృష్టిని పెడుతుంది.",
+            options: [
+                "1) ప్రశంస, విలువలు – జీవ వైవిధ్యం పట్ల స్పృహ కలిగి ఉండటం",
+                "2) విషయావగాహన",
+                "3) బొమ్మలు గీయడం, నమూనాలు తయారుచేయడం ద్వారా భావప్రసారం",
+                "4) ప్రశ్నించడం, పరికల్పనలు చేయడం"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
