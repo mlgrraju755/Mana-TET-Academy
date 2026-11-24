@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - Environmental Studies (Questions 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #27ae60;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eafaf1;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Environmental Studies</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - Questions 121 to 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. The function of sepals in a flower is to",
+            options: [
+                "1) attract insects",
+                "2) produce pollen",
+                "3) protect the bud",
+                "4) form seeds"
+            ],
+            answer: 2
+        },
+        {
+            q: "122. Identify the functions normally performed by the stem in plants:\nA) Transporting water and minerals\nB) Providing support to leaves, flowers, and fruits\nC) Absorbing minerals from the soil\nD) Absorbing water from the soil",
+            options: [
+                "1) A & B only",
+                "2) A & C only",
+                "3) B & D only",
+                "4) C & D only"
+            ],
+            answer: 0
+        },
+        {
+            q: "123. If pollination occurs, but fertilisation fails, which of the following will not happen?",
+            options: [
+                "1) Pollen tube formation",
+                "2) Ovule developing into seed",
+                "3) Pollen grains growing on stigma",
+                "4) Germination of pollen grains"
+            ],
+            answer: 1
+        },
+        {
+            q: "124. Read the following statements and choose the correct answer:\nStatement I: Refrigeration slows down the process of food spoilage.\nStatement II: Low temperature reduces the growth of microorganisms.",
+            options: [
+                "1) Both Statements I and II are true",
+                "2) Both Statements I and II are false",
+                "3) Statement I is true and Statement II is false",
+                "4) Statement I is false and Statement II is true"
+            ],
+            answer: 0
+        },
+        {
+            q: "125. Read the following statements and choose the correct answer:\nStatement I: Pulses are an important part of a balanced diet.\nStatement II: Pulses are rich in proteins and help in body building.",
+            options: [
+                "1) Both Statements I and II are true",
+                "2) Both Statements I and II are false",
+                "3) Statement I is false, but Statement II is true",
+                "4) Statement I is true, but Statement II is false"
+            ],
+            answer: 0
+        },
+        {
+            q: "126. Among the following, which is the major pollutant released during aluminium refining?",
+            options: [
+                "1) Chlorides",
+                "2) Sulphates",
+                "3) Fluorides",
+                "4) Nitrates"
+            ],
+            answer: 2
+        },
+        {
+            q: "127. Read the following statements and choose the correct answer:\nStatement I: Floods can be reduced by deforestation.\nStatement II: Trees help in absorbing water and reduce water runoff.",
+            options: [
+                "1) Both Statements I and II are true",
+                "2) Both Statements I and II are false",
+                "3) Statement I is false, Statement II is true",
+                "4) Statement I is true, Statement II is false"
+            ],
+            answer: 2
+        },
+        {
+            q: "128. On rainy days the amount of water vapour in the air is high; hence air is",
+            options: [
+                "1) neither more humid nor less humid",
+                "2) less humid",
+                "3) may be more humid or less humid",
+                "4) more humid"
+            ],
+            answer: 3
+        },
+        {
+            q: "129. Hydrogen is considered a \"future fuel\" because it:",
+            options: [
+                "1) occurs freely in large quantities in nature",
+                "2) produces only water as a by-product when used as a fuel",
+                "3) can be extracted directly from coal without energy loss",
+                "4) is cheaper than all fossil fuels"
+            ],
+            answer: 1
+        },
+        {
+            q: "130. When a mosquito bites a person on the leg, what is the correct sequence of nerve impulse leading to the response?",
+            options: [
+                "1) Sensory nerves → Motor nerves → Brain → Muscles → Response",
+                "2) Motor nerves → Brain → Sensory nerves → Muscles → Response",
+                "3) Brain → Sensory nerves → Motor nerves → Muscles → Response",
+                "4) Sensory nerves → Brain → Motor nerves → Muscles → Response"
+            ],
+            answer: 3
+        },
+        {
+            q: "131. Identify the agranulocyte among the following white blood cells.",
+            options: [
+                "1) Basophil",
+                "2) Monocyte",
+                "3) Eosinophil",
+                "4) Neutrophil"
+            ],
+            answer: 1
+        },
+        {
+            q: "132. Identify the correct pair among the following.",
+            options: [
+                "1) Absence of oxygen – Transpiration",
+                "2) Absence of oxygen – Photosynthesis",
+                "3) Presence of light – Digestion",
+                "4) Presence of oxygen – Aerobic respiration"
+            ],
+            answer: 3
+        },
+        {
+            q: "133. Mir Momin Astarabadi was the Prime Minister during the reign of this Qutb Shahi ruler",
+            options: [
+                "1) Quli Qutb Shah",
+                "2) Ibrahim Qutb Shah",
+                "3) Muhammad Quli Qutb Shah",
+                "4) Abul Hasan Qutb Shah"
+            ],
+            answer: 2
+        },
+        {
+            q: "134. A river begins to deposit the silt and sand it carries along its bed and banks when it.",
+            options: [
+                "1) becomes narrow",
+                "2) is at its source",
+                "3) flows along mountain ranges",
+                "4) becomes wide and slow"
+            ],
+            answer: 3
+        },
+        {
+            q: "135. Among the following, the hills located in the Upper Telangana Plateau are",
+            options: [
+                "1) Rakhi hills",
+                "2) Devarakonda hills",
+                "3) Kandikal hills",
+                "4) Satmala hills"
+            ],
+            answer: 0
+        },
+        {
+            q: "136. Implementing all the decisions taken by the Gram Panchayat and overseeing the day-to-day activities of the Panchayat is the responsibility of",
+            options: [
+                "1) Village Secretary",
+                "2) Mandal Revenue Officer",
+                "3) Village Sarpanch",
+                "4) Agricultural Extension Officer"
+            ],
+            answer: 0
+        },
+        {
+            q: "137. According to \"Telangana Panchayat Raj Act, 2018\", one among the following is NOT directly elected by the people",
+            options: [
+                "1) Mandal Parishad Territorial Constituency Members",
+                "2) Zilla Parishad Territorial Constituency Members",
+                "3) Village Sarpanch",
+                "4) Municipal Chairman"
+            ],
+            answer: 3
+        },
+        {
+            q: "138. In the ancient Indian context, the term \"Bhaga\" refers to",
+            options: [
+                "1) a type of weapon used in battles",
+                "2) a religious ritual performed by priests",
+                "3) a share of agricultural produce paid as tax to the king",
+                "4) a measurement unit of land"
+            ],
+            answer: 2
+        },
+        {
+            q: "139. The bronze statue of a dancing girl and a clay figure of the Mother Goddess were discovered during this civilisation",
+            options: [
+                "1) Vedic Civilisation",
+                "2) Indus Valley Civilisation",
+                "3) Iranian Civilisation",
+                "4) Persian Civilisation"
+            ],
+            answer: 1
+        },
+        {
+            q: "140. By the beginning of the 19th century, much of this part of Africa was brought under the colonial rule of Great Britain",
+            options: [
+                "1) North-Western part of Africa",
+                "2) Western part of Africa",
+                "3) Southern and North-Eastern part of Africa",
+                "4) South-Western part of Africa"
+            ],
+            answer: 2
+        },
+        {
+            q: "141. Pochampally in Telangana is famous for its Ikkat sarees. Here, \"Ikkat\" refers to",
+            options: [
+                "1) a special type of silk fibre",
+                "2) a resist-dyeing technique used in weaving",
+                "3) a traditional handloom",
+                "4) a pattern printed after weaving"
+            ],
+            answer: 1
+        },
+        {
+            q: "142. Ram, who lives in Patna, plans to visit Jaipur during his summer vacation. To reach Jaipur, Ram has to travel towards",
+            options: [
+                "1) North",
+                "2) North-East",
+                "3) West",
+                "4) South-East"
+            ],
+            answer: 2
+        },
+        {
+            q: "143. In the Andaman and Nicobar Islands, the islands of volcanic origin are",
+            options: [
+                "1) Neil Island",
+                "2) Havelock Island",
+                "3) Car Nicobar",
+                "4) Barren Island"
+            ],
+            answer: 3
+        },
+        {
+            q: "144. Most of the annual rainfall in India is received through",
+            options: [
+                "1) retreating South-West monsoon winds",
+                "2) South-West monsoon winds",
+                "3) upper air circulation",
+                "4) cyclonic depressions from the Mediterranean Sea"
+            ],
+            answer: 1
+        },
+        {
+            q: "145. Which question best promotes higher-order thinking among students about plants?",
+            options: [
+                "1) What is photosynthesis?",
+                "2) Define pollination.",
+                "3) Why do desert plants have fewer leaves?",
+                "4) Name the parts of a flower."
+            ],
+            answer: 2
+        },
+        {
+            q: "146. Which teaching method best integrates psychomotor, cognitive, and affective domains simultaneously?",
+            options: [
+                "1) Lecture method",
+                "2) Demonstration method",
+                "3) Project method",
+                "4) Drill method"
+            ],
+            answer: 2
+        },
+        {
+            q: "147. Read the following statements and choose the correct answer:\nStatement I: Increasing the number of items in a test always improves its validity.\nStatement II: A lengthy test automatically covers all cognitive levels of the subject.",
+            options: [
+                "1) Both Statements I and II are true",
+                "2) Both Statements I and II are false",
+                "3) Statement I is true, but Statement II is false",
+                "4) Statement I is false, but Statement II is true"
+            ],
+            answer: 1
+        },
+        {
+            q: "148. As per Right to Education Act 2009, a teacher while teaching Environmental Studies must consider the following:\nA) All round development of the child\nB) Continuous and Comprehensive Evaluation\nC) Ensuring teaching-learning takes place in English language only\nD) Focusing only on developing personal values over constitutional values\nChoose the correct answer:",
+            options: [
+                "1) A, B, C & D",
+                "2) A, B & C only",
+                "3) A & B only",
+                "4) A, C & D only"
+            ],
+            answer: 2
+        },
+        {
+            q: "149. A class 5 student grouping objects based on some meaningful characteristics indicates that he has achieved this process skill.",
+            options: [
+                "1) Confirming",
+                "2) Classifying",
+                "3) Measuring",
+                "4) Predicting"
+            ],
+            answer: 1
+        },
+        {
+            q: "150. The following academic standard mainly focuses on fostering freedom, equality, justice and national integration among children.",
+            options: [
+                "1) Appreciation, values – Awareness towards bio diversity",
+                "2) Conceptual understanding",
+                "3) Communication through drawing, model making",
+                "4) Questioning, making hypothesis"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
