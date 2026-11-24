@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (16th June 2026 - Shift 2) - Child Development and Pedagogy (Questions 1 - 30)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #3498db;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eef6fc;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Child Development and Pedagogy</h1>
+    <div class="subtitle">TG TET Paper I (16th June 2026 - Shift 2) - Questions 1 to 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. The factor of 'under nourishment of mother during prenatal period' that can influence the growth and development of the child comes under this type of factor:\nA. Biological\nB. Environmental",
+            options: [
+                "1) Both A & B",
+                "2) Neither A nor B",
+                "3) A only",
+                "4) B only"
+            ],
+            answer: 3
+        },
+        {
+            q: "2. When we say that development is spiral it should be understood that",
+            options: [
+                "1) Development proceeds on a straight path with a steady pace",
+                "2) Development does not proceed on a straight path with a steady pace",
+                "3) Development is uniform",
+                "4) Development cannot be observed"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. One among the following human body part does NOT have lymph nodes",
+            options: [
+                "1) Armpit",
+                "2) Neck",
+                "3) Chest",
+                "4) Spinal cord"
+            ],
+            answer: 3
+        },
+        {
+            q: "4. Developmental tasks are:\nA. Physical\nB. Cognitive\nC. Social",
+            options: [
+                "1) B & C only",
+                "2) A & B only",
+                "3) A, B & C",
+                "4) B only"
+            ],
+            answer: 2
+        },
+        {
+            q: "5. A child who knows the word 'sand' pronouncing a new word 'band' correctly based on the sound of 'and' is an example for this concept of Piaget",
+            options: [
+                "1) Reversibility",
+                "2) Accommodation",
+                "3) Assimilation",
+                "4) Animism"
+            ],
+            answer: 2
+        },
+        {
+            q: "6. In spite of being warned by her mother, 5-year-old Prardhana was playing with her father's favourite show piece and broke it by mistake. She started requesting her mother not to tell her father that she broke it because he would beat her. The Level of moral development Prardhana is in, according to Kohlberg",
+            options: [
+                "1) II",
+                "2) I",
+                "3) III",
+                "4) IV"
+            ],
+            answer: 1
+        },
+        {
+            q: "7. The minimum age from which Stanford Binet Scale of Intelligence can be used",
+            options: [
+                "1) 2 years",
+                "2) 0 years",
+                "3) 4 years",
+                "4) 6 years"
+            ],
+            answer: 0
+        },
+        {
+            q: "8. Pushpa's parents joined her in music school which she has to attend daily in the evening. Pushpa is not interested in music but she doesn't express because she knows that whatever her parents say has to be obeyed otherwise, she'll be punished. The child rearing style of Pushpa's parents is",
+            options: [
+                "1) Uninvolved",
+                "2) Authoritative",
+                "3) Permissive",
+                "4) Authoritarian"
+            ],
+            answer: 3
+        },
+        {
+            q: "9. An understanding of the way behavioural problems emerge show that they are NOT",
+            options: [
+                "1) Innate",
+                "2) Habitual",
+                "3) Learnt",
+                "4) Curative"
+            ],
+            answer: 0
+        },
+        {
+            q: "10. In a study conducted to see the impact of mid-day meal on the attendance of the students the dependant variable is",
+            options: [
+                "1) Mid-day meal",
+                "2) Attendance of students",
+                "3) Nutritional value of food",
+                "4) Age of the students"
+            ],
+            answer: 1
+        },
+        {
+            q: "11. Changes in the behaviour of the individual because of direct or indirect experiences can be called as",
+            options: [
+                "1) Memory",
+                "2) Personality",
+                "3) Learning",
+                "4) Mental health"
+            ],
+            answer: 2
+        },
+        {
+            q: "12. Nakul is a seven-year-old child who used to spoil his school dress very badly everyday with food marks, colour, mud, etc. One day when his dress looked a little better with no food marks his mother said, 'Very good Nakul, today you ate properly, your dress does not have food marks, keep it up'. Because of this praise, Nakul slowly started to eat properly and also do every activity carefully, thus eventually coming back home with neat dress. This is an example for this concept of operant conditioning by Skinner",
+            options: [
+                "1) Generalisation",
+                "2) Discrimination",
+                "3) Cueing",
+                "4) Shaping"
+            ],
+            answer: 3
+        },
+        {
+            q: "13. Match the following principles of Classical Conditioning with their essence:\nA) Extinction — i) Reappearance of apparently extinguished conditioned response\nB) Spontaneous Recovery — ii) Reacting differently to different situations\nC) Stimulus generalisation — iii) Disappearance of conditioned response\nD) Stimulus discrimination — iv) Responding in usual fashion\nChoose the correct answer:",
+            options: [
+                "1) A-iii, B-iv, C-i, D-ii",
+                "2) A-ii, B-i, C-iv, D-iii",
+                "3) A-i, B-ii, C-iv, D-iii",
+                "4) A-iii, B-i, C-iv, D-ii"
+            ],
+            answer: 3
+        },
+        {
+            q: "14. According to this theory, we make many random and false attempts before we get the correct solution",
+            options: [
+                "1) Operant conditioning",
+                "2) Classical conditioning",
+                "3) Trial and error",
+                "4) Observation"
+            ],
+            answer: 2
+        },
+        {
+            q: "15. Learning according to Bandura does NOT take place in one of the following ways",
+            options: [
+                "1) Incorporating and imitating others behaviour",
+                "2) Blindly responding to environmental stimuli",
+                "3) Watching and listening to other people",
+                "4) From examples of others"
+            ],
+            answer: 1
+        },
+        {
+            q: "16. Emphasis on unity and cohesiveness within learning experiences is the contribution of this learning theory",
+            options: [
+                "1) Insightful",
+                "2) Observational learning",
+                "3) Trial and error",
+                "4) Conditioning"
+            ],
+            answer: 0
+        },
+        {
+            q: "17. Poor air quality can be regarded as a threat to this need of a person",
+            options: [
+                "1) Basic",
+                "2) Secondary",
+                "3) Psychological",
+                "4) Social"
+            ],
+            answer: 0
+        },
+        {
+            q: "18. One among the following is NOT related to 'affective' domain",
+            options: [
+                "1) Attitude",
+                "2) Thinking",
+                "3) Feeling",
+                "4) Emotion"
+            ],
+            answer: 1
+        },
+        {
+            q: "19. A mother picking up the art work of her child from multiple art works presented before her is an example for",
+            options: [
+                "1) Probed recall",
+                "2) Serial recognition",
+                "3) Simple recall",
+                "4) Alternate recognition"
+            ],
+            answer: 3
+        },
+        {
+            q: "20. Learning of mathematics helping or hindering in learning of programming is an example for",
+            options: [
+                "1) Vicarious learning",
+                "2) Learning by conditioning",
+                "3) Transfer of learning",
+                "4) Concrete learning"
+            ],
+            answer: 2
+        },
+        {
+            q: "21. The disability category with problems due to impairment of psychological processes like perception and memory is",
+            options: [
+                "1) Speech impairment",
+                "2) Physical impairment",
+                "3) Visual impairment",
+                "4) Learning disability"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. One among the following is an advantage of enquiry-based learning",
+            options: [
+                "1) Time consuming",
+                "2) Requires plenty of resources",
+                "3) Promotes self-learning",
+                "4) School textbooks may not be suitable"
+            ],
+            answer: 2
+        },
+        {
+            q: "23. Organising learning in heterogenous classroom may also be understood as",
+            options: [
+                "1) Discouraging peer learning",
+                "2) Using lecture method for all the students",
+                "3) Special instruction to students sharing common learning needs",
+                "4) Catering to individual differences"
+            ],
+            answer: 3
+        },
+        {
+            q: "24. According to Bruner, children during this stage show their thought process through non-verbal activities based on motor actions and movements",
+            options: [
+                "1) Enactive",
+                "2) Iconic",
+                "3) Symbolic",
+                "4) Intuitive"
+            ],
+            answer: 0
+        },
+        {
+            q: "25. One among the following teacher centred methods has the major problem of sustaining attention of students",
+            options: [
+                "1) Play-way",
+                "2) Lecture",
+                "3) Activity",
+                "4) Project"
+            ],
+            answer: 1
+        },
+        {
+            q: "26. Read the following statements and identify the correct answer:\nStatement A: Play promotes cognitive development\nStatement B: We should make children solve lot of puzzles to promote cognitive development",
+            options: [
+                "1) Both Statements A and B are correct",
+                "2) Statements A and B are incorrect",
+                "3) Only Statement A is correct",
+                "4) Only Statement B is correct"
+            ],
+            answer: 2
+        },
+        {
+            q: "27. Guidance is",
+            options: [
+                "1) making a person dependent",
+                "2) giving directions",
+                "3) the process of helping a person in adjusting to himself",
+                "4) imposition of one's point of view on another person"
+            ],
+            answer: 2
+        },
+        {
+            q: "28. The Pre-Conception & Pre-Natal Diagnostics Techniques Act, 1994 in India prohibits",
+            options: [
+                "1) Child marriage",
+                "2) Infanticide",
+                "3) Sex selection before or after conception",
+                "4) Child Prostitution"
+            ],
+            answer: 2
+        },
+        {
+            q: "29. Assessment of learning carried out in schools majorly focuses on assessing",
+            options: [
+                "1) random learning outcomes",
+                "2) planned learning outcomes",
+                "3) incidental learning",
+                "4) abstract learning"
+            ],
+            answer: 1
+        },
+        {
+            q: "30. As per the Schedule of Norms and Standards for a School of 'Right of Children to Free and Compulsory Education Act, 2009' a school of first to fifth class having an admitted strength between one hundred and twenty-one to two hundred should have these many teachers",
+            options: [
+                "1) Five",
+                "2) Four",
+                "3) Five plus one head teacher",
+                "4) Three"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Mee Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(Attempted: ${answeredCount} out of ${quizData.length} questions)</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
