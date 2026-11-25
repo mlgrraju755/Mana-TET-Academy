@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - గణితం (ప్రశ్నలు 91 - 120)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #1f618d;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.55em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #1f618d;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #ebf5fb;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #1f618d;
+            white-space: pre-line;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #1f618d;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>గణితం (Mathematics)</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - ప్రశ్నలు 91 నుండి 120</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. (2a + 3b - 5c)(a²b - bc²) =",
+            options: [
+                "1) 2a³b - 2abc² - 3a²b² + 3b²c² - 5a²bc - 5bc³",
+                "2) 2a³b + 2abc² + 3a²b² - 3b²c² + 5a²bc - 5bc³",
+                "3) 2a³b - 2abc² + 3a²b² - 3b²c² + 5a²bc - 5bc³",
+                "4) 2a³b - 2abc² + 3a²b² - 3b²c² - 5a²bc + 5bc³"
+            ],
+            answer: 3,
+            explanation: "ప్రతి పదాన్ని గుణిస్తే:\n• 2a × (a²b - bc²) = 2a³b - 2abc²\n• 3b × (a²b - bc²) = 3a²b² - 3b²c²\n• -5c × (a²b - bc²) = -5a²bc + 5bc³ (రుణాత్మక × రుణాత్మక = ధనాత్మక +5bc³).\nకాబట్టి మొత్తం 2a³b - 2abc² + 3a²b² - 3b²c² - 5a²bc + 5bc³."
+        },
+        {
+            q: "92. క్రింది వాటిలో నుండి దత్తాంశంను సూచించుటకు సంబంధించి సరైన వ్యాఖ్యలను గుర్తించండి.\nA) పట చిత్రంలో దత్తాంశం యొక్క పౌనఃపున్యాన్ని సూచించడానికి పటాలను లేదా గుర్తులను ఉపయోగిస్తారు.\nB) ఒక కమ్మీ రేఖాచిత్రంలో, కమ్మీల పొడవులు రాశుల పౌనఃపున్యములను సూచిస్తాయి.\nసరైన సమాధానాన్ని ఎంచుకోండి.",
+            options: [
+                "1) వ్యాఖ్య A మాత్రమే సరైనది.",
+                "2) వ్యాఖ్య B మాత్రమే సరైనది.",
+                "3) రెండు వ్యాఖ్యలు A మరియు B సరైనవి.",
+                "4) రెండు వ్యాఖ్యలు A మరియు B సరికావు."
+            ],
+            answer: 2,
+            explanation: "పట చిత్రం (Pictograph) లో పౌనఃపున్యాన్ని బొమ్మలు/గుర్తులతో సూచిస్తారు మరియు కమ్మీ రేఖాచిత్రం (Bar graph) లో కమ్మీల పొడవు/ఎత్తు పౌనఃపున్యాన్ని సూచిస్తుంది. కాబట్టి A మరియు B రెండూ సరైనవి."
+        },
+        {
+            q: "93. ΔPQR లో Q వద్ద లంబకోణం కలదు, QS, PR పైకి గీయబడిన లంబం, PQ = 12 సెం.మీ., QR = 9 సెం.మీ. మరియు PR = 15 సెం.మీ. అయితే, QS పొడవు (సెం.మీ. లలో)",
+            options: [
+                "1) 1.8",
+                "2) 3.6",
+                "3) 5.4",
+                "4) 7.2"
+            ],
+            answer: 3,
+            explanation: "త్రిభుజ వైశాల్యం = 1/2 × భూమి × ఎత్తు.\nPQ మరియు QR లంబభుజాలు కాబట్టి వైశాల్యం = 1/2 × 12 × 9 = 54 చ.సెం.మీ.\nPR భూమి మరియు QS ఎత్తు అయితే వైశాల్యం = 1/2 × 15 × QS = 54 ⇒ 7.5 × QS = 54 ⇒ QS = 54 / 7.5 = 7.2 సెం.మీ."
+        },
+        {
+            q: "94. 100 కోట్ల సంఖ్యలో ఉండే అంకెల సంఖ్య",
+            options: [
+                "1) 8",
+                "2) 9",
+                "3) 10",
+                "4) 11"
+            ],
+            answer: 2,
+            explanation: "1 కోటి = 1,00,00,000 (8 అంకెలు).\n100 కోట్లు = 100 × 1,00,00,000 = 1,00,00,00,000 (1 తర్వాత 9 సున్నాలు).\nమొత్తం అంకెలు = 1 + 9 = 10."
+        },
+        {
+            q: "95. 0.803 - 0.3967 + 0.76 =",
+            options: [
+                "1) 0.1663",
+                "2) 1.1663",
+                "3) 0.4823",
+                "4) 0.4837"
+            ],
+            answer: 1,
+            explanation: "దశాంశ స్థానాలను సమం చేసి గణించాలి:\n• 0.8030 - 0.3967 = 0.4063\n• 0.4063 + 0.7600 = 1.1663."
+        },
+        {
+            q: "96. కింది భిన్నాల ఆరోహణ క్రమాన్ని ఎంచుకోండి.\n2/3, 5/6, 3/5, 3/4",
+            options: [
+                "1) 3/5, 2/3, 3/4, 5/6",
+                "2) 2/3, 3/5, 3/4, 5/6",
+                "3) 2/3, 3/4, 3/5, 5/6",
+                "4) 3/4, 2/3, 3/5, 5/6"
+            ],
+            answer: 0,
+            explanation: "దశాంశ విలువలు:\n• 3/5 = 0.60\n• 2/3 ≈ 0.667\n• 3/4 = 0.75\n• 5/6 ≈ 0.833\nఆరోహణ క్రమం (చిన్నది నుండి పెద్దది): 3/5, 2/3, 3/4, 5/6."
+        },
+        {
+            q: "97. ఒక త్రిభుజంలో బాహ్య కోణము 120° మరియు దీని అంతరాభిముఖ కోణాలు 1 : 2 నిష్పత్తిలో ఉన్నట్లయితే, ఆ త్రిభుజం ఒక",
+            options: [
+                "1) అల్పకోణ త్రిభుజం",
+                "2) అధికకోణ త్రిభుజం",
+                "3) లంబకోణ త్రిభుజం",
+                "4) సమద్విబాహు లంబకోణ త్రిభుజం"
+            ],
+            answer: 0,
+            explanation: "బాహ్యకోణం = అంతరాభిముఖ కోణాల మొత్తం = 120°.\nనిష్పత్తి 1 : 2 కాబట్టి అంతరాభిముఖ కోణాలు (1/3)×120° = 40° మరియు (2/3)×120° = 80°.\nమూడవ కోణం = 180° - 120° = 60°.\nమూడు కోణాలు (40°, 60°, 80°) 90° కంటే తక్కువ కాబట్టి ఇది అల్పకోణ త్రిభుజం."
+        },
+        {
+            q: "98. కింది వాటిలో నుండి 3 మరియు 9 రెండింటితోనూ నిశ్శేషంగా భాగించబడే సంఖ్యలను ఎంచుకోండి.\nA) 779868\nB) 482510\nC) 374562\nD) 564879\nసరైన సమాధానాన్ని ఎంచుకోండి.",
+            options: [
+                "1) B & D మాత్రమే",
+                "2) A & C మాత్రమే",
+                "3) A & B మాత్రమే",
+                "4) C & D మాత్రమే"
+            ],
+            answer: 1,
+            explanation: "ఒక సంఖ్యలోని అంకెల మొత్తం 9 తో భాగించబడితే, అది 3 మరియు 9 రెండింటితోనూ భాగించబడుతుంది:\n• A) 7+7+9+8+6+8 = 45 (9 తో భాగించబడుతుంది)\n• B) 4+8+2+5+1+0 = 20 (కాదు)\n• C) 3+7+4+5+6+2 = 27 (9 తో భాగించబడుతుంది)\n• D) 5+6+4+8+7+9 = 39 (కాదు).\nకాబట్టి A & C మాత్రమే."
+        },
+        {
+            q: "99. ఒక కంపెనీ ప్రతిరోజూ 4280 బొమ్మలను తయారు చేస్తే, ఫిబ్రవరి 2026 నెలలో తయారైన మొత్తం బొమ్మల సంఖ్య",
+            options: [
+                "1) 1,19,840",
+                "2) 1,24,120",
+                "3) 1,28,400",
+                "4) 1,32,680"
+            ],
+            answer: 0,
+            explanation: "2026 లీపు సంవత్సరం కాదు కాబట్టి ఫిబ్రవరి 2026 లో 28 రోజులు ఉంటాయి.\nమొత్తం బొమ్మలు = 4280 × 28 = 1,19,840."
+        },
+        {
+            q: "100. 21 నుండి 40 వరకు గల సంయుక్త సంఖ్యల మధ్యగతం",
+            options: [
+                "1) 30",
+                "2) 31",
+                "3) 32",
+                "4) 33"
+            ],
+            answer: 1,
+            explanation: "21 నుండి 40 వరకు గల సంయుక్త సంఖ్యలు (16 సంఖ్యలు):\n21, 22, 24, 25, 26, 27, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40.\nసరి సంఖ్యలో (n = 16) ఉన్నందున మధ్యగతం = (8వ పదం + 9వ పదం) / 2 = (30 + 32) / 2 = 31."
+        },
+        {
+            q: "101. కింది వాటిలో సరళరేఖలకు సంబంధించిన సరైన వ్యాఖ్యలను ఎంచుకోండి.\nA) ఒక తలంలో, రెండు సమాంతర రేఖలకు ఒక ఉమ్మడి బిందువు ఉంటుంది.\nB) లంబ కోణముతో ఖండించుకునే రెండు ఖండన రేఖలను లంబ రేఖలు అంటారు.\nసరైన సమాధానాన్ని ఎంచుకోండి.",
+            options: [
+                "1) రెండు వ్యాఖ్యలు A మరియు B సరైనవి.",
+                "2) రెండు వ్యాఖ్యలు A మరియు B సరికావు.",
+                "3) వ్యాఖ్య A మాత్రమే సరైనది.",
+                "4) వ్యాఖ్య B మాత్రమే సరైనది."
+            ],
+            answer: 3,
+            explanation: "సమాంతర రేఖలకు ఉమ్మడి బిందువు ఉండదు (కాబట్టి A తప్పు). 90° కోణంతో ఖండించుకునే రేఖలను లంబ రేఖలు అంటారు (కాబట్టి B సరైనది)."
+        },
+        {
+            q: "102. 936² - 64² =",
+            options: [
+                "1) 862000",
+                "2) 86200",
+                "3) 872000",
+                "4) 87200"
+            ],
+            answer: 2,
+            explanation: "a² - b² = (a - b)(a + b) సర్వసమీకరణం ప్రకారం:\n936² - 64² = (936 - 64)(936 + 64) = 872 × 1000 = 8,72,000."
+        },
+        {
+            q: "103. కింది వాటిలో సంపూర్ణ ఘన సంఖ్యను ఎంచుకోండి.",
+            options: [
+                "1) 1728",
+                "2) 2026",
+                "3) 2048",
+                "4) 3600"
+            ],
+            answer: 0,
+            explanation: "1728 = 12 × 12 × 12 = 12³. ఇది ఒక సంపూర్ణ ఘన సంఖ్య (Perfect cube)."
+        },
+        {
+            q: "104. ఒక ఘనం యొక్క సంపూర్ణ ఉపరితల వైశాల్యం 1944 చ.సెం.మీ. అయితే, దాని ఘనపరిమాణం (ఘ.సెం.మీ. లలో)",
+            options: [
+                "1) 4096",
+                "2) 5832",
+                "3) 6859",
+                "4) 10648"
+            ],
+            answer: 1,
+            explanation: "ఘనం సంపూర్ణ తల వైశాల్యం = 6a² = 1944 ⇒ a² = 1944 / 6 = 324 ⇒ భుజం a = 18 సెం.మీ.\nఘనపరిమాణం = a³ = 18³ = 5832 ఘ.సెం.మీ."
+        },
+        {
+            q: "105. (16x³ - 100x) / 2x(2x + 5) =",
+            options: [
+                "1) (2x - 5)",
+                "2) 2(2x - 5)",
+                "3) 2(2x + 5)",
+                "4) (2x + 5)"
+            ],
+            answer: 1,
+            explanation: "లవంలో 4x ఉమ్మడి తీయగా: 4x(4x² - 25) = 4x(2x - 5)(2x + 5).\nఇప్పుడు [4x(2x - 5)(2x + 5)] / [2x(2x + 5)] = 2(2x - 5)."
+        },
+        {
+            q: "106. ఒకే పరిమాణం కలిగిన 45 పసుపు ప్యాకెట్ల బరువు 9 కిలోలు అయితే, అలాంటి 75 పసుపు ప్యాకెట్ల బరువు (కిలోగ్రాములలో)",
+            options: [
+                "1) 7.5",
+                "2) 12",
+                "3) 15",
+                "4) 16"
+            ],
+            answer: 2,
+            explanation: "45 ప్యాకెట్ల బరువు = 9 కిలోలు ⇒ 1 ప్యాకెట్ బరువు = 9 / 45 = 1/5 కిలోలు.\n75 ప్యాకెట్ల బరువు = 75 × (1/5) = 15 కిలోగ్రాములు."
+        },
+        {
+            q: "107. (3⁰ + 1/3) × 3³ × 1/2 =",
+            options: [
+                "1) 27",
+                "2) 9",
+                "3) 36",
+                "4) 18"
+            ],
+            answer: 3,
+            explanation: "3⁰ = 1, 3³ = 27.\n(1 + 1/3) × 27 × (1/2) = (4/3) × 27 × (1/2) = 36 × (1/2) = 18."
+        },
+        {
+            q: "108. కింది వాటిలో రెండు సౌష్ఠవ రేఖలను మాత్రమే కలిగి ఉన్న ఆకారాన్ని ఎంచుకోండి.",
+            options: [
+                "1) దీర్ఘచతురస్రం",
+                "2) చతురస్రం",
+                "3) సమద్విబాహు త్రిభుజము",
+                "4) వృత్తం"
+            ],
+            answer: 0,
+            explanation: "దీర్ఘచతురస్రానికి అడ్డంగా ఒకటి, నిలువుగా ఒకటి — మొత్తం 2 సౌష్ఠవ రేఖలు మాత్రమే ఉంటాయి. (చతురస్రానికి 4, సమద్విబాహు త్రిభుజానికి 1, వృత్తానికి అపరిమితం)."
+        },
+        {
+            q: "109. రమేష్ ఒక వాక్యూమ్ క్లీనర్ ను ₹20000 లకు కొని ₹23000 లకు అమ్మిన, అతనికి వచ్చిన లాభ శాతం",
+            options: [
+                "1) 6%",
+                "2) 9%",
+                "3) 12%",
+                "4) 15%"
+            ],
+            answer: 3,
+            explanation: "కొన్న వెల = ₹20,000, అమ్మిన వెల = ₹23,000.\nలాభం = ₹23,000 - ₹20,000 = ₹3,000.\nలాభ శాతం = (3000 / 20000) × 100 = 15%."
+        },
+        {
+            q: "110. రెండు భిన్నాల లబ్ధం 4/21. దానిలోని ఒక భిన్నం 3/7 అయితే, రెండవ భిన్నం",
+            options: [
+                "1) 1/3",
+                "2) 4/3",
+                "3) 4/9",
+                "4) 1/9"
+            ],
+            answer: 2,
+            explanation: "రెండవ భిన్నం = (4/21) ÷ (3/7) = (4/21) × (7/3) = 4/9."
+        },
+        {
+            q: "111. కింది వాటిలో పూర్ణ సంఖ్యలకు సంబంధించిన సరికాని వ్యాఖ్యను ఎంచుకోండి.",
+            options: [
+                "1) పూర్ణసంఖ్యల వ్యవకలనాలకు సంవృత ధర్మం వర్తించదు.",
+                "2) పూర్ణ సంఖ్యలలో వ్యవకలనానికి స్థిత్యంతర ధర్మం వర్తించదు.",
+                "3) పూర్ణ సంఖ్యలలో గుణకార తత్సమాంశము '1'.",
+                "4) పూర్ణ సంఖ్యల సంకలనంలో స్థిత్యంతర ధర్మం వర్తిస్తుంది."
+            ],
+            answer: 0,
+            explanation: "ఏ రెండు పూర్ణ సంఖ్యలను తీసివేసినా ఫలితం పూర్ణ సంఖ్యే అవుతుంది (ఉదా: 3 - 5 = -2). కాబట్టి పూర్ణ సంఖ్యల వ్యవకలనాలకు సంవృత ధర్మం వర్తిస్తుంది. మొదటి వ్యాఖ్య సరికానిది."
+        },
+        {
+            q: "112. ఒక తీగను మలిచి 35 సెం.మీ. వ్యాసార్థం గల వృత్తాన్ని ఏర్పరిచారు. మరల అదే తీగతో ఒక చతురస్రాకారాన్ని తయారు చేసిన, ఆ చతురస్రం యొక్క భుజం పొడవు (సెం.మీ.లలో) (π = 22/7 గా ఉపయోగించండి)",
+            options: [
+                "1) 25",
+                "2) 27.5",
+                "3) 50",
+                "4) 55"
+            ],
+            answer: 3,
+            explanation: "తీగ పొడవు = వృత్త పరిధి = 2πr = 2 × (22/7) × 35 = 220 సెం.మీ.\nచతురస్ర చుట్టుకొలత = 4 × భుజం = 220 ⇒ భుజం = 220 / 4 = 55 సెం.మీ."
+        },
+        {
+            q: "113. దత్తాంశం 15, 23, 8, (x + 6), 25, x, 5, 10 యొక్క సగటు 16.5 అయితే, 'x' విలువ",
+            options: [
+                "1) 24",
+                "2) 20",
+                "3) 26",
+                "4) 18"
+            ],
+            answer: 1,
+            explanation: "మొత్తం 8 రాశులు ఉన్నాయి. రాశుల మొత్తం = సగటు × సంఖ్య = 16.5 × 8 = 132.\nఇచ్చిన సంఖ్యల మొత్తం = 15 + 23 + 8 + 25 + 5 + 10 = 86.\n86 + (x + 6) + x = 132 ⇒ 2x + 92 = 132 ⇒ 2x = 40 ⇒ x = 20."
+        },
+        {
+            q: "114. ప్రియ పుట్టినరోజున, ఆమె తల్లి ఎరుపు మరియు తెలుపు రంగు పూలతో కూడిన ఒక పూలగుత్తిని తెచ్చారు. ఆ పూలగుత్తిలో మొత్తం 63 పూలు ఉన్నాయి, ఎరుపు మరియు తెలుపు రంగు పూల నిష్పత్తి 4 : 5 అయితే, అందులోని తెలుపు రంగు పూల సంఖ్య",
+            options: [
+                "1) 21",
+                "2) 28",
+                "3) 35",
+                "4) 42"
+            ],
+            answer: 2,
+            explanation: "నిష్పత్తి భాగాల మొత్తం = 4 + 5 = 9.\nతెలుపు పూల వాటా = 5/9.\nతెలుపు పూల సంఖ్య = (5/9) × 63 = 5 × 7 = 35."
+        },
+        {
+            q: "115. \"గణిత పరమైన ఆలోచనలను తన స్వంత మాటల్లో వివరించడం\" అనేది ఈ విద్యా ప్రమాణం:",
+            options: [
+                "1) సమస్యాసాధన",
+                "2) కారణాలు చెప్పడం – నిరూపణ చేయడం",
+                "3) వ్యక్తపరచడం",
+                "4) దృశ్యీకరణ, ప్రాతినిధ్యపరచడం"
+            ],
+            answer: 2,
+            explanation: "గణిత ఆలోచనలు, ప్రక్రియలు మరియు ఫలితాలను స్వంత మాటల్లో చెప్పడం లేదా రాయడం 'వ్యక్తపరచడం' (Communication) విద్యా ప్రమాణానికి చెందుతుంది."
+        },
+        {
+            q: "116. కింది వాటిలో త్రిభుజం, చతురస్రం, దీర్ఘ చతురస్రం యొక్క చుట్టుకొలత మరియు వైశాల్యాల భావనల బోధనకు ఉపయోగించే అత్యంత అనుకూలమైన బోధనాభ్యసన సామగ్రిని గుర్తించండి:\nA) భిన్నాల చట్రం\nB) గళ్ళ కాగితం\nC) పూసల చట్రం\nD) జియోబోర్డు\nసరైన జవాబును ఎంచుకోండి:",
+            options: [
+                "1) A & C మాత్రమే",
+                "2) B & D మాత్రమే",
+                "3) A, C & D మాత్రమే",
+                "4) A, B, C & D"
+            ],
+            answer: 1,
+            explanation: "గళ్ళ కాగితం (Grid paper) మరియు జియోబోర్డు (Geoboard) లపై రేఖాగణిత ఆకృతులు ఏర్పరిచి చుట్టుకొలత మరియు వైశాల్యాలను సులభంగా లెక్కించవచ్చు. కాబట్టి B & D సరైనవి."
+        },
+        {
+            q: "117. మూల్యాంకనానికి సంబంధించిన క్రింది వ్యాఖ్యలను చదవండి:\nవ్యాఖ్య-I : సమగ్ర మూల్యాంకనంలో విద్యార్థుల ఆసక్తులు, వైఖరులు మరియు ఉద్వేగాల మదింపు మాత్రమే ఇమిడి ఉంటుంది.\nవ్యాఖ్య-II : నిరంతర సమగ్ర మూల్యాంకనంలో నిర్మాణాత్మక, సంగ్రహణాత్మక మదింపు భాగమై ఉంటాయి.\nసరైన జవాబును ఎంచుకోండి:",
+            options: [
+                "1) రెండు వ్యాఖ్యలు సత్యం.",
+                "2) రెండు వ్యాఖ్యలు అసత్యం.",
+                "3) వ్యాఖ్య-I సత్యం మరియు వ్యాఖ్య-II అసత్యం.",
+                "4) వ్యాఖ్య-I అసత్యం మరియు వ్యాఖ్య-II సత్యం."
+            ],
+            answer: 3,
+            explanation: "సమగ్ర మూల్యాంకనంలో విద్యా విషయాలతో పాటు సహ-విద్యాంశాలు (ఆసక్తులు, వైఖరులు, విలువలు, నైపుణ్యాలు) కూడా ఉంటాయి; 'మాత్రమే' అనడం సరికాదు (వ్యాఖ్య-I అసత్యం). CCE లో నిర్మాణాత్మక (FA), సంగ్రహణాత్మక (SA) మదింపులు భాగమే (వ్యాఖ్య-II సత్యం)."
+        },
+        {
+            q: "118. కింది వాటిలో అన్వేషణ పద్ధతి యొక్క పరిమితి:",
+            options: [
+                "1) ఇది ఎక్కువ సమయం తీసుకోవడం వల్ల విద్యా ప్రణాళికను సకాలంలో ముగించలేము.",
+                "2) స్వయంగా శోధించడం వల్ల గణితం పట్ల ఆసక్తి పెరుగుతుంది.",
+                "3) అభ్యసనం మనోవైజ్ఞానిక ఆధారంగా జరుగుతుంది.",
+                "4) విద్యార్థి నూతన ఆలోచనలు పెంచుకుంటాడు."
+            ],
+            answer: 0,
+            explanation: "అన్వేషణ (Heuristic) పద్ధతిలో విద్యార్థులు స్వయంగా పరిశోధించి నేర్చుకోవడానికి ఎక్కువ సమయం పడుతుంది; ఇది సిలబస్/విద్యా ప్రణాళికను నిర్ణీత సమయంలో పూర్తి చేయడంలో ఒక పరిమితి."
+        },
+        {
+            q: "119. ప్రాథమిక స్థాయిలో గణిత విద్యా ప్రణాళిక అమలు కోసం క్రింద తెలిపిన యూనిట్లను తార్కిక క్రమంలో అమర్చండి.\nA. కొలతలు\nB. భాగహారం\nC. సంకలనం - వ్యవకలనం\nD. గుణకారం\nసరైన జవాబును ఎంచుకోండి:",
+            options: [
+                "1) C, A, D, B",
+                "2) C, D, B, A",
+                "3) D, B, C, A",
+                "4) A, B, C, D"
+            ],
+            answer: 1,
+            explanation: "ప్రాథమిక గణిత క్రమంలో మొదట సంకలనం - వ్యవకలనం (C), తర్వాత పునరావృత సంకలనమైన గుణకారం (D), దాని తర్వాత భాగహారం (B), అనంతరం వాటి అనువర్తనంగా కొలతలు (A) వస్తాయి. కాబట్టి C, D, B, A."
+        },
+        {
+            q: "120. గణిత అభ్యసనంలో విద్యార్థులు వెనుకబడటానికి గల కారణాలలో ఒకటి:",
+            options: [
+                "1) గణితం నేర్చుకోవాలనే ఆసక్తి కలిగి ఉండడం.",
+                "2) గణితం బోధించేటప్పుడు వ్యక్తిగత భేదాలను దృష్టిలో ఉంచుకోవడం.",
+                "3) విద్యార్థి గణిత తరగతులకు సరిగా హాజరు కాకపోవడం.",
+                "4) విద్యార్థి గణితంలో సరైన పూర్వ భావనలను కలిగి ఉండటం."
+            ],
+            answer: 2,
+            explanation: "తరగతులకు క్రమం తప్పకుండా హాజరు కాకపోవడం వల్ల ప్రాథమిక భావనలు మిస్ అయి విద్యార్థి గణితంలో వెనుకబడటానికి కారణమవుతుంది."
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span><div class="explanation"><strong>వివరణ:</strong><br>${item.explanation}</div>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
