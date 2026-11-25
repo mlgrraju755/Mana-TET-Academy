@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - Child Development and Pedagogy (Questions 1 - 30)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #8e44ad;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #f5eef8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>Child Development and Pedagogy</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - Questions 1 to 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. One among the following is an example for only 'maturation' but NOT learning.",
+            options: [
+                "1) A girl greeting her teacher",
+                "2) Child riding a bicycle",
+                "3) Teething in infants",
+                "4) A boy taking bath by himself"
+            ],
+            answer: 2
+        },
+        {
+            q: "2. Shruthi observed that her younger son is slow in attaining developmental milestones as compared to her older son. This is an example for this principle of growth and development",
+            options: [
+                "1) Principle of integration",
+                "2) Principle of individual differences",
+                "3) Principle of spiral versus linear advancement",
+                "4) Principle of predictability"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. Among the following, the concept that is formed later in the course of development of a child",
+            options: [
+                "1) Colour",
+                "2) Shape",
+                "3) Size",
+                "4) Time"
+            ],
+            answer: 3
+        },
+        {
+            q: "4. Havighurst identified developmental tasks starting from this stage of development",
+            options: [
+                "1) Infancy",
+                "2) Childhood",
+                "3) Adulthood",
+                "4) Adolescence"
+            ],
+            answer: 0
+        },
+        {
+            q: "5. One among the following is NOT a characteristic of cognitive development during the sensori-motor stage of Piaget",
+            options: [
+                "1) Displaying uncoordinated reflexes",
+                "2) Object permanence",
+                "3) Forming mental images",
+                "4) Using language"
+            ],
+            answer: 3
+        },
+        {
+            q: "6. Kangana is the daughter of the Principal of the Higher Secondary School in which she is studying. Her teacher told her that she can work for extra time in the laboratory if she wants additional practice. Kangana refused to this saying that will be injustice to her classmates. Kangana is in this stage of Kohlberg's moral development.",
+            options: [
+                "1) Stage VI",
+                "2) Stage IV",
+                "3) Stage III",
+                "4) Stage VII"
+            ],
+            answer: 0
+        },
+        {
+            q: "7. Intelligence Quotient (IQ) in which of the following case will be 150",
+            options: [
+                "1) Mental Age 8 and Chronological Age 12",
+                "2) Mental Age 12 and Chronological Age 8",
+                "3) Mental Age 12 and Chronological Age 12",
+                "4) Mental Age 12 and Chronological Age 18"
+            ],
+            answer: 1
+        },
+        {
+            q: "8. Ideal parenting style among the following is",
+            options: [
+                "1) Permissive",
+                "2) Authoritarian",
+                "3) Authoritative",
+                "4) Uninvolved"
+            ],
+            answer: 2
+        },
+        {
+            q: "9. Identify the example among the following that shows 'adjustment':\nA) A father reworking the family budget allocation to accommodate his son's study expenses\nB) A student altering the daily routine to cope with additional workload of college\nC) A girl stopping to go to college to avoid study stress",
+            options: [
+                "1) B only",
+                "2) A & C only",
+                "3) B & C only",
+                "4) A & B only"
+            ],
+            answer: 3
+        },
+        {
+            q: "10. A researcher has taken up a feedback study on a scheme introduced by the Government for which he used interview method. The researcher used a schedule that consisted some closed ended questions and all participants were asked the same set of questions in the same order. This type of interview is called",
+            options: [
+                "1) Projective",
+                "2) Unstructured",
+                "3) Semi-structured",
+                "4) Structured"
+            ],
+            answer: 3
+        },
+        {
+            q: "11. These experiences bring about learning in an individual:\nA) Direct\nB) Indirect",
+            options: [
+                "1) Both A & B",
+                "2) Neither A nor B",
+                "3) A only",
+                "4) B only"
+            ],
+            answer: 0
+        },
+        {
+            q: "12. Teaching a child to play the game of 'carroms' reinforcing through the steps of positioning the striker, aiming the coin, shooting and pocketing the coin is an example for this concept of operant conditioning by Skinner",
+            options: [
+                "1) Chaining",
+                "2) Generalisation",
+                "3) Extinction",
+                "4) Spontaneous recovery"
+            ],
+            answer: 0
+        },
+        {
+            q: "13. Stimulus generalisation is in sharp contrast to",
+            options: [
+                "1) Stimulus response connection",
+                "2) Stimulus discrimination",
+                "3) Spontaneous recovery",
+                "4) Extinction"
+            ],
+            answer: 1
+        },
+        {
+            q: "14. Observing that her four-year-old son is engaging in imaginative play, Suchitra brought a Lego set to foster creativity. Providing opportunity to learn at the right time like Suchitra is an implication of this Law of Learning of Thorndike",
+            options: [
+                "1) Law of exercise",
+                "2) Law of readiness",
+                "3) Law of effect",
+                "4) Law of disuse"
+            ],
+            answer: 1
+        },
+        {
+            q: "15. Parul is a pre-school kid. His teacher observed that he gets very aggressive when anyone stops him from doing anything. During the parent-teacher meeting the teacher told his mother about his behaviour and asked if anyone in the house behaves in such a way so as to suggest to be mindful about their behaviour before kids. The teacher here is thinking whether this type of learning is the cause of aggressive behaviour of the child",
+            options: [
+                "1) Insightful",
+                "2) Trial and error",
+                "3) Observational",
+                "4) Conditioning"
+            ],
+            answer: 2
+        },
+        {
+            q: "16. The learning based on insightful learning theory gives least importance to",
+            options: [
+                "1) Holism",
+                "2) Cohesiveness",
+                "3) Isolated facts",
+                "4) Perceptual organisation"
+            ],
+            answer: 2
+        },
+        {
+            q: "17. Struggle for achievement is a",
+            options: [
+                "1) Socio-psychological drive",
+                "2) Biological drive",
+                "3) Primary drive",
+                "4) Tertiary drive"
+            ],
+            answer: 0
+        },
+        {
+            q: "18. One among the following belongs to 'psychomotor' domain",
+            options: [
+                "1) Acting",
+                "2) Attitude",
+                "3) Feeling",
+                "4) Emotion"
+            ],
+            answer: 0
+        },
+        {
+            q: "19. A teacher has given some words to the students to memorise in the order presented. After few days she added some more words to the list and asked the students to identify and arrange only those words learnt earlier in the same order. This method of measurement of memory is",
+            options: [
+                "1) Free recall",
+                "2) Reconstruction",
+                "3) Recitation",
+                "4) Simple recall"
+            ],
+            answer: 1
+        },
+        {
+            q: "20. Correlated learning leads to",
+            options: [
+                "1) Rote memorization",
+                "2) Transfer of learning",
+                "3) Zero transfer",
+                "4) Development of aptitude"
+            ],
+            answer: 1
+        },
+        {
+            q: "21. Inclusive education should be practiced from this stage",
+            options: [
+                "1) Higher secondary",
+                "2) Primary",
+                "3) Secondary",
+                "4) Preschool"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. The role of a teacher in project-based learning is of a",
+            options: [
+                "1) Propagator",
+                "2) Disseminator",
+                "3) Instructor",
+                "4) Facilitator"
+            ],
+            answer: 3
+        },
+        {
+            q: "23. Understanding students' individual challenges and offering tailored support can be referred to as",
+            options: [
+                "1) Similarity",
+                "2) Equality",
+                "3) Equity",
+                "4) Uniformity"
+            ],
+            answer: 2
+        },
+        {
+            q: "24. Hanumanth asked his daughter that 'if the total of the opposite sides of a dice is 7 what number will you have opposite to 2'. His daughter answered it as 5 even in the absence of the dice physically. Hanumanth's daughter is in this stage according to Bruner",
+            options: [
+                "1) Formal operational",
+                "2) Enactive",
+                "3) Symbolic",
+                "4) Pre-operational"
+            ],
+            answer: 2
+        },
+        {
+            q: "25. One among the following should be avoided for effectiveness of Lecture method",
+            options: [
+                "1) Relevant statements",
+                "2) Continuity",
+                "3) Fluency",
+                "4) Ambiguous words"
+            ],
+            answer: 3
+        },
+        {
+            q: "26. Read the following statements and identify the correct answer:\nStatement A : Play promotes imagination and creativity\nStatement B : We should give lot of rote memorisation activities to children to develop imagination",
+            options: [
+                "1) Statement B is only correct",
+                "2) Statement A is only correct",
+                "3) Statement A and Statement B both are correct",
+                "4) Statement A and Statement B both are incorrect"
+            ],
+            answer: 1
+        },
+        {
+            q: "27. Counselling CANNOT alter one among the following",
+            options: [
+                "1) Attitudes",
+                "2) Interests",
+                "3) Aptitude",
+                "4) Overall behaviour"
+            ],
+            answer: 2
+        },
+        {
+            q: "28. The 24/7 toll free National Child Helpline number that provides immediate assistance to children in distress is",
+            options: [
+                "1) 1098",
+                "2) 1099",
+                "3) 1809",
+                "4) 1908"
+            ],
+            answer: 0
+        },
+        {
+            q: "29. Identify the INCORRECT statement relating to assessment of learning among the following",
+            options: [
+                "1) Good assessment enhances student learning",
+                "2) Assessment is a process of making judgements",
+                "3) Assessment can influence student learning",
+                "4) Assessment should not use multiple methods"
+            ],
+            answer: 3
+        },
+        {
+            q: "30. As per the Schedule of Norms and Standards for a School of 'Right of Children to Free and Compulsory Education Act, 2009' the school building need NOT consist of one among the following",
+            options: [
+                "1) labs for math, science and social",
+                "2) barrier free access",
+                "3) separate toilet for boys and girls",
+                "4) safe and adequate drinking water"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
