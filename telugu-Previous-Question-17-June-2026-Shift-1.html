@@ -24,7 +24,7 @@
         h1 {
             text-align: center;
             color: #2c3e50;
-            border-bottom: 2px solid #e67e22;
+            border-bottom: 2px solid #8e44ad;
             padding-bottom: 10px;
             margin-bottom: 8px;
             font-size: 1.55em;
@@ -36,29 +36,42 @@
             font-weight: bold;
             font-size: 1.08em;
         }
-        .passage-box {
-            background: #fef9e7;
-            border: 1px solid #f7dc6f;
-            border-left: 5px solid #e67e22;
+        .comprehension-box {
+            background: #fdfefe;
+            border: 1px solid #d5dbdb;
+            border-left: 5px solid #8e44ad;
             border-radius: 6px;
             padding: 18px 22px;
             margin-bottom: 20px;
         }
-        .passage-title {
+        .comprehension-title {
             font-weight: bold;
-            color: #b9770e;
+            color: #6c3483;
             margin-bottom: 10px;
-            font-size: 1.08em;
+            font-size: 1.05em;
         }
-        .passage-text {
-            white-space: pre-line;
-            font-size: 1.04em;
-            color: #2c3e50;
+        .poem-box {
+            font-weight: bold;
+            color: #1a252f;
+            background: #f9f4fc;
+            padding: 14px 18px;
+            border-radius: 5px;
+            border: 1px dashed #9b59b6;
+            line-height: 1.9;
+            font-size: 1.06em;
+        }
+        .passage-box {
+            color: #222;
+            background: #f8f9fa;
+            padding: 14px 18px;
+            border-radius: 5px;
+            line-height: 1.85;
+            font-size: 1.03em;
         }
         .question-card {
             background: #fafafa;
             border: 1px solid #e0e0e0;
-            border-left: 5px solid #e67e22;
+            border-left: 5px solid #8e44ad;
             border-radius: 6px;
             padding: 18px;
             margin-bottom: 20px;
@@ -80,7 +93,7 @@
             transition: background 0.2s;
         }
         .options label:hover {
-            background: #fdf2e9;
+            background: #f5eef8;
         }
         .options input[type="radio"] {
             margin-right: 10px;
@@ -125,7 +138,7 @@
             margin-top: 25px;
             padding: 20px;
             background-color: #e8f4fd;
-            border: 2px solid #e67e22;
+            border: 2px solid #8e44ad;
             border-radius: 8px;
             text-align: center;
             font-size: 1.4em;
@@ -137,7 +150,7 @@
 <body>
 
 <div class="container">
-    <h1>భాష I - తెలుగు</h1>
+    <h1>భాష I - తెలుగు (Language I - Telugu)</h1>
     <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - ప్రశ్నలు 31 నుండి 60</div>
     
     <div id="quiz-container"></div>
@@ -148,9 +161,22 @@
 </div>
 
 <script>
-    const padhyamText = `కొఱగాని కొడుకు పుట్టినకొఱగామియెగాదు తండ్రి గుణములు జెరచున్చెఱుకు తుద వెన్ను పుట్టినచెఱుకున తీపెల్ల చెరచు సిద్ధము సుమతీ!`;
+    const poemBlock = {
+        afterIndex: 3, // appears right after 34th question (index 3 in 31..34)
+        title: "ప్రశ్నలు (31 నుండి 34 వరకు) : కింది పద్యాన్ని చదవండి. ప్రశ్నలకు జవాబులు రాయండి.",
+        lines: [
+            "కొఱగాని కొడుకు పుట్టిన",
+            "కొఱగామియెగాదు తండ్రి గుణములు జెరచున్",
+            "చెఱుకు తుద వెన్ను పుట్టిన",
+            "చెఱుకున తీపెల్ల చెరచు సిద్ధము సుమతీ!"
+        ]
+    };
 
-    const gadhyamText = `గణపతి దేవుడు చాలా శక్తి సంపన్నుడు. అతడు రాజ్యపాలన చేసినన్ని రోజులు సామంతులు అణగిమణిగి ఉన్నారు. రాజ్యానికి శత్రుభయం లేకుండా స్థిరమైన పాలన చేశాడు. అతడంటే ప్రజలకు అభిమానం, భయం, భక్తి ఉండేవి. మంత్రుల సలహాలు, సామంతుల అభిప్రాయాలకు విలువనిచ్చి రాజ్యపాలన చేసిన గణపతిదేవుడు వృద్ధాప్యం వల్ల రుద్రమదేవికి పట్టాభిషేకం చేయాలనుకున్నాడు. ఒక స్త్రీని రాజుగా చేస్తే రాబోయే పరిణామాలు ఎట్లా ఉంటాయి అనే ఆలోచనలో పడి మంత్రుల సలహాలు అభిప్రాయాలు తీసుకున్నాడు.`;
+    const passageBlock = {
+        afterIndex: 7, // appears right after 38th question (index 7 in 31..38)
+        title: "ప్రశ్నలు (35 నుండి 38 వరకు) : కింది గద్యాన్ని చదవండి. ప్రశ్నలకు జవాబులు రాయండి.",
+        text: "గణపతి దేవుడు చాలా శక్తి సంపన్నుడు. అతడు రాజ్యపాలన చేసినన్ని రోజులు సామంతులు అణగిమణిగి ఉన్నారు. రాజ్యానికి శత్రుభయం లేకుండా స్థిరమైన పాలన చేశాడు. అతడంటే ప్రజలకు అభిమానం, భయం, భక్తి ఉండేవి. మంత్రుల సలహాలు, సామంతుల అభిప్రాయాలకు విలువనిచ్చి రాజ్యపాలన చేసిన గణపతిదేవుడు వృద్ధాప్యం వల్ల రుద్రమదేవికి పట్టాభిషేకం చేయాలనుకున్నాడు. ఒక స్త్రీని రాజుగా చేస్తే రాబోయే పరిణామాలు ఎట్లా ఉంటాయి అనే ఆలోచనలో పడి మంత్రుల సలహాలు అభిప్రాయాలు తీసుకున్నాడు."
+    };
 
     const quizData = [
         {
@@ -251,7 +277,7 @@
                 "3) ద్రవ్యనిధి",
                 "4) వరదం"
             ],
-            answer: 2
+            answer: 1
         },
         {
             q: "41. అడవికి రాజు హరిత్తు. ఈ వాక్యంలో హరిత్తు అనగా ఏమిటి?",
@@ -291,7 +317,7 @@
                 "3) గంగ",
                 "4) సాగింది"
             ],
-            answer: 3
+            answer: 0
         },
         {
             q: "45. 'ఓయి' అనేది ఏమిటి?",
@@ -361,7 +387,7 @@
                 "3) నరహరి శతకం",
                 "4) నారాయణ శతకం"
             ],
-            answer: 2
+            answer: 3
         },
         {
             q: "52. 'గొల్లసుద్దులు' అనేది ఏ రూపం?",
@@ -458,33 +484,46 @@
     const quizContainer = document.getElementById('quiz-container');
     const userAnswers = new Array(quizData.length).fill(null);
 
-    function createPassageCard(title, content) {
+    function renderPoemBox() {
         const box = document.createElement('div');
-        box.className = 'passage-box';
+        box.className = 'comprehension-box';
 
-        const heading = document.createElement('div');
-        heading.className = 'passage-title';
-        heading.textContent = title;
-        box.appendChild(heading);
+        const title = document.createElement('div');
+        title.className = 'comprehension-title';
+        title.textContent = poemBlock.title;
+        box.appendChild(title);
 
-        const body = document.createElement('div');
-        body.className = 'passage-text';
-        body.textContent = content;
-        box.appendChild(body);
+        const poemDiv = document.createElement('div');
+        poemDiv.className = 'poem-box';
+        poemDiv.innerHTML = poemBlock.lines.join('<br>');
+        box.appendChild(poemDiv);
 
         return box;
     }
 
+    function renderPassageBox() {
+        const box = document.createElement('div');
+        box.className = 'comprehension-box';
+
+        const title = document.createElement('div');
+        title.className = 'comprehension-title';
+        title.textContent = passageBlock.title;
+        box.appendChild(title);
+
+        const passageDiv = document.createElement('div');
+        passageDiv.className = 'passage-box';
+        passageDiv.textContent = passageBlock.text;
+        box.appendChild(passageDiv);
+
+        return box;
+    }
+
+    // Place the 4-line Telugu poem right above Q31 and passage right above Q35
+    quizContainer.appendChild(renderPoemBox());
+
     quizData.forEach((item, qIndex) => {
-        if (qIndex === 0) {
-            quizContainer.appendChild(
-                createPassageCard("ప్రశ్నలు (31 నుండి 34 వరకు) : కింది పద్యాన్ని చదవండి.", padhyamText)
-            );
-        }
         if (qIndex === 4) {
-            quizContainer.appendChild(
-                createPassageCard("ప్రశ్నలు (35 నుండి 38 వరకు) : కింది గద్యాన్ని చదవండి.", gadhyamText)
-            );
+            quizContainer.appendChild(renderPassageBox());
         }
 
         const card = document.createElement('div');
