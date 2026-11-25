@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - పరిసరాల అధ్యయనం (ప్రశ్నలు 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.55em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #27ae60;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eafaf1;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>పరిసరాల అధ్యయనం (Environmental Studies)</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - ప్రశ్నలు 121 నుండి 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. కింది వానిలో సరికాని వాక్యాలను గుర్తించండి.\nA) మానవ శరీరంలో కేవలం కీళ్ళ ద్వారా మాత్రమే కదలికలు ఏర్పడతాయి.\nB) దండం, చీల కీలు మెడను ముందుకు, వెనుకకు మరియు ప్రక్కలకు కదపడానికి ఉపయోగపడుతుంది.\nC) బొంగరపు కీలు భుజాలను కదిలించడానికి ఉపయోగపడుతుంది.\nD) మడతబందు కీలు మోచేతిని ఒక వైపుకు మాత్రమే కదిలించడానికి ఉపయోగపడుతుంది.",
+            options: [
+                "1) A, B & D",
+                "2) B, C & D",
+                "3) A & D",
+                "4) A, B & C"
+            ],
+            answer: 3
+        },
+        {
+            q: "122. అయోడిన్ పోషక లోపం వలన ఏర్పడు వ్యాధి లక్షణం",
+            options: [
+                "1) కండరాల బలహీనత",
+                "2) చిగుళ్ళ నుండి రక్తం కారడం",
+                "3) మెడ వాపు",
+                "4) దంతక్షయం"
+            ],
+            answer: 2
+        },
+        {
+            q: "123. కింది ప్రవచనాలను గమనించి, సరియైన వాక్యాన్ని గుర్తించండి.\nప్రవచనం (A) : ప్రోటీన్లు శరీర నిర్మాణానికి, పెరుగుదలకు ఉపయోగపడతాయి.\nప్రవచనం (B) : మాంసకృత్తులు కణజాలాల మరమ్మత్తులలో సహాయపడతాయి.\nసరియైన సమాధానాన్ని ఎంచుకోండి.",
+            options: [
+                "1) (A) మరియు (B) రెండూ సరియైనవే.",
+                "2) (A) సరియైనది, కానీ (B) సరియైనది కాదు.",
+                "3) (A) సరియైనది కాదు, కానీ (B) సరియైనది.",
+                "4) (A) మరియు (B) రెండూ సరియైనవి కావు."
+            ],
+            answer: 0
+        },
+        {
+            q: "124. కింది వానిని జతపరచుము.\nA. ఆల్జీబ్రా          i. భారతదేశం\nB. త్రిభుజమితి       ii. అరేబియా\nC. రేఖాగణితం        iii. గ్రీస్\nD. సంఖ్యాశాస్త్రం     iv. బాబిలోనియా\nసరియైన సమాధానాన్ని ఎంచుకోండి.",
+            options: [
+                "1) A-ii, B-i, C-iii, D-iv",
+                "2) A-iii, B-iv, C-ii, D-i",
+                "3) A-iv, B-ii, C-i, D-iii",
+                "4) A-i, B-iii, C-iv, D-ii"
+            ],
+            answer: 0
+        },
+        {
+            q: "125. జలచరాల పరిరక్షణకు మన దేశంలో స్థాపించబడిన చట్టం",
+            options: [
+                "1) నీటి వనరుల సంరక్షణ చట్టం, 1986",
+                "2) సముద్ర జీవవైవిధ్య చట్టం, 2002",
+                "3) మత్స్య అభివృద్ధి బోర్డు చట్టం, 1995",
+                "4) జల కాలుష్య నివారణ, నియంత్రణ చట్టం, 1974"
+            ],
+            answer: 3
+        },
+        {
+            q: "126. ఇంధనాన్ని పొదుపు చేయడానికి క్రింది వాటిలో ఏది ఉత్తమమైన మార్గం?",
+            options: [
+                "1) ప్రతి వ్యక్తికి వ్యక్తిగత వాహనం ఉపయోగించడం.",
+                "2) తక్కువ దూరాలకు కూడా కార్లు ఉపయోగించడం.",
+                "3) ప్రజా రవాణా వ్యవస్థను (Public Transport) ఉపయోగించడం.",
+                "4) ట్రాఫిక్ సిగ్నల్ వద్ద ఇంజిన్ను ఆన్ చేసి ఉంచడం."
+            ],
+            answer: 2
+        },
+        {
+            q: "127. కింది వానిలో సరియైన జతను గుర్తించండి.\n1) నాగార్జునసాగర్ ఆనకట్ట - గోదావరి నది\n2) శ్రీరామ్ సాగర్ ప్రాజెక్ట్ - కృష్ణా నది\n3) జూరాల ప్రాజెక్ట్ - మంజీరా నది\n4) నిజాంసాగర్ ప్రాజెక్ట్ - మంజీరా నది",
+            options: [
+                "1) నాగార్జునసాగర్ ఆనకట్ట - గోదావరి నది",
+                "2) శ్రీరామ్ సాగర్ ప్రాజెక్ట్ - కృష్ణా నది",
+                "3) జూరాల ప్రాజెక్ట్ - మంజీరా నది",
+                "4) నిజాంసాగర్ ప్రాజెక్ట్ - మంజీరా నది"
+            ],
+            answer: 3
+        },
+        {
+            q: "128. భద్రాచలం శ్రీ సీతారామచంద్ర స్వామి దేవాలయాన్ని నిర్మించినది",
+            options: [
+                "1) కంచర్ల గోపన్న (భక్త రామదాసు)",
+                "2) తానీషా",
+                "3) రుద్రమదేవి",
+                "4) ప్రతాపరుద్రుడు"
+            ],
+            answer: 0
+        },
+        {
+            q: "129. కింది వానిలో అడవుల నాశనానికి గల కారణం కానిది ఏది?",
+            options: [
+                "1) అటవీ నిర్మూలన",
+                "2) సామాజిక అడవుల పెంపకం",
+                "3) గనుల తవ్వకం",
+                "4) పట్టణీకరణ"
+            ],
+            answer: 1
+        },
+        {
+            q: "130. కాకతీయుల కాలంలో నిర్మించబడిన ప్రసిద్ధ చెరువు",
+            options: [
+                "1) హుస్సేన్ సాగర్",
+                "2) ఉస్మాన్ సాగర్",
+                "3) రామప్ప చెరువు",
+                "4) హిమాయత్ సాగర్"
+            ],
+            answer: 2
+        },
+        {
+            q: "131. 'అంతర్జాతీయ జీవవైవిధ్య దినోత్సవం' ఎప్పుడు జరుపుకుంటారు?",
+            options: [
+                "1) మే 22",
+                "2) జూన్ 5",
+                "3) ఏప్రిల్ 22",
+                "4) మార్చి 21"
+            ],
+            answer: 0
+        },
+        {
+            q: "132. భూమి తన అక్షం చుట్టూ తాను తిరగడానికి పట్టే సమయం",
+            options: [
+                "1) 365 1/4 రోజులు",
+                "2) 24 గంటలు",
+                "3) 30 రోజులు",
+                "4) 12 గంటలు"
+            ],
+            answer: 1
+        },
+        {
+            q: "133. కింది వానిలో తప్పుగా జతపరచబడిన దానిని గుర్తించండి.",
+            options: [
+                "1) సమ్మక్క సారలమ్మ జాతర - ములుగు",
+                "2) నాగోబా జాతర - ఆదిలాబాద్",
+                "3) ఏడుపాయల జాతర - మెదక్",
+                "4) కొమురవెల్లి మల్లన్న జాతర - నిజామాబాద్"
+            ],
+            answer: 3
+        },
+        {
+            q: "134. పటాలలో నీటి వనరులను సూచించడానికి ఉపయోగించే రంగు",
+            options: [
+                "1) ఆకుపచ్చ",
+                "2) గోధుమ",
+                "3) నీలం",
+                "4) పసుపు"
+            ],
+            answer: 2
+        },
+        {
+            q: "135. భారత రాజ్యాంగ ముసాయిదా కమిటీ అధ్యక్షుడు",
+            options: [
+                "1) డా. బాబూ రాజేంద్రప్రసాద్",
+                "2) డా. బి.ఆర్. అంబేద్కర్",
+                "3) జవహర్ లాల్ నెహ్రూ",
+                "4) సర్దార్ వల్లభాయ్ పటేల్"
+            ],
+            answer: 1
+        },
+        {
+            q: "136. పోచంపల్లి చేనేత చీరలకు ప్రసిద్ధి చెందిన జిల్లా",
+            options: [
+                "1) యాదాద్రి భువనగిరి",
+                "2) నల్గొండ",
+                "3) సిద్దిపేట",
+                "4) కరీంనగర్"
+            ],
+            answer: 0
+        },
+        {
+            q: "137. పచ్చిక బయళ్ళు, అడవులు మరియు నీటి కుంటలు అనేవి",
+            options: [
+                "1) కృత్రిమ ఆవాసాలు",
+                "2) సహజ ఆవాసాలు",
+                "3) ఎడారి ఆవాసాలు",
+                "4) ధ్రువ ఆవాసాలు"
+            ],
+            answer: 1
+        },
+        {
+            q: "138. కింది వానిలో ఆకు కూరగాయ కానిది ఏది?",
+            options: [
+                "1) పాలకూర",
+                "2) తోటకూర",
+                "3) క్యారెట్",
+                "4) మెంతికూర"
+            ],
+            answer: 2
+        },
+        {
+            q: "139. మన దేశ జాతీయ జెండాలోని అశోక చక్రంలో గల ఆకుల (Spokes) సంఖ్య",
+            options: [
+                "1) 20",
+                "2) 22",
+                "3) 24",
+                "4) 26"
+            ],
+            answer: 2
+        },
+        {
+            q: "140. వరి పంట పండటానికి అత్యంత అనుకూలమైన నేలలు",
+            options: [
+                "1) ఇసుక నేలలు",
+                "2) ఒండ్రు నేలలు",
+                "3) రాతి నేలలు",
+                "4) ఎర్ర నేలలు"
+            ],
+            answer: 1
+        },
+        {
+            q: "141. వర్షపు నీటిని భూమిలోకి ఇంకింపజేయడానికి నిర్మించేవి",
+            options: [
+                "1) ఇంకుడు గుంతలు",
+                "2) చెక్ డ్యామ్ లు",
+                "3) కాలువలు",
+                "4) బావులు"
+            ],
+            answer: 0
+        },
+        {
+            q: "142. కింది వానిలో పునరుత్పాదక ఇంధన వనరు",
+            options: [
+                "1) బొగ్గు",
+                "2) పెట్రోలియం",
+                "3) సౌరశక్తి",
+                "4) సహజ వాయువు"
+            ],
+            answer: 2
+        },
+        {
+            q: "143. కీటకాలను ఆహారంగా తీసుకునే మొక్క",
+            options: [
+                "1) నెపెంథిస్",
+                "2) మందార",
+                "3) వేప",
+                "4) చింత"
+            ],
+            answer: 0
+        },
+        {
+            q: "144. తెలంగాణ రాష్ట్ర పక్షి",
+            options: [
+                "1) నెమలి",
+                "2) పాలపిట్ట",
+                "3) రామచిలుక",
+                "4) పావురం"
+            ],
+            answer: 1
+        },
+        {
+            q: "145. ప్రాథమిక స్థాయిలో పరిసరాల అధ్యయనం (EVS) బోధన యొక్క ప్రధాన ఉద్దేశ్యం",
+            options: [
+                "1) శాస్త్రీయ నిర్వచనాలను కంఠస్థం చేయించడం.",
+                "2) పిల్లలను వారి చుట్టూ ఉన్న సహజ మరియు సామాజిక పరిసరాలతో అనుసంధానించడం.",
+                "3) పరీక్షలలో ఎక్కువ మార్కులు సాధించేలా చేయడం.",
+                "4) పాఠ్యపుస్తకంలోని విషయాలను మాత్రమే బోధించడం."
+            ],
+            answer: 1
+        },
+        {
+            q: "146. పరిసరాల అధ్యయనం (EVS) లో 'క్షేత్ర పర్యటనలు' నిర్వహించడం వలన కలిగే ప్రయోజనం",
+            options: [
+                "1) విద్యార్థులకు ప్రత్యక్ష అనుభవాలు లభిస్తాయి.",
+                "2) ఉపాధ్యాయునికి విశ్రాంతి లభిస్తుంది.",
+                "3) సమయం వృథా అవుతుంది.",
+                "4) క్రమశిక్షణ తగ్గుతుంది."
+            ],
+            answer: 0
+        },
+        {
+            q: "147. NCF-2005 ప్రకారం, ప్రాథమిక స్థాయిలో పరిసరాల అధ్యయనం ఏ తరగతుల నుండి ప్రారంభమవుతుంది?",
+            options: [
+                "1) 1వ తరగతి నుండి",
+                "2) 3వ తరగతి నుండి",
+                "3) 4వ తరగతి నుండి",
+                "4) 5వ తరగతి నుండి"
+            ],
+            answer: 1
+        },
+        {
+            q: "148. పరిసరాల అధ్యయనంలో విద్యార్థుల ప్రక్రియా నైపుణ్యాలను మదింపు చేయడానికి ఉత్తమమైన సాధనం",
+            options: [
+                "1) వ్యాసరూప పరీక్షలు",
+                "2) పరిశీలన మరియు పోర్ట్ ఫోలియో",
+                "3) బహుళైచ్ఛిక ప్రశ్నలు",
+                "4) మౌఖిక పరీక్షలు"
+            ],
+            answer: 1
+        },
+        {
+            q: "149. ఒక ఉపాధ్యాయుడు 'నీటి కాలుష్యం' అనే అంశాన్ని బోధించేటప్పుడు విద్యార్థులను సమీపంలోని చెరువు వద్దకు తీసుకెళ్లి పరిశీలింపజేశాడు. ఇది ఏ బోధనా పద్ధతి?",
+            options: [
+                "1) ఉపన్యాస పద్ధతి",
+                "2) పరిశీలన / క్షేత్ర పర్యటన పద్ధతి",
+                "3) నిగమన పద్ధతి",
+                "4) చారిత్రక పద్ధతి"
+            ],
+            answer: 1
+        },
+        {
+            q: "150. పరిసరాల అధ్యయనం (EVS) పాఠ్యపుస్తకాలలో 'ఇతివృత్తాల' (Themes) ఆధారిత విధానాన్ని ఎందుకు ఎంచుకున్నారు?",
+            options: [
+                "1) సిలబస్ తగ్గించడానికి",
+                "2) విషయాల మధ్య సమన్వయం మరియు సమగ్ర అవగాహన పెంపొందించడానికి",
+                "3) ఉపాధ్యాయుల పనిభారం తగ్గించడానికి",
+                "4) పరీక్షల నిర్వహణ సులభతరం చేయడానికి"
+            ],
+            answer: 1
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
