@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - Mathematics (Questions 91 - 120)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #1f618d;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #1f618d;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #ebf5fb;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .explanation {
+            margin-top: 8px;
+            font-weight: normal;
+            color: #2c3e50;
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #1f618d;
+            white-space: pre-line;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #1f618d;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Mathematics</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - Questions 91 to 120</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "91. (2a + 3b - 5c)(a²b - bc²) =",
+            options: [
+                "1) 2a³b - 2abc² - 3a²b² + 3b²c² - 5a²bc - 5bc³",
+                "2) 2a³b + 2abc² + 3a²b² - 3b²c² + 5a²bc - 5bc³",
+                "3) 2a³b - 2abc² + 3a²b² - 3b²c² + 5a²bc - 5bc³",
+                "4) 2a³b - 2abc² + 3a²b² - 3b²c² - 5a²bc + 5bc³"
+            ],
+            answer: 3,
+            explanation: "Multiply each term:\n• 2a × (a²b - bc²) = 2a³b - 2abc²\n• 3b × (a²b - bc²) = 3a²b² - 3b²c²\n• -5c × (a²b - bc²) = -5a²bc + 5bc³ (negative × negative = positive +5bc³).\nSo the result is 2a³b - 2abc² + 3a²b² - 3b²c² - 5a²bc + 5bc³."
+        },
+        {
+            q: "92. Identify the correct statements regarding the representation of data from the following.\nA) In a pictograph, pictures or symbols are used to represent the frequency of data.\nB) In a bar graph, the lengths of the bars represent the frequencies of the observations.\nChoose the correct answer.",
+            options: [
+                "1) Only statement A is correct.",
+                "2) Only statement B is correct.",
+                "3) Both statements A and B are correct.",
+                "4) Neither statement A nor B is correct."
+            ],
+            answer: 2,
+            explanation: "A pictograph uses pictures or symbols to show frequency, and in a bar graph, the length/height of each bar represents the frequency of the corresponding observation. Both A and B are correct."
+        },
+        {
+            q: "93. In ΔPQR, right-angled at Q, QS is the perpendicular drawn to PR. If PQ = 12 cm, QR = 9 cm and PR = 15 cm, then the length of QS (in cm) is",
+            options: [
+                "1) 1.8",
+                "2) 3.6",
+                "3) 5.4",
+                "4) 7.2"
+            ],
+            answer: 3,
+            explanation: "Area of ΔPQR = 1/2 × PQ × QR = 1/2 × 12 × 9 = 54 sq. cm.\nUsing PR as base and QS as height: Area = 1/2 × PR × QS ⇒ 54 = 1/2 × 15 × QS ⇒ 7.5 × QS = 54 ⇒ QS = 54 / 7.5 = 7.2 cm."
+        },
+        {
+            q: "94. The number of digits in the number 100 crores is",
+            options: [
+                "1) 8",
+                "2) 9",
+                "3) 10",
+                "4) 11"
+            ],
+            answer: 2,
+            explanation: "1 crore = 1,00,00,000 (8 digits).\n100 crores = 100 × 1,00,00,000 = 1,00,00,00,000 (1 followed by 9 zeros).\nTotal digits = 1 + 9 = 10."
+        },
+        {
+            q: "95. 0.803 - 0.3967 + 0.76 =",
+            options: [
+                "1) 0.1663",
+                "2) 1.1663",
+                "3) 0.4823",
+                "4) 0.4837"
+            ],
+            answer: 1,
+            explanation: "Align decimal places:\n• 0.8030 - 0.3967 = 0.4063\n• 0.4063 + 0.7600 = 1.1663."
+        },
+        {
+            q: "96. Choose the ascending order of the following fractions.\n2/3, 5/6, 3/5, 3/4",
+            options: [
+                "1) 3/5, 2/3, 3/4, 5/6",
+                "2) 2/3, 3/5, 3/4, 5/6",
+                "3) 2/3, 3/4, 3/5, 5/6",
+                "4) 3/4, 2/3, 3/5, 5/6"
+            ],
+            answer: 0,
+            explanation: "Convert to decimals:\n• 3/5 = 0.60\n• 2/3 ≈ 0.667\n• 3/4 = 0.75\n• 5/6 ≈ 0.833\nAscending order (smallest to largest): 3/5, 2/3, 3/4, 5/6."
+        },
+        {
+            q: "97. If an exterior angle of a triangle is 120° and its interior opposite angles are in the ratio 1 : 2, then the triangle is a/an",
+            options: [
+                "1) Acute-angled triangle",
+                "2) Obtuse-angled triangle",
+                "3) Right-angled triangle",
+                "4) Isosceles right-angled triangle"
+            ],
+            answer: 0,
+            explanation: "Exterior angle = sum of opposite interior angles = 120°.\nIn ratio 1 : 2, the interior opposite angles are (1/3)×120° = 40° and (2/3)×120° = 80°.\nThird angle = 180° - 120° = 60°.\nSince all angles (40°, 60°, 80°) are less than 90°, it is an acute-angled triangle."
+        },
+        {
+            q: "98. Choose the numbers which are exactly divisible by both 3 and 9 from the following.\nA) 779868\nB) 482510\nC) 374562\nD) 564879\nChoose the correct answer.",
+            options: [
+                "1) B & D only",
+                "2) A & C only",
+                "3) A & B only",
+                "4) C & D only"
+            ],
+            answer: 1,
+            explanation: "A number divisible by 9 is also divisible by 3. Check sum of digits:\n• A) 7+7+9+8+6+8 = 45 (divisible by 9)\n• B) 4+8+2+5+1+0 = 20 (not divisible)\n• C) 3+7+4+5+6+2 = 27 (divisible by 9)\n• D) 5+6+4+8+7+9 = 39 (not divisible).\nSo A & C only."
+        },
+        {
+            q: "99. If a company manufactures 4280 toys every day, the total number of toys manufactured in the month of February 2026 is",
+            options: [
+                "1) 1,19,840",
+                "2) 1,24,120",
+                "3) 1,28,400",
+                "4) 1,32,680"
+            ],
+            answer: 0,
+            explanation: "2026 is not a leap year, so February 2026 has 28 days.\nTotal toys = 4280 × 28 = 1,19,840."
+        },
+        {
+            q: "100. The median of composite numbers from 21 to 40 is",
+            options: [
+                "1) 30",
+                "2) 31",
+                "3) 32",
+                "4) 33"
+            ],
+            answer: 1,
+            explanation: "Composite numbers from 21 to 40 (16 numbers):\n21, 22, 24, 25, 26, 27, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40.\nSince n = 16 (even), Median = (8th term + 9th term) / 2 = (30 + 32) / 2 = 31."
+        },
+        {
+            q: "101. Choose the correct statements regarding straight lines from the following.\nA) In a plane, two parallel lines have one common point.\nB) Two intersecting lines that intersect at a right angle are called perpendicular lines.\nChoose the correct answer.",
+            options: [
+                "1) Both statements A and B are correct.",
+                "2) Neither statement A nor B is correct.",
+                "3) Only statement A is correct.",
+                "4) Only statement B is correct."
+            ],
+            answer: 3,
+            explanation: "Parallel lines in a plane never meet (no common point), so A is false. Lines intersecting at 90° (right angle) are perpendicular lines, so B is true."
+        },
+        {
+            q: "102. 936² - 64² =",
+            options: [
+                "1) 862000",
+                "2) 86200",
+                "3) 872000",
+                "4) 87200"
+            ],
+            answer: 2,
+            explanation: "Using a² - b² = (a - b)(a + b):\n936² - 64² = (936 - 64)(936 + 64) = 872 × 1000 = 872,000."
+        },
+        {
+            q: "103. Choose the perfect cube number from the following.",
+            options: [
+                "1) 1728",
+                "2) 2026",
+                "3) 2048",
+                "4) 3600"
+            ],
+            answer: 0,
+            explanation: "1728 = 12 × 12 × 12 = 12³, which is a perfect cube."
+        },
+        {
+            q: "104. If the total surface area of a cube is 1944 sq. cm, then its volume (in cubic cm) is",
+            options: [
+                "1) 4096",
+                "2) 5832",
+                "3) 6859",
+                "4) 10648"
+            ],
+            answer: 1,
+            explanation: "Total surface area of a cube = 6a² = 1944 ⇒ a² = 1944 / 6 = 324 ⇒ side a = 18 cm.\nVolume = a³ = 18³ = 5832 cubic cm."
+        },
+        {
+            q: "105. (16x³ - 100x) / 2x(2x + 5) =",
+            options: [
+                "1) (2x - 5)",
+                "2) 2(2x - 5)",
+                "3) 2(2x + 5)",
+                "4) (2x + 5)"
+            ],
+            answer: 1,
+            explanation: "Factor numerator: 4x(4x² - 25) = 4x(2x - 5)(2x + 5).\nDivide by 2x(2x + 5): [4x(2x - 5)(2x + 5)] / [2x(2x + 5)] = 2(2x - 5)."
+        },
+        {
+            q: "106. If the weight of 45 turmeric packets of equal size is 9 kg, then the weight (in kilograms) of 75 such turmeric packets is",
+            options: [
+                "1) 7.5",
+                "2) 12",
+                "3) 15",
+                "4) 16"
+            ],
+            answer: 2,
+            explanation: "Weight of 45 packets = 9 kg ⇒ Weight of 1 packet = 9 / 45 = 1/5 kg.\nWeight of 75 packets = 75 × (1/5) = 15 kg."
+        },
+        {
+            q: "107. (3⁰ + 1/3) × 3³ × 1/2 =",
+            options: [
+                "1) 27",
+                "2) 9",
+                "3) 36",
+                "4) 18"
+            ],
+            answer: 3,
+            explanation: "3⁰ = 1 and 3³ = 27.\n(1 + 1/3) × 27 × (1/2) = (4/3) × 27 × (1/2) = 36 × (1/2) = 18."
+        },
+        {
+            q: "108. Choose the shape which has only two lines of symmetry from the following.",
+            options: [
+                "1) Rectangle",
+                "2) Square",
+                "3) Isosceles triangle",
+                "4) Circle"
+            ],
+            answer: 0,
+            explanation: "A rectangle has 2 lines of symmetry (horizontal and vertical). A square has 4, an isosceles triangle has 1, and a circle has infinitely many."
+        },
+        {
+            q: "109. If Ramesh bought a vacuum cleaner for ₹20000 and sold it for ₹23000, his profit percentage is",
+            options: [
+                "1) 6%",
+                "2) 9%",
+                "3) 12%",
+                "4) 15%"
+            ],
+            answer: 3,
+            explanation: "Cost Price = ₹20,000, Selling Price = ₹23,000.\nProfit = ₹23,000 - ₹20,000 = ₹3,000.\nProfit % = (3000 / 20000) × 100 = 15%."
+        },
+        {
+            q: "110. The product of two fractions is 4/21. If one of the fractions is 3/7, then the other fraction is",
+            options: [
+                "1) 1/3",
+                "2) 4/3",
+                "3) 4/9",
+                "4) 1/9"
+            ],
+            answer: 2,
+            explanation: "Other fraction = (4/21) ÷ (3/7) = (4/21) × (7/3) = 4/9."
+        },
+        {
+            q: "111. Choose the INCORRECT statement regarding integers from the following.",
+            options: [
+                "1) Closure property does not hold good under subtraction of integers.",
+                "2) Commutative property does not hold good under subtraction of integers.",
+                "3) The multiplicative identity in integers is '1'.",
+                "4) Commutative property holds good under addition of integers."
+            ],
+            answer: 0,
+            explanation: "Integers are closed under subtraction (subtracting any two integers gives an integer, e.g., 3 - 5 = -2). Thus option 1 is incorrect."
+        },
+        {
+            q: "112. A wire is bent in the form of a circle of radius 35 cm. If the same wire is bent in the form of a square, then the length of the side of the square (in cm) is (Use π = 22/7)",
+            options: [
+                "1) 25",
+                "2) 27.5",
+                "3) 50",
+                "4) 55"
+            ],
+            answer: 3,
+            explanation: "Length of wire = Circumference of circle = 2πr = 2 × (22/7) × 35 = 220 cm.\nPerimeter of square = 4 × side = 220 ⇒ side = 220 / 4 = 55 cm."
+        },
+        {
+            q: "113. If the mean of the data 15, 23, 8, (x + 6), 25, x, 5, 10 is 16.5, then the value of 'x' is",
+            options: [
+                "1) 24",
+                "2) 20",
+                "3) 26",
+                "4) 18"
+            ],
+            answer: 1,
+            explanation: "There are 8 observations. Sum of observations = Mean × 8 = 16.5 × 8 = 132.\nSum of known terms = 15 + 23 + 8 + 25 + 5 + 10 = 86.\n86 + (x + 6) + x = 132 ⇒ 2x + 92 = 132 ⇒ 2x = 40 ⇒ x = 20."
+        },
+        {
+            q: "114. On Priya's birthday, her mother brought a bouquet consisting of red and white flowers. There are a total of 63 flowers in the bouquet, and the ratio of red and white flowers is 4 : 5, then the number of white flowers in it is",
+            options: [
+                "1) 21",
+                "2) 28",
+                "3) 35",
+                "4) 42"
+            ],
+            answer: 2,
+            explanation: "Total ratio parts = 4 + 5 = 9.\nFraction of white flowers = 5/9.\nNumber of white flowers = (5/9) × 63 = 5 × 7 = 35."
+        },
+        {
+            q: "115. \"Explaining mathematical ideas in one's own words\" belongs to this academic standard:",
+            options: [
+                "1) Problem solving",
+                "2) Reasoning – Proof",
+                "3) Communication",
+                "4) Visualization and Representation"
+            ],
+            answer: 2,
+            explanation: "Articulating or explaining mathematical ideas, methods, and reasoning in one's own words falls under Communication."
+        },
+        {
+            q: "116. Identify the most suitable teaching-learning material used to teach the concepts of perimeter and area of a triangle, square, and rectangle from the following:\nA) Fraction frames\nB) Grid paper\nC) Abacus\nD) Geoboard\nChoose the correct answer:",
+            options: [
+                "1) A & C only",
+                "2) B & D only",
+                "3) A, C & D only",
+                "4) A, B, C & D"
+            ],
+            answer: 1,
+            explanation: "Grid paper and Geoboard allow learners to construct shapes and count units to understand perimeter and area directly. Hence B & D only."
+        },
+        {
+            q: "117. Read the following statements regarding evaluation:\nStatement-I : Comprehensive evaluation involves only the assessment of students' interests, attitudes, and emotions.\nStatement-II : Formative and summative assessments are part of Continuous and Comprehensive Evaluation.\nChoose the correct answer:",
+            options: [
+                "1) Both statements are true.",
+                "2) Both statements are false.",
+                "3) Statement-I is true and Statement-II is false.",
+                "4) Statement-I is false and Statement-II is true."
+            ],
+            answer: 3,
+            explanation: "Comprehensive evaluation covers both scholastic and co-scholastic aspects (not 'only' interests, attitudes, and emotions), so Statement-I is false. Formative and summative assessments are components of CCE, so Statement-II is true."
+        },
+        {
+            q: "118. Limitation of Heuristic method among the following:",
+            options: [
+                "1) As it is time-consuming, the syllabus cannot be completed in time.",
+                "2) Self-discovery increases interest in mathematics.",
+                "3) Learning takes place on a psychological basis.",
+                "4) The student develops new ideas."
+            ],
+            answer: 0,
+            explanation: "Because students discover concepts on their own, the heuristic method takes more time, making timely syllabus completion a limitation."
+        },
+        {
+            q: "119. Arrange the units given below in a logical sequence for the implementation of the mathematics curriculum at the primary level.\nA. Measurements\nB. Division\nC. Addition - Subtraction\nD. Multiplication\nChoose the correct answer:",
+            options: [
+                "1) C, A, D, B",
+                "2) C, D, B, A",
+                "3) D, B, C, A",
+                "4) A, B, C, D"
+            ],
+            answer: 1,
+            explanation: "Logical sequence: Addition - Subtraction (C) first, then Multiplication (D, repeated addition), then Division (B), followed by applications like Measurements (A). So C, D, B, A."
+        },
+        {
+            q: "120. One of the reasons for students lagging behind in learning mathematics:",
+            options: [
+                "1) Having interest in learning mathematics.",
+                "2) Keeping individual differences in mind while teaching mathematics.",
+                "3) The student not attending mathematics classes regularly.",
+                "4) The student having proper prerequisite concepts in mathematics."
+            ],
+            answer: 2,
+            explanation: "Irregular attendance in mathematics classes causes learners to miss foundational concepts, leading to lagging behind."
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span><div class="explanation"><strong>Explanation:</strong><br>${item.explanation}</div>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
