@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - Environmental Studies (Questions 121 - 150)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #27ae60;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #eafaf1;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #27ae60;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Environmental Studies</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - Questions 121 to 150</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "121. Identify the INCORRECT statements among the following.\nA) Movements in the human body occur only through joints.\nB) Pivot joint helps to move the neck forward, backward and sideways.\nC) Ball and socket joint helps in moving the shoulders.\nD) Hinge joint helps to move the elbow in one direction only.",
+            options: [
+                "1) A, B & D",
+                "2) B, C & D",
+                "3) A & D",
+                "4) A, B & C"
+            ],
+            answer: 3
+        },
+        {
+            q: "122. Symptom of the disease caused due to iodine deficiency",
+            options: [
+                "1) Weakness of muscles",
+                "2) Bleeding from gums",
+                "3) Swelling in the neck",
+                "4) Tooth decay"
+            ],
+            answer: 2
+        },
+        {
+            q: "123. Observe the following statements and identify the correct one.\nStatement (A) : Proteins are useful for body building and growth.\nStatement (B) : Proteins help in the repair of tissues.\nChoose the correct answer.",
+            options: [
+                "1) Both (A) and (B) are correct.",
+                "2) (A) is correct, but (B) is not correct.",
+                "3) (A) is not correct, but (B) is correct.",
+                "4) Both (A) and (B) are not correct."
+            ],
+            answer: 0
+        },
+        {
+            q: "124. Match the following.\nA. Algebra          i. India\nB. Trigonometry     ii. Arabia\nC. Geometry         iii. Greece\nD. Arithmetic       iv. Babylonia\nChoose the correct answer.",
+            options: [
+                "1) A-ii, B-i, C-iii, D-iv",
+                "2) A-iii, B-iv, C-ii, D-i",
+                "3) A-iv, B-ii, C-i, D-iii",
+                "4) A-i, B-iii, C-iv, D-ii"
+            ],
+            answer: 0
+        },
+        {
+            q: "125. Act enacted in our country for the conservation of aquatic animals",
+            options: [
+                "1) Water Resources Conservation Act, 1986",
+                "2) Marine Biodiversity Act, 2002",
+                "3) Fisheries Development Board Act, 1995",
+                "4) Water (Prevention and Control of Pollution) Act, 1974"
+            ],
+            answer: 3
+        },
+        {
+            q: "126. Which of the following is the best way to save fuel?",
+            options: [
+                "1) Using a personal vehicle for each person.",
+                "2) Using cars even for short distances.",
+                "3) Using Public Transport system.",
+                "4) Keeping the engine running at traffic signals."
+            ],
+            answer: 2
+        },
+        {
+            q: "127. Identify the correct pair from the following.\n1) Nagarjuna Sagar Dam - River Godavari\n2) Sriram Sagar Project - River Krishna\n3) Jurala Project - River Manjeera\n4) Nizamsagar Project - River Manjeera",
+            options: [
+                "1) Nagarjuna Sagar Dam - River Godavari",
+                "2) Sriram Sagar Project - River Krishna",
+                "3) Jurala Project - River Manjeera",
+                "4) Nizamsagar Project - River Manjeera"
+            ],
+            answer: 3
+        },
+        {
+            q: "128. Bhadrachalam Sri Sita Ramachandra Swamy Temple was constructed by",
+            options: [
+                "1) Kancharla Gopanna (Bhakta Ramadasu)",
+                "2) Tanisha",
+                "3) Rudramadevi",
+                "4) Prataparudra"
+            ],
+            answer: 0
+        },
+        {
+            q: "129. Which of the following is NOT a cause for the destruction of forests?",
+            options: [
+                "1) Deforestation",
+                "2) Social forestry",
+                "3) Mining",
+                "4) Urbanization"
+            ],
+            answer: 1
+        },
+        {
+            q: "130. Famous tank built during the Kakatiya period",
+            options: [
+                "1) Hussain Sagar",
+                "2) Osman Sagar",
+                "3) Ramappa Tank",
+                "4) Himayat Sagar"
+            ],
+            answer: 2
+        },
+        {
+            q: "131. When is 'International Day for Biological Diversity' celebrated?",
+            options: [
+                "1) May 22",
+                "2) June 5",
+                "3) April 22",
+                "4) March 21"
+            ],
+            answer: 0
+        },
+        {
+            q: "132. Time taken by the Earth to rotate once on its own axis",
+            options: [
+                "1) 365 1/4 days",
+                "2) 24 hours",
+                "3) 30 days",
+                "4) 12 hours"
+            ],
+            answer: 1
+        },
+        {
+            q: "133. Identify the INCORRECTLY matched pair from the following.",
+            options: [
+                "1) Sammakka Saralamma Jatara - Mulugu",
+                "2) Nagoba Jatara - Adilabad",
+                "3) Edupayala Jatara - Medak",
+                "4) Komuravelli Mallanna Jatara - Nizamabad"
+            ],
+            answer: 3
+        },
+        {
+            q: "134. Colour used to represent water bodies on maps",
+            options: [
+                "1) Green",
+                "2) Brown",
+                "3) Blue",
+                "4) Yellow"
+            ],
+            answer: 2
+        },
+        {
+            q: "135. Chairman of the Drafting Committee of the Indian Constitution",
+            options: [
+                "1) Dr. Babu Rajendra Prasad",
+                "2) Dr. B.R. Ambedkar",
+                "3) Jawaharlal Nehru",
+                "4) Sardar Vallabhbhai Patel"
+            ],
+            answer: 1
+        },
+        {
+            q: "136. District famous for Pochampally handloom sarees",
+            options: [
+                "1) Yadadri Bhuvanagiri",
+                "2) Nalgonda",
+                "3) Siddipet",
+                "4) Karimnagar"
+            ],
+            answer: 0
+        },
+        {
+            q: "137. Grasslands, forests, and ponds are",
+            options: [
+                "1) Artificial habitats",
+                "2) Natural habitats",
+                "3) Desert habitats",
+                "4) Polar habitats"
+            ],
+            answer: 1
+        },
+        {
+            q: "138. Which of the following is NOT a leafy vegetable?",
+            options: [
+                "1) Spinach",
+                "2) Amaranthus",
+                "3) Carrot",
+                "4) Fenugreek leaves"
+            ],
+            answer: 2
+        },
+        {
+            q: "139. Number of spokes in the Ashoka Chakra of our National Flag",
+            options: [
+                "1) 20",
+                "2) 22",
+                "3) 24",
+                "4) 26"
+            ],
+            answer: 2
+        },
+        {
+            q: "140. Most suitable soils for growing paddy crop",
+            options: [
+                "1) Sandy soils",
+                "2) Alluvial soils",
+                "3) Rocky soils",
+                "4) Red soils"
+            ],
+            answer: 1
+        },
+        {
+            q: "141. Structures built to percolate rainwater into the ground",
+            options: [
+                "1) Soak pits",
+                "2) Check dams",
+                "3) Canals",
+                "4) Wells"
+            ],
+            answer: 0
+        },
+        {
+            q: "142. Renewable source of energy among the following",
+            options: [
+                "1) Coal",
+                "2) Petroleum",
+                "3) Solar energy",
+                "4) Natural gas"
+            ],
+            answer: 2
+        },
+        {
+            q: "143. Insectivorous plant",
+            options: [
+                "1) Nepenthes",
+                "2) Hibiscus",
+                "3) Neem",
+                "4) Tamarind"
+            ],
+            answer: 0
+        },
+        {
+            q: "144. State bird of Telangana",
+            options: [
+                "1) Peacock",
+                "2) Indian Roller (Palapitta)",
+                "3) Parrot",
+                "4) Pigeon"
+            ],
+            answer: 1
+        },
+        {
+            q: "145. Main objective of teaching Environmental Studies (EVS) at the primary level",
+            options: [
+                "1) Making students memorize scientific definitions.",
+                "2) Connecting children with their surrounding natural and social environment.",
+                "3) Enabling students to score high marks in examinations.",
+                "4) Teaching only the content given in the textbook."
+            ],
+            answer: 1
+        },
+        {
+            q: "146. Benefit of organizing 'Field Trips' in Environmental Studies (EVS)",
+            options: [
+                "1) Students get direct experiences.",
+                "2) Teacher gets relaxation.",
+                "3) Time gets wasted.",
+                "4) Discipline decreases."
+            ],
+            answer: 0
+        },
+        {
+            q: "147. According to NCF-2005, from which class does Environmental Studies begin at the primary level?",
+            options: [
+                "1) From Class 1",
+                "2) From Class 3",
+                "3) From Class 4",
+                "4) From Class 5"
+            ],
+            answer: 1
+        },
+        {
+            q: "148. Best tool to assess process skills of students in Environmental Studies",
+            options: [
+                "1) Essay type tests",
+                "2) Observation and Portfolio",
+                "3) Multiple choice questions",
+                "4) Oral tests"
+            ],
+            answer: 1
+        },
+        {
+            q: "149. While teaching the topic 'Water Pollution', a teacher took the students to a nearby pond to observe it. Which teaching method is this?",
+            options: [
+                "1) Lecture method",
+                "2) Observation / Field trip method",
+                "3) Deductive method",
+                "4) Historical method"
+            ],
+            answer: 1
+        },
+        {
+            q: "150. Why is the 'Theme-based' approach chosen in Environmental Studies (EVS) textbooks?",
+            options: [
+                "1) To reduce the syllabus",
+                "2) To promote correlation among subjects and holistic understanding",
+                "3) To reduce the workload of teachers",
+                "4) To make conducting examinations easier"
+            ],
+            answer: 1
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
