@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - శిశు వికాసం మరియు బోధనా శాస్త్రం (ప్రశ్నలు 1 - 30)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.55em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #8e44ad;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #f5eef8;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #8e44ad;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h1>శిశు వికాసం మరియు బోధనా శాస్త్రం</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - ప్రశ్నలు 1 నుండి 30</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const quizData = [
+        {
+            q: "1. కింది వాటిలో ఒకటి 'పరిపక్వత'కు మాత్రమే ఉదాహరణ, అభ్యసనానికి కాదు.",
+            options: [
+                "1) ఒక అమ్మాయి తన ఉపాధ్యాయునికి అభివాదం చేయడం",
+                "2) ఒక పిల్లవాడు సైకిల్ తొక్కడం",
+                "3) శిశువులలో పళ్ళు రావడం",
+                "4) ఒక బాలుడు తనకు తానుగా స్నానం చేయడం"
+            ],
+            answer: 2
+        },
+        {
+            q: "2. తన పెద్ద కొడుకుతో పోలిస్తే తన చిన్న కొడుకు వికాస మైలురాళ్లను చేరుకోవడంలో నెమ్మదిగా ఉన్నాడని శృతి గమనించింది. ఇది పెరుగుదల మరియు వికాసం యొక్క ఈ సూత్రానికి ఒక ఉదాహరణ",
+            options: [
+                "1) సమైక్య సూత్రం",
+                "2) వైయక్తిక భేదాల సూత్రం",
+                "3) సర్పిలాకార మరియు సరళరేఖీయ పురోగమనం యొక్క సూత్రం",
+                "4) ప్రాగుక్తీకరణ సూత్రం"
+            ],
+            answer: 1
+        },
+        {
+            q: "3. కింది వాటిలో, పిల్లల వికాస క్రమంలో చివరగా ఏర్పడే భావన",
+            options: [
+                "1) రంగు",
+                "2) ఆకారం",
+                "3) పరిమాణం",
+                "4) సమయం"
+            ],
+            answer: 3
+        },
+        {
+            q: "4. హావిఘర్స్ట్ వికాస కృత్యాలను ఈ వికాస దశ నుండి ప్రారంభమయ్యేవిగా గుర్తించారు",
+            options: [
+                "1) శైశవం",
+                "2) బాల్యం",
+                "3) వయోజనం",
+                "4) కౌమారం"
+            ],
+            answer: 0
+        },
+        {
+            q: "5. ఈ క్రింది వాటిలో పియాజె యొక్క ఇంద్రియ చాలక దశలోని సంజ్ఞానాత్మక వికాస లక్షణం కానిది",
+            options: [
+                "1) సమన్వయం లేని ప్రతిచర్యలను ప్రదర్శించడం",
+                "2) వస్తు స్థిరత్వం",
+                "3) మానసిక చిత్రాలను ఏర్పరచుకోవడం",
+                "4) భాషను ఉపయోగించడం"
+            ],
+            answer: 3
+        },
+        {
+            q: "6. కంగనా తాను చదువుతున్న ఉన్నత మాధ్యమిక పాఠశాల ప్రిన్సిపాల్ కుమార్తె. ఆమె ఉపాధ్యాయురాలు ఆమెతో నీకు అదనపు సాధన కావాలనుకుంటే ప్రయోగశాలలో ఎక్కువ సమయం పనిచేయవచ్చని చెప్పారు. అలా చేయడం తన తోటి విద్యార్థులకు అన్యాయం అవుతుందని కంగనా దీనిని నిరాకరించింది. కంగనా కోల్ బర్గ్ నైతిక వికాసంలోని ఈ దశలో ఉంది.",
+            options: [
+                "1) దశ VI",
+                "2) దశ IV",
+                "3) దశ III",
+                "4) దశ VII"
+            ],
+            answer: 0
+        },
+        {
+            q: "7. కింది వాటిలో ఏ సందర్భంలో ప్రజ్ఞా లబ్ది (IQ) 150 గా ఉంటుంది?",
+            options: [
+                "1) మానసిక వయస్సు 8 మరియు వాస్తవిక వయస్సు 12",
+                "2) మానసిక వయస్సు 12 మరియు వాస్తవిక వయస్సు 8",
+                "3) మానసిక వయస్సు 12 మరియు వాస్తవిక వయస్సు 12",
+                "4) మానసిక వయస్సు 12 మరియు వాస్తవిక వయస్సు 18"
+            ],
+            answer: 1
+        },
+        {
+            q: "8. కింది వాటిలో ఆదర్శవంతమైన పెంపక శైలి",
+            options: [
+                "1) అనుమతి పూర్వక",
+                "2) అధికార పూర్వక",
+                "3) బాధ్యతాయుత",
+                "4) జోక్య రహిత"
+            ],
+            answer: 2
+        },
+        {
+            q: "9. కింది వాటిలో 'సర్దుబాటు'ను సూచించే ఉదాహరణను గుర్తించండి:\nA) ఒక తండ్రి కొడుకు చదువు ఖర్చుల కోసం కుటుంబ బడ్జెట్ కేటాయింపులను పునఃసమీక్షించడం\nB) ఒక విద్యార్థి కళాశాల అదనపు పనిభారాన్ని తట్టుకోవడానికి తన దినచర్యను మార్చుకోవడం\nC) ఒక అమ్మాయి చదువు ఒత్తిడిని తప్పించుకోవడానికి కళాశాలకు వెళ్లడం మానేయడం",
+            options: [
+                "1) B మాత్రమే",
+                "2) A & C మాత్రమే",
+                "3) B & C మాత్రమే",
+                "4) A & B మాత్రమే"
+            ],
+            answer: 3
+        },
+        {
+            q: "10. ఒక పరిశోధకుడు ప్రభుత్వం ప్రవేశపెట్టిన ఒక పథకంపై పరిపుష్టి సేకరణ అధ్యయనం చేపట్టారు, ఇందుకోసం అతను ఇంటర్వ్యూ పద్ధతిని ఉపయోగించారు. ఆ పరిశోధకుడు కొన్ని క్లోజ్డ్-ఎండెడ్ ప్రశ్నలు ఉన్న ఒక షెడ్యూల్ను ఉపయోగించారు మరియు పాల్గొన్న వారందరినీ ఒకే క్రమంలో ఒకే రకమైన ప్రశ్నలు అడిగారు. ఈ రకమైన ఇంటర్వ్యూను ఇలా అంటారు",
+            options: [
+                "1) ప్రోజెక్టివ్",
+                "2) అన్స్ట్రక్చర్డ్",
+                "3) సెమీ-స్ట్రక్చర్డ్",
+                "4) స్ట్రక్చర్డ్"
+            ],
+            answer: 3
+        },
+        {
+            q: "11. ఈ అనుభవాలు ఒక వ్యక్తిలో అభ్యసనను కలుగజేస్తాయి:\nA) ప్రత్యక్ష\nB) పరోక్ష",
+            options: [
+                "1) A & B రెండూ",
+                "2) A మరియు B రెండూ కాదు",
+                "3) A మాత్రమే",
+                "4) B మాత్రమే"
+            ],
+            answer: 0
+        },
+        {
+            q: "12. ఒక పిల్లవాడికి 'క్యారమ్స్' ఆట ఆడటాన్ని స్ట్రైకర్ను సరైన స్థానంపై ఉంచడం, నాణెం గురిపెట్టడం, కొట్టడం మరియు నాణెంను పాకెట్ లో పడవేయడం వంటి దశలగుండా పునర్బలనం చేస్తూ నేర్పించడం అనేది స్కిన్నర్ యొక్క కార్యసాధక నిబంధనకు సంబంధించిన ఈ భావనకు ఒక ఉదాహరణ",
+            options: [
+                "1) చైనింగ్",
+                "2) సాధారణీకరణ",
+                "3) విలుప్తీకరణం",
+                "4) అయత్న సిద్ధ స్వాస్థ్యం"
+            ],
+            answer: 0
+        },
+        {
+            q: "13. ఉద్దీపన సాధారణీకరణ దీనికి పూర్తిగా విరుద్ధంగా ఉంటుంది",
+            options: [
+                "1) ఉద్దీపన ప్రతిస్పందన అనుసంధానం",
+                "2) ఉద్దీపన విచక్షణ",
+                "3) అయత్న సిద్ధ స్వాస్థ్యం",
+                "4) విలుప్తీకరణం"
+            ],
+            answer: 1
+        },
+        {
+            q: "14. సుచిత్ర తన నాలుగేళ్ల కొడుకు ఊహాత్మక ఆటలలో నిమగ్నమవ్వడాన్ని గమనించి, అతనిలో సృజనాత్మకతను పెంపొందించడానికి ఒక లెగో సెట్ను తీసుకువచ్చింది. సుచిత్ర లాగా సరైన సమయంలో అభ్యసనానికి అవకాశం కల్పించడం అనేది థార్న్ డైక్ యొక్క ఈ అభ్యసన నియమం యొక్క ఒక అంతరార్థం",
+            options: [
+                "1) అభ్యాస నియమం",
+                "2) సంసిద్ధత నియమం",
+                "3) ఫలిత నియమం",
+                "4) నిరుపయోగ నియమం"
+            ],
+            answer: 1
+        },
+        {
+            q: "15. పరుల్ ఒక ప్రీ-స్కూల్ పిల్లవాడు. ఎవరైనా అతన్ని ఏదైనా చేయకుండా ఆపినప్పుడు అతను చాలా దూకుడుగా ప్రవర్తిస్తాడని అతని ఉపాధ్యాయురాలు గమనించారు. తల్లిదండ్రులు-ఉపాధ్యాయుల సమావేశంలో, ఉపాధ్యాయురాలు అతని ప్రవర్తన గురించి అతని తల్లికి చెప్పి, ఇంట్లో ఎవరైనా ఇలాగే ప్రవర్తిస్తారా అని అడిగారు, తద్వారా పిల్లల ముందు వారి ప్రవర్తన విషయంలో జాగ్రత్తగా ఉండమని సూచించుటకు. పిల్లవాడి దూకుడు ప్రవర్తనకు ఈ రకమైన అభ్యసనం కారణమా అని ఇక్కడ ఉపాధ్యాయురాలు ఆలోచిస్తున్నారు.",
+            options: [
+                "1) అంతర్దృష్టి",
+                "2) యత్న దోష",
+                "3) పరిశీలనాత్మక",
+                "4) నిబంధన"
+            ],
+            answer: 2
+        },
+        {
+            q: "16. అంతర్దృష్టి అభ్యసన సిద్ధాంతం ఆధారంగా జరిగే అభ్యసనం అతి తక్కువ ప్రాధాన్యత ఇచ్చేది",
+            options: [
+                "1) సమగ్రత",
+                "2) సమన్వయం",
+                "3) విడివిడి వాస్తవాలు (Isolated facts)",
+                "4) ప్రత్యక్ష వ్యవస్థీకరణ"
+            ],
+            answer: 2
+        },
+        {
+            q: "17. సాధన కోసం చేసే పోరాటం అనేది",
+            options: [
+                "1) సామాజిక-మానసిక ప్రేరణ",
+                "2) జీవసంబంధ ప్రేరణ",
+                "3) ప్రాథమిక ప్రేరణ",
+                "4) తృతీయ ప్రేరణ"
+            ],
+            answer: 0
+        },
+        {
+            q: "18. కింది వాటిలో ఒకటి 'మానసిక చలనాత్మక' రంగానికి చెందినది",
+            options: [
+                "1) నటించడం (Acting)",
+                "2) వైఖరి",
+                "3) భావన",
+                "4) ఉద్వేగం"
+            ],
+            answer: 0
+        },
+        {
+            q: "19. ఒక ఉపాధ్యాయురాలు విద్యార్థులకు ఇచ్చిన క్రమంలో కంఠస్థం చేయడానికి కొన్ని పదాలను ఇచ్చారు. కొన్ని రోజుల తరువాత ఆమె ఆ జాబితాకు మరికొన్ని పదాలను జోడించి, ఇంతకు ముందు నేర్చుకున్న పదాలను మాత్రమే గుర్తించి, అదే క్రమంలో అమర్చమని విద్యార్థులను అడిగారు. స్మృతిని కొలిచే ఈ పద్ధతి",
+            options: [
+                "1) స్వేచ్ఛా పునఃస్మరణ",
+                "2) పునర్నిర్మాణం",
+                "3) పఠనం",
+                "4) సాధారణ పునఃస్మరణ"
+            ],
+            answer: 1
+        },
+        {
+            q: "20. సహసంబంధ అభ్యసనం దీనికి దారితీస్తుంది.",
+            options: [
+                "1) బట్టీ స్మృతి",
+                "2) అభ్యసన బదలాయింపు",
+                "3) శూన్య బదలాయింపు",
+                "4) సహజ సామర్థ్య వికాసం"
+            ],
+            answer: 1
+        },
+        {
+            q: "21. సమ్మిళిత విద్యను ఈ దశ నుండి ఆచరించాలి",
+            options: [
+                "1) ఉన్నత మాధ్యమిక",
+                "2) ప్రాథమిక",
+                "3) మాధ్యమిక",
+                "4) పూర్వపాఠశాల"
+            ],
+            answer: 3
+        },
+        {
+            q: "22. ప్రాజెక్ట్ ఆధారిత అభ్యసనంలో ఉపాధ్యాయుని పాత్ర",
+            options: [
+                "1) ప్రచారకుడు",
+                "2) వ్యాప్తికర్త",
+                "3) బోధకుడు",
+                "4) సౌకర్యకర్త"
+            ],
+            answer: 3
+        },
+        {
+            q: "23. విద్యార్థుల వ్యక్తిగత సవాళ్లను అర్థం చేసుకొని వారికి అనుగుణంగా మద్దతు అందించడాన్ని ఈ క్రింది విధంగా పేర్కొనవచ్చు",
+            options: [
+                "1) సారూప్యత",
+                "2) సమానత్వం",
+                "3) సమ న్యాయం",
+                "4) ఏకరూపత"
+            ],
+            answer: 2
+        },
+        {
+            q: "24. హనుమంత్ తన కుమార్తెను 'ఒక పాచికకు ఇరువైపులా ఉన్న సంఖ్యల మొత్తం 7 అయితే, 2కు ఎదురుగా ఏ సంఖ్య ఉంటుంది?' అని అడిగాడు. పాచిక భౌతికంగా అందుబాటులో లేనప్పటికీ, అతని కుమార్తె 5 అని సమాధానం ఇచ్చింది. బ్రూనర్ ప్రకారం హనుమంత్ కుమార్తె ఈ దశలో ఉంది",
+            options: [
+                "1) అమూర్త చాలక",
+                "2) క్రియాత్మక",
+                "3) ప్రతీకాత్మక",
+                "4) పూర్వ ప్రచాలక"
+            ],
+            answer: 2
+        },
+        {
+            q: "25. ఉపన్యాస పద్ధతి ప్రభావవంతంగా ఉండుటకు కింది వాటిలో ఒకదాన్ని నివారించాలి",
+            options: [
+                "1) సంబంధిత వాక్యాలు",
+                "2) నిరంతరత",
+                "3) అనర్గళత",
+                "4) అస్పష్టమైన పదాలు"
+            ],
+            answer: 3
+        },
+        {
+            q: "26. కింది స్టేట్ మెంట్ లను చదివి సరైన సమాధానాన్ని గుర్తించండి:\nస్టేట్ మెంట్ A : ఆట ఊహాశక్తిని మరియు సృజనాత్మకతను పెంపొందిస్తుంది\nస్టేట్ మెంట్ B : పిల్లలలో ఊహాశక్తిని పెంపొందించడానికి మనం వారికి బట్టీ స్మృతి కృత్యాలను ఎక్కువగా ఇవ్వాలి",
+            options: [
+                "1) స్టేట్ మెంట్ B మాత్రమే సరైనది",
+                "2) స్టేట్ మెంట్ A మాత్రమే సరైనది",
+                "3) స్టేట్ మెంట్ A మరియు స్టేట్ మెంట్ B రెండూ సరైనవి",
+                "4) స్టేట్ మెంట్ A మరియు స్టేట్ మెంట్ B రెండూ సరికావు"
+            ],
+            answer: 1
+        },
+        {
+            q: "27. కింది వాటిలో మంత్రణం మార్చలేనిది",
+            options: [
+                "1) వైఖరులు",
+                "2) ఆసక్తులు",
+                "3) సహజ సామర్థ్యం",
+                "4) మొత్తం ప్రవర్తన (Overall behaviour)"
+            ],
+            answer: 2
+        },
+        {
+            q: "28. ఇబ్బందుల్లో ఉన్న పిల్లలకు తక్షణ సహాయం అందించే 24/7 టోల్ ఫ్రీ జాతీయ బాలల హెల్ప్ లైన్ నంబర్",
+            options: [
+                "1) 1098",
+                "2) 1099",
+                "3) 1809",
+                "4) 1908"
+            ],
+            answer: 0
+        },
+        {
+            q: "29. కింది వాటిలో అభ్యసన మదింపుకు సంబంధించి సరికాని స్టేట్ మెంట్ ను గుర్తించండి",
+            options: [
+                "1) మంచి మదింపు విద్యార్థి అభ్యసనాన్ని మెరుగుపరుస్తుంది.",
+                "2) మదింపు అనేది తీర్పులు ఇచ్చే ప్రక్రియ",
+                "3) మదింపు విద్యార్థి అభ్యసనాన్ని ప్రభావితం చేయగలదు",
+                "4) మదింపు బహుళ పద్ధతులను ఉపయోగించకూడదు"
+            ],
+            answer: 3
+        },
+        {
+            q: "30. 'పిల్లల ఉచిత మరియు నిర్బంధ విద్యా హక్కు చట్టం, 2009'లోని పాఠశాల నియమ నిబంధనల పట్టిక ప్రకారం, పాఠశాల భవనంలో కింది వాటిలో ఒకటి ఉండవలసిన అవసరం లేదు",
+            options: [
+                "1) గణితం, సైన్స్ మరియు సాంఘిక శాస్త్రం కోసం ప్రయోగశాలలు",
+                "2) అడ్డంకులు లేని ప్రవేశం",
+                "3) అబ్బాయిలు మరియు అమ్మాయిలకు వేర్వేరు మరుగుదొడ్లు",
+                "4) సురక్షితమైన మరియు తగినంత త్రాగునీరు"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    quizData.forEach((item, qIndex) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
