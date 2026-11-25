@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - Language II - English (Questions 61 - 90)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.6em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .passage-box {
+            background: #eaf4fc;
+            border: 1px solid #aed6f1;
+            border-left: 5px solid #2980b9;
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+        }
+        .passage-title {
+            font-weight: bold;
+            color: #1f618d;
+            margin-bottom: 10px;
+            font-size: 1.06em;
+        }
+        .passage-text {
+            white-space: pre-line;
+            font-size: 1.02em;
+            color: #2c3e50;
+            line-height: 1.75;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #2980b9;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #ebf5fb;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #2980b9;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Language II - English</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - Questions 61 to 90</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const passageText = `The Internet is one of the most influential forms of mass media, revolutionizing human behaviour as people spend increasing amounts of time online studying, communicating, creating, and entertaining themselves. However, excessive use often termed "Internet addiction" can have harmful consequences for both individuals and society. It has become a widely discussed global issue, significantly affecting relationships, academic performance, productivity, and social interactions. Over the past two decades, internet use for socialization and gaming has surged, especially among children, adolescents, and young adults, driven by technological advancements. Excessive use is linked to strained personal relationships, reduced work efficiency, shorter sleep duration, increased cyberbullying, and rising addiction rates. The problem worsened after the COVID-19 pandemic, as lockdowns and emotional distress led many to rely heavily on online platforms for coping with. Internet addiction also has physical effects, including headaches, sleep disturbances, and repetitive strain injuries such as carpal tunnel syndrome.`;
+
+    const quizData = [
+        {
+            q: "61. As per the passage, \"Internet addiction\" means",
+            options: [
+                "1) accessing education online.",
+                "2) online content creation.",
+                "3) extreme use of the internet.",
+                "4) restricted use of social media."
+            ],
+            answer: 2
+        },
+        {
+            q: "62. After the COVID-19 pandemic, this led many people to rely heavily on online platforms for coping with.",
+            options: [
+                "1) lockdown and emotional distress",
+                "2) entertainment",
+                "3) inquisitiveness",
+                "4) technology development"
+            ],
+            answer: 0
+        },
+        {
+            q: "63. As per the passage, this is an impact of internet addiction.",
+            options: [
+                "1) It improves academic performance.",
+                "2) It has little effect on daily life.",
+                "3) It affects academic performance.",
+                "4) It only affects entertainment habits."
+            ],
+            answer: 2
+        },
+        {
+            q: "64. Based on the passage, identify the consequence of excessive internet use.",
+            options: [
+                "1) Improved productivity at work",
+                "2) Enhanced physical fitness",
+                "3) Sleep disturbances",
+                "4) Healthier relationships"
+            ],
+            answer: 2
+        },
+        {
+            q: "65. As per the passage, the trend observed over the past two decades regarding internet use is",
+            options: [
+                "1) decline in internet use for communication.",
+                "2) surge in internet use for socialization and gaming.",
+                "3) internet usage remained largely unchanged.",
+                "4) decrease in online entertainment activities."
+            ],
+            answer: 1
+        },
+        {
+            q: "66. We are looking forward ______ good rains this year. Choose the correct option to complete the sentence.",
+            options: [
+                "1) to",
+                "2) with",
+                "3) for",
+                "4) at"
+            ],
+            answer: 0
+        },
+        {
+            q: "67. Choose correctly punctuated sentence.",
+            options: [
+                "1) They said, \"we have won the match.\"",
+                "2) They said \"We have won the match.\"",
+                "3) They said, We have won the match.",
+                "4) They said, \"We have won the match.\""
+            ],
+            answer: 3
+        },
+        {
+            q: "68. Mr. Vaibhav said to me, \"I brought a gift for you.\" Identify the correct indirect form of the sentence.",
+            options: [
+                "1) Mr. Vaibhav told me that he had brought a gift for me.",
+                "2) Mr. Vaibhav told me that he brought a gift for him.",
+                "3) Mr. Vaibhav told me that he has brought a gift for me.",
+                "4) Mr. Vaibhav told me that I had brought a gift for him."
+            ],
+            answer: 0
+        },
+        {
+            q: "69. Arrange the following in sequence to make a meaningful sentence.\nP: The film industry\nQ: fascinating history\nR: that dates back\nS: to the late 19th century.\nT: has a rich and\nChoose the correct option.",
+            options: [
+                "1) P, T, R, Q, S",
+                "2) P, R, T, Q, S",
+                "3) P, T, Q, R, S",
+                "4) P, Q, T, R, S"
+            ],
+            answer: 2
+        },
+        {
+            q: "70. Identify the part with an error in the given sentence.\nSmoking is (A) / undoubtedly (B) / very injurious (C) / for health. (D)",
+            options: [
+                "1) A",
+                "2) B",
+                "3) C",
+                "4) D"
+            ],
+            answer: 3
+        },
+        {
+            q: "71. Choose the meaningful sentence.",
+            options: [
+                "1) Success depends viewing even small tasks on with a broad outlook.",
+                "2) Success depends on viewing even small tasks with a broad outlook.",
+                "3) Success depends on viewing even with small tasks a broad outlook.",
+                "4) Success viewing depends small tasks even on with a broad outlook."
+            ],
+            answer: 1
+        },
+        {
+            q: "72. My elder sister is playing cricket. Choose the appropriate passive voice sentence.",
+            options: [
+                "1) Cricket has been played by my elder sister.",
+                "2) Cricket is being played by my elder sister.",
+                "3) Cricket was being played by my elder sister.",
+                "4) Cricket had been played by my elder sister."
+            ],
+            answer: 1
+        },
+        {
+            q: "73. 'Don't depend on him, as he is a man of straw.' Identify the meaning of the idiom \"a man of straw\".",
+            options: [
+                "1) a very strong person",
+                "2) a very active person",
+                "3) an insignificant person",
+                "4) a hardworking person"
+            ],
+            answer: 2
+        },
+        {
+            q: "74. We waited ______ it stopped raining. Choose the correct option to complete the sentence.",
+            options: [
+                "1) until",
+                "2) in spite of",
+                "3) irrespective of",
+                "4) between"
+            ],
+            answer: 0
+        },
+        {
+            q: "75. Children should learn to live in harmony with others. Identify the opposite meaning of the word 'harmony.'",
+            options: [
+                "1) conflict",
+                "2) agreement",
+                "3) confusion",
+                "4) melody"
+            ],
+            answer: 0
+        },
+        {
+            q: "76. Eat ______ you will die. Complete the sentence with correct option.",
+            options: [
+                "1) beside",
+                "2) with",
+                "3) or else",
+                "4) unless"
+            ],
+            answer: 2
+        },
+        {
+            q: "77. We went there last week, ______ ? Choose the correct option.",
+            options: [
+                "1) did we",
+                "2) didn't we",
+                "3) weren't we",
+                "4) don't we"
+            ],
+            answer: 1
+        },
+        {
+            q: "78. The thief had ______ the scene before the police arrived. Complete the sentence with the correct option.",
+            options: [
+                "1) flee",
+                "2) flees",
+                "3) fled",
+                "4) fleeing"
+            ],
+            answer: 2
+        },
+        {
+            q: "79. She earns one lakh rupees ______ Choose the correct option.",
+            options: [
+                "1) year",
+                "2) an year",
+                "3) the year",
+                "4) a year"
+            ],
+            answer: 3
+        },
+        {
+            q: "80. Read the following two sentences.\nSentence A: In the hot desert, oases are life savers for travellers.\nSentence B: In the hot desert, oases is life savers for travellers.\nChoose the correct sentence.",
+            options: [
+                "1) Only the sentence A is correct.",
+                "2) Both the sentences A and B are correct.",
+                "3) Only the sentence B is correct.",
+                "4) Both the sentences A and B are incorrect."
+            ],
+            answer: 0
+        },
+        {
+            q: "81. The boy slipped on the road and hurt ______ Complete the sentence with correct option.",
+            options: [
+                "1) herself",
+                "2) themselves",
+                "3) his self",
+                "4) himself"
+            ],
+            answer: 3
+        },
+        {
+            q: "82. Choose the correctly spelt word.",
+            options: [
+                "1) compensete",
+                "2) compensate",
+                "3) compansete",
+                "4) compansate"
+            ],
+            answer: 1
+        },
+        {
+            q: "83. The union decided to ______ the strike. Choose the correct option to complete the sentence.",
+            options: [
+                "1) call of",
+                "2) call on",
+                "3) call off",
+                "4) call in"
+            ],
+            answer: 2
+        },
+        {
+            q: "84. One who deals in flowers is called",
+            options: [
+                "1) floorer.",
+                "2) artist.",
+                "3) vendor.",
+                "4) florist."
+            ],
+            answer: 3
+        },
+        {
+            q: "85. Identify the English formative tool for class V of Telangana State Board.",
+            options: [
+                "1) Project work",
+                "2) Map pointing",
+                "3) Book review",
+                "4) Dictation"
+            ],
+            answer: 0
+        },
+        {
+            q: "86. 'Teacher gives commands in the target language and the students respond with physical movements.' Name this method of teaching.",
+            options: [
+                "1) Grammar translation method",
+                "2) Direct method",
+                "3) S-O-S method",
+                "4) Total Physical Response method"
+            ],
+            answer: 3
+        },
+        {
+            q: "87. Identify the suitable teaching and learning material for primary level learners.",
+            options: [
+                "1) TED Talks",
+                "2) Picture Dictionaries",
+                "3) Cause and Effect Maps",
+                "4) Encyclopaedia"
+            ],
+            answer: 1
+        },
+        {
+            q: "88. According to Noam Chomsky, the innate ability to learn language is known as",
+            options: [
+                "1) Language Detection Device.",
+                "2) Learner Developed Device.",
+                "3) Language Acquisition Device.",
+                "4) Learners Acquisition Device."
+            ],
+            answer: 2
+        },
+        {
+            q: "89. This language skill requires attention to grammar, spelling, punctuation, and organization.",
+            options: [
+                "1) Writing",
+                "2) Reading",
+                "3) Listening",
+                "4) Speaking"
+            ],
+            answer: 0
+        },
+        {
+            q: "90. Identify the most appropriate discourse for primary-grade learners from the following.",
+            options: [
+                "1) Story/Narrative",
+                "2) Play script",
+                "3) Autobiography",
+                "4) Travelogue"
+            ],
+            answer: 0
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    function createPassageCard(title, content) {
+        const box = document.createElement('div');
+        box.className = 'passage-box';
+
+        const heading = document.createElement('div');
+        heading.className = 'passage-title';
+        heading.textContent = title;
+        box.appendChild(heading);
+
+        const body = document.createElement('div');
+        body.className = 'passage-text';
+        body.textContent = content;
+        box.appendChild(body);
+
+        return box;
+    }
+
+    quizData.forEach((item, qIndex) => {
+        if (qIndex === 0) {
+            quizContainer.appendChild(
+                createPassageCard("Questions (61 - 65): Read the following passage and choose the correct option for each question.", passageText)
+            );
+        }
+
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer!';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! <br><span style="color:#155724;">Correct Answer: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            Your Final Score: <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.72em; color: #555;">(Questions Attempted: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
