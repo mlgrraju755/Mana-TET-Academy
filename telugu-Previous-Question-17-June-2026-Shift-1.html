@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG TET Paper I (17th June 2026 - Shift 1) - భాష I - తెలుగు (ప్రశ్నలు 31 - 60)</title>
+    <style>
+        body {
+            font-family: 'Noto Sans Telugu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.75;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #fff;
+            padding: 25px 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.55em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.08em;
+        }
+        .passage-box {
+            background: #fef9e7;
+            border: 1px solid #f7dc6f;
+            border-left: 5px solid #e67e22;
+            border-radius: 6px;
+            padding: 18px 22px;
+            margin-bottom: 20px;
+        }
+        .passage-title {
+            font-weight: bold;
+            color: #b9770e;
+            margin-bottom: 10px;
+            font-size: 1.08em;
+        }
+        .passage-text {
+            white-space: pre-line;
+            font-size: 1.04em;
+            color: #2c3e50;
+        }
+        .question-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 5px solid #e67e22;
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            white-space: pre-line;
+        }
+        .options label {
+            display: block;
+            padding: 10px 14px;
+            margin: 6px 0;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #fdf2e9;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+        }
+        .feedback {
+            margin-top: 12px;
+            padding: 10px 14px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .feedback.correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .feedback.wrong {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        #score-board {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #e8f4fd;
+            border: 2px solid #e67e22;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>భాష I - తెలుగు</h1>
+    <div class="subtitle">TG TET Paper I (17th June 2026 - Shift 1) - ప్రశ్నలు 31 నుండి 60</div>
+    
+    <div id="quiz-container"></div>
+
+    <button class="submit-btn" onclick="calculateFinalScore()">Final Submit</button>
+    
+    <div id="score-board"></div>
+</div>
+
+<script>
+    const padhyamText = `కొఱగాని కొడుకు పుట్టినకొఱగామియెగాదు తండ్రి గుణములు జెరచున్చెఱుకు తుద వెన్ను పుట్టినచెఱుకున తీపెల్ల చెరచు సిద్ధము సుమతీ!`;
+
+    const gadhyamText = `గణపతి దేవుడు చాలా శక్తి సంపన్నుడు. అతడు రాజ్యపాలన చేసినన్ని రోజులు సామంతులు అణగిమణిగి ఉన్నారు. రాజ్యానికి శత్రుభయం లేకుండా స్థిరమైన పాలన చేశాడు. అతడంటే ప్రజలకు అభిమానం, భయం, భక్తి ఉండేవి. మంత్రుల సలహాలు, సామంతుల అభిప్రాయాలకు విలువనిచ్చి రాజ్యపాలన చేసిన గణపతిదేవుడు వృద్ధాప్యం వల్ల రుద్రమదేవికి పట్టాభిషేకం చేయాలనుకున్నాడు. ఒక స్త్రీని రాజుగా చేస్తే రాబోయే పరిణామాలు ఎట్లా ఉంటాయి అనే ఆలోచనలో పడి మంత్రుల సలహాలు అభిప్రాయాలు తీసుకున్నాడు.`;
+
+    const quizData = [
+        {
+            q: "31. ఈ పద్యంలోని సంబోధన ఏమిటి?",
+            options: [
+                "1) కొడుకు",
+                "2) తండ్రి",
+                "3) వెన్ను",
+                "4) సుమతీ"
+            ],
+            answer: 3
+        },
+        {
+            q: "32. ఈ పద్యంలో చివర అనే అర్థంలో వాడిన పదమేది?",
+            options: [
+                "1) కొఱగాని",
+                "2) తుద",
+                "3) చెరచు",
+                "4) గామియె"
+            ],
+            answer: 1
+        },
+        {
+            q: "33. కింది వానిలో ఏ పదం రెండు పదాల కలయికతో ఉంది?",
+            options: [
+                "1) చెరచు",
+                "2) తుద",
+                "3) తీపెల్ల",
+                "4) గామియె"
+            ],
+            answer: 2
+        },
+        {
+            q: "34. ఈ పద్యం ప్రకారం వెన్ను వలన కలిగే పరిణామమేమి?",
+            options: [
+                "1) తీపి పెరుగుతుంది",
+                "2) చెఱుకు తీపి చెడుతుంది.",
+                "3) సుమతీ సిద్ధమౌతుంది",
+                "4) తండ్రి కొఱగామి అవుతారు"
+            ],
+            answer: 1
+        },
+        {
+            q: "35. ఈ గద్యము ప్రకారము పరిపాలన చేస్తున్నవారెవరు?",
+            options: [
+                "1) రుద్రమదేవి",
+                "2) గణపతి దేవుడు",
+                "3) సామంతులు",
+                "4) మంత్రులు"
+            ],
+            answer: 1
+        },
+        {
+            q: "36. రుద్రమదేవి పట్టాభిషేకానికి కారణం ఏమిటి?",
+            options: [
+                "1) అస్థిరత్వం",
+                "2) పరిణామాలు",
+                "3) రాజు వృద్ధాప్యం",
+                "4) శత్రుత్వం"
+            ],
+            answer: 2
+        },
+        {
+            q: "37. ఎవరి పాలనలో సామంతులు అణగిమణిగి ఉన్నారు?",
+            options: [
+                "1) గణపతి దేవుడు",
+                "2) రుద్రమదేవి",
+                "3) నాయంకరులు",
+                "4) మంత్రులు"
+            ],
+            answer: 0
+        },
+        {
+            q: "38. భయం, భక్తి అనేవి ఎవరికి ఉన్నాయి?",
+            options: [
+                "1) రాజుకు",
+                "2) రాణికి",
+                "3) ప్రజలకు",
+                "4) మంత్రులకు"
+            ],
+            answer: 2
+        },
+        {
+            q: "39. సంజ అనే పదానికి ప్రకృతి పదం ఏమిటి?",
+            options: [
+                "1) సంధ్య",
+                "2) సిగ",
+                "3) సందిమ",
+                "4) సాంజ"
+            ],
+            answer: 0
+        },
+        {
+            q: "40. ద్రవ్యాదులను ధరించునది అనే వ్యుత్పత్తి కలిగిన పదమేది?",
+            options: [
+                "1) ద్రావ్యం",
+                "2) వసుధ",
+                "3) ద్రవ్యనిధి",
+                "4) వరదం"
+            ],
+            answer: 2
+        },
+        {
+            q: "41. అడవికి రాజు హరిత్తు. ఈ వాక్యంలో హరిత్తు అనగా ఏమిటి?",
+            options: [
+                "1) ఏనుగు",
+                "2) సింహం",
+                "3) వ్యాఘ్రం",
+                "4) చిఱుతగండు"
+            ],
+            answer: 1
+        },
+        {
+            q: "42. సదనం, నివాసం అనే పర్యాయ పదాలు కలిగిన పదమేది?",
+            options: [
+                "1) ఇల్లు",
+                "2) సాధనం",
+                "3) గుళ్ళు",
+                "4) సహవాసం"
+            ],
+            answer: 0
+        },
+        {
+            q: "43. 'తిప్పక' లో ఉన్న పరుషం ఏది?",
+            options: [
+                "1) తి",
+                "2) ప",
+                "3) ప్ప",
+                "4) క"
+            ],
+            answer: 3
+        },
+        {
+            q: "44. రమణి పాట గంగాప్రవాహమై సాగింది. ఈ వాక్యంలో స్త్రీలింగ పదం కానిది ఏది?",
+            options: [
+                "1) పాట",
+                "2) రమణి",
+                "3) గంగ",
+                "4) సాగింది"
+            ],
+            answer: 3
+        },
+        {
+            q: "45. 'ఓయి' అనేది ఏమిటి?",
+            options: [
+                "1) ప్రథమా విభక్తి",
+                "2) సప్తమీ విభక్తి",
+                "3) సంబోధన ప్రథమా విభక్తి",
+                "4) చతుర్థీ విభక్తి"
+            ],
+            answer: 2
+        },
+        {
+            q: "46. కింది వానిలో అవ్యయం ఏది?",
+            options: [
+                "1) అమ్మో!",
+                "2) బామ్మా!",
+                "3) బొమ్మ?",
+                "4) కొమ్మ?"
+            ],
+            answer: 0
+        },
+        {
+            q: "47. 'ముగ్ధ' అనే పదంలోని ద్విత్వాక్షర ధ్వని?",
+            options: [
+                "1) ము",
+                "2) గ",
+                "3) ధ",
+                "4) ద్విత్వాక్షర ధ్వని లేదు."
+            ],
+            answer: 3
+        },
+        {
+            q: "48. అర్థవంతములైన రెండు పదాలు కలిసి కొత్త (ఏక) పదంగా ఏర్పడటాన్ని ఏమంటారు?",
+            options: [
+                "1) అవ్యయం",
+                "2) సమాసం",
+                "3) సంధి",
+                "4) ప్రత్యయం"
+            ],
+            answer: 1
+        },
+        {
+            q: "49. పొట్లపల్లి రామారావు జన్మించిన గ్రామం పేరేమి?",
+            options: [
+                "1) తాటికాయల",
+                "2) దోమకొండ",
+                "3) పాకాల",
+                "4) నేరెల్ల"
+            ],
+            answer: 0
+        },
+        {
+            q: "50. బసవపురాణం రచించిన వారు ఎవరు?",
+            options: [
+                "1) పాల్కురికి సోమనాథుడు",
+                "2) నన్నయ",
+                "3) పోతన",
+                "4) కాణదం పెద్దన"
+            ],
+            answer: 0
+        },
+        {
+            q: "51. 'నారాయణా!' అనే మకుటం కలిగిన శతకమేది?",
+            options: [
+                "1) చిత్తశతకం",
+                "2) విశ్వకర్మ శతకం",
+                "3) నరహరి శతకం",
+                "4) నారాయణ శతకం"
+            ],
+            answer: 2
+        },
+        {
+            q: "52. 'గొల్లసుద్దులు' అనేది ఏ రూపం?",
+            options: [
+                "1) జానపద కళారూపం",
+                "2) నాగరిక కళారూపం",
+                "3) చిత్రకవిత కళారూపం",
+                "4) గోకుల కళారూపం"
+            ],
+            answer: 0
+        },
+        {
+            q: "53. 'భాగోతం అన్నా యక్షగానం అన్నా రెండూ ఒక్కటే' ఈ వాక్యం?",
+            options: [
+                "1) సరైనది",
+                "2) సరైనది కాదు",
+                "3) పాక్షికమైనది",
+                "4) శుద్ధతప్పు"
+            ],
+            answer: 1
+        },
+        {
+            q: "54. మొట్టమొదటిసారి, తెలంగాణలోని ఏ గ్రామంలో బొగ్గు బయటపడింది?",
+            options: [
+                "1) రామగుండం",
+                "2) గోదావరి ఖని",
+                "3) ఇల్లందు",
+                "4) పాల్వంచ"
+            ],
+            answer: 2
+        },
+        {
+            q: "55. ప్రాథమికస్థాయి తెలుగు భాషా బోధనకు అనుకూలమైన ఇతివృత్తం",
+            options: [
+                "1) అంతర్జాతీయ సంబంధాలు",
+                "2) ప్రపంచశాంతి",
+                "3) సంస్కృతి-కళలు",
+                "4) కుటుంబం"
+            ],
+            answer: 3
+        },
+        {
+            q: "56. ఉత్తమ తెలుగు భాషా బోధనా తరగతి గదిని గుర్తించండి.",
+            options: [
+                "1) విద్యార్థులు మౌనపఠనంలో నిమగ్నమై, నిశ్శబ్దంగా కాలాంశం ముగిసేవరకు గడపడం.",
+                "2) ఉపాధ్యాయుడు ఇచ్చిన అంశం మీద విద్యార్థులు జట్లుగా ఏర్పడి చర్చను నిర్వహించడం.",
+                "3) ఉపాధ్యాయుడు నల్లబల్ల మీద రాసే అంశాలను విద్యార్థులు కాలాంశం ముగిసేవరకు రాసుకోవడం.",
+                "4) ఉపాధ్యాయుడు కాలాంశం మొత్తం పాఠాన్ని చదివి వినిపించడం."
+            ],
+            answer: 1
+        },
+        {
+            q: "57. మన భారతదేశంలో కృత్యాధార పద్ధతిని మొదట ప్రస్తావించిన కమిటి",
+            options: [
+                "1) యశ్ పాల్ కమిటి",
+                "2) మాల్కం ఆదిశేషయ్య కమిటి",
+                "3) ఈశ్వరీభాయి పటేల్ కమిటి",
+                "4) చతుర్వేది కమిటి"
+            ],
+            answer: 2
+        },
+        {
+            q: "58. సంస్థాగత ప్రణాళిక ముఖ్య లక్షణాలలో సరియైన వానిని గుర్తించండి.\nA) పాఠశాలకు అవసరమైన ఆర్థిక, మానవశక్తి వనరులను సేకరించి సద్వినియోగం చేయడం\nB) పాఠశాలకు, సమాజానికి మధ్య సన్నిహిత సంబంధం ఏర్పరచడం\nC) పాఠశాల నిర్వహణలో ప్రజాస్వామ్య విలువలను పాటించడం\nD) గ్రామ ప్రజల, ఉపాధ్యాయుల ప్రయోజనాల పరిరక్షణ\nసరైన ఐచ్ఛికాన్ని గుర్తించండి.",
+            options: [
+                "1) A, B & C మాత్రమే",
+                "2) B, C & D మాత్రమే",
+                "3) A, B, C & D",
+                "4) B & D మాత్రమే"
+            ],
+            answer: 2
+        },
+        {
+            q: "59. కేవలం 'శ్రవ్య' బోధనోపకరణాలు",
+            options: [
+                "1) సంగీత వాయిద్యాలు, ల్యాప్ టాప్ లు",
+                "2) రేడియో, ఎల్.సి.డి. ప్రొజెక్టర్లు",
+                "3) టేప్ రికార్డర్, కంప్యూటర్లు",
+                "4) రేడియో, టేప్ రికార్డర్"
+            ],
+            answer: 3
+        },
+        {
+            q: "60. 'బహుళైచ్ఛిక ప్రశ్నలు' - పరిమితులలో సరియైన వానిని గుర్తించుము.\nA) నైపుణ్యాలు, వినియోగం, భావ ప్రకటనకు తావు ఉంటుంది\nB) ఊహించి జవాబులు ఎంపిక చేసే అవకాశం అసలే ఉండదు\nC) కాపీ చేయడానికి వీలుంది\nD) గుడ్డిగా గుర్తించే వీలుంది. యాంత్రిక పునఃస్మరణకు తావు ఉంది",
+            options: [
+                "1) A, B, C & D",
+                "2) C & D మాత్రమే",
+                "3) A & B మాత్రమే",
+                "4) B, C & D మాత్రమే"
+            ],
+            answer: 1
+        }
+    ];
+
+    const quizContainer = document.getElementById('quiz-container');
+    const userAnswers = new Array(quizData.length).fill(null);
+
+    function createPassageCard(title, content) {
+        const box = document.createElement('div');
+        box.className = 'passage-box';
+
+        const heading = document.createElement('div');
+        heading.className = 'passage-title';
+        heading.textContent = title;
+        box.appendChild(heading);
+
+        const body = document.createElement('div');
+        body.className = 'passage-text';
+        body.textContent = content;
+        box.appendChild(body);
+
+        return box;
+    }
+
+    quizData.forEach((item, qIndex) => {
+        if (qIndex === 0) {
+            quizContainer.appendChild(
+                createPassageCard("ప్రశ్నలు (31 నుండి 34 వరకు) : కింది పద్యాన్ని చదవండి.", padhyamText)
+            );
+        }
+        if (qIndex === 4) {
+            quizContainer.appendChild(
+                createPassageCard("ప్రశ్నలు (35 నుండి 38 వరకు) : కింది గద్యాన్ని చదవండి.", gadhyamText)
+            );
+        }
+
+        const card = document.createElement('div');
+        card.className = 'question-card';
+
+        const qText = document.createElement('div');
+        qText.className = 'question-text';
+        qText.textContent = item.q;
+        card.appendChild(qText);
+
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+
+        item.options.forEach((opt, oIndex) => {
+            const label = document.createElement('label');
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = `question_${qIndex}`;
+            radio.value = oIndex;
+
+            radio.addEventListener('change', () => {
+                checkAnswer(qIndex, oIndex);
+            });
+
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(opt));
+            optionsDiv.appendChild(label);
+        });
+
+        card.appendChild(optionsDiv);
+
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback';
+        feedbackDiv.id = `feedback_${qIndex}`;
+        card.appendChild(feedbackDiv);
+
+        quizContainer.appendChild(card);
+    });
+
+    function checkAnswer(qIndex, selectedIndex) {
+        userAnswers[qIndex] = selectedIndex;
+        const item = quizData[qIndex];
+        const correctIndex = item.answer;
+        const feedbackDiv = document.getElementById(`feedback_${qIndex}`);
+        
+        feedbackDiv.style.display = 'block';
+        if (selectedIndex === correctIndex) {
+            feedbackDiv.className = 'feedback correct';
+            feedbackDiv.innerHTML = '✔ Right Answer! (సరైన సమాధానం)';
+        } else {
+            feedbackDiv.className = 'feedback wrong';
+            feedbackDiv.innerHTML = `✖ Wrong Answer! (తప్పు సమాధానం) <br><span style="color:#155724;">సరైన సమాధానం: ${item.options[correctIndex]}</span>`;
+        }
+    }
+
+    function calculateFinalScore() {
+        let score = 0;
+        let answeredCount = 0;
+
+        userAnswers.forEach((ans, index) => {
+            if (ans !== null) {
+                answeredCount++;
+                if (ans === quizData[index].answer) {
+                    score++;
+                }
+            }
+        });
+
+        const scoreBoard = document.getElementById('score-board');
+        scoreBoard.style.display = 'block';
+        scoreBoard.innerHTML = `
+            మీ ఫైనల్ స్కోర్ (Final Score): <span style="color: #28a745;">${score} / ${quizData.length}</span><br>
+            <span style="font-size: 0.7em; color: #555;">(ప్రయత్నించిన ప్రశ్నలు: ${answeredCount} / ${quizData.length})</span>
+        `;
+        scoreBoard.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
